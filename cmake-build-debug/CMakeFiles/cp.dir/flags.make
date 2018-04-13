@@ -6,5 +6,5 @@ CXX_FLAGS = -g -fPIC   -std=gnu++11 -Wdeprecated-declarations -std=gnu++11
 
 CXX_DEFINES = -Dcp_EXPORTS
 
-CXX_INCLUDES = -I/home/ryuhoseok/CartPole -I/usr/include/python2.7 -I/usr/local/include 
+CXX_INCLUDES = -I/home/ryuhoseok/CartPole -I/usr/include/python2.7 -I/usr/local/include -isystem /usr/include/eigen3 -isystem /usr/include/coin 
 

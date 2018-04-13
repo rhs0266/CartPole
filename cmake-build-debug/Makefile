@@ -176,32 +176,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/CartPole.dir/build.make CMakeFiles/CartPole.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-python_lib/simulation.o: python_lib/simulation.cpp.o
+vpc/simulation.o: vpc/simulation.cpp.o
 
-.PHONY : python_lib/simulation.o
+.PHONY : vpc/simulation.o
 
 # target to build an object file
-python_lib/simulation.cpp.o:
-	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/python_lib/simulation.cpp.o
-.PHONY : python_lib/simulation.cpp.o
+vpc/simulation.cpp.o:
+	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/vpc/simulation.cpp.o
+.PHONY : vpc/simulation.cpp.o
 
-python_lib/simulation.i: python_lib/simulation.cpp.i
+vpc/simulation.i: vpc/simulation.cpp.i
 
-.PHONY : python_lib/simulation.i
+.PHONY : vpc/simulation.i
 
 # target to preprocess a source file
-python_lib/simulation.cpp.i:
-	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/python_lib/simulation.cpp.i
-.PHONY : python_lib/simulation.cpp.i
+vpc/simulation.cpp.i:
+	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/vpc/simulation.cpp.i
+.PHONY : vpc/simulation.cpp.i
 
-python_lib/simulation.s: python_lib/simulation.cpp.s
+vpc/simulation.s: vpc/simulation.cpp.s
 
-.PHONY : python_lib/simulation.s
+.PHONY : vpc/simulation.s
 
 # target to generate assembly for a file
-python_lib/simulation.cpp.s:
-	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/python_lib/simulation.cpp.s
-.PHONY : python_lib/simulation.cpp.s
+vpc/simulation.cpp.s:
+	$(MAKE) -f CMakeFiles/cp.dir/build.make CMakeFiles/cp.dir/vpc/simulation.cpp.s
+.PHONY : vpc/simulation.cpp.s
 
 # Help Target
 help:
@@ -217,9 +217,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... python_lib/simulation.o"
-	@echo "... python_lib/simulation.i"
-	@echo "... python_lib/simulation.s"
+	@echo "... vpc/simulation.o"
+	@echo "... vpc/simulation.i"
+	@echo "... vpc/simulation.s"
 .PHONY : help
 
 

@@ -47,6 +47,8 @@
 					<Add directory="/home/ryuhoseok/CartPole"/>
 					<Add directory="/usr/include/python2.7"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/coin"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -72,6 +74,8 @@
 					<Add directory="/home/ryuhoseok/CartPole"/>
 					<Add directory="/usr/include/python2.7"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/coin"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -222,10 +226,10 @@
 		<Unit filename="/home/ryuhoseok/CartPole/main.cpp">
 			<Option target="CartPole"/>
 		</Unit>
-		<Unit filename="/home/ryuhoseok/CartPole/python_lib/simulation.cpp">
+		<Unit filename="/home/ryuhoseok/CartPole/vpc/simulation.cpp">
 			<Option target="cp"/>
 		</Unit>
-		<Unit filename="/home/ryuhoseok/CartPole/python_lib/simulation.h">
+		<Unit filename="/home/ryuhoseok/CartPole/vpc/simulation.h">
 			<Option target="cp"/>
 		</Unit>
 		<Unit filename="/home/ryuhoseok/CartPole/CMakeLists.txt">

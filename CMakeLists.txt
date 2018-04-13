@@ -28,9 +28,9 @@ add_executable(CartPole main.cpp)
 
 target_link_libraries(CartPole ${DART_LIBRARIES} ${Boost_LIBRARIES} engine)
 
+
+file(GLOB vpc_srcs "vpc/*.h" "vpc/*.cpp")
 project(cp)
-
-add_library(cp SHARED python_lib/simulation.cpp)
-
-target_link_libraries(cp ${Boost_LIBRARIES})
+add_library(cp SHARED ${vpc_srcs})
+target_link_libraries(cp ${DART_LIBRARIES} ${Boost_LIBRARIES} engine)
 set_target_properties(cp PROPERTIES PREFIX "" )

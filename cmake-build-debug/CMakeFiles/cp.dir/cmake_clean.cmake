@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cp.dir/vpc/simulation.cpp.o"
-  "cp.pdb"
-  "cp.so"
+  "../py_code/cp.pdb"
+  "../py_code/cp.so"
 )
 
 # Per-language clean rules from dependency scanning.

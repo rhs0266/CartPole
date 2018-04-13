@@ -32,6 +32,7 @@ add_executable(render ${render_srcs})
 target_link_libraries(render ${DART_LIBRARIES} ${Boost_LIBRARIES} engine)
 
 #####################################
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/py_code)
 project(cp)
 file(GLOB vpc_srcs "vpc/*.h" "vpc/*.cpp")
 add_library(cp SHARED ${vpc_srcs})

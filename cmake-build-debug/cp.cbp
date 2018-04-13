@@ -38,7 +38,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="cp">
-				<Option output="/home/ryuhoseok/CartPole/cmake-build-debug/cp.so" prefix_auto="0" extension_auto="0"/>
+				<Option output="/home/ryuhoseok/CartPole/py_code/cp.so" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/ryuhoseok/CartPole/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
@@ -65,7 +65,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="cp/fast">
-				<Option output="/home/ryuhoseok/CartPole/cmake-build-debug/cp.so" prefix_auto="0" extension_auto="0"/>
+				<Option output="/home/ryuhoseok/CartPole/py_code/cp.so" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/ryuhoseok/CartPole/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>

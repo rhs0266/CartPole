@@ -55,7 +55,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -250,7 +250,7 @@ PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 cp_BINARY_DIR:STATIC=/home/ryuhoseok/CartPole/build
 
 //Dependencies for the target
-cp_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_python.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;
+cp_LIB_DEPENDS:STATIC=general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_python.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;engine;
 
 //Value Computed by CMake
 cp_SOURCE_DIR:STATIC=/home/ryuhoseok/CartPole
@@ -259,10 +259,16 @@ cp_SOURCE_DIR:STATIC=/home/ryuhoseok/CartPole
 engine_BINARY_DIR:STATIC=/home/ryuhoseok/CartPole/build/engine
 
 //Dependencies for the target
-engine_LIB_DEPENDS:STATIC=general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-optimizer-ipopt;general;dart;
+engine_LIB_DEPENDS:STATIC=general;dart-optimizer-ipopt;general;dart;
 
 //Value Computed by CMake
 engine_SOURCE_DIR:STATIC=/home/ryuhoseok/CartPole/engine
+
+//Value Computed by CMake
+render_BINARY_DIR:STATIC=/home/ryuhoseok/CartPole/build
+
+//Value Computed by CMake
+render_SOURCE_DIR:STATIC=/home/ryuhoseok/CartPole
 
 
 ########################
@@ -295,8 +301,6 @@ Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
-//MODIFIED property for variable: CMAKE_BUILD_TYPE
-CMAKE_BUILD_TYPE-MODIFIED:INTERNAL=ON
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/ryuhoseok/CartPole/build
 //Major version of cmake used to create the current loaded cache
@@ -424,7 +428,7 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 DART_DEFINITIONS:INTERNAL=
 DART_INCLUDE_DIRS:INTERNAL=/usr/local/include
-DART_LIBRARIES:INTERNAL=dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart
+DART_LIBRARIES:INTERNAL=dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart
 DART_dart_DEFINITIONS:INTERNAL=
 DART_dart_DEPENDENCIES:INTERNAL=external-odelcpsolver
 DART_dart_FOUND:INTERNAL=TRUE
@@ -441,7 +445,7 @@ DART_optimizer-ipopt_FOUND:INTERNAL=TRUE
 DART_optimizer-ipopt_INCLUDE_DIRS:INTERNAL=
 DART_optimizer-ipopt_LIBRARIES:INTERNAL=dart-optimizer-ipopt
 //Details about finding DART
-FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart][cfound components:  gui optimizer-ipopt dart ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart][cfound components:  gui optimizer-ipopt dart ][v()]
 //Details about finding GLUT
 FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/usr/lib/x86_64-linux-gnu/libglut.so][/usr/include][v()]
 //Details about finding OpenGL

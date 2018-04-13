@@ -90,23 +90,13 @@ CartPole_EXTERNAL_OBJECTS =
 
 CartPole: CMakeFiles/CartPole.dir/main.cpp.o
 CartPole: CMakeFiles/CartPole.dir/build.make
+CartPole: /usr/local/lib/libdart-gui.so.6.4.0
 CartPole: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 CartPole: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 CartPole: /usr/lib/x86_64-linux-gnu/libboost_python.so
 CartPole: /usr/lib/x86_64-linux-gnu/libboost_system.so
 CartPole: ../engine/libengine.so
-CartPole: /usr/local/lib/libdart-optimizer-ipopt.so.6.4.0
-CartPole: /usr/lib/libipopt.so
-CartPole: /usr/local/lib/libdart-gui.so.6.4.0
 CartPole: /usr/local/lib/libdart-utils.so.6.4.0
-CartPole: /usr/local/lib/libdart.so.6.4.0
-CartPole: /usr/lib/x86_64-linux-gnu/libccd.so
-CartPole: /usr/lib/libfcl.so
-CartPole: /usr/lib/x86_64-linux-gnu/libassimp.so
-CartPole: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-CartPole: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-CartPole: /usr/lib/x86_64-linux-gnu/libboost_system.so
-CartPole: /usr/local/lib/libdart-external-odelcpsolver.so.6.4.0
 CartPole: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
 CartPole: /usr/lib/x86_64-linux-gnu/libglut.so
 CartPole: /usr/lib/x86_64-linux-gnu/libXmu.so
@@ -115,6 +105,16 @@ CartPole: /usr/lib/x86_64-linux-gnu/libGLU.so
 CartPole: /usr/lib/x86_64-linux-gnu/libGL.so
 CartPole: /usr/local/lib/libdart-external-lodepng.so.6.4.0
 CartPole: /usr/local/lib/libdart-external-imgui.so.6.4.0
+CartPole: /usr/local/lib/libdart-optimizer-ipopt.so.6.4.0
+CartPole: /usr/lib/libipopt.so
+CartPole: /usr/local/lib/libdart.so.6.4.0
+CartPole: /usr/lib/x86_64-linux-gnu/libccd.so
+CartPole: /usr/lib/libfcl.so
+CartPole: /usr/lib/x86_64-linux-gnu/libassimp.so
+CartPole: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+CartPole: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+CartPole: /usr/lib/x86_64-linux-gnu/libboost_system.so
+CartPole: /usr/local/lib/libdart-external-odelcpsolver.so.6.4.0
 CartPole: CMakeFiles/CartPole.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ryuhoseok/CartPole/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CartPole"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CartPole.dir/link.txt --verbose=$(VERBOSE)

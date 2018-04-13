@@ -206,6 +206,33 @@ Record.cpp.s:
 	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Record.cpp.s
 .PHONY : Record.cpp.s
 
+StateMachine.o: StateMachine.cpp.o
+
+.PHONY : StateMachine.o
+
+# target to build an object file
+StateMachine.cpp.o:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/StateMachine.cpp.o
+.PHONY : StateMachine.cpp.o
+
+StateMachine.i: StateMachine.cpp.i
+
+.PHONY : StateMachine.i
+
+# target to preprocess a source file
+StateMachine.cpp.i:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/StateMachine.cpp.i
+.PHONY : StateMachine.cpp.i
+
+StateMachine.s: StateMachine.cpp.s
+
+.PHONY : StateMachine.s
+
+# target to generate assembly for a file
+StateMachine.cpp.s:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/StateMachine.cpp.s
+.PHONY : StateMachine.cpp.s
+
 World.o: World.cpp.o
 
 .PHONY : World.o
@@ -251,6 +278,9 @@ help:
 	@echo "... Record.o"
 	@echo "... Record.i"
 	@echo "... Record.s"
+	@echo "... StateMachine.o"
+	@echo "... StateMachine.i"
+	@echo "... StateMachine.s"
 	@echo "... World.o"
 	@echo "... World.i"
 	@echo "... World.s"

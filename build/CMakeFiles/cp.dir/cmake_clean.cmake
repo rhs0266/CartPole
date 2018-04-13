@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cp.dir/python_lib/simulation.cpp.o"
+  "CMakeFiles/cp.dir/vpc/simulation.cpp.o"
   "cp.pdb"
   "cp.so"
 )

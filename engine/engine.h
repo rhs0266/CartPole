@@ -6,5 +6,6 @@
 #include "Character.h"
 #include "DartHelper.h"
 #include "World.h"
+#include "Record.h"
 
 #endif

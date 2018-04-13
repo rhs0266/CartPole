@@ -179,6 +179,33 @@ DartHelper.cpp.s:
 	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/DartHelper.cpp.s
 .PHONY : DartHelper.cpp.s
 
+Record.o: Record.cpp.o
+
+.PHONY : Record.o
+
+# target to build an object file
+Record.cpp.o:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Record.cpp.o
+.PHONY : Record.cpp.o
+
+Record.i: Record.cpp.i
+
+.PHONY : Record.i
+
+# target to preprocess a source file
+Record.cpp.i:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Record.cpp.i
+.PHONY : Record.cpp.i
+
+Record.s: Record.cpp.s
+
+.PHONY : Record.s
+
+# target to generate assembly for a file
+Record.cpp.s:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Record.cpp.s
+.PHONY : Record.cpp.s
+
 World.o: World.cpp.o
 
 .PHONY : World.o
@@ -221,6 +248,9 @@ help:
 	@echo "... DartHelper.o"
 	@echo "... DartHelper.i"
 	@echo "... DartHelper.s"
+	@echo "... Record.o"
+	@echo "... Record.i"
+	@echo "... Record.s"
 	@echo "... World.o"
 	@echo "... World.i"
 	@echo "... World.s"

@@ -83,6 +83,12 @@
 		<Unit filename="/home/ryuhoseok/CartPole/engine/EigenIncludes.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/ryuhoseok/CartPole/engine/Record.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/ryuhoseok/CartPole/engine/Record.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/ryuhoseok/CartPole/engine/StdIncludes.h">
 			<Option target="engine"/>
 		</Unit>

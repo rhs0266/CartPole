@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ryuhoseok/CartPole/python_lib/simulation.cpp
+simulation.h
+/home/ryuhoseok/CartPole/python_lib/simulation.h
+iostream
+-
+
+/home/ryuhoseok/CartPole/python_lib/simulation.h
+boost/python.hpp
+-
+boost/python/list.hpp
+-
+

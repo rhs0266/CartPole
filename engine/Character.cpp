@@ -22,7 +22,7 @@ Initialize()
 	 	nullptr,
 	 	Eigen::Vector3d(0.2,0.1,0.1),
 	 	Eigen::Vector3d(0,0,0),
-	 	Eigen::Vector3d(0.0,0.05,0.0),1.0);
+	 	Eigen::Vector3d(0.0,0.0501,0.0),1.0);
 
 	auto pole = DartHelper::MakeRevoluteJointBody(
 	 	"Pole",

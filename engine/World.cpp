@@ -35,7 +35,7 @@ Initialize()
 	// p[1] = 0.01;
 	// mCharacter->GetSkeleton()->setPositions(p);
 	mWorld->addSkeleton(mCharacter->GetSkeleton());
-	mWorld->addSkeleton(mGround);
+	//mWorld->addSkeleton(mGround);
 }
 void
 World::

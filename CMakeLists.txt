@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 2.80)
 project(CartPole)
 add_compile_options(-std=gnu++11)
 add_compile_options(-Wdeprecated-declarations)
@@ -27,3 +27,10 @@ link_directories(./engine/)
 add_executable(CartPole main.cpp)
 
 target_link_libraries(CartPole ${DART_LIBRARIES} ${Boost_LIBRARIES} engine)
+
+project(cp)
+
+add_library(cp SHARED python_lib/simulation.cpp)
+
+target_link_libraries(cp ${Boost_LIBRARIES})
+set_target_properties(cp PROPERTIES PREFIX "" )

@@ -49,9 +49,13 @@ void
 World::
 Action(bool isleft)
 {
-//	if(isleft)
-//		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(-100,0,0),Eigen::Vector3d(0,0,0));
-//	else
-//		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(100,0,0),Eigen::Vector3d(0,0,0));
+	if(isleft) {
+		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(-150, 0, 0), Eigen::Vector3d(0, 0, 0));
+//		std::cout << "LEFT\n";
+	}
+	else {
+		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(150, 0, 0), Eigen::Vector3d(0, 0, 0));
+//		std::cout << "RIGHT\n";
+	}
 }
 }

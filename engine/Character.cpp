@@ -28,9 +28,14 @@ Initialize()
 	 	"Pole",
 	 	mSkeleton,
 	 	cart,
-	 	Eigen::Vector3d(0.05,1.0,0.05),
+	 	Eigen::Vector3d(0.05,0.5,0.05),
 	 	Eigen::Vector3d(0,0.05,0),
-	 	Eigen::Vector3d(0,0.55,0),1.0);
+	 	Eigen::Vector3d(0,0.3,0),1.0);
+
+	// Pole initially tilted
+//    srand(time(NULL));
+//    double angle = rand()%100 - 50;
+//	mSkeleton->setPosition(1,0.001*angle);
 
 //	DartHelper::MakeFreeJointBody(
 //		"Torso",

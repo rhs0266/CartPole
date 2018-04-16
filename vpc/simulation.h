@@ -12,7 +12,7 @@ public:
     Simulation();
     void Init();
     void Reset();
-    void Step();
+    void Step(bool);
 
     std::shared_ptr<VPC::World> world;
     std::vector<std::shared_ptr<VPC::Record>> records;

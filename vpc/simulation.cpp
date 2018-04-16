@@ -31,17 +31,19 @@ void Simulation::Init(){
 
 void Simulation::Reset(){
     world->Initialize();
-    if(boost::filesystem::exists(output_path))
-        boost::filesystem::remove_all(output_path);
-    boost::filesystem::create_directories(output_path);
+//    if(boost::filesystem::exists(output_path))
+//        boost::filesystem::remove_all(output_path);
+//    boost::filesystem::create_directories(output_path);
 }
 
-void Simulation::Step(){
+void Simulation::Step(bool recordFlag){
     world->TimeStepping();
 
-//    records.push_back(std::make_shared<VPC::Record>());
-//    records.back()->Set(world->GetWorld(),world->GetCharacter());
-//    records.back()->Write(output_path+std::to_string(records.size()-1));
+    if (recordFlag) {
+        records.push_back(std::make_shared<VPC::Record>());
+        records.back()->Set(world->GetWorld(), world->GetCharacter());
+        records.back()->Write(output_path + std::to_string(records.size() - 1));
+    }
 }
 
 boost::python::list Simulation::GetState(){

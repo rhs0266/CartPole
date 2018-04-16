@@ -18,8 +18,10 @@ GAME = 'CartPole-v0'    # name of game
 
 def get_options():
     parser = ArgumentParser()
-    parser.add_argument('--MAX_EPISODE', type=int, default=3000,
+    parser.add_argument('--MAX_EPISODE', type=int, default=10000,
                         help='max number of episodes iteration')
+    parser.add_argument('--GOAL_REWARD', type=int, default=500,
+                        help='goal reward of each episode')
     parser.add_argument('--ACTION_DIM', type=int, default=2,
                         help='number of actions one can take')
     parser.add_argument('--OBSERVATION_DIM', type=int, default=4,
@@ -163,7 +165,7 @@ def train(env):
         sum_loss_value = 0
         
         # The step loop
-        while not done and score < 200:
+        while not done and score < options.GOAL_REWARD:
             global_step += 1
             if global_step % options.EPS_ANNEAL_STEPS == 0 and eps > options.FINAL_EPS:
                 eps = eps * options.EPS_DECAY
@@ -173,7 +175,7 @@ def train(env):
             action = agent.sample_action(Q1, {obs : np.reshape(observation, (1, -1))}, eps, options)
             act_queue[exp_pointer] = action
             env.SetAction(action)
-            env.Step()
+            env.Step(True)
             observation = env.GetState()
             reward = env.GetReward()
             if env.GetDone()==1:
@@ -185,8 +187,8 @@ def train(env):
             score += reward
             reward = score  # Reward will be the accumulative score
 
-            if done and score<200 :
-                reward = -2000   # If it fails, punish hard
+            if done and score < options.GOAL_REWARD :
+                reward = -options.GOAL_REWARD * 8   # If it fails, punish hard
                 observation = np.zeros_like(observation)
 
             
@@ -213,14 +215,14 @@ def train(env):
         score_queue.append(score)
         if len(score_queue) > MAX_SCORE_QUEUE_SIZE:
             score_queue.pop(0)
-            if np.mean(score_queue) > 195: # The threshold of being solved
+            if np.mean(score_queue) > options.GOAL_REWARD * 0.95: # The threshold of being solved
                 learning_finished = True
             else:
                 learning_finished = False
         if learning_finished:
             print( "Testing !!!" )
         # save progress every 100 episodes
-        if learning_finished and i_episode % 100 == 0:
+        if learning_finished:
             saver.save(sess, 'checkpoints-cartpole/' + GAME + '-dqn', global_step = global_step)
 
 

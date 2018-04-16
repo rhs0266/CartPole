@@ -39,9 +39,9 @@ void Simulation::Reset(){
 void Simulation::Step(){
     world->TimeStepping();
 
-    records.push_back(std::make_shared<VPC::Record>());
-    records.back()->Set(world->GetWorld(),world->GetCharacter());
-    records.back()->Write(output_path+std::to_string(records.size()-1));
+//    records.push_back(std::make_shared<VPC::Record>());
+//    records.back()->Set(world->GetWorld(),world->GetCharacter());
+//    records.back()->Write(output_path+std::to_string(records.size()-1));
 }
 
 boost::python::list Simulation::GetState(){

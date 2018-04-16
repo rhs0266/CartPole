@@ -163,7 +163,7 @@ def train(env):
         sum_loss_value = 0
         
         # The step loop
-        while not done:
+        while not done and score < 200:
             global_step += 1
             if global_step % options.EPS_ANNEAL_STEPS == 0 and eps > options.FINAL_EPS:
                 eps = eps * options.EPS_DECAY

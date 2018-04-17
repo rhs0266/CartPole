@@ -33,9 +33,9 @@ Initialize()
 	 	Eigen::Vector3d(0,0.3,0),1.0);
 
 	// Pole initially tilted
-//    srand(time(NULL));
-//    double angle = rand()%100 - 50;
-//	mSkeleton->setPosition(1,0.001*angle);
+    srand(time(NULL));
+    double angle = rand()%40 - 20;
+	mSkeleton->setPosition(1,0.001*angle);
 
 //	DartHelper::MakeFreeJointBody(
 //		"Torso",

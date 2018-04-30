@@ -10,18 +10,20 @@ class Simulation
 {
 public:
     Simulation();
-    void Init();
-    void Reset();
-    void Step(bool);
+    void init();
+    void reset();
+    void step(bool);
 
     std::shared_ptr<VPC::World> world;
     std::vector<std::shared_ptr<VPC::Record>> records;
     std::string output_path;
 
-    boost::python::list GetState();
-    void SetAction(boost::python::list v);
-    int GetReward();
-    int GetDone();
+    int getStateNum();
+    int getActionNum();
+    boost::python::list getState();
+    void setAction(float v);
+    int getReward();
+    int getDone();
 };
 
 #endif

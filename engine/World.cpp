@@ -47,15 +47,8 @@ TimeStepping()
 
 void
 World::
-Action(bool isleft)
+Action(float v)
 {
-	if(isleft) {
-		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(-150, 0, 0), Eigen::Vector3d(0, 0, 0));
-//		std::cout << "LEFT\n";
-	}
-	else {
-		mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(150, 0, 0), Eigen::Vector3d(0, 0, 0));
-//		std::cout << "RIGHT\n";
-	}
+	mCharacter->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(v, 0, 0), Eigen::Vector3d(0, 0, 0));
 }
 }

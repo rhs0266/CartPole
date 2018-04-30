@@ -15,7 +15,7 @@ public:
 	World(int num_sim_step);
 	void Initialize();
 	void TimeStepping();
-	void Action(bool isleft);
+	void Action(float v);
 	const std::shared_ptr<Character>& GetCharacter(){return mCharacter;}
 	const dart::simulation::WorldPtr& GetWorld(){return mWorld;}
 };

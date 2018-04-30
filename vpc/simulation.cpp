@@ -18,7 +18,7 @@ Eigen::VectorXd toEigen(boost::python::list py_list)
 Simulation::Simulation(){
 }
 
-void Simulation::Init(){
+void Simulation::init(){
     world = std::make_shared<VPC::World>(5); // world->TimeStepping() 이 호출 될 때마다 world->step() 이 호출되는 비율
     world->Initialize();
     world->GetWorld()->setTimeStep(0.0001);
@@ -29,14 +29,14 @@ void Simulation::Init(){
     boost::filesystem::create_directories(output_path);
 }
 
-void Simulation::Reset(){
+void Simulation::reset(){
     world->Initialize();
 //    if(boost::filesystem::exists(output_path))
 //        boost::filesystem::remove_all(output_path);
 //    boost::filesystem::create_directories(output_path);
 }
 
-void Simulation::Step(bool recordFlag){
+void Simulation::step(bool recordFlag){
     world->TimeStepping();
 
     if (recordFlag) {
@@ -46,7 +46,18 @@ void Simulation::Step(bool recordFlag){
     }
 }
 
-boost::python::list Simulation::GetState(){
+int Simulation::getStateNum(){
+    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
+    int size = pos.rows() * 2;
+    return size;
+}
+
+
+int Simulation::getActionNum(){
+    return 1;
+}
+
+boost::python::list Simulation::getState(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions() * 2.0;
     Eigen::VectorXd vec = world->GetCharacter()->GetSkeleton()->getVelocities() * 0.2;
     int size = pos.rows();
@@ -55,22 +66,18 @@ boost::python::list Simulation::GetState(){
     return toPyList(state);
 }
 
-int Simulation::GetReward(){
+int Simulation::getReward(){
     return 1;
 }
 
-int Simulation::GetDone(){
+int Simulation::getDone(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
     if (abs(pos[0])>2.4 || abs(pos[1])>0.15) return 1;
     return 0;
 }
 
-void Simulation::SetAction(boost::python::list v){
-    Eigen::VectorXd actList = toEigen(v);
-    assert(actList.rows() == 2);
-    if (actList[0] == 1) world->Action(true);
-    else if (actList[1] == 1) world->Action(false);
-    else std::cout<<"WRONG!!!\n";
+void Simulation::setAction(float v){
+    world->Action(v * 100);
 }
 //
 //
@@ -92,13 +99,13 @@ using namespace boost::python;
 BOOST_PYTHON_MODULE(cp)
 {
     class_<Simulation>("Simulation",init<>())
-            .def("Init",&Simulation::Init)
-            .def("Step",&Simulation::Step)
-            .def("Reset",&Simulation::Reset)
-            .def("GetState",&Simulation::GetState)
-            .def("SetAction",&Simulation::SetAction)
-            .def("GetReward",&Simulation::GetReward)
-            .def("GetDone",&Simulation::GetDone);
+            .def("init",&Simulation::init)
+            .def("step",&Simulation::step)
+            .def("reset",&Simulation::reset)
+            .def("getState",&Simulation::getState)
+            .def("setAction",&Simulation::setAction)
+            .def("getReward",&Simulation::getReward)
+            .def("getDone",&Simulation::getDone);
 }
 
 

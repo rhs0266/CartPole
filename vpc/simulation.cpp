@@ -67,17 +67,26 @@ boost::python::list Simulation::getState(){
 }
 
 int Simulation::getReward(){
+    Eigen::VectorXd p = world->GetCharacter()->GetSkeleton()->getPositions();
+    double terminal_angle = 15.0/180.0*3.141592;
+    double terminal_position = 1.5;
+
+    double r1 = (terminal_position-fabs(p[0]))/terminal_position;
+    double r2 = (terminal_angle-fabs(p[1]))/terminal_angle;
+
+
+    return r1 + r2;
     return 1;
 }
 
 int Simulation::getDone(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    if (abs(pos[0])>2.4 || abs(pos[1])>0.15) return 1;
+    if (abs(pos[0])>1.5 || abs(pos[1])>15.0/180.0*3.141592) return 1;
     return 0;
 }
 
 void Simulation::setAction(float v){
-    world->Action(v * 100);
+    world->Action(v * 1000);
 }
 //
 //

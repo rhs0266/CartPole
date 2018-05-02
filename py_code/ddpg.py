@@ -60,9 +60,14 @@ class DDPG(object):
 		# gaussian noise
 		self.noise = GaussianNoise()
 
+		self.flag = None
+
 	def optimize_network(self):
 		if self.replaybuffer.size() < self.options.BUFFER_SIZE:
 			return
+		if self.flag == None:
+			self.flag = True
+			print 'OPT'
 		s_batch, a_batch, r_batch, s2_batch = self.replaybuffer.sample_batch(self.options.BATCH_SIZE)
 
 		action_target_batch = self.actor_target.predict(s2_batch)
@@ -83,7 +88,7 @@ class DDPG(object):
 		self.sess.run(self.soft_copy_actor)	
 		self.sess.run(self.soft_copy_critic)	
 
-	def training(self):
+	def training(self, goal_step):
 		print("Start training")
 		global_step = 0
 		eps = self.options.INIT_EPS
@@ -95,26 +100,29 @@ class DDPG(object):
 			state = self.env.getState()
 			total_reward = 0
 
-			while not done and total_reward < self.options.GOAL_REWARD:
+			while local_step < goal_step and not done:
 				# epsilon decaying
 				global_step += 1
+				local_step += 1
 				if global_step % self.options.EPS_ANNEAL_STEPS == 0 and eps > self.options.FINAL_EPS:
 					eps = eps * self.options.EPS_DECAY
 
-				# epsilon exploration
-				if np.random.uniform(0,1) < eps:
-					action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3
-				else:
-					action = float(self.actor.predict(state)[0][0])
+				# # epsilon exploration
+				# if np.random.uniform(0,1) < eps:
+				# 	action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3
+				# else:
+				# 	action = float(self.actor.predict(state)[0][0])
+				action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3
+
 
 				# stepping
 				self.env.setAction(action)
-				self.env.step(mem)
+				self.env.step(False)
 				reward = self.env.getReward()
 				next_state = self.env.getState()
 				done = self.env.getDone()
-				if done and total_reward < self.options.GOAL_REWARD:
-					reward = -1000
+				# if done and total_reward < self.options.GOAL_REWARD:
+				# 	reward = -1000
 
 				# training
 				self.replaybuffer.add(state, [action], [reward], next_state)
@@ -130,3 +138,23 @@ class DDPG(object):
 			if (t+1)%500==0:
 				self.saver.save(self.sess, 'checkpoints-cartpole/cartpole_dqn', global_step = global_step)
 			print(t, total_reward)
+
+	def eval(self):
+		print("Start evaluation")
+		self.env.reset()
+		state = self.env.getState()
+		done = False
+		total_reward = 0
+		while not done and total_reward < self.options.GOAL_REWARD:
+			action = float(self.actor.predict(state)[0][0])
+
+			# stepping
+			self.env.setAction(action)
+			self.env.step(True)
+			reward = self.env.getReward()
+			next_state = self.env.getState()
+			done = self.env.getDone()
+			state = next_state
+			total_reward += reward
+
+		print 'eval: ', total_reward

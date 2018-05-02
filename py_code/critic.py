@@ -23,10 +23,10 @@ class CriticNetwork:
         self.action = tf.placeholder(tf.float32, [None, self.options.ACTION_DIM]) # Placeholder
 
         with tf.variable_scope(self.name):
-            hidden_layer_state = tf.layers.dense(self.state, 16, activation = tf.nn.elu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layers
-            hidden_layer_action = tf.layers.dense(self.action, 16, activation = tf.nn.elu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layers
-            hidden_layer_total = tf.concat([hidden_layer_state, hidden_layer_action], axis=1)
-            hidden_layer = tf.layers.dense(hidden_layer_total, 16, activation = tf.nn.elu, kernel_initializer=tf.contrib.layers.xavier_initializer())
+            hidden_layer_state = tf.layers.dense(self.state, 64, activation = tf.nn.relu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layers
+            # hidden_layer_action = tf.layers.dense(self.action, 16, activation = tf.nn.relu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layers
+            hidden_layer_total = tf.concat([hidden_layer_state, self.action], axis=1)
+            hidden_layer = tf.layers.dense(hidden_layer_total, 32, activation = tf.nn.relu, kernel_initializer=tf.contrib.layers.xavier_initializer())
             self.q_predict = tf.layers.dense(hidden_layer, 1, kernel_initializer = tf.contrib.layers.xavier_initializer())
 
         self.network_params = tf.trainable_variables(scope = self.name)

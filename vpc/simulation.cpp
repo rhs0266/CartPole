@@ -23,6 +23,9 @@ void Simulation::init(){
     world->Initialize();
     world->GetWorld()->setTimeStep(0.0001);
 
+    int size = world->GetCharacter()->GetSkeleton()->getPositions().rows();
+    for (int i=0;i<4;i++) mDesiredDofs[i] = Eigen::VectorXd::Zero(size);
+
     output_path = "../output/";
     if(boost::filesystem::exists(output_path))
         boost::filesystem::remove_all(output_path);
@@ -54,7 +57,9 @@ int Simulation::getStateNum(){
 
 
 int Simulation::getActionNum(){
-    return 1;
+    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
+    int size = pos.rows();
+    return size * 4;
 }
 
 boost::python::list Simulation::getState(){
@@ -85,8 +90,27 @@ int Simulation::getDone(){
     return 0;
 }
 
-void Simulation::setAction(float v){
-    world->Action(v * 1000);
+void Simulation::setAction(boost::python::list action){
+    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
+    int size = pos.size(), j = 0;
+    Eigen::VectorXd act = toEigen(action);
+
+    for (int i=0;i<4;i++){
+//        for (int k=0;k<size;k++){
+//            mDesiredDofs[i][k] = act[j++];
+//        }
+        mDesiredDofs[i]=act.segment(i*size, size);
+    }
+}
+void Simulation::PDControl(Eigen::VectorXd mDesiredDofs[4]){
+    // version 2. ddot_theta = Kp * error + Kd * dot_theta;
+    // torque = M * ddot_theta + Coriolis
+//    Eigen::VectorXd desiredDofs = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(mDesiredDofs.data(), mDesiredDofs.size());
+////	std::cout<<desiredDofs.transpose()<<std::endl;
+//    Eigen::VectorXd ddot_theta = ((desiredDofs - mPendulum->getPositions()) * Kp) - (mPendulum->getVelocities() * Kd);
+//    std::cout<<ddot_theta.transpose()<<std::endl;
+//    Eigen::VectorXd torque = mPendulum->getMassMatrix() * ddot_theta + mPendulum->getCoriolisAndGravityForces();
+//    mPendulum->setForces(torque);
 }
 //
 //

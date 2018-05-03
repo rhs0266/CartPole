@@ -21,9 +21,13 @@ public:
     int getStateNum();
     int getActionNum();
     boost::python::list getState();
-    void setAction(float v);
+    void setAction(boost::python::list action);
     double getReward();
     int getDone();
+
+    void PDControl(Eigen::VectorXd mDesiredDofs[4]);
+
+    Eigen::VectorXd mDesiredDofs[4];
 };
 
 #endif

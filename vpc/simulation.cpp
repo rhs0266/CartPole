@@ -66,7 +66,7 @@ boost::python::list Simulation::getState(){
     return toPyList(state);
 }
 
-int Simulation::getReward(){
+double Simulation::getReward(){
     Eigen::VectorXd p = world->GetCharacter()->GetSkeleton()->getPositions();
     double terminal_angle = 15.0/180.0*3.141592;
     double terminal_position = 1.5;

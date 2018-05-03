@@ -22,7 +22,7 @@ public:
     int getActionNum();
     boost::python::list getState();
     void setAction(float v);
-    int getReward();
+    double getReward();
     int getDone();
 };
 

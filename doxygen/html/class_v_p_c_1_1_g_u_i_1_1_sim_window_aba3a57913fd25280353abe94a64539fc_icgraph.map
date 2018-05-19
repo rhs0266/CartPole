@@ -1,0 +1,7 @@
+<map id="VPC::GUI::SimWindow::Motion" name="VPC::GUI::SimWindow::Motion">
+<area shape="rect" id="node2" href="$class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6decd7c869caee8f54c8c80d46b6d4e6" title="VPC::GUI::SimWindow\l::Mouse" alt="" coords="213,5,373,47"/>
+<area shape="rect" id="node3" href="$class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6da00ed4fb5f11befaf1dba6485cfcfb" title="VPC::GUI::SimWindow\l::Keyboard" alt="" coords="421,5,581,47"/>
+<area shape="rect" id="node4" href="$class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a3e7a520e02dde6a2e8525f86db0c7895" title="VPC::GUI::SimWindow\l::GoToFrame" alt="" coords="629,5,789,47"/>
+<area shape="rect" id="node5" href="$class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6863fa1bec1696c6984c2f1066428e21" title="VPC::GUI::SimWindow\l::Display" alt="" coords="837,5,997,47"/>
+<area shape="rect" id="node6" href="$class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a992208c3ff374bcf269d7b7fcbf7324d" title="VPC::GUI::SimWindow\l::SimWindow" alt="" coords="1045,5,1205,47"/>
+</map>

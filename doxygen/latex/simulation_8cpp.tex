@@ -1,0 +1,123 @@
+\hypertarget{simulation_8cpp}{}\section{vpc/simulation.cpp faila apraksts}
+\label{simulation_8cpp}\index{vpc/simulation.\+cpp@{vpc/simulation.\+cpp}}
+{\ttfamily \#include \char`\"{}simulation.\+h\char`\"{}}\\*
+Include dependency graph for simulation.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::python\+::list \hyperlink{simulation_8cpp_a3fe4fa32fecf808041a7f243ac01c91d}{to\+Py\+List} (const Eigen\+::\+Vector\+Xd \&vec)
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{simulation_8cpp_a6d1b6ed25a79f2f7060d0f4e43f86b12}{to\+Eigen} (boost\+::python\+::list py\+\_\+list)
+\item 
+\hyperlink{simulation_8cpp_a3ce127d7d91ec30b2465b6cefdbdf84c}{B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE} (cp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Funkcijas dokumentācija}
+\index{simulation.\+cpp@{simulation.\+cpp}!B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE}}
+\index{B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE}!simulation.\+cpp@{simulation.\+cpp}}
+\subsubsection[{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E(cp)}{BOOST_PYTHON_MODULE(cp)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+O\+S\+T\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+M\+O\+D\+U\+LE (
+\begin{DoxyParamCaption}
+\item[{cp}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation_8cpp_a3ce127d7d91ec30b2465b6cefdbdf84c}{}\label{simulation_8cpp_a3ce127d7d91ec30b2465b6cefdbdf84c}
+
+
+Definēts līnijā 143 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+144 \{
+145     class\_<Simulation>(\textcolor{stringliteral}{"Simulation"},init<>())
+146             .def(\textcolor{stringliteral}{"init"},&\hyperlink{class_simulation_a10d9646039f5bffba768c3abd0b558c7}{Simulation::init})
+147             .def(\textcolor{stringliteral}{"step"},&\hyperlink{class_simulation_ae057193c8d120c47e136cdb9aeee2fd8}{Simulation::step})
+148             .def(\textcolor{stringliteral}{"reset"},&\hyperlink{class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb}{Simulation::reset})
+149             .def(\textcolor{stringliteral}{"getState"},&\hyperlink{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52}{Simulation::getState})
+150             .def(\textcolor{stringliteral}{"setAction"},&\hyperlink{class_simulation_ae024524b94a02df25c987e25cd83d8c9}{Simulation::setAction})
+151             .def(\textcolor{stringliteral}{"getReward"},&\hyperlink{class_simulation_acdf5b1b5ec41703365499a888b0d6691}{Simulation::getReward})
+152             .def(\textcolor{stringliteral}{"getDone"},&\hyperlink{class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2}{Simulation::getDone});
+153 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation_8cpp_a3ce127d7d91ec30b2465b6cefdbdf84c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{simulation.\+cpp@{simulation.\+cpp}!to\+Eigen@{to\+Eigen}}
+\index{to\+Eigen@{to\+Eigen}!simulation.\+cpp@{simulation.\+cpp}}
+\subsubsection[{\texorpdfstring{to\+Eigen(boost\+::python\+::list py\+\_\+list)}{toEigen(boost::python::list py_list)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd to\+Eigen (
+\begin{DoxyParamCaption}
+\item[{boost\+::python\+::list}]{py\+\_\+list}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation_8cpp_a6d1b6ed25a79f2f7060d0f4e43f86b12}{}\label{simulation_8cpp_a6d1b6ed25a79f2f7060d0f4e43f86b12}
+
+
+Definēts līnijā 10 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+11 \{
+12     Eigen::VectorXd vec(boost::python::len(py\_list));
+13     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i =0;i<vec.rows();i++)
+14         vec[i] = boost::python::extract<int>(py\_list[i]);
+15     \textcolor{keywordflow}{return} vec;
+16 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation_8cpp_a6d1b6ed25a79f2f7060d0f4e43f86b12_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{simulation.\+cpp@{simulation.\+cpp}!to\+Py\+List@{to\+Py\+List}}
+\index{to\+Py\+List@{to\+Py\+List}!simulation.\+cpp@{simulation.\+cpp}}
+\subsubsection[{\texorpdfstring{to\+Py\+List(const Eigen\+::\+Vector\+Xd \&vec)}{toPyList(const Eigen::VectorXd &vec)}}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::python\+::list to\+Py\+List (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector\+Xd \&}]{vec}
+\end{DoxyParamCaption}
+)}\hypertarget{simulation_8cpp_a3fe4fa32fecf808041a7f243ac01c91d}{}\label{simulation_8cpp_a3fe4fa32fecf808041a7f243ac01c91d}
+
+
+Definēts līnijā 3 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5     boost::python::list py\_list;
+6     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i =0;i<vec.rows();i++)
+7         py\_list.append(vec[i]);
+8     \textcolor{keywordflow}{return} py\_list;
+9 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation_8cpp_a3fe4fa32fecf808041a7f243ac01c91d_icgraph}
+\end{center}
+\end{figure}
+
+

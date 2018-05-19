@@ -28,155 +28,48 @@ const double delta_Kd = 3.0;
 using namespace dart::dynamics;
 using namespace dart::simulation;
 
+/**
+ * @mainpage hello~
+ * @brief main.cpp
+ * @details it is main~
+ */
+
 class MyWindow : public dart::gui::SimWindow {
 public:
 
     /// Constructor
-    MyWindow(WorldPtr world)
+    MyWindow(std::shared_ptr<VPC::World> world)
             : mPositiveSign(true),
               mBodyForce(false),
               mPDControl(false),
               Kp(default_Kp), Kd(default_Kd) {
-        setWorld(world);
+        setWorld(world->GetWorld());
+
+        mWorld = world;
 
         // Find the Skeleton named "CartPole" within the World
-        mCartPole = world->getSkeleton("cartpole");
+        mSimBiCon = world->GetWorld()->getSkeleton("SimBiCon");
 
         // Make sure that the pendulum was found in the World
-        assert(mCartPole != nullptr);
+        // assert(mSimBiCon != nullptr);
 
-        mForceCountDown.resize(mCartPole->getNumDofs(), 0);
 
-        ArrowShape::Properties arrow_properties;
-        arrow_properties.mRadius = 0.05;
-        mArrow = std::shared_ptr<ArrowShape>(new ArrowShape(
-                Eigen::Vector3d(-default_height, 0.0, default_height / 2.0),
-                Eigen::Vector3d(-default_width / 2.0, 0.0, default_height / 2.0),
-                arrow_properties, dart::Color::Orange(1.0)));
-    }
-
-    void changeDirection() {
-        mPositiveSign = !mPositiveSign;
-        if (mPositiveSign) {
-            mArrow->setPositions(
-                    Eigen::Vector3d(-default_height, 0.0, default_height / 2.0),
-                    Eigen::Vector3d(-default_width / 2.0, 0.0, default_height / 2.0));
-        } else {
-            mArrow->setPositions(
-                    Eigen::Vector3d(default_height, 0.0, default_height / 2.0),
-                    Eigen::Vector3d(default_width / 2.0, 0.0, default_height / 2.0));
-        }
-    }
-
-    void applyForce(std::size_t index) {
-        if (index < mForceCountDown.size())
-            mForceCountDown[index] = default_countdown;
-    }
-
-    void changeRestPosition(double delta) {
-        // Lesson 2a
-        for (std::size_t i = 0; i < mCartPole->getNumDofs(); i++) {
-            DegreeOfFreedomPtr dof = mCartPole->getDof(i);
-            double newRestPosition = dof->getRestPosition() + delta;
-            if (std::abs(newRestPosition) > 90.0 * M_PI / 180.0)
-                newRestPosition = (newRestPosition > 0) ? (90.0 * M_PI / 180.0) : -(90.0 * M_PI / 180.0);
-            dof->setRestPosition(newRestPosition);
-        }
-//        mCartPole->getDof(0)->setRestPosition(0.0);
-//        mCartPole->getDof(2)->setRestPosition(0.0);
-    }
-
-    void changeStiffness(double delta) {
-        // Lesson 2b
-        for (std::size_t i = 0; i < mCartPole->getNumDofs(); i++) {
-            DegreeOfFreedomPtr dof = mCartPole->getDof(i);
-            double stiffness = dof->getSpringStiffness() + delta;
-            if (stiffness < 0.0) stiffness = 0.0;
-            dof->setSpringStiffness(stiffness);
-        }
-
-//        mCartPole->getDof(0)->setSpringStiffness(0.0);
-//        mCartPole->getDof(2)->setSpringStiffness(0.0);
-    }
-
-    void changeDamping(double delta) {
-        // Lesson 2c
-        for (size_t i = 0; i < mCartPole->getNumDofs(); ++i) {
-            DegreeOfFreedom *dof = mCartPole->getDof(i);
-            double damping = dof->getDampingCoefficient() + delta;
-            if (damping < 0.0)
-                damping = 0.0;
-            dof->setDampingCoefficient(damping);
-        }
-    }
-
-    void changeKp(double delta) {
-        Kp += delta;
-        if (Kp < 0) Kp = 0;
-        std::cout << "Proportional gain : " << Kp << std::endl;
-    }
-
-    void changeKd(double delta) {
-        Kd += delta;
-        if (Kd < 0) Kd = 0;
-        std::cout << "Derivative gain : " << Kd << std::endl;
     }
 
     void printDofs() {
-        for (std::size_t i = 0; i < mCartPole->getNumDofs(); i++) {
-            std::cout << "Dof #" << i << " : " << mCartPole->getDof(i)->getPosition() / M_PI * 180.0 << std::endl;
+        for (std::size_t i = 0; i < mSimBiCon->getNumDofs(); i++) {
+            std::cout << "Dof #" << i << " : " << mSimBiCon->getDof(i)->getPosition() / M_PI * 180.0 << std::endl;
         }
     }
 
     /// Handle keyboard input
     void keyboard(unsigned char key, int x, int y) override {
         switch (key) {
-            case '-':
-                changeDirection();
-                break;
-
-            case '1':
-                applyForce(0);
-                break;
-
-            case 'w':
-                changeStiffness(delta_stiffness);
-                break;
-            case 's':
-                changeStiffness(-delta_stiffness);
-                break;
-
-            case 'e':
-                changeDamping(delta_damping);
-                break;
-            case 'd':
-                changeDamping(-delta_damping);
-                break;
-
-            case 'f':
-                mBodyForce = !mBodyForce;
-                break;
-
-            case 'v':
-                mPDControl = !mPDControl;
-                if (mPDControl) std::cout << "PD On" << std::endl;
-                else std::cout << "PD off" << std::endl;
-                break;
-
-            case 'h':
-                changeKp(delta_Kp);
-                break;
-
-            case 'j':
-                changeKp(-delta_Kp);
-                break;
-
             case 'k':
-                changeKd(delta_Kd);
-                break;
-
-            case 'l':
-                changeKd(-delta_Kd);
+                mWorld->GetCharacter()->GetSkeleton()->setPosition(4,1.1);
+//                std::cout << mWorld->GetCharacter()->GetSkeleton()->getVelocity(4) << std::endl;
+//                if (mWorld->GetCharacter()->GetSkeleton()->getPosition(4) >= -0.2207)
+                SimWindow::timeStepping();
                 break;
 
             case 'p':
@@ -189,40 +82,8 @@ public:
     }
 
     void timeStepping() override {
-        // Reset all the shapes to be Blue
-        // Lesson 1a
-//        for (std::size_t i = 0; i < mCartPole->getNumBodyNodes(); i++) {
-//            BodyNodePtr bn = mCartPole->getBodyNode(i);
-//            bn->getShapeNode(1)->getVisualAspect()->setColor(dart::Color::Blue()); // body
-//            bn->getShapeNode(0)->getVisualAspect()->setColor(dart::Color::Red()); // joint
-//
-//            // TODO: Remove any arrows
-//            if (bn->getNumShapeNodes() == 3) {
-//                //(bn->getShapeNodesWith<VisualAspect>())[2]->remove();
-//                bn->getShapeNode(2)->remove();
-//            }
-//
-//        }
-//
-        // Apply body forces based on user input, and color the body shape red
-        for (std::size_t i = 0; i < mCartPole->getNumBodyNodes(); ++i) {
-            if (mForceCountDown[i] > 0) {
-                // Lesson 1c
-                BodyNodePtr bn = mCartPole->getBodyNode(i);
-
-                Eigen::Vector3d force = default_force * Eigen::Vector3d::UnitX();
-                Eigen::Vector3d location(0, 0, 0);
-
-                if (!mPositiveSign) force = -force, location[0] = -location[0];
-
-                bn->addExtForce(force, location, true, true);
-//                bn->getShapeNode(1)->getVisualAspect()->setColor(dart::Color::Black());
-//                bn->createShapeNodeWith<VisualAspect>(mArrow);
-
-                --mForceCountDown[i];
-            }
-        }
-        SimWindow::timeStepping();
+//        std::cout << mWorld->GetCharacter()->GetSkeleton()->getPositions() << std::endl << std::endl;
+//        SimWindow::timeStepping();
     }
 
 protected:
@@ -230,8 +91,11 @@ protected:
     /// An arrow shape that we will use to visualize applied forces
     std::shared_ptr<ArrowShape> mArrow;
 
+    /// The world pointer
+    std::shared_ptr<VPC::World> mWorld;
+
     /// The pendulum that we will be perturbing
-    SkeletonPtr mCartPole;
+    SkeletonPtr mSimBiCon;
 
     /// Number of iterations before clearing a force entry
     std::vector<int> mForceCountDown;
@@ -255,14 +119,16 @@ int main(int argc, char *argv[]) {
     std::shared_ptr<VPC::World> world = std::make_shared<VPC::World>(1);
     world->Initialize();
     world->GetWorld()->setTimeStep(0.002);
+    std::cout << world->GetCharacter()->GetSkeleton()->getPositions() << std::endl;
+
 
     // Create a window for rendering the world and handling user input
-    MyWindow window(world->GetWorld());
+    MyWindow window(world);
 
     // Print instructions
 
     // Initialize glut, initialize the window, and begin the glut event loop
     glutInit(&argc, argv);
-    window.initWindow(1080, 810, "CartPole");
+    window.initWindow(1080, 810, "SimBiCon");
     glutMainLoop();
 }

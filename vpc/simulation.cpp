@@ -11,7 +11,7 @@ Eigen::VectorXd toEigen(boost::python::list py_list)
 {
     Eigen::VectorXd vec(boost::python::len(py_list));
     for(int i =0;i<vec.rows();i++)
-        vec[i] = boost::python::extract<int>(py_list[i]);
+        vec[i] = boost::python::extract<float>(py_list[i]);
     return vec;
 }
 
@@ -19,12 +19,16 @@ Simulation::Simulation(){
 }
 
 void Simulation::init(){
-    world = std::make_shared<VPC::World>(5); // world->TimeStepping() 이 호출 될 때마다 world->step() 이 호출되는 비율
+    world = std::make_shared<VPC::World>(1); // world->TimeStepping() 이 호출 될 때마다 world->step() 이 호출되는 비율
     world->Initialize();
     world->GetWorld()->setTimeStep(0.0001);
 
     int size = world->GetCharacter()->GetSkeleton()->getPositions().rows();
     for (int i=0;i<4;i++) mDesiredDofs[i] = Eigen::VectorXd::Zero(size);
+
+    fsm = std::make_shared<VPC::StateMachine>(world);
+    controller = std::make_shared<VPC::Controller>(world);
+    fsm->Initialize();
 
     output_path = "../output/";
     if(boost::filesystem::exists(output_path))
@@ -40,48 +44,77 @@ void Simulation::reset(){
 }
 
 void Simulation::step(bool recordFlag){
-    world->TimeStepping();
+    Eigen::VectorXd p,v;
+    int lastState = 0, stepCount = 0;
+    reward = 0.0;
+    for (;stepCount<10;){
+        stepCount++;
+        fsm->GetMotion(p,v);
 
-    if (recordFlag) {
-        records.push_back(std::make_shared<VPC::Record>());
-        records.back()->Set(world->GetWorld(), world->GetCharacter());
-        records.back()->Write(output_path + std::to_string(records.size() - 1));
+        int newState = fsm->GetState();
+//        if (world->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207){ // determine simbicon falls down
+//            break;
+//        }
+        if (lastState == 3 && newState == 0){
+            //break;
+        }
+        Eigen::VectorXd tau = controller->ComputeTorque(p,v);
+        std::cout << "Tau : " << tau << std::endl;
+        tau = fsm->TorsoControl(tau);
+        world->GetCharacter()->GetSkeleton()->setForces(tau);
+        world->TimeStepping();
+
+        double desiredVelocity = -1.3; // z-axis
+        double currentVelocity = world->GetCharacter()->GetSkeleton()->getVelocity(5);
+        double zVelocityReward = exp(-pow((desiredVelocity - currentVelocity),2.0));
+
+        double torsoAngle = world->GetCharacter()->GetSkeleton()->getPosition(0);
+        double torsoUpwardReward = exp(-pow(torsoAngle, 2.0) );
+
+        bool fallDownFlag = world->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207;
+        double fallDownPenalty = fallDownFlag ? -10 : 0.0;
+
+        reward += 1.0 * zVelocityReward + 0.5 * torsoUpwardReward + 1.0 * fallDownPenalty;
+
+        lastState = newState;
+
+        //if (fallDownFlag) break;
+
+        if (recordFlag) {
+            records.push_back(std::make_shared<VPC::Record>());
+            records.back()->Set(world->GetWorld(), world->GetCharacter(),fsm);
+            records.back()->Write(output_path + std::to_string(records.size() - 1));
+        }
     }
+    reward /= stepCount;
 }
 
 int Simulation::getStateNum(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    int size = pos.rows() * 2;
+    int size = pos.rows() * 2 + 1;
     return size;
 }
 
 
 int Simulation::getActionNum(){
-    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    int size = pos.rows();
-    return size * 4;
+    return 24; // state number(4) * joint number(6)
 }
 
 boost::python::list Simulation::getState(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions() * 2.0;
     Eigen::VectorXd vec = world->GetCharacter()->GetSkeleton()->getVelocities() * 0.2;
+    Eigen::VectorXd phase(1); phase << fsm->GetState()/4.0;
+
     int size = pos.rows();
-    Eigen::VectorXd state(size*2);
-    state << pos,vec;
+    Eigen::VectorXd state(size*2 + 1);
+
+    //state << pos,vec,phase;
+    //std::cout << state << "#" << std::endl;
     return toPyList(state);
 }
 
 double Simulation::getReward(){
-    Eigen::VectorXd p = world->GetCharacter()->GetSkeleton()->getPositions();
-    double terminal_angle = 15.0/180.0*3.141592;
-    double terminal_position = 1.5;
-
-    double r1 = (terminal_position-fabs(p[0]))/terminal_position;
-    double r2 = (terminal_angle-fabs(p[1]))/terminal_angle;
-
-
-    return r1 + r2;
-    return 1;
+    return reward;
 }
 
 int Simulation::getDone(){
@@ -91,26 +124,7 @@ int Simulation::getDone(){
 }
 
 void Simulation::setAction(boost::python::list action){
-    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    int size = pos.size(), j = 0;
-    Eigen::VectorXd act = toEigen(action);
-
-    for (int i=0;i<4;i++){
-//        for (int k=0;k<size;k++){
-//            mDesiredDofs[i][k] = act[j++];
-//        }
-        mDesiredDofs[i]=act.segment(i*size, size);
-    }
-}
-void Simulation::PDControl(Eigen::VectorXd mDesiredDofs[4]){
-    // version 2. ddot_theta = Kp * error + Kd * dot_theta;
-    // torque = M * ddot_theta + Coriolis
-//    Eigen::VectorXd desiredDofs = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(mDesiredDofs.data(), mDesiredDofs.size());
-////	std::cout<<desiredDofs.transpose()<<std::endl;
-//    Eigen::VectorXd ddot_theta = ((desiredDofs - mPendulum->getPositions()) * Kp) - (mPendulum->getVelocities() * Kd);
-//    std::cout<<ddot_theta.transpose()<<std::endl;
-//    Eigen::VectorXd torque = mPendulum->getMassMatrix() * ddot_theta + mPendulum->getCoriolisAndGravityForces();
-//    mPendulum->setForces(torque);
+    fsm->SetStatePose(toEigen(action));
 }
 //
 //

@@ -7,5 +7,7 @@
 #include "DartHelper.h"
 #include "World.h"
 #include "Record.h"
+#include "Controller.h"
+#include "StateMachine.h"
 
 #endif

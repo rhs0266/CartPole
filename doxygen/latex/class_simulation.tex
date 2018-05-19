@@ -1,0 +1,477 @@
+\hypertarget{class_simulation}{}\section{Simulation klases apraksts}
+\label{class_simulation}\index{Simulation@{Simulation}}
+
+
+{\ttfamily \#include $<$simulation.\+h$>$}
+
+
+
+Sadarbības diagramma klasei Simulation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_simulation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}{Simulation} ()
+\item 
+void \hyperlink{class_simulation_a10d9646039f5bffba768c3abd0b558c7}{init} ()
+\item 
+void \hyperlink{class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb}{reset} ()
+\item 
+void \hyperlink{class_simulation_ae057193c8d120c47e136cdb9aeee2fd8}{step} (bool)
+\item 
+int \hyperlink{class_simulation_ad1124017cff783732cab02a78af0720d}{get\+State\+Num} ()
+\item 
+int \hyperlink{class_simulation_a75067c89a43d0e1798fc06c71c3e3a27}{get\+Action\+Num} ()
+\item 
+boost\+::python\+::list \hyperlink{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52}{get\+State} ()
+\item 
+void \hyperlink{class_simulation_ae024524b94a02df25c987e25cd83d8c9}{set\+Action} (boost\+::python\+::list action)
+\item 
+double \hyperlink{class_simulation_acdf5b1b5ec41703365499a888b0d6691}{get\+Reward} ()
+\item 
+int \hyperlink{class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2}{get\+Done} ()
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_record}{V\+P\+C\+::\+Record} $>$ $>$ \hyperlink{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{records}
+\item 
+std\+::string \hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\+\_\+path}
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{class_simulation_a3c630148d41a6eb21d13563e2017f7b6}{m\+Desired\+Dofs} \mbox{[}4\mbox{]}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_state_machine}{V\+P\+C\+::\+State\+Machine} $>$ \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_controller}{V\+P\+C\+::\+Controller} $>$ \hyperlink{class_simulation_a2e3cc7be178e163d8a2bae06191993a7}{controller}
+\item 
+double \hyperlink{class_simulation_a5224aea8e98ffc054c58674ab1494971}{reward}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 9 failā simulation.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{Simulation()}{Simulation()}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+::\+Simulation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}{}\label{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}
+
+
+Definēts līnijā 18 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+18                       \{
+19 \}
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{Simulation@{Simulation}!get\+Action\+Num@{get\+Action\+Num}}
+\index{get\+Action\+Num@{get\+Action\+Num}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{get\+Action\+Num()}{getActionNum()}}]{\setlength{\rightskip}{0pt plus 5cm}int Simulation\+::get\+Action\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_a75067c89a43d0e1798fc06c71c3e3a27}{}\label{class_simulation_a75067c89a43d0e1798fc06c71c3e3a27}
+
+
+Definēts līnijā 96 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+96                             \{
+97     \textcolor{keywordflow}{return} 24; \textcolor{comment}{// state number(4) * joint number(6)}
+98 \}
+\end{DoxyCode}
+\index{Simulation@{Simulation}!get\+Done@{get\+Done}}
+\index{get\+Done@{get\+Done}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{get\+Done()}{getDone()}}]{\setlength{\rightskip}{0pt plus 5cm}int Simulation\+::get\+Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2}{}\label{class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2}
+
+
+Definēts līnijā 117 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+117                        \{
+118     Eigen::VectorXd pos = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPositions();
+119     \textcolor{keywordflow}{if} (abs(pos[0])>1.5 || abs(pos[1])>15.0/180.0*3.141592) \textcolor{keywordflow}{return} 1;
+120     \textcolor{keywordflow}{return} 0;
+121 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!get\+Reward@{get\+Reward}}
+\index{get\+Reward@{get\+Reward}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{get\+Reward()}{getReward()}}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\+::get\+Reward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_acdf5b1b5ec41703365499a888b0d6691}{}\label{class_simulation_acdf5b1b5ec41703365499a888b0d6691}
+
+
+Definēts līnijā 113 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+113                             \{
+114     \textcolor{keywordflow}{return} \hyperlink{class_simulation_a5224aea8e98ffc054c58674ab1494971}{reward};
+115 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_acdf5b1b5ec41703365499a888b0d6691_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{get\+State()}{getState()}}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::python\+::list Simulation\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52}{}\label{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52}
+
+
+Definēts līnijā 100 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+100                                     \{
+101     Eigen::VectorXd pos = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPositions() * 2.0;
+102     Eigen::VectorXd vec = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getVelocities() * 0.2;
+103     Eigen::VectorXd phase(1); phase << \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->GetState()/4.0;
+104 
+105     \textcolor{keywordtype}{int} size = pos.rows();
+106     Eigen::VectorXd state(size*2 + 1);
+107 
+108     state << pos,vec,phase;
+109     std::cout << state << \textcolor{stringliteral}{"#"} << std::endl;
+110     \textcolor{keywordflow}{return} \hyperlink{simulation_8cpp_a3fe4fa32fecf808041a7f243ac01c91d}{toPyList}(state);
+111 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!get\+State\+Num@{get\+State\+Num}}
+\index{get\+State\+Num@{get\+State\+Num}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{get\+State\+Num()}{getStateNum()}}]{\setlength{\rightskip}{0pt plus 5cm}int Simulation\+::get\+State\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_ad1124017cff783732cab02a78af0720d}{}\label{class_simulation_ad1124017cff783732cab02a78af0720d}
+
+
+Definēts līnijā 89 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+89                            \{
+90     Eigen::VectorXd pos = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPositions();
+91     \textcolor{keywordtype}{int} size = pos.rows() * 2 + 1;
+92     \textcolor{keywordflow}{return} size;
+93 \}
+\end{DoxyCode}
+\index{Simulation@{Simulation}!init@{init}}
+\index{init@{init}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_a10d9646039f5bffba768c3abd0b558c7}{}\label{class_simulation_a10d9646039f5bffba768c3abd0b558c7}
+
+
+Definēts līnijā 21 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+21                      \{
+22     \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world} = std::make\_shared<VPC::World>(5); \textcolor{comment}{// world->TimeStepping() 이 호출 될 때마다 world->step() 이 호출되는
+       비율}
+23     \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->Initialize();
+24     \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetWorld()->setTimeStep(0.0001);
+25 
+26     \textcolor{keywordtype}{int} size = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPositions().rows();
+27     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<4;i++) \hyperlink{class_simulation_a3c630148d41a6eb21d13563e2017f7b6}{mDesiredDofs}[i] = Eigen::VectorXd::Zero(size);
+28 
+29     \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm} = std::make\_shared<VPC::StateMachine>(\hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world});
+30     \hyperlink{class_simulation_a2e3cc7be178e163d8a2bae06191993a7}{controller} = std::make\_shared<VPC::Controller>(\hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world});
+31     \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->Initialize();
+32 
+33     \hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\_path} = \textcolor{stringliteral}{"../output/"};
+34     \textcolor{keywordflow}{if}(boost::filesystem::exists(\hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\_path}))
+35         boost::filesystem::remove\_all(\hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\_path});
+36     boost::filesystem::create\_directories(\hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\_path});
+37 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_simulation_a10d9646039f5bffba768c3abd0b558c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!reset@{reset}}
+\index{reset@{reset}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb}{}\label{class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb}
+
+
+Definēts līnijā 39 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+39                       \{
+40     \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->Initialize();
+41 \textcolor{comment}{//    if(boost::filesystem::exists(output\_path))}
+42 \textcolor{comment}{//        boost::filesystem::remove\_all(output\_path);}
+43 \textcolor{comment}{//    boost::filesystem::create\_directories(output\_path);}
+44 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!set\+Action@{set\+Action}}
+\index{set\+Action@{set\+Action}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{set\+Action(boost\+::python\+::list action)}{setAction(boost::python::list action)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+::set\+Action (
+\begin{DoxyParamCaption}
+\item[{boost\+::python\+::list}]{action}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_ae024524b94a02df25c987e25cd83d8c9}{}\label{class_simulation_ae024524b94a02df25c987e25cd83d8c9}
+
+
+Definēts līnijā 123 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+123                                                 \{
+124     \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->SetStatePose(\hyperlink{simulation_8cpp_a6d1b6ed25a79f2f7060d0f4e43f86b12}{toEigen}(action));
+125 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_simulation_ae024524b94a02df25c987e25cd83d8c9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_ae024524b94a02df25c987e25cd83d8c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulation@{Simulation}!step@{step}}
+\index{step@{step}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{step(bool)}{step(bool)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+::step (
+\begin{DoxyParamCaption}
+\item[{bool}]{record\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_ae057193c8d120c47e136cdb9aeee2fd8}{}\label{class_simulation_ae057193c8d120c47e136cdb9aeee2fd8}
+
+
+Definēts līnijā 46 failā simulation.\+cpp.
+
+
+\begin{DoxyCode}
+46                                     \{
+47     Eigen::VectorXd p,v;
+48     \textcolor{keywordtype}{int} lastState = 0, stepCount = 0;
+49     \hyperlink{class_simulation_a5224aea8e98ffc054c58674ab1494971}{reward} = 0.0;
+50     \textcolor{keywordflow}{for} (;;)\{
+51         stepCount++;
+52         \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->GetMotion(p,v);
+53 
+54         \textcolor{keywordtype}{int} newState = \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->GetState();
+55 \textcolor{comment}{//        if (world->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207)\{ // determine simbicon falls
+       down}
+56 \textcolor{comment}{//            break;}
+57 \textcolor{comment}{//        \}}
+58         \textcolor{keywordflow}{if} (lastState == 3 && newState == 0)\{
+59             \textcolor{keywordflow}{break};
+60         \}
+61         Eigen::VectorXd tau = \hyperlink{class_simulation_a2e3cc7be178e163d8a2bae06191993a7}{controller}->ComputeTorque(p,v);
+62         tau = \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm}->TorsoControl(tau);
+63         \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->setForces(tau);
+64         \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->TimeStepping();
+65 
+66         \textcolor{keywordtype}{double} desiredVelocity = -1.3; \textcolor{comment}{// z-axis}
+67         \textcolor{keywordtype}{double} currentVelocity = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getVelocity(5);
+68         \textcolor{keywordtype}{double} zVelocityReward = exp(-pow((desiredVelocity - currentVelocity),2.0));
+69 
+70         \textcolor{keywordtype}{double} torsoAngle = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPosition(0);
+71         \textcolor{keywordtype}{double} torsoUpwardReward = exp(-pow(torsoAngle, 2.0));
+72 
+73         \textcolor{keywordtype}{bool} fallDownFlag = \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207;
+74         \textcolor{keywordtype}{double} fallDownPenalty = fallDownFlag ? -10 : 0.0;
+75 
+76         \hyperlink{class_simulation_a5224aea8e98ffc054c58674ab1494971}{reward} += 1.0 * zVelocityReward + 0.5 * torsoUpwardReward + 1.0 * fallDownPenalty;
+77 
+78         lastState = newState;
+79 
+80         \textcolor{keywordflow}{if} (recordFlag) \{
+81             \hyperlink{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{records}.push\_back(std::make\_shared<VPC::Record>());
+82             \hyperlink{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{records}.back()->Set(\hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetWorld(), \hyperlink{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{world}->GetCharacter(),
+      \hyperlink{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{fsm});
+83             \hyperlink{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{records}.back()->Write(\hyperlink{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{output\_path} + std::to\_string(
+      \hyperlink{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{records}.size() - 1));
+84         \}
+85     \}
+86     \hyperlink{class_simulation_a5224aea8e98ffc054c58674ab1494971}{reward} /= stepCount;
+87 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_simulation_ae057193c8d120c47e136cdb9aeee2fd8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{Simulation@{Simulation}!controller@{controller}}
+\index{controller@{controller}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{controller}{controller}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+Controller}$>$ Simulation\+::controller}\hypertarget{class_simulation_a2e3cc7be178e163d8a2bae06191993a7}{}\label{class_simulation_a2e3cc7be178e163d8a2bae06191993a7}
+
+
+Definēts līnijā 30 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!fsm@{fsm}}
+\index{fsm@{fsm}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{fsm}{fsm}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+State\+Machine}$>$ Simulation\+::fsm}\hypertarget{class_simulation_a3a7d01e2a53a88044001a28aab387a97}{}\label{class_simulation_a3a7d01e2a53a88044001a28aab387a97}
+
+
+Definēts līnijā 29 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!m\+Desired\+Dofs@{m\+Desired\+Dofs}}
+\index{m\+Desired\+Dofs@{m\+Desired\+Dofs}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{m\+Desired\+Dofs}{mDesiredDofs}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd Simulation\+::m\+Desired\+Dofs\mbox{[}4\mbox{]}}\hypertarget{class_simulation_a3c630148d41a6eb21d13563e2017f7b6}{}\label{class_simulation_a3c630148d41a6eb21d13563e2017f7b6}
+
+
+Definēts līnijā 28 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!output\+\_\+path@{output\+\_\+path}}
+\index{output\+\_\+path@{output\+\_\+path}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{output\+\_\+path}{output_path}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Simulation\+::output\+\_\+path}\hypertarget{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}{}\label{class_simulation_a7c51cfbcfc8f08e47535a504dfbdd18a}
+
+
+Definēts līnijā 19 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!records@{records}}
+\index{records@{records}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{records}{records}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+Record}$>$ $>$ Simulation\+::records}\hypertarget{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}{}\label{class_simulation_a8e55698283d8bbba9843391b0d9ecfa8}
+
+
+Definēts līnijā 18 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!reward@{reward}}
+\index{reward@{reward}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{reward}{reward}}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\+::reward}\hypertarget{class_simulation_a5224aea8e98ffc054c58674ab1494971}{}\label{class_simulation_a5224aea8e98ffc054c58674ab1494971}
+
+
+Definēts līnijā 31 failā simulation.\+h.
+
+\index{Simulation@{Simulation}!world@{world}}
+\index{world@{world}!Simulation@{Simulation}}
+\subsubsection[{\texorpdfstring{world}{world}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+World}$>$ Simulation\+::world}\hypertarget{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}{}\label{class_simulation_ab8b3d4d3e13a05086f8497e5235fb37a}
+
+
+Definēts līnijā 17 failā simulation.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+vpc/\hyperlink{simulation_8h}{simulation.\+h}\item 
+vpc/\hyperlink{simulation_8cpp}{simulation.\+cpp}\end{DoxyCompactItemize}

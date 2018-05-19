@@ -1,0 +1,303 @@
+\hypertarget{class_v_p_c_1_1_character}{}\section{V\+PC\+:\+:Character klases apraksts}
+\label{class_v_p_c_1_1_character}\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+
+
+{\ttfamily \#include $<$Character.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:Character\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_v_p_c_1_1_character__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_character_ab07d09bda7da4df08877ba8a82aed689}{Character} (const std\+::string name)
+\item 
+void \hyperlink{class_v_p_c_1_1_character_a9fb1410736359fab3877e3afe18f2877}{Initialize} ()
+\item 
+const dart\+::dynamics\+::\+Skeleton\+Ptr \& \hyperlink{class_v_p_c_1_1_character_ab2694f013d033805504228cb151a368f}{Get\+Skeleton} ()
+\end{DoxyCompactItemize}
+\subsection*{Privātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_v_p_c_1_1_character_a66b5e53cb1779993ae7b78e1b29209b5}{m\+Name}
+\item 
+dart\+::dynamics\+::\+Skeleton\+Ptr \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{m\+Skeleton}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 7 failā Character.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}!Character@{Character}}
+\index{Character@{Character}!V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+\subsubsection[{\texorpdfstring{Character(const std\+::string name)}{Character(const std::string name)}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+Character\+::\+Character (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_character_ab07d09bda7da4df08877ba8a82aed689}{}\label{class_v_p_c_1_1_character_ab07d09bda7da4df08877ba8a82aed689}
+
+
+Definēts līnijā 8 failā Character.\+cpp.
+
+
+\begin{DoxyCode}
+9     :\hyperlink{class_v_p_c_1_1_character_a66b5e53cb1779993ae7b78e1b29209b5}{mName}(name)
+10 \{
+11     
+12 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_character_ab07d09bda7da4df08877ba8a82aed689_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}!Get\+Skeleton@{Get\+Skeleton}}
+\index{Get\+Skeleton@{Get\+Skeleton}!V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+\subsubsection[{\texorpdfstring{Get\+Skeleton()}{GetSkeleton()}}]{\setlength{\rightskip}{0pt plus 5cm}const dart\+::dynamics\+::\+Skeleton\+Ptr\& V\+P\+C\+::\+Character\+::\+Get\+Skeleton (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_character_ab2694f013d033805504228cb151a368f}{}\label{class_v_p_c_1_1_character_ab2694f013d033805504228cb151a368f}
+
+
+Definēts līnijā 16 failā Character.\+h.
+
+
+\begin{DoxyCode}
+16 \{\textcolor{keywordflow}{return} \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton};\}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+Character\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_character_a9fb1410736359fab3877e3afe18f2877}{}\label{class_v_p_c_1_1_character_a9fb1410736359fab3877e3afe18f2877}
+
+
+Definēts līnijā 16 failā Character.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18     \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton} = Skeleton::create(\hyperlink{class_v_p_c_1_1_character_a66b5e53cb1779993ae7b78e1b29209b5}{mName});
+19 \textcolor{comment}{//  auto cart = DartHelper::MakePrismaticJointBody(}
+20 \textcolor{comment}{//      "Cart",}
+21 \textcolor{comment}{//      mSkeleton,}
+22 \textcolor{comment}{//      nullptr,}
+23 \textcolor{comment}{//      Eigen::Vector3d(0.2,0.1,0.1),}
+24 \textcolor{comment}{//      Eigen::Vector3d(0,0,0),}
+25 \textcolor{comment}{//      Eigen::Vector3d(0.0,0.0501,0.0),1.0);}
+26 \textcolor{comment}{//}
+27 \textcolor{comment}{//  auto pole = DartHelper::MakeRevoluteJointBody(}
+28 \textcolor{comment}{//      "Pole",}
+29 \textcolor{comment}{//      mSkeleton,}
+30 \textcolor{comment}{//      cart,}
+31 \textcolor{comment}{//      Eigen::Vector3d(0.05,0.5,0.05),}
+32 \textcolor{comment}{//      Eigen::Vector3d(0,0.05,0),}
+33 \textcolor{comment}{//      Eigen::Vector3d(0,0.3,0),1.0);}
+34 
+35 \textcolor{comment}{//   Pole initially tilted}
+36 \textcolor{comment}{//    srand(time(NULL));}
+37 \textcolor{comment}{//    double angle = rand()%40 - 20;}
+38 \textcolor{comment}{//  mSkeleton->setPosition(1,0.001*angle);}
+39 
+40     \hyperlink{namespace_v_p_c_1_1_dart_helper_a69fa7c63ad96f84bb86411e438a73d48}{DartHelper::MakeFreeJointBody}(
+41         \textcolor{stringliteral}{"Torso"},
+42         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+43         \textcolor{keyword}{nullptr},
+44         Eigen::Vector3d(0.0,0.4,0.2),
+45         Eigen::Vector3d(0,1.1,0),
+46         70);
+47 
+48     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+49         \textcolor{stringliteral}{"ThighR"},
+50         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+51         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"Torso"}),
+52         Eigen::Vector3d(0.0,0.4,0.1),
+53         Eigen::Vector3d(-0.0,0.9,0),
+54         Eigen::Vector3d(-0.0,0.7,0),
+55         5);
+56 
+57     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+58         \textcolor{stringliteral}{"ThighL"},
+59         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+60         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"Torso"}),
+61         Eigen::Vector3d(0.0,0.4,0.1),
+62         Eigen::Vector3d(0.0,0.9,0),
+63         Eigen::Vector3d(0.0,0.7,0),
+64         5);
+65 
+66     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+67         \textcolor{stringliteral}{"KneeR"},
+68         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+69         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"ThighR"}),
+70         Eigen::Vector3d(0.0,0.4,0.1),
+71         Eigen::Vector3d(-0.0,0.5,0),
+72         Eigen::Vector3d(-0.0,0.3,0),
+73         4);
+74 
+75     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+76         \textcolor{stringliteral}{"KneeL"},
+77         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+78         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"ThighL"}),
+79         Eigen::Vector3d(0.0,0.4,0.1),
+80         Eigen::Vector3d(0.0,0.5,0),
+81         Eigen::Vector3d(0.0,0.3,0),
+82         4);
+83 
+84     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+85         \textcolor{stringliteral}{"FootR"},
+86         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+87         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"KneeR"}),
+88         Eigen::Vector3d(0.0,0.095,0.2),
+89         Eigen::Vector3d(-0.0,0.1,0),
+90         Eigen::Vector3d(-0.0,0.05,-0.03),
+91         1);
+92 
+93     \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{DartHelper::MakeRevoluteJointBody}(
+94         \textcolor{stringliteral}{"FootL"},
+95         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton},
+96         \hyperlink{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{mSkeleton}->getBodyNode(\textcolor{stringliteral}{"KneeL"}),
+97         Eigen::Vector3d(0.0,0.095,0.2),
+98         Eigen::Vector3d(0.0,0.1,0),
+99         Eigen::Vector3d(0.0,0.05,-0.03),
+100         1);
+101 
+102 
+103 
+104 
+105 
+106 
+107     \textcolor{comment}{// DartHelper::MakeFreeJointBody(}
+108     \textcolor{comment}{//  "Torso",}
+109     \textcolor{comment}{//  mSkeleton,}
+110     \textcolor{comment}{//  nullptr,}
+111     \textcolor{comment}{//  Eigen::Vector3d(0.4,0.4,0.2),}
+112     \textcolor{comment}{//  Eigen::Vector3d(0,1.1,0),}
+113     \textcolor{comment}{//  70);}
+114 
+115     \textcolor{comment}{// DartHelper::MakeRevoluteJointBody(}
+116     \textcolor{comment}{//  "ThighR",}
+117     \textcolor{comment}{//  mSkeleton,}
+118     \textcolor{comment}{//  mSkeleton->getBodyNode("Torso"),}
+119     \textcolor{comment}{//  Eigen::Vector3d(0.1,0.4,0.1),}
+120     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.9,0),}
+121     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.7,0),}
+122     \textcolor{comment}{//  5);}
+123 
+124     \textcolor{comment}{// DartHelper::MakeRevoluteJointBody(}
+125     \textcolor{comment}{//  "ThighL",}
+126     \textcolor{comment}{//  mSkeleton,}
+127     \textcolor{comment}{//  mSkeleton->getBodyNode("Torso"),}
+128     \textcolor{comment}{//  Eigen::Vector3d(0.1,0.4,0.1),}
+129     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.9,0),}
+130     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.7,0),}
+131     \textcolor{comment}{//  5);}
+132 
+133     \textcolor{comment}{// DartHelper::MakeRevoluteJointBody(}
+134     \textcolor{comment}{//  "KneeR",}
+135     \textcolor{comment}{//  mSkeleton,}
+136     \textcolor{comment}{//  mSkeleton->getBodyNode("ThighR"),}
+137     \textcolor{comment}{//  Eigen::Vector3d(0.1,0.4,0.1),}
+138     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.5,0),}
+139     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.3,0),}
+140     \textcolor{comment}{//  4);}
+141 
+142     \textcolor{comment}{// DartHelper::MakeRevoluteJointBody(}
+143     \textcolor{comment}{//  "KneeL",}
+144     \textcolor{comment}{//  mSkeleton,}
+145     \textcolor{comment}{//  mSkeleton->getBodyNode("ThighL"),}
+146     \textcolor{comment}{//  Eigen::Vector3d(0.1,0.4,0.1),}
+147     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.5,0),}
+148     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.3,0),}
+149     \textcolor{comment}{//  4);}
+150 
+151     \textcolor{comment}{// DartHelper::MakeRevoluteJointBody(}
+152     \textcolor{comment}{//  "FootR",}
+153     \textcolor{comment}{//  mSkeleton,}
+154     \textcolor{comment}{//  mSkeleton->getBodyNode("KneeR"),}
+155     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.1,0.3),}
+156     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.1,0),}
+157     \textcolor{comment}{//  Eigen::Vector3d(-0.2,0.05,0.07),}
+158     \textcolor{comment}{//  1);}
+159 
+160     \textcolor{comment}{// DartHelper::MakeBallJointBody(}
+161     \textcolor{comment}{//  "FootL",}
+162     \textcolor{comment}{//  mSkeleton,}
+163     \textcolor{comment}{//  mSkeleton->getBodyNode("KneeL"),}
+164     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.1,0.3),}
+165     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.1,0),}
+166     \textcolor{comment}{//  Eigen::Vector3d(0.2,0.05,0.07),}
+167     \textcolor{comment}{//  1);}
+168 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_character_a9fb1410736359fab3877e3afe18f2877_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_character_a9fb1410736359fab3877e3afe18f2877_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}!m\+Name@{m\+Name}}
+\index{m\+Name@{m\+Name}!V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+\subsubsection[{\texorpdfstring{m\+Name}{mName}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string V\+P\+C\+::\+Character\+::m\+Name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_character_a66b5e53cb1779993ae7b78e1b29209b5}{}\label{class_v_p_c_1_1_character_a66b5e53cb1779993ae7b78e1b29209b5}
+
+
+Definēts līnijā 10 failā Character.\+h.
+
+\index{V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}!m\+Skeleton@{m\+Skeleton}}
+\index{m\+Skeleton@{m\+Skeleton}!V\+P\+C\+::\+Character@{V\+P\+C\+::\+Character}}
+\subsubsection[{\texorpdfstring{m\+Skeleton}{mSkeleton}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Skeleton\+Ptr V\+P\+C\+::\+Character\+::m\+Skeleton\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}{}\label{class_v_p_c_1_1_character_afbd0d7d0c6227cabd47de1a5c2d7c039}
+
+
+Definēts līnijā 11 failā Character.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+engine/\hyperlink{_character_8h}{Character.\+h}\item 
+engine/\hyperlink{_character_8cpp}{Character.\+cpp}\end{DoxyCompactItemize}

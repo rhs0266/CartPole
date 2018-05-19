@@ -1,0 +1,176 @@
+\hypertarget{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface}{}\section{V\+PC\+:\+:G\+UI\+:\+:Dart\+Interface nosaukumvietas apraksts}
+\label{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface}\index{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426}{Draw\+Shape} (const Eigen\+::\+Isometry3d \&T, const dart\+::dynamics\+::\+Shape $\ast$shape, const Eigen\+::\+Vector4d \&color)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a984d0004c2f1a3006835ec469c1318d3}{Draw\+Frame} (const Eigen\+::\+Isometry3d \&T)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a0f48bc6711d69c0979519f00998d1876}{Draw\+Skeleton} (const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, const Eigen\+::\+Vector4d \&color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Funkcijas dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}!Draw\+Frame@{Draw\+Frame}}
+\index{Draw\+Frame@{Draw\+Frame}!V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}}
+\subsubsection[{\texorpdfstring{Draw\+Frame(const Eigen\+::\+Isometry3d \&\+T)}{DrawFrame(const Eigen::Isometry3d &T)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface\+::\+Draw\+Frame (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Isometry3d \&}]{T}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a984d0004c2f1a3006835ec469c1318d3}{}\label{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a984d0004c2f1a3006835ec469c1318d3}
+
+
+Definēts līnijā 63 failā Dart\+Interface.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     Eigen::Vector3d p0,p1;
+66     glDisable(GL\_LIGHTING);
+67     glPushMatrix();
+68     glMultMatrixd(T.data());
+69     p0 = Eigen::Vector3d::Zero();
+70 
+71     p1 = 0.1*Eigen::Vector3d::UnitX();
+72     \hyperlink{namespace_v_p_c_1_1_g_u_i_a45de6c011f74c08734aa04ce57bb9fd7}{DrawLine}(p0,p1,Eigen::Vector4d(1,0,0,1),2.0);
+73     p1 = 0.1*Eigen::Vector3d::UnitY();
+74     \hyperlink{namespace_v_p_c_1_1_g_u_i_a45de6c011f74c08734aa04ce57bb9fd7}{DrawLine}(p0,p1,Eigen::Vector4d(0,1,0,1),2.0);
+75     p1 = 0.1*Eigen::Vector3d::UnitZ();
+76     \hyperlink{namespace_v_p_c_1_1_g_u_i_a45de6c011f74c08734aa04ce57bb9fd7}{DrawLine}(p0,p1,Eigen::Vector4d(0,0,1,1),2.0);
+77     glPopMatrix();
+78     glEnable(GL\_LIGHTING);
+79 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a984d0004c2f1a3006835ec469c1318d3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}!Draw\+Shape@{Draw\+Shape}}
+\index{Draw\+Shape@{Draw\+Shape}!V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}}
+\subsubsection[{\texorpdfstring{Draw\+Shape(const Eigen\+::\+Isometry3d \&\+T, const dart\+::dynamics\+::\+Shape $\ast$shape, const Eigen\+::\+Vector4d \&color)}{DrawShape(const Eigen::Isometry3d &T, const dart::dynamics::Shape *shape, const Eigen::Vector4d &color)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface\+::\+Draw\+Shape (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Isometry3d \&}]{T, }
+\item[{const dart\+::dynamics\+::\+Shape $\ast$}]{shape, }
+\item[{const Eigen\+::\+Vector4d \&}]{color}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426}{}\label{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426}
+
+
+Definēts līnijā 47 failā Dart\+Interface.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51 
+52     glEnable(GL\_LIGHTING);
+53     glColorMaterial(GL\_FRONT\_AND\_BACK, GL\_AMBIENT\_AND\_DIFFUSE);
+54     glEnable(GL\_COLOR\_MATERIAL);
+55     \textcolor{keywordflow}{if} (shape->is<BoxShape>())
+56     \{
+57         \textcolor{keyword}{const} \textcolor{keyword}{auto}* box = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }BoxShape*\textcolor{keyword}{>}(shape);
+58         glPolygonMode(GL\_FRONT\_AND\_BACK,GL\_FILL);
+59         \hyperlink{namespace_v_p_c_1_1_g_u_i_a3ab06821c73e252bb864f2e9c9a6e916}{DrawCube}(T,box->getSize(),color);
+60     \}
+61     glDisable(GL\_LIGHTING);
+62 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}!Draw\+Skeleton@{Draw\+Skeleton}}
+\index{Draw\+Skeleton@{Draw\+Skeleton}!V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface@{V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface}}
+\subsubsection[{\texorpdfstring{Draw\+Skeleton(const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, const Eigen\+::\+Vector4d \&color)}{DrawSkeleton(const dart::dynamics::SkeletonPtr &skel, const Eigen::Vector4d &color)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Dart\+Interface\+::\+Draw\+Skeleton (
+\begin{DoxyParamCaption}
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{const Eigen\+::\+Vector4d \&}]{color}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a0f48bc6711d69c0979519f00998d1876}{}\label{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a0f48bc6711d69c0979519f00998d1876}
+
+
+Definēts līnijā 15 failā Dart\+Interface.\+cpp.
+
+
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<skel->getNumBodyNodes();i++)
+20     \{
+21         \textcolor{keyword}{auto} bn = skel->getBodyNode(i);
+22         \textcolor{keyword}{auto} shapeNodes = bn->getShapeNodesWith<VisualAspect>();
+23 
+24         \textcolor{comment}{// const Eigen::Isometry3d& T = shapeNodes[0]->getTransform();}
+25         \textcolor{keyword}{const} Eigen::Isometry3d& T = bn->getTransform();
+26         
+27         \hyperlink{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a81b02a78bdeb3f5bdd750d8357f6f426}{DrawShape}(T,shapeNodes[0]->getShape().\textcolor{keyword}{get}(),color);
+28         \textcolor{comment}{// glDisable(GL\_DEPTH\_TEST);}
+29         \textcolor{comment}{// DrawFrame(T);}
+30         \textcolor{comment}{// glEnable(GL\_DEPTH\_TEST);}
+31     \}   
+32     glDisable(GL\_DEPTH\_TEST);
+33     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1;i<skel->getNumJoints();i++)
+34     \{
+35         \textcolor{keyword}{auto} parent = skel->getJoint(i)->getParentBodyNode();
+36         Eigen::Isometry3d T;
+37         T.setIdentity();
+38         \textcolor{keywordflow}{if}(parent!=\textcolor{keyword}{nullptr})
+39             T = parent->getTransform();
+40         T = T*skel->getJoint(i)->getTransformFromParentBodyNode();
+41         \hyperlink{namespace_v_p_c_1_1_g_u_i_ae93b170c02a6812211061109cbb0c4a6}{DrawSphere}(T.translation(),0.03,Eigen::Vector4d(0.8,0,0,1));
+42         \textcolor{comment}{// DrawFrame(T);}
+43     \}
+44     glEnable(GL\_DEPTH\_TEST);
+45 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a0f48bc6711d69c0979519f00998d1876_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_g_u_i_1_1_dart_interface_a0f48bc6711d69c0979519f00998d1876_icgraph}
+\end{center}
+\end{figure}
+
+

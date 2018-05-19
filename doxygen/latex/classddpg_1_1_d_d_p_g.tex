@@ -1,0 +1,409 @@
+\hypertarget{classddpg_1_1_d_d_p_g}{}\section{ddpg.\+D\+D\+PG klases apraksts}
+\label{classddpg_1_1_d_d_p_g}\index{ddpg.\+D\+D\+PG@{ddpg.\+D\+D\+PG}}
+
+
+Mantojamības diagramma klasei ddpg.\+D\+D\+PG\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classddpg_1_1_d_d_p_g__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei ddpg.\+D\+D\+PG\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classddpg_1_1_d_d_p_g__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classddpg_1_1_d_d_p_g_ae5e2615ed363feea9c437913b1cfc71f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec}{optimize\+\_\+network} (self)
+\item 
+def \hyperlink{classddpg_1_1_d_d_p_g_a5237a908e38e5ac76c6b733fc61aeb3d}{training} (self, goal\+\_\+step)
+\item 
+def \hyperlink{classddpg_1_1_d_d_p_g_a2784ad40da92d5131c80f25736b0413b}{eval} (self)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a7faf017eedf2120a89e584563d2b80b1}{env}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_ae6f6b492a3680ece32923bb5f145011f}{actor}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a8b144476a564ad7483fc276939d27f31}{actor\+\_\+target}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a75e1fa4557d41a8685f47d2d2d730479}{critic}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a3c8e5f26e9a64fb7af68b7e96d9c8b49}{critic\+\_\+target}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a2bb041b9ab7c84c83f584a1eae593a87}{soft\+\_\+copy\+\_\+actor}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a01b575596a4ae50a5ee3656ce9529c94}{soft\+\_\+copy\+\_\+critic}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_af2e26e10a5dd5209afa7a6f3b7d16ab7}{replaybuffer}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_acbd64c92b0d268210807f4e10a214039}{saver}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a9e0f7ad3975f13452b47eb0a3c5194c7}{checkpoint}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_a9b3d7ee697bd6d7657e0e35b4c1cbd2f}{noise}
+\item 
+\hyperlink{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}{flag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 19 failā ddpg.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self)}{__init__(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg.\+D\+D\+P\+G.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg_1_1_d_d_p_g_ae5e2615ed363feea9c437913b1cfc71f}{}\label{classddpg_1_1_d_d_p_g_ae5e2615ed363feea9c437913b1cfc71f}
+
+
+Definēts līnijā 20 failā ddpg.\+py.
+
+
+\begin{DoxyCode}
+20     \textcolor{keyword}{def }\hyperlink{classddpg_1_1_d_d_p_g_ae5e2615ed363feea9c437913b1cfc71f}{\_\_init\_\_}(self):
+21         self.\hyperlink{classddpg_1_1_d_d_p_g_a7faf017eedf2120a89e584563d2b80b1}{env} = \hyperlink{classenv_1_1_environment}{Environment}()
+22         self.\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options} = \hyperlink{classoptions_1_1_options}{Options}().get\_options()
+23         self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess} = tf.Session()
+24 
+25         \textcolor{comment}{# actor}
+26         self.\hyperlink{classddpg_1_1_d_d_p_g_ae6f6b492a3680ece32923bb5f145011f}{actor} = Actor(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, self.\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options}, name=\textcolor{stringliteral}{"actor"})
+27         self.\hyperlink{classddpg_1_1_d_d_p_g_a8b144476a564ad7483fc276939d27f31}{actor\_target} = Actor(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, self.\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options}, name=\textcolor{stringliteral}{"actor\_target"})
+28 
+29         \textcolor{comment}{# critic}
+30         self.\hyperlink{classddpg_1_1_d_d_p_g_a75e1fa4557d41a8685f47d2d2d730479}{critic} = Critic(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, self.\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options}, name=\textcolor{stringliteral}{"critic"})
+31         self.\hyperlink{classddpg_1_1_d_d_p_g_a3c8e5f26e9a64fb7af68b7e96d9c8b49}{critic\_target} = Critic(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, self.\hyperlink{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{options}, name=\textcolor{stringliteral}{"critic\_target"})
+32 
+33         \textcolor{comment}{# soft copy}
+34         self.\hyperlink{classddpg_1_1_d_d_p_g_a2bb041b9ab7c84c83f584a1eae593a87}{soft\_copy\_actor} = \(\backslash\)
+35             [self.actor\_target.network\_params[i].assign(
+36                 tf.multiply(self.actor.network\_params[i], self.options.TAU) + \(\backslash\)
+37                 tf.multiply(self.actor\_target.network\_params[i], 1. - self.options.TAU)) \(\backslash\)
+38                 \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(self.actor\_target.network\_params)
+39             )]
+40 
+41         self.\hyperlink{classddpg_1_1_d_d_p_g_a01b575596a4ae50a5ee3656ce9529c94}{soft\_copy\_critic} = \(\backslash\)
+42             [self.critic\_target.network\_params[i].assign(
+43                 tf.multiply(self.critic.network\_params[i], self.options.TAU) + \(\backslash\)
+44                 tf.multiply(self.critic\_target.network\_params[i], 1. - self.options.TAU)) \(\backslash\)
+45                 \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(self.critic\_target.network\_params)
+46             )]
+47 
+48         \textcolor{comment}{# replay buffer}
+49         self.\hyperlink{classddpg_1_1_d_d_p_g_af2e26e10a5dd5209afa7a6f3b7d16ab7}{replaybuffer} = \hyperlink{classreplaybuffer_1_1_replay_buffer}{ReplayBuffer}(self.options.BUFFER\_SIZE)
+50 
+51         \textcolor{comment}{# saving and loading networks}
+52         self.\hyperlink{classddpg_1_1_d_d_p_g_acbd64c92b0d268210807f4e10a214039}{saver} = tf.train.Saver()
+53         self.\hyperlink{classddpg_1_1_d_d_p_g_a9e0f7ad3975f13452b47eb0a3c5194c7}{checkpoint} = tf.train.get\_checkpoint\_state(\textcolor{stringliteral}{"checkpoints-cartpole"})
+54         \textcolor{keywordflow}{if} self.\hyperlink{classddpg_1_1_d_d_p_g_a9e0f7ad3975f13452b47eb0a3c5194c7}{checkpoint} \textcolor{keywordflow}{and} self.checkpoint.model\_checkpoint\_path:
+55             self.saver.restore(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, self.checkpoint.model\_checkpoint\_path)
+56             print(\textcolor{stringliteral}{"Successfully loaded:"}, self.checkpoint.model\_checkpoint\_path)
+57         \textcolor{keywordflow}{else}:
+58             print(\textcolor{stringliteral}{"Could not find old network weights"})
+59 
+60         \textcolor{comment}{# gaussian noise}
+61         self.\hyperlink{classddpg_1_1_d_d_p_g_a9b3d7ee697bd6d7657e0e35b4c1cbd2f}{noise} = \hyperlink{classnoise_1_1_gaussian_noise}{GaussianNoise}()
+62 
+63         self.\hyperlink{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}{flag} = \textcolor{keywordtype}{None}
+64 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!eval@{eval}}
+\index{eval@{eval}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{eval(self)}{eval(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg.\+D\+D\+P\+G.\+eval (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg_1_1_d_d_p_g_a2784ad40da92d5131c80f25736b0413b}{}\label{classddpg_1_1_d_d_p_g_a2784ad40da92d5131c80f25736b0413b}
+
+
+Definēts līnijā 145 failā ddpg.\+py.
+
+
+\begin{DoxyCode}
+145     \textcolor{keyword}{def }\hyperlink{classddpg_1_1_d_d_p_g_a2784ad40da92d5131c80f25736b0413b}{eval}(self):
+146         print(\textcolor{stringliteral}{"Start evaluation"})
+147         self.env.reset()
+148         state = self.env.getState()
+149         done = \textcolor{keyword}{False}
+150         total\_reward = 0
+151         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} done \textcolor{keywordflow}{and} total\_reward < self.options.GOAL\_REWARD:
+152             action = float(self.actor.predict(state)[0][0])
+153 
+154             \textcolor{comment}{# stepping}
+155             self.env.setAction(action)
+156             self.env.step(\textcolor{keyword}{True})
+157             reward = self.env.getReward()
+158             next\_state = self.env.getState()
+159             done = self.env.getDone()
+160             state = next\_state
+161             total\_reward += reward
+162 
+163         \textcolor{keywordflow}{print} \textcolor{stringliteral}{'eval: '}, total\_reward\end{DoxyCode}
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!optimize\+\_\+network@{optimize\+\_\+network}}
+\index{optimize\+\_\+network@{optimize\+\_\+network}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{optimize\+\_\+network(self)}{optimize_network(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg.\+D\+D\+P\+G.\+optimize\+\_\+network (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec}{}\label{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec}
+
+
+Definēts līnijā 65 failā ddpg.\+py.
+
+
+\begin{DoxyCode}
+65     \textcolor{keyword}{def }\hyperlink{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec}{optimize\_network}(self):
+66         \textcolor{keywordflow}{if} self.replaybuffer.size() < self.options.BUFFER\_SIZE:
+67             \textcolor{keywordflow}{return}
+68         \textcolor{keywordflow}{if} self.\hyperlink{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}{flag} == \textcolor{keywordtype}{None}:
+69             self.\hyperlink{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}{flag} = \textcolor{keyword}{True}
+70             \textcolor{keywordflow}{print} \textcolor{stringliteral}{'OPT'}
+71         s\_batch, a\_batch, r\_batch, s2\_batch = self.replaybuffer.sample\_batch(self.options.BATCH\_SIZE)
+72 
+73         action\_target\_batch = self.actor\_target.predict(s2\_batch)
+74         q\_target\_batch = r\_batch + self.options.GAMMA * self.critic\_target.predict(s2\_batch, 
+      action\_target\_batch)
+75         self.critic.update(s\_batch, a\_batch, q\_target\_batch)
+76 
+77         action\_train\_batch = self.actor.predict(s\_batch)
+78         q\_grad\_batch = self.critic.compute\_grad(s\_batch, action\_train\_batch)
+79         \textcolor{comment}{# idxs=[]}
+80         \textcolor{comment}{# for i in range(len(q\_grad\_batch)):}
+81         \textcolor{comment}{#   if (q\_grad\_batch[i] < 0):}
+82         \textcolor{comment}{#       idxs.append(i)}
+83         \textcolor{comment}{# s\_batch = s\_batch[idxs]}
+84         \textcolor{comment}{# q\_grad\_batch = q\_grad\_batch[idxs]}
+85 
+86         self.actor.update(s\_batch, q\_grad\_batch)
+87 
+88         self.sess.run(self.\hyperlink{classddpg_1_1_d_d_p_g_a2bb041b9ab7c84c83f584a1eae593a87}{soft\_copy\_actor})  
+89         self.sess.run(self.\hyperlink{classddpg_1_1_d_d_p_g_a01b575596a4ae50a5ee3656ce9529c94}{soft\_copy\_critic})    
+90 
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!training@{training}}
+\index{training@{training}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{training(self, goal\+\_\+step)}{training(self, goal_step)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg.\+D\+D\+P\+G.\+training (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{goal\+\_\+step}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg_1_1_d_d_p_g_a5237a908e38e5ac76c6b733fc61aeb3d}{}\label{classddpg_1_1_d_d_p_g_a5237a908e38e5ac76c6b733fc61aeb3d}
+
+
+Definēts līnijā 91 failā ddpg.\+py.
+
+
+\begin{DoxyCode}
+91     \textcolor{keyword}{def }\hyperlink{classddpg_1_1_d_d_p_g_a5237a908e38e5ac76c6b733fc61aeb3d}{training}(self, goal\_step):
+92         print(\textcolor{stringliteral}{"Start training"})
+93         global\_step = 0
+94         eps = self.options.INIT\_EPS
+95         mem = \textcolor{keyword}{False}
+96         \textcolor{keywordflow}{for} t \textcolor{keywordflow}{in} range(self.options.MAX\_EPISODE):
+97             local\_step = 0
+98             done = \textcolor{keyword}{False}
+99             self.env.reset()
+100             state = self.env.getState()
+101             total\_reward = 0
+102 
+103             \textcolor{keywordflow}{while} local\_step < goal\_step:
+104                 \textcolor{comment}{# epsilon decaying}
+105                 global\_step += 1
+106                 local\_step += 1
+107                 \textcolor{keywordflow}{if} global\_step % self.options.EPS\_ANNEAL\_STEPS == 0 \textcolor{keywordflow}{and} eps > self.options.FINAL\_EPS:
+108                     eps = eps * self.options.EPS\_DECAY
+109 
+110                 \textcolor{comment}{# # epsilon exploration}
+111                 \textcolor{comment}{# if np.random.uniform(0,1) < eps:}
+112                 \textcolor{comment}{#   action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3}
+113                 \textcolor{comment}{# else:}
+114                 \textcolor{comment}{#   action = float(self.actor.predict(state)[0][0])}
+115                 
+116                 print(actor.predict(state)[0][0])
+117                 \textcolor{comment}{# action = np.random.normal(float(self.actor.predict(state)[0][0]), eps) # sigma = 0.3}
+118                 \textcolor{comment}{#action = normlNoise(action, eps)}
+119 
+120 
+121                 \textcolor{comment}{# stepping}
+122                 self.env.setAction(action)
+123                 self.env.step(\textcolor{keyword}{True})
+124                 reward = self.env.getReward()
+125                 next\_state = self.env.getState()
+126                 done = self.env.getDone()
+127                 \textcolor{comment}{# if done and total\_reward < self.options.GOAL\_REWARD:}
+128                 \textcolor{comment}{#   reward = -1000}
+129 
+130                 \textcolor{comment}{# training}
+131                 self.replaybuffer.add(state, [action], [reward], next\_state)
+132                 self.\hyperlink{classddpg_1_1_d_d_p_g_a06c8a226bfc7c56f33a74da00ed8bcec}{optimize\_network}()
+133 
+134                 state = next\_state
+135                 total\_reward += reward
+136 
+137             \textcolor{keywordflow}{if} total\_reward == self.options.GOAL\_REWARD:
+138                 mem = \textcolor{keyword}{True}
+139             \textcolor{keywordflow}{else}:
+140                 mem = \textcolor{keyword}{False}
+141             \textcolor{keywordflow}{if} (t+1)%500==0:
+142                 self.saver.save(self.\hyperlink{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{sess}, \textcolor{stringliteral}{'checkpoints-simbicon/simbicon\_ddpg'}, global\_step = 
+      global\_step)
+143             print(t, total\_reward)
+144 
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classddpg_1_1_d_d_p_g_a5237a908e38e5ac76c6b733fc61aeb3d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!actor@{actor}}
+\index{actor@{actor}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{actor}{actor}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+actor}\hypertarget{classddpg_1_1_d_d_p_g_ae6f6b492a3680ece32923bb5f145011f}{}\label{classddpg_1_1_d_d_p_g_ae6f6b492a3680ece32923bb5f145011f}
+
+
+Definēts līnijā 26 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!actor\+\_\+target@{actor\+\_\+target}}
+\index{actor\+\_\+target@{actor\+\_\+target}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{actor\+\_\+target}{actor_target}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+actor\+\_\+target}\hypertarget{classddpg_1_1_d_d_p_g_a8b144476a564ad7483fc276939d27f31}{}\label{classddpg_1_1_d_d_p_g_a8b144476a564ad7483fc276939d27f31}
+
+
+Definēts līnijā 27 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!checkpoint@{checkpoint}}
+\index{checkpoint@{checkpoint}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{checkpoint}{checkpoint}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+checkpoint}\hypertarget{classddpg_1_1_d_d_p_g_a9e0f7ad3975f13452b47eb0a3c5194c7}{}\label{classddpg_1_1_d_d_p_g_a9e0f7ad3975f13452b47eb0a3c5194c7}
+
+
+Definēts līnijā 53 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!critic@{critic}}
+\index{critic@{critic}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{critic}{critic}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+critic}\hypertarget{classddpg_1_1_d_d_p_g_a75e1fa4557d41a8685f47d2d2d730479}{}\label{classddpg_1_1_d_d_p_g_a75e1fa4557d41a8685f47d2d2d730479}
+
+
+Definēts līnijā 30 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!critic\+\_\+target@{critic\+\_\+target}}
+\index{critic\+\_\+target@{critic\+\_\+target}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{critic\+\_\+target}{critic_target}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+critic\+\_\+target}\hypertarget{classddpg_1_1_d_d_p_g_a3c8e5f26e9a64fb7af68b7e96d9c8b49}{}\label{classddpg_1_1_d_d_p_g_a3c8e5f26e9a64fb7af68b7e96d9c8b49}
+
+
+Definēts līnijā 31 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!env@{env}}
+\index{env@{env}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+env}\hypertarget{classddpg_1_1_d_d_p_g_a7faf017eedf2120a89e584563d2b80b1}{}\label{classddpg_1_1_d_d_p_g_a7faf017eedf2120a89e584563d2b80b1}
+
+
+Definēts līnijā 21 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!flag@{flag}}
+\index{flag@{flag}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{flag}{flag}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+flag}\hypertarget{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}{}\label{classddpg_1_1_d_d_p_g_ae456a944d9035ea92e16b3b5d9852dcb}
+
+
+Definēts līnijā 63 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!noise@{noise}}
+\index{noise@{noise}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{noise}{noise}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+noise}\hypertarget{classddpg_1_1_d_d_p_g_a9b3d7ee697bd6d7657e0e35b4c1cbd2f}{}\label{classddpg_1_1_d_d_p_g_a9b3d7ee697bd6d7657e0e35b4c1cbd2f}
+
+
+Definēts līnijā 61 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!options@{options}}
+\index{options@{options}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+options}\hypertarget{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}{}\label{classddpg_1_1_d_d_p_g_a20c64c2cb91fbfa0c705fbab17f027ee}
+
+
+Definēts līnijā 22 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!replaybuffer@{replaybuffer}}
+\index{replaybuffer@{replaybuffer}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{replaybuffer}{replaybuffer}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+replaybuffer}\hypertarget{classddpg_1_1_d_d_p_g_af2e26e10a5dd5209afa7a6f3b7d16ab7}{}\label{classddpg_1_1_d_d_p_g_af2e26e10a5dd5209afa7a6f3b7d16ab7}
+
+
+Definēts līnijā 49 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!saver@{saver}}
+\index{saver@{saver}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{saver}{saver}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+saver}\hypertarget{classddpg_1_1_d_d_p_g_acbd64c92b0d268210807f4e10a214039}{}\label{classddpg_1_1_d_d_p_g_acbd64c92b0d268210807f4e10a214039}
+
+
+Definēts līnijā 52 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!sess@{sess}}
+\index{sess@{sess}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{sess}{sess}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+sess}\hypertarget{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}{}\label{classddpg_1_1_d_d_p_g_a9fed3bda5c1636b1c4bb89fe3a4293c5}
+
+
+Definēts līnijā 23 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!soft\+\_\+copy\+\_\+actor@{soft\+\_\+copy\+\_\+actor}}
+\index{soft\+\_\+copy\+\_\+actor@{soft\+\_\+copy\+\_\+actor}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{soft\+\_\+copy\+\_\+actor}{soft_copy_actor}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+soft\+\_\+copy\+\_\+actor}\hypertarget{classddpg_1_1_d_d_p_g_a2bb041b9ab7c84c83f584a1eae593a87}{}\label{classddpg_1_1_d_d_p_g_a2bb041b9ab7c84c83f584a1eae593a87}
+
+
+Definēts līnijā 34 failā ddpg.\+py.
+
+\index{ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}!soft\+\_\+copy\+\_\+critic@{soft\+\_\+copy\+\_\+critic}}
+\index{soft\+\_\+copy\+\_\+critic@{soft\+\_\+copy\+\_\+critic}!ddpg\+::\+D\+D\+PG@{ddpg\+::\+D\+D\+PG}}
+\subsubsection[{\texorpdfstring{soft\+\_\+copy\+\_\+critic}{soft_copy_critic}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg.\+D\+D\+P\+G.\+soft\+\_\+copy\+\_\+critic}\hypertarget{classddpg_1_1_d_d_p_g_a01b575596a4ae50a5ee3656ce9529c94}{}\label{classddpg_1_1_d_d_p_g_a01b575596a4ae50a5ee3656ce9529c94}
+
+
+Definēts līnijā 41 failā ddpg.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{ddpg_8py}{ddpg.\+py}\end{DoxyCompactItemize}

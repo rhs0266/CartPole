@@ -1,0 +1,571 @@
+\hypertarget{class_v_p_c_1_1_state_machine}{}\section{V\+PC\+:\+:State\+Machine klases apraksts}
+\label{class_v_p_c_1_1_state_machine}\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+
+
+{\ttfamily \#include $<$State\+Machine.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:State\+Machine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_v_p_c_1_1_state_machine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_state_machine_a2c351c164a0a6cfd999ef8c1a50c8747}{State\+Machine} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \&world)
+\item 
+void \hyperlink{class_v_p_c_1_1_state_machine_af1b80fe57cbacfe9b2cb29ef8a0a29ff}{Set\+State\+Pose} (Eigen\+::\+Vector\+Xd p)
+\item 
+int \hyperlink{class_v_p_c_1_1_state_machine_a4a9ff71162129142a4eeb70b209be439}{Get\+State} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_state_machine_a377178b83696e6ad08504858930bef8c}{Set\+State} (int state)
+\item 
+void \hyperlink{class_v_p_c_1_1_state_machine_a74cd487408c3ae67046fdaf429b25ca7}{Initialize} ()
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{class_v_p_c_1_1_state_machine_a09f8ecfe81b0e075f648b81cf545fd89}{Torso\+Control} (const Eigen\+::\+Vector\+Xd \&tau)
+\item 
+void \hyperlink{class_v_p_c_1_1_state_machine_a83142e6c04d30eeb8beb49b331ba5b74}{Get\+Motion} (Eigen\+::\+Vector\+Xd \&p, Eigen\+::\+Vector\+Xd \&v)
+\end{DoxyCompactItemize}
+\subsection*{Privātās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117}{Get\+Stance\+Foot\+Name} ()
+\item 
+std\+::string \hyperlink{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}{Get\+Swing\+Foot\+Name} ()
+\end{DoxyCompactItemize}
+\subsection*{Privātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{m\+World}
+\item 
+std\+::vector$<$ \hyperlink{struct_v_p_c_1_1_state}{State} $>$ \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{m\+States}
+\item 
+int \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{m\+State}
+\item 
+double \hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{m\+Elapsed\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 15 failā State\+Machine.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!State\+Machine@{State\+Machine}}
+\index{State\+Machine@{State\+Machine}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{State\+Machine(const std\+::shared\+\_\+ptr$<$ V\+P\+C\+::\+World $>$ \&world)}{StateMachine(const std::shared_ptr< VPC::World > &world)}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+State\+Machine\+::\+State\+Machine (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf V\+P\+C\+::\+World} $>$ \&}]{world}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_state_machine_a2c351c164a0a6cfd999ef8c1a50c8747}{}\label{class_v_p_c_1_1_state_machine_a2c351c164a0a6cfd999ef8c1a50c8747}
+
+
+Definēts līnijā 7 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+8     :\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState}(0),\hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{mElapsedTime}(0.0),\hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}(world)
+9 \{
+10 
+11 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a2c351c164a0a6cfd999ef8c1a50c8747_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Get\+Motion@{Get\+Motion}}
+\index{Get\+Motion@{Get\+Motion}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+Motion(\+Eigen\+::\+Vector\+Xd \&p, Eigen\+::\+Vector\+Xd \&v)}{GetMotion(Eigen::VectorXd &p, Eigen::VectorXd &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+State\+Machine\+::\+Get\+Motion (
+\begin{DoxyParamCaption}
+\item[{Eigen\+::\+Vector\+Xd \&}]{p, }
+\item[{Eigen\+::\+Vector\+Xd \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_state_machine_a83142e6c04d30eeb8beb49b331ba5b74}{}\label{class_v_p_c_1_1_state_machine_a83142e6c04d30eeb8beb49b331ba5b74}
+
+
+Definēts līnijā 144 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+145 \{
+146     \textcolor{keyword}{auto}& skel = \hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetCharacter()->GetSkeleton();
+147     p.resize(skel->getNumDofs());
+148     v.resize(skel->getNumDofs());
+149     p.setZero();
+150     v.setZero();
+151 
+152     \hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{mElapsedTime} +=\hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetWorld()->getTimeStep();
+153     \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 1 ||\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 3)
+154     \{
+155         \textcolor{comment}{// std::cout<<mState<<std::endl;}
+156         \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetWorld()->getLastCollisionResult().inCollision(skel->getBodyNode(
+      \hyperlink{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}{GetSwingFootName}())))
+157         \{
+158             std::cout<<\textcolor{stringliteral}{"Contact ! "}<<\hyperlink{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}{GetSwingFootName}()<<std::endl;
+159             \hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{mElapsedTime} = 0.0;
+160             \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState}++;
+161         \}
+162     \}
+163     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{mElapsedTime}>0.3)\{
+164         \hyperlink{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{mElapsedTime} = 0.0;
+165         \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState}++;
+166     \}
+167 
+168     \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} %=4;
+169     p = \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}[\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState}].target\_positions;
+170 \textcolor{comment}{//  p = AddBalanceControl(p);}
+171 
+172 
+173 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a83142e6c04d30eeb8beb49b331ba5b74_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a83142e6c04d30eeb8beb49b331ba5b74_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Get\+Stance\+Foot\+Name@{Get\+Stance\+Foot\+Name}}
+\index{Get\+Stance\+Foot\+Name@{Get\+Stance\+Foot\+Name}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+Stance\+Foot\+Name()}{GetStanceFootName()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string V\+P\+C\+::\+State\+Machine\+::\+Get\+Stance\+Foot\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117}{}\label{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117}
+
+
+Definēts līnijā 216 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+217 \{
+218     std::string stance\_foot\_name;
+219     \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 0 || \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 1)
+220         stance\_foot\_name = \textcolor{stringliteral}{"FootL"};
+221     \textcolor{keywordflow}{else}
+222         stance\_foot\_name = \textcolor{stringliteral}{"FootR"};
+223     \textcolor{keywordflow}{return} stance\_foot\_name;
+224 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Get\+State@{Get\+State}}
+\index{Get\+State@{Get\+State}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+State()}{GetState()}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+State\+Machine\+::\+Get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_state_machine_a4a9ff71162129142a4eeb70b209be439}{}\label{class_v_p_c_1_1_state_machine_a4a9ff71162129142a4eeb70b209be439}
+
+
+Definēts līnijā 32 failā State\+Machine.\+h.
+
+
+\begin{DoxyCode}
+32 \{\textcolor{keywordflow}{return} \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState};\};
+\end{DoxyCode}
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Get\+Swing\+Foot\+Name@{Get\+Swing\+Foot\+Name}}
+\index{Get\+Swing\+Foot\+Name@{Get\+Swing\+Foot\+Name}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Get\+Swing\+Foot\+Name()}{GetSwingFootName()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string V\+P\+C\+::\+State\+Machine\+::\+Get\+Swing\+Foot\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}{}\label{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}
+
+
+Definēts līnijā 227 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+228 \{
+229     std::string swing\_foot\_name;
+230     \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 0 || \hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} == 1)
+231         swing\_foot\_name = \textcolor{stringliteral}{"FootR"};
+232     \textcolor{keywordflow}{else}
+233         swing\_foot\_name = \textcolor{stringliteral}{"FootL"};
+234     \textcolor{keywordflow}{return} swing\_foot\_name;
+235 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+State\+Machine\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_state_machine_a74cd487408c3ae67046fdaf429b25ca7}{}\label{class_v_p_c_1_1_state_machine_a74cd487408c3ae67046fdaf429b25ca7}
+
+
+Definēts līnijā 15 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{comment}{/*auto& skel = mWorld->GetCharacter()->GetSkeleton();}
+18 \textcolor{comment}{    //Initialize Walking fsm}
+19 \textcolor{comment}{    Eigen::VectorXd p = skel->getPositions();}
+20 \textcolor{comment}{    p.setZero();}
+21 \textcolor{comment}{    Eigen::VectorXd p0=p;}
+22 \textcolor{comment}{    Eigen::VectorXd p1=p;}
+23 \textcolor{comment}{    Eigen::VectorXd p2=p;}
+24 \textcolor{comment}{    Eigen::VectorXd p3=p;}
+25 \textcolor{comment}{}
+26 \textcolor{comment}{    //Swing Foot}
+27 \textcolor{comment}{    p0[6] = 0.5;}
+28 \textcolor{comment}{    p0[8] = -1.1;}
+29 \textcolor{comment}{    p0[10] = 0.1;}
+30 \textcolor{comment}{    //Stance Foot}
+31 \textcolor{comment}{    p1[9] = -0.05;}
+32 \textcolor{comment}{    p1[11] = 0.1;}
+33 \textcolor{comment}{}
+34 \textcolor{comment}{    //Swing Foot}
+35 \textcolor{comment}{    p1[6] = -0.7;}
+36 \textcolor{comment}{    p1[8] = -0.05;}
+37 \textcolor{comment}{    p1[10] = 0.1;}
+38 \textcolor{comment}{    //Stance Foot}
+39 \textcolor{comment}{    p1[9] = -0.1;}
+40 \textcolor{comment}{    p1[11] = 0.1;}
+41 \textcolor{comment}{}
+42 \textcolor{comment}{    //Swing Foot}
+43 \textcolor{comment}{    p2[7] = 0.5;}
+44 \textcolor{comment}{    p2[9] = -1.1;}
+45 \textcolor{comment}{    p2[11] = 0.1;}
+46 \textcolor{comment}{    //Stance Foot}
+47 \textcolor{comment}{    p2[8] = -0.05;}
+48 \textcolor{comment}{    p2[10] = 0.1;}
+49 \textcolor{comment}{}
+50 \textcolor{comment}{    //Swing Foot}
+51 \textcolor{comment}{    p3[7] = -0.7;}
+52 \textcolor{comment}{    p3[9] = -0.05;}
+53 \textcolor{comment}{    p3[11] = 0.1;}
+54 \textcolor{comment}{    //Stance Foot}
+55 \textcolor{comment}{    p3[8] = -0.1;}
+56 \textcolor{comment}{    p3[10] = 0.1;}
+57 \textcolor{comment}{}
+58 \textcolor{comment}{    State s0,s1,s2,s3;}
+59 \textcolor{comment}{    s0.target\_positions = p0;}
+60 \textcolor{comment}{    s1.target\_positions = p1;}
+61 \textcolor{comment}{    s2.target\_positions = p2;}
+62 \textcolor{comment}{    s3.target\_positions = p3;}
+63 \textcolor{comment}{}
+64 \textcolor{comment}{    s0.c\_d = 0.0;}
+65 \textcolor{comment}{    s0.c\_v = 0.01;}
+66 \textcolor{comment}{}
+67 \textcolor{comment}{    s1.c\_d = 1.0;}
+68 \textcolor{comment}{    s1.c\_v = 0.0;}
+69 \textcolor{comment}{}
+70 \textcolor{comment}{    s2.c\_d = 0.0;}
+71 \textcolor{comment}{    s2.c\_v = 0.01;}
+72 \textcolor{comment}{}
+73 \textcolor{comment}{    s3.c\_d = 1.0;}
+74 \textcolor{comment}{    s3.c\_v = 0.0;}
+75 \textcolor{comment}{}
+76 \textcolor{comment}{    mStates.push\_back(s0);}
+77 \textcolor{comment}{    mStates.push\_back(s1);}
+78 \textcolor{comment}{    mStates.push\_back(s2);}
+79 \textcolor{comment}{    mStates.push\_back(s3);*/}
+80 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a74cd487408c3ae67046fdaf429b25ca7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_v_p_c_1_1_state_machine_a74cd487408c3ae67046fdaf429b25ca7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Set\+State@{Set\+State}}
+\index{Set\+State@{Set\+State}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Set\+State(int state)}{SetState(int state)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+State\+Machine\+::\+Set\+State (
+\begin{DoxyParamCaption}
+\item[{int}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_state_machine_a377178b83696e6ad08504858930bef8c}{}\label{class_v_p_c_1_1_state_machine_a377178b83696e6ad08504858930bef8c}
+
+
+Definēts līnijā 33 failā State\+Machine.\+h.
+
+
+\begin{DoxyCode}
+33 \{\hyperlink{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{mState} =state;\}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Set\+State\+Pose@{Set\+State\+Pose}}
+\index{Set\+State\+Pose@{Set\+State\+Pose}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Set\+State\+Pose(\+Eigen\+::\+Vector\+Xd p)}{SetStatePose(Eigen::VectorXd p)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+State\+Machine\+::\+Set\+State\+Pose (
+\begin{DoxyParamCaption}
+\item[{Eigen\+::\+Vector\+Xd}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_state_machine_af1b80fe57cbacfe9b2cb29ef8a0a29ff}{}\label{class_v_p_c_1_1_state_machine_af1b80fe57cbacfe9b2cb29ef8a0a29ff}
+
+
+Definēts līnijā 84 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+84                                   \{
+85     \textcolor{keyword}{auto}& skel = \hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetCharacter()->GetSkeleton();
+86     Eigen::VectorXd p = skel->getPositions();
+87     p.setZero();
+88     Eigen::VectorXd p0=p;
+89     Eigen::VectorXd p1=p;
+90     Eigen::VectorXd p2=p;
+91     Eigen::VectorXd p3=p;
+92 
+93     \textcolor{comment}{//Swing Foot}
+94     p0[6] = action[0];
+95     p0[8] = action[1];
+96     p0[10] = action[2];
+97     \textcolor{comment}{//Stance Foot}
+98     p1[7] = action[3];
+99     p1[9] = action[4];
+100     p1[11] = action[5];
+101 
+102     \textcolor{comment}{//Swing Foot}
+103     p1[6] = action[6];
+104     p1[8] = action[7];
+105     p1[10] = action[8];
+106     \textcolor{comment}{//Stance Foot}
+107     p1[7] = action[9];
+108     p1[9] = action[10];
+109     p1[11] = action[11];
+110 
+111     \textcolor{comment}{//Swing Foot}
+112     p2[7] = action[12];
+113     p2[9] = action[13];
+114     p2[11] = action[14];
+115     \textcolor{comment}{//Stance Foot}
+116     p2[6] = action[15];
+117     p2[8] = action[16];
+118     p2[10] = action[17];
+119 
+120     \textcolor{comment}{//Swing Foot}
+121     p3[7] = action[18];
+122     p3[9] = action[19];
+123     p3[11] = action[20];
+124     \textcolor{comment}{//Stance Foot}
+125     p3[6] = action[21];
+126     p3[8] = action[22];
+127     p3[10] = action[23];
+128 
+129     State s0,s1,s2,s3;
+130     s0.target\_positions = p0;
+131     s1.target\_positions = p1;
+132     s2.target\_positions = p2;
+133     s3.target\_positions = p3;
+134 
+135     \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}.clear();
+136     \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}.push\_back(s0);
+137     \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}.push\_back(s1);
+138     \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}.push\_back(s2);
+139     \hyperlink{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{mStates}.push\_back(s3);
+140 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_af1b80fe57cbacfe9b2cb29ef8a0a29ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_af1b80fe57cbacfe9b2cb29ef8a0a29ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!Torso\+Control@{Torso\+Control}}
+\index{Torso\+Control@{Torso\+Control}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{Torso\+Control(const Eigen\+::\+Vector\+Xd \&tau)}{TorsoControl(const Eigen::VectorXd &tau)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd V\+P\+C\+::\+State\+Machine\+::\+Torso\+Control (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector\+Xd \&}]{tau}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_state_machine_a09f8ecfe81b0e075f648b81cf545fd89}{}\label{class_v_p_c_1_1_state_machine_a09f8ecfe81b0e075f648b81cf545fd89}
+
+
+Definēts līnijā 238 failā State\+Machine.\+cpp.
+
+
+\begin{DoxyCode}
+239 \{
+240     Eigen::VectorXd newtau = tau;
+241     std::string swing\_foot = \hyperlink{class_v_p_c_1_1_state_machine_a3a82e5a3e97af57259dd438e1666850f}{GetSwingFootName}();
+242     std::string stance\_foot\_name = \hyperlink{class_v_p_c_1_1_state_machine_aa803d5ed2b6f0482db916befb57d5117}{GetStanceFootName}();
+243 
+244     \textcolor{keywordtype}{int} swing\_foot\_index = \hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetCharacter()->GetSkeleton()->getBodyNode(swing\_foot)->
+      getParentJoint()->getIndexInSkeleton(0);
+245     \textcolor{keywordtype}{int} stance\_foot\_index = \hyperlink{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{mWorld}->GetCharacter()->GetSkeleton()->getBodyNode(stance\_foot\_name)->
+      getParentJoint()->getIndexInSkeleton(0);
+246     newtau[stance\_foot\_index-4] = -newtau[0]-newtau[swing\_foot\_index-4];
+247     newtau.block<6,1>(0,0).setZero();
+248     \textcolor{keywordflow}{return} newtau;
+249 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a09f8ecfe81b0e075f648b81cf545fd89_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_state_machine_a09f8ecfe81b0e075f648b81cf545fd89_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!m\+Elapsed\+Time@{m\+Elapsed\+Time}}
+\index{m\+Elapsed\+Time@{m\+Elapsed\+Time}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{m\+Elapsed\+Time}{mElapsedTime}}]{\setlength{\rightskip}{0pt plus 5cm}double V\+P\+C\+::\+State\+Machine\+::m\+Elapsed\+Time\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}{}\label{class_v_p_c_1_1_state_machine_a84f9280c1fdceceb1370f019bdf0765b}
+
+
+Definēts līnijā 21 failā State\+Machine.\+h.
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!m\+State@{m\+State}}
+\index{m\+State@{m\+State}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{m\+State}{mState}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+State\+Machine\+::m\+State\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}{}\label{class_v_p_c_1_1_state_machine_abdbff835fd0b042e99de640d88000ce1}
+
+
+Definēts līnijā 20 failā State\+Machine.\+h.
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!m\+States@{m\+States}}
+\index{m\+States@{m\+States}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{m\+States}{mStates}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf State}$>$ V\+P\+C\+::\+State\+Machine\+::m\+States\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}{}\label{class_v_p_c_1_1_state_machine_a31a1498d9a99c4f7b60ec326b002d514}
+
+
+Definēts līnijā 19 failā State\+Machine.\+h.
+
+\index{V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}!m\+World@{m\+World}}
+\index{m\+World@{m\+World}!V\+P\+C\+::\+State\+Machine@{V\+P\+C\+::\+State\+Machine}}
+\subsubsection[{\texorpdfstring{m\+World}{mWorld}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+World}$>$ V\+P\+C\+::\+State\+Machine\+::m\+World\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}{}\label{class_v_p_c_1_1_state_machine_a50cdee7e7d9a0824f067d0bf1b312c32}
+
+
+Definēts līnijā 18 failā State\+Machine.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+engine/\hyperlink{_state_machine_8h}{State\+Machine.\+h}\item 
+engine/\hyperlink{_state_machine_8cpp}{State\+Machine.\+cpp}\end{DoxyCompactItemize}

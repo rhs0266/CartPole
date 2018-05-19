@@ -1,0 +1,158 @@
+\hypertarget{class_v_p_c_1_1_controller}{}\section{V\+PC\+:\+:Controller klases apraksts}
+\label{class_v_p_c_1_1_controller}\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_v_p_c_1_1_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_controller_a132b5d8ac47550346fecf84fe8008179}{Controller} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \&world)
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{class_v_p_c_1_1_controller_a15c395dff986eed594d3f99d58e7d3d1}{Compute\+Torque} (const Eigen\+::\+Vector\+Xd \&p, const Eigen\+::\+Vector\+Xd \&v)
+\end{DoxyCompactItemize}
+\subsection*{Privātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \hyperlink{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}{m\+World}
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{class_v_p_c_1_1_controller_a88da6e3301abaeb5b63fd1519fb67cb1}{m\+Kp}
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}{m\+Kv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 7 failā Controller.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+\subsubsection[{\texorpdfstring{Controller(const std\+::shared\+\_\+ptr$<$ V\+P\+C\+::\+World $>$ \&world)}{Controller(const std::shared_ptr< VPC::World > &world)}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+Controller\+::\+Controller (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf V\+P\+C\+::\+World} $>$ \&}]{world}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_controller_a132b5d8ac47550346fecf84fe8008179}{}\label{class_v_p_c_1_1_controller_a132b5d8ac47550346fecf84fe8008179}
+
+
+Definēts līnijā 6 failā Controller.\+cpp.
+
+
+\begin{DoxyCode}
+7     :\hyperlink{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}{mWorld}(world)
+8 \{
+9     \textcolor{keyword}{auto}& skel =\hyperlink{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}{mWorld}->GetCharacter()->GetSkeleton();
+10     \hyperlink{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}{mKv} = Eigen::VectorXd::Zero(skel->getNumDofs());
+11     \hyperlink{class_v_p_c_1_1_controller_a88da6e3301abaeb5b63fd1519fb67cb1}{mKp} = Eigen::VectorXd::Zero(skel->getNumDofs());
+12 
+13 
+14     \textcolor{keywordtype}{int} start\_index = skel->getBodyNode(1)->getParentJoint()->getIndexInSkeleton(0);
+15     \textcolor{comment}{// mKp.block<3,1>(6,0) = Eigen::Vector3d::Constant(50);}
+16     \textcolor{comment}{// mKp.block<3,1>(9,0) = Eigen::Vector3d::Constant(50);}
+17 
+18     \textcolor{comment}{// mKp.block<3,1>(12,0) = Eigen::Vector3d::Constant(10);}
+19     \textcolor{comment}{// mKp.block<3,1>(15,0) = Eigen::Vector3d::Constant(10);}
+20 
+21     \textcolor{comment}{// mKp.block<3,1>(18,0) = Eigen::Vector3d::Constant(10);}
+22     \textcolor{comment}{// mKp.block<3,1>(21,0) = Eigen::Vector3d::Constant(10);}
+23     mKp = Eigen::VectorXd::Constant(skel->getNumDofs(),300);
+24     \hyperlink{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}{mKv} = Eigen::VectorXd::Constant(skel->getNumDofs(),30);
+25     \textcolor{comment}{// mKp.tail(skel->getNumDofs()-start\_index) =
+       Eigen::VectorXd::Constant(skel->getNumDofs()-start\_index,300);}
+26     \textcolor{comment}{// mKv.tail(skel->getNumDofs()-start\_index) =
+       Eigen::VectorXd::Constant(skel->getNumDofs()-start\_index,30);}
+27 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_controller_a132b5d8ac47550346fecf84fe8008179_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}!Compute\+Torque@{Compute\+Torque}}
+\index{Compute\+Torque@{Compute\+Torque}!V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+\subsubsection[{\texorpdfstring{Compute\+Torque(const Eigen\+::\+Vector\+Xd \&p, const Eigen\+::\+Vector\+Xd \&v)}{ComputeTorque(const Eigen::VectorXd &p, const Eigen::VectorXd &v)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd V\+P\+C\+::\+Controller\+::\+Compute\+Torque (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector\+Xd \&}]{p, }
+\item[{const Eigen\+::\+Vector\+Xd \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_controller_a15c395dff986eed594d3f99d58e7d3d1}{}\label{class_v_p_c_1_1_controller_a15c395dff986eed594d3f99d58e7d3d1}
+
+
+Definēts līnijā 30 failā Controller.\+cpp.
+
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keyword}{auto}& skel =\hyperlink{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}{mWorld}->GetCharacter()->GetSkeleton();
+33     Eigen::VectorXd p\_diff = skel->getPositionDifferences(p,skel->getPositions());
+34     Eigen::VectorXd v\_diff = v - skel->getVelocities();
+35     Eigen::VectorXd tau = \hyperlink{class_v_p_c_1_1_controller_a88da6e3301abaeb5b63fd1519fb67cb1}{mKp}.cwiseProduct(p\_diff) + \hyperlink{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}{mKv}.cwiseProduct(v\_diff);
+36     \textcolor{keywordflow}{return} tau;
+37 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_controller_a15c395dff986eed594d3f99d58e7d3d1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}!m\+Kp@{m\+Kp}}
+\index{m\+Kp@{m\+Kp}!V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+\subsubsection[{\texorpdfstring{m\+Kp}{mKp}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd V\+P\+C\+::\+Controller\+::m\+Kp\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_controller_a88da6e3301abaeb5b63fd1519fb67cb1}{}\label{class_v_p_c_1_1_controller_a88da6e3301abaeb5b63fd1519fb67cb1}
+
+
+Definēts līnijā 11 failā Controller.\+h.
+
+\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}!m\+Kv@{m\+Kv}}
+\index{m\+Kv@{m\+Kv}!V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+\subsubsection[{\texorpdfstring{m\+Kv}{mKv}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd V\+P\+C\+::\+Controller\+::m\+Kv\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}{}\label{class_v_p_c_1_1_controller_a6c4a4f388d7ee81f2519e4b05f653f9d}
+
+
+Definēts līnijā 11 failā Controller.\+h.
+
+\index{V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}!m\+World@{m\+World}}
+\index{m\+World@{m\+World}!V\+P\+C\+::\+Controller@{V\+P\+C\+::\+Controller}}
+\subsubsection[{\texorpdfstring{m\+World}{mWorld}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+World}$>$ V\+P\+C\+::\+Controller\+::m\+World\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}{}\label{class_v_p_c_1_1_controller_a9c46fee9b19ef4f4d79726717f923586}
+
+
+Definēts līnijā 10 failā Controller.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+engine/\hyperlink{_controller_8h}{Controller.\+h}\item 
+engine/\hyperlink{_controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}

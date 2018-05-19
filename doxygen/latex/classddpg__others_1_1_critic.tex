@@ -1,0 +1,202 @@
+\hypertarget{classddpg__others_1_1_critic}{}\section{ddpg\+\_\+others.\+Critic klases apraksts}
+\label{classddpg__others_1_1_critic}\index{ddpg\+\_\+others.\+Critic@{ddpg\+\_\+others.\+Critic}}
+
+
+Mantojamības diagramma klasei ddpg\+\_\+others.\+Critic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classddpg__others_1_1_critic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei ddpg\+\_\+others.\+Critic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classddpg__others_1_1_critic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classddpg__others_1_1_critic_ad79f6a3961bf9da84b50feb690f72708}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classddpg__others_1_1_critic_ab0c8a33f283df68173a93990084034de}{sess}, n\+\_\+features, lr=0.\+01)
+\item 
+def \hyperlink{classddpg__others_1_1_critic_aa108c309d56a4e946e76908168a97cdf}{learn} (self, \hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s}, \hyperlink{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{r}, \hyperlink{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}{s\+\_\+})
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classddpg__others_1_1_critic_ab0c8a33f283df68173a93990084034de}{sess}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}{v\+\_\+}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{r}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}{v}
+\item 
+\hyperlink{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}{td\+\_\+error}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a234f0de11677fd4cc6b2387173ed5065}{loss}
+\item 
+\hyperlink{classddpg__others_1_1_critic_a3c9fc0fa915bdd1c961e8a94b60e486f}{train\+\_\+op}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 84 failā ddpg\+\_\+others.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, sess, n\+\_\+features, lr=0.\+01)}{__init__(self, sess, n_features, lr=0.01)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg\+\_\+others.\+Critic.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sess, }
+\item[{}]{n\+\_\+features, }
+\item[{}]{lr = {\ttfamily 0.01}}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg__others_1_1_critic_ad79f6a3961bf9da84b50feb690f72708}{}\label{classddpg__others_1_1_critic_ad79f6a3961bf9da84b50feb690f72708}
+
+
+Definēts līnijā 85 failā ddpg\+\_\+others.\+py.
+
+
+\begin{DoxyCode}
+85     \textcolor{keyword}{def }\hyperlink{classddpg__others_1_1_critic_ad79f6a3961bf9da84b50feb690f72708}{\_\_init\_\_}(self, sess, n\_features, lr=0.01):
+86         self.\hyperlink{classddpg__others_1_1_critic_ab0c8a33f283df68173a93990084034de}{sess} = sess
+87         with tf.name\_scope(\textcolor{stringliteral}{'inputs'}):
+88             self.\hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s} = tf.placeholder(tf.float32, [1, n\_features], \textcolor{stringliteral}{"state"})
+89             self.\hyperlink{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}{v\_} = tf.placeholder(tf.float32, [1, 1], name=\textcolor{stringliteral}{"v\_next"})
+90             self.\hyperlink{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{r} = tf.placeholder(tf.float32, name=\textcolor{stringliteral}{'r')}
+91 \textcolor{stringliteral}{}
+92 \textcolor{stringliteral}{        with tf.variable\_scope('Critic'}):
+93             l1 = tf.layers.dense(
+94                 inputs=self.\hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s},
+95                 units=30,  \textcolor{comment}{# number of hidden units}
+96                 activation=tf.nn.relu,
+97                 kernel\_initializer=tf.random\_normal\_initializer(0., .1),  \textcolor{comment}{# weights}
+98                 bias\_initializer=tf.constant\_initializer(0.1),  \textcolor{comment}{# biases}
+99                 name=\textcolor{stringliteral}{'l1'}
+100             )
+101 
+102             self.\hyperlink{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}{v} = tf.layers.dense(
+103                 inputs=l1,
+104                 units=1,  \textcolor{comment}{# output units}
+105                 activation=\textcolor{keywordtype}{None},
+106                 kernel\_initializer=tf.random\_normal\_initializer(0., .1),  \textcolor{comment}{# weights}
+107                 bias\_initializer=tf.constant\_initializer(0.1),  \textcolor{comment}{# biases}
+108                 name=\textcolor{stringliteral}{'V'}
+109             )
+110 
+111         with tf.variable\_scope(\textcolor{stringliteral}{'squared\_TD\_error'}):
+112             self.\hyperlink{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}{td\_error} = tf.reduce\_mean(self.\hyperlink{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{r} + GAMMA * self.\hyperlink{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}{v\_} - self.
+      \hyperlink{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}{v})
+113             self.\hyperlink{classddpg__others_1_1_critic_a234f0de11677fd4cc6b2387173ed5065}{loss} = tf.square(self.\hyperlink{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}{td\_error})    \textcolor{comment}{# TD\_error = (r+gamma*V\_next) - V\_eval}
+114         with tf.variable\_scope(\textcolor{stringliteral}{'train'}):
+115             self.\hyperlink{classddpg__others_1_1_critic_a3c9fc0fa915bdd1c961e8a94b60e486f}{train\_op} = tf.train.AdamOptimizer(lr).minimize(self.
+      \hyperlink{classddpg__others_1_1_critic_a234f0de11677fd4cc6b2387173ed5065}{loss})
+116 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!learn@{learn}}
+\index{learn@{learn}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{learn(self, s, r, s\+\_\+)}{learn(self, s, r, s_)}}]{\setlength{\rightskip}{0pt plus 5cm}def ddpg\+\_\+others.\+Critic.\+learn (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{s, }
+\item[{}]{r, }
+\item[{}]{s\+\_\+}
+\end{DoxyParamCaption}
+)}\hypertarget{classddpg__others_1_1_critic_aa108c309d56a4e946e76908168a97cdf}{}\label{classddpg__others_1_1_critic_aa108c309d56a4e946e76908168a97cdf}
+
+
+Definēts līnijā 117 failā ddpg\+\_\+others.\+py.
+
+
+\begin{DoxyCode}
+117     \textcolor{keyword}{def }\hyperlink{classddpg__others_1_1_critic_aa108c309d56a4e946e76908168a97cdf}{learn}(self, s, r, s\_):
+118         s, s\_ = s[np.newaxis, :], s\_[np.newaxis, :]
+119 
+120         v\_ = self.sess.run(self.\hyperlink{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}{v}, \{self.\hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s}: s\_\})
+121         td\_error, \_ = self.sess.run([self.\hyperlink{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}{td\_error}, self.\hyperlink{classddpg__others_1_1_critic_a3c9fc0fa915bdd1c961e8a94b60e486f}{train\_op}],
+122                                     \{self.\hyperlink{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{s}: s, self.\hyperlink{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}{v\_}: v\_, self.\hyperlink{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{r}: r\})
+123         \textcolor{keywordflow}{return} td\_error
+124 
+125 
+\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!loss@{loss}}
+\index{loss@{loss}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{loss}{loss}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+loss}\hypertarget{classddpg__others_1_1_critic_a234f0de11677fd4cc6b2387173ed5065}{}\label{classddpg__others_1_1_critic_a234f0de11677fd4cc6b2387173ed5065}
+
+
+Definēts līnijā 113 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!r@{r}}
+\index{r@{r}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{r}{r}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+r}\hypertarget{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}{}\label{classddpg__others_1_1_critic_a127f5c9ec25bd223417b5f478bc2a11f}
+
+
+Definēts līnijā 90 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!s@{s}}
+\index{s@{s}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{s}{s}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+s}\hypertarget{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}{}\label{classddpg__others_1_1_critic_a6d70d80341ad76c8c12ddaf0e06e513a}
+
+
+Definēts līnijā 88 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!sess@{sess}}
+\index{sess@{sess}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{sess}{sess}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+sess}\hypertarget{classddpg__others_1_1_critic_ab0c8a33f283df68173a93990084034de}{}\label{classddpg__others_1_1_critic_ab0c8a33f283df68173a93990084034de}
+
+
+Definēts līnijā 86 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!td\+\_\+error@{td\+\_\+error}}
+\index{td\+\_\+error@{td\+\_\+error}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{td\+\_\+error}{td_error}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+td\+\_\+error}\hypertarget{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}{}\label{classddpg__others_1_1_critic_acd08db4e575e41c9b40c89aeb70b69fc}
+
+
+Definēts līnijā 112 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!train\+\_\+op@{train\+\_\+op}}
+\index{train\+\_\+op@{train\+\_\+op}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{train\+\_\+op}{train_op}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+train\+\_\+op}\hypertarget{classddpg__others_1_1_critic_a3c9fc0fa915bdd1c961e8a94b60e486f}{}\label{classddpg__others_1_1_critic_a3c9fc0fa915bdd1c961e8a94b60e486f}
+
+
+Definēts līnijā 115 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!v@{v}}
+\index{v@{v}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{v}{v}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+v}\hypertarget{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}{}\label{classddpg__others_1_1_critic_a4ea207b84e027e537185c3067f21e8fd}
+
+
+Definēts līnijā 102 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}!v\+\_\+@{v\+\_\+}}
+\index{v\+\_\+@{v\+\_\+}!ddpg\+\_\+others\+::\+Critic@{ddpg\+\_\+others\+::\+Critic}}
+\subsubsection[{\texorpdfstring{v\+\_\+}{v_}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+Critic.\+v\+\_\+}\hypertarget{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}{}\label{classddpg__others_1_1_critic_a44cb021fd77cfeb1515d1421ea1135cd}
+
+
+Definēts līnijā 89 failā ddpg\+\_\+others.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{ddpg__others_8py}{ddpg\+\_\+others.\+py}\end{DoxyCompactItemize}

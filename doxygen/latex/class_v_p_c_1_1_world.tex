@@ -1,0 +1,283 @@
+\hypertarget{class_v_p_c_1_1_world}{}\section{V\+PC\+:\+:World klases apraksts}
+\label{class_v_p_c_1_1_world}\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_v_p_c_1_1_world__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_world_ad254de0695a997e40e656f713457fd02}{World} (int num\+\_\+sim\+\_\+step)
+\item 
+void \hyperlink{class_v_p_c_1_1_world_ab539deccddaf2d046421fb1597c9f75f}{Initialize} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_world_ab919f1a2120d4ba69baf6b71310ba44c}{Time\+Stepping} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_world_a7c97e099140777b966a10a09a8ef8c46}{Action} (float v)
+\item 
+const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \& \hyperlink{class_v_p_c_1_1_world_ac1036f6ad680a9fc111a2ab9fd7f8db7}{Get\+Character} ()
+\item 
+const dart\+::simulation\+::\+World\+Ptr \& \hyperlink{class_v_p_c_1_1_world_aa05d0cebdc8e0145b5adce7cd177e79b}{Get\+World} ()
+\end{DoxyCompactItemize}
+\subsection*{Privātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{m\+Character}
+\item 
+dart\+::dynamics\+::\+Skeleton\+Ptr \hyperlink{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}{m\+Ground}
+\item 
+dart\+::simulation\+::\+World\+Ptr \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{m\+World}
+\item 
+int \hyperlink{class_v_p_c_1_1_world_a264392e9cea05755e4b452f118251d3f}{m\+Num\+Simulation\+Step}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 6 failā World.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!World@{World}}
+\index{World@{World}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{World(int num\+\_\+sim\+\_\+step)}{World(int num_sim_step)}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+World\+::\+World (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+\_\+sim\+\_\+step}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_world_ad254de0695a997e40e656f713457fd02}{}\label{class_v_p_c_1_1_world_ad254de0695a997e40e656f713457fd02}
+
+
+Definēts līnijā 10 failā World.\+cpp.
+
+
+\begin{DoxyCode}
+11     :\hyperlink{class_v_p_c_1_1_world_a264392e9cea05755e4b452f118251d3f}{mNumSimulationStep}(num\_sim\_step)
+12 \{
+13     
+14 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_world_ad254de0695a997e40e656f713457fd02_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!Action@{Action}}
+\index{Action@{Action}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{Action(float v)}{Action(float v)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+World\+::\+Action (
+\begin{DoxyParamCaption}
+\item[{float}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_world_a7c97e099140777b966a10a09a8ef8c46}{}\label{class_v_p_c_1_1_world_a7c97e099140777b966a10a09a8ef8c46}
+
+
+Definēts līnijā 50 failā World.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{mCharacter}->GetSkeleton()->getBodyNode(0)->addExtForce(Eigen::Vector3d(v, 0, 0), 
+      Eigen::Vector3d(0, 0, 0));
+53 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_world_a7c97e099140777b966a10a09a8ef8c46_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!Get\+Character@{Get\+Character}}
+\index{Get\+Character@{Get\+Character}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{Get\+Character()}{GetCharacter()}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<${\bf Character}$>$\& V\+P\+C\+::\+World\+::\+Get\+Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_world_ac1036f6ad680a9fc111a2ab9fd7f8db7}{}\label{class_v_p_c_1_1_world_ac1036f6ad680a9fc111a2ab9fd7f8db7}
+
+
+Definēts līnijā 19 failā World.\+h.
+
+
+\begin{DoxyCode}
+19 \{\textcolor{keywordflow}{return} \hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{mCharacter};\}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!Get\+World@{Get\+World}}
+\index{Get\+World@{Get\+World}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{Get\+World()}{GetWorld()}}]{\setlength{\rightskip}{0pt plus 5cm}const dart\+::simulation\+::\+World\+Ptr\& V\+P\+C\+::\+World\+::\+Get\+World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_world_aa05d0cebdc8e0145b5adce7cd177e79b}{}\label{class_v_p_c_1_1_world_aa05d0cebdc8e0145b5adce7cd177e79b}
+
+
+Definēts līnijā 20 failā World.\+h.
+
+
+\begin{DoxyCode}
+20 \{\textcolor{keywordflow}{return} \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld};\}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{Initialize()}{Initialize()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+World\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_world_ab539deccddaf2d046421fb1597c9f75f}{}\label{class_v_p_c_1_1_world_ab539deccddaf2d046421fb1597c9f75f}
+
+
+Definēts līnijā 18 failā World.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{
+20     \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld} = std::make\_shared<dart::simulation::World>();
+21     \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld}->setGravity(Eigen::Vector3d(0,-9.81,0));
+22     \hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{mCharacter} = std::make\_shared<VPC::Character>(\textcolor{stringliteral}{"SimBiCon"});
+23     \hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{mCharacter}->Initialize();
+24     \hyperlink{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}{mGround} = Skeleton::create(\textcolor{stringliteral}{"ground"});
+25     \hyperlink{namespace_v_p_c_1_1_dart_helper_a70dd049386ce8ba7d9fdb96407d8c3d3}{DartHelper::MakeWeldJointBody}(
+26         \textcolor{stringliteral}{"Ground"},
+27         \hyperlink{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}{mGround},
+28         \textcolor{keyword}{nullptr},
+29         Eigen::Vector3d(100.0,0.2,100.0),
+30         Eigen::Vector3d(0,0,0),
+31         Eigen::Vector3d(0,-0.1,0),
+32         10);
+33     
+34     \textcolor{comment}{// Eigen::VectorXd p = mCharacter->GetSkeleton()->getPositions();}
+35     \textcolor{comment}{// p[1] = 0.01;}
+36     \textcolor{comment}{// mCharacter->GetSkeleton()->setPositions(p);}
+37     \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld}->addSkeleton(\hyperlink{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{mCharacter}->GetSkeleton());
+38     \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld}->addSkeleton(\hyperlink{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}{mGround});
+39 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_world_ab539deccddaf2d046421fb1597c9f75f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_v_p_c_1_1_world_ab539deccddaf2d046421fb1597c9f75f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!Time\+Stepping@{Time\+Stepping}}
+\index{Time\+Stepping@{Time\+Stepping}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{Time\+Stepping()}{TimeStepping()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+World\+::\+Time\+Stepping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_world_ab919f1a2120d4ba69baf6b71310ba44c}{}\label{class_v_p_c_1_1_world_ab919f1a2120d4ba69baf6b71310ba44c}
+
+
+Definēts līnijā 42 failā World.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i =0;i<\hyperlink{class_v_p_c_1_1_world_a264392e9cea05755e4b452f118251d3f}{mNumSimulationStep};i++)
+45         \hyperlink{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{mWorld}->step();
+46 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_world_ab919f1a2120d4ba69baf6b71310ba44c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_world_ab919f1a2120d4ba69baf6b71310ba44c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!m\+Character@{m\+Character}}
+\index{m\+Character@{m\+Character}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{m\+Character}{mCharacter}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Character}$>$ V\+P\+C\+::\+World\+::m\+Character\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}{}\label{class_v_p_c_1_1_world_a7cb13d4f5210b3dc9156025920d25ad6}
+
+
+Definēts līnijā 9 failā World.\+h.
+
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!m\+Ground@{m\+Ground}}
+\index{m\+Ground@{m\+Ground}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{m\+Ground}{mGround}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Skeleton\+Ptr V\+P\+C\+::\+World\+::m\+Ground\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}{}\label{class_v_p_c_1_1_world_ab2bdb8cd4e8fa1e043cceef8a2c123f1}
+
+
+Definēts līnijā 10 failā World.\+h.
+
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!m\+Num\+Simulation\+Step@{m\+Num\+Simulation\+Step}}
+\index{m\+Num\+Simulation\+Step@{m\+Num\+Simulation\+Step}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{m\+Num\+Simulation\+Step}{mNumSimulationStep}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+World\+::m\+Num\+Simulation\+Step\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_world_a264392e9cea05755e4b452f118251d3f}{}\label{class_v_p_c_1_1_world_a264392e9cea05755e4b452f118251d3f}
+
+
+Definēts līnijā 13 failā World.\+h.
+
+\index{V\+P\+C\+::\+World@{V\+P\+C\+::\+World}!m\+World@{m\+World}}
+\index{m\+World@{m\+World}!V\+P\+C\+::\+World@{V\+P\+C\+::\+World}}
+\subsubsection[{\texorpdfstring{m\+World}{mWorld}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::simulation\+::\+World\+Ptr V\+P\+C\+::\+World\+::m\+World\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}{}\label{class_v_p_c_1_1_world_a4a70a334fda433d89f96c0858368020e}
+
+
+Definēts līnijā 11 failā World.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+engine/\hyperlink{_world_8h}{World.\+h}\item 
+engine/\hyperlink{_world_8cpp}{World.\+cpp}\end{DoxyCompactItemize}

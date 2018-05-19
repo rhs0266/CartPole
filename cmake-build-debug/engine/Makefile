@@ -152,6 +152,33 @@ Character.cpp.s:
 	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Character.cpp.s
 .PHONY : Character.cpp.s
 
+Controller.o: Controller.cpp.o
+
+.PHONY : Controller.o
+
+# target to build an object file
+Controller.cpp.o:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Controller.cpp.o
+.PHONY : Controller.cpp.o
+
+Controller.i: Controller.cpp.i
+
+.PHONY : Controller.i
+
+# target to preprocess a source file
+Controller.cpp.i:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Controller.cpp.i
+.PHONY : Controller.cpp.i
+
+Controller.s: Controller.cpp.s
+
+.PHONY : Controller.s
+
+# target to generate assembly for a file
+Controller.cpp.s:
+	cd /home/ryuhoseok/CartPole/cmake-build-debug && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Controller.cpp.s
+.PHONY : Controller.cpp.s
+
 DartHelper.o: DartHelper.cpp.o
 
 .PHONY : DartHelper.o
@@ -272,6 +299,9 @@ help:
 	@echo "... Character.o"
 	@echo "... Character.i"
 	@echo "... Character.s"
+	@echo "... Controller.o"
+	@echo "... Controller.i"
+	@echo "... Controller.s"
 	@echo "... DartHelper.o"
 	@echo "... DartHelper.i"
 	@echo "... DartHelper.s"

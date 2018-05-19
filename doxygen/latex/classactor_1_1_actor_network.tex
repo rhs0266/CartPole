@@ -1,0 +1,263 @@
+\hypertarget{classactor_1_1_actor_network}{}\section{actor.\+Actor\+Network klases apraksts}
+\label{classactor_1_1_actor_network}\index{actor.\+Actor\+Network@{actor.\+Actor\+Network}}
+
+
+Sadarbības diagramma klasei actor.\+Actor\+Network\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classactor_1_1_actor_network__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classactor_1_1_actor_network_a4fc65628c69ee1807e95af77b6794046}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classactor_1_1_actor_network_ae8daea79f8d1f754c3d44c76036da21a}{sess}, \hyperlink{classactor_1_1_actor_network_af7cdb447ae7a2a605a9a22336297d34f}{options}, \hyperlink{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{name})
+\item 
+def \hyperlink{classactor_1_1_actor_network_acf991872a87f6ba32f828e6611262a1b}{build\+\_\+network} (self)
+\item 
+def \hyperlink{classactor_1_1_actor_network_add9742704ce6dbd77bd645e9ee9f4ed5}{predict} (self, \hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state})
+\item 
+def \hyperlink{classactor_1_1_actor_network_a730e1fa368e30085d1f320b99afa5571}{update} (self, states, action\+\_\+grads)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classactor_1_1_actor_network_ae8daea79f8d1f754c3d44c76036da21a}{sess}
+\item 
+\hyperlink{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}{state\+\_\+dim}
+\item 
+\hyperlink{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}{action\+\_\+dim}
+\item 
+\hyperlink{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{name}
+\item 
+\hyperlink{classactor_1_1_actor_network_af7cdb447ae7a2a605a9a22336297d34f}{options}
+\item 
+\hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state}
+\item 
+\hyperlink{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}{action\+\_\+predict}
+\item 
+\hyperlink{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}{action\+\_\+grad}
+\item 
+\hyperlink{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}{network\+\_\+params}
+\item 
+\hyperlink{classactor_1_1_actor_network_ae6932b19d7a23205226ab1bc454a5693}{network\+\_\+params\+\_\+grad}
+\item 
+\hyperlink{classactor_1_1_actor_network_a10e3ddfa0963a82bec05f3a0fa59d023}{train}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 4 failā actor.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, sess, options, name)}{__init__(self, sess, options, name)}}]{\setlength{\rightskip}{0pt plus 5cm}def actor.\+Actor\+Network.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sess, }
+\item[{}]{options, }
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classactor_1_1_actor_network_a4fc65628c69ee1807e95af77b6794046}{}\label{classactor_1_1_actor_network_a4fc65628c69ee1807e95af77b6794046}
+
+
+Definēts līnijā 5 failā actor.\+py.
+
+
+\begin{DoxyCode}
+5     \textcolor{keyword}{def }\hyperlink{classactor_1_1_actor_network_a4fc65628c69ee1807e95af77b6794046}{\_\_init\_\_}(self,sess,options,name):
+6         \textcolor{comment}{# session}
+7         \textcolor{comment}{# state\_dim}
+8         \textcolor{comment}{# action\_dim}
+9         \textcolor{comment}{# learning\_rate}
+10         \textcolor{comment}{# name}
+11         self.\hyperlink{classactor_1_1_actor_network_ae8daea79f8d1f754c3d44c76036da21a}{sess} = sess
+12         self.\hyperlink{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}{state\_dim} = options.STATE\_DIM
+13         self.\hyperlink{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}{action\_dim} = options.ACTION\_DIM
+14         self.\hyperlink{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{name} = name
+15         self.\hyperlink{classactor_1_1_actor_network_af7cdb447ae7a2a605a9a22336297d34f}{options} = options
+16 
+17         self.\hyperlink{classactor_1_1_actor_network_acf991872a87f6ba32f828e6611262a1b}{build\_network}()
+18 
+19         init\_vars = tf.group(tf.global\_variables\_initializer(), tf.local\_variables\_initializer())
+20         sess.run(init\_vars)
+21 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!build\+\_\+network@{build\+\_\+network}}
+\index{build\+\_\+network@{build\+\_\+network}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{build\+\_\+network(self)}{build_network(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def actor.\+Actor\+Network.\+build\+\_\+network (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classactor_1_1_actor_network_acf991872a87f6ba32f828e6611262a1b}{}\label{classactor_1_1_actor_network_acf991872a87f6ba32f828e6611262a1b}
+
+
+Definēts līnijā 23 failā actor.\+py.
+
+
+\begin{DoxyCode}
+23     \textcolor{keyword}{def }\hyperlink{classactor_1_1_actor_network_acf991872a87f6ba32f828e6611262a1b}{build\_network}(self):
+24         self.\hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state} = tf.placeholder(tf.float32, [\textcolor{keywordtype}{None}, self.\hyperlink{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}{state\_dim}]) \textcolor{comment}{# Placeholder}
+25         with tf.variable\_scope(self.\hyperlink{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{name}):
+26             hidden\_layer = tf.layers.dense(self.\hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state}, 64, activation = tf.nn.elu, kernel\_initializer 
+      = tf.contrib.layers.xavier\_initializer()) \textcolor{comment}{# use elu for hidden layer}
+27             self.\hyperlink{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}{action\_predict} = tf.layers.dense(hidden\_layer, self.
+      \hyperlink{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}{action\_dim}, activation = tf.nn.tanh, kernel\_initializer = tf.contrib.layers.xavier\_initializer())
+       \textcolor{comment}{# use tanh to ensure output range becomes [-1,1]}
+28 
+29         self.\hyperlink{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}{action\_grad} = tf.placeholder(tf.float32, [\textcolor{keywordtype}{None}, self.
+      \hyperlink{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}{action\_dim}]) \textcolor{comment}{# Placeholder}
+30         self.\hyperlink{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}{network\_params} = tf.trainable\_variables(scope = self.
+      \hyperlink{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{name})
+31 
+32         \textcolor{comment}{# find d(xs) s.t. d(ys)=grad\_ys}
+33         \textcolor{comment}{# since grad\_ys is given, result is gradient of each network params for satisfying given grad\_ys}
+34         \textcolor{comment}{# in other word, net params should be changed as net\_params\_grad to change ys as grad\_ys}
+35         self.\hyperlink{classactor_1_1_actor_network_ae6932b19d7a23205226ab1bc454a5693}{network\_params\_grad} = tf.gradients(ys=self.
+      \hyperlink{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}{action\_predict}, xs=self.\hyperlink{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}{network\_params}, grad\_ys=-self.
+      \hyperlink{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}{action\_grad})
+36 
+37         \textcolor{comment}{# train}
+38         self.\hyperlink{classactor_1_1_actor_network_a10e3ddfa0963a82bec05f3a0fa59d023}{train} = tf.train.AdamOptimizer(self.options.LR\_A).apply\_gradients(zip(self.
+      \hyperlink{classactor_1_1_actor_network_ae6932b19d7a23205226ab1bc454a5693}{network\_params\_grad}, self.\hyperlink{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}{network\_params}))
+39 
+\end{DoxyCode}
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!predict@{predict}}
+\index{predict@{predict}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{predict(self, state)}{predict(self, state)}}]{\setlength{\rightskip}{0pt plus 5cm}def actor.\+Actor\+Network.\+predict (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classactor_1_1_actor_network_add9742704ce6dbd77bd645e9ee9f4ed5}{}\label{classactor_1_1_actor_network_add9742704ce6dbd77bd645e9ee9f4ed5}
+
+
+Definēts līnijā 40 failā actor.\+py.
+
+
+\begin{DoxyCode}
+40     \textcolor{keyword}{def }\hyperlink{classactor_1_1_actor_network_add9742704ce6dbd77bd645e9ee9f4ed5}{predict}(self, state):
+41         s = np.reshape(state, [-1, self.\hyperlink{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}{state\_dim}]) \textcolor{comment}{# ensure right shape}
+42         \textcolor{keywordflow}{return} self.sess.run(self.\hyperlink{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}{action\_predict},
+43                              feed\_dict=\{
+44                                  self.\hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state} : s
+45                              \})
+46 
+47 
+\end{DoxyCode}
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!update@{update}}
+\index{update@{update}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{update(self, states, action\+\_\+grads)}{update(self, states, action_grads)}}]{\setlength{\rightskip}{0pt plus 5cm}def actor.\+Actor\+Network.\+update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{states, }
+\item[{}]{action\+\_\+grads}
+\end{DoxyParamCaption}
+)}\hypertarget{classactor_1_1_actor_network_a730e1fa368e30085d1f320b99afa5571}{}\label{classactor_1_1_actor_network_a730e1fa368e30085d1f320b99afa5571}
+
+
+Definēts līnijā 48 failā actor.\+py.
+
+
+\begin{DoxyCode}
+48     \textcolor{keyword}{def }\hyperlink{classactor_1_1_actor_network_a730e1fa368e30085d1f320b99afa5571}{update}(self, states, action\_grads):
+49         self.sess.run(self.\hyperlink{classactor_1_1_actor_network_a10e3ddfa0963a82bec05f3a0fa59d023}{train},
+50                       feed\_dict=\{
+51                           self.\hyperlink{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{state}: states,
+52                           self.\hyperlink{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}{action\_grad}: action\_grads
+53                       \}\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!action\+\_\+dim@{action\+\_\+dim}}
+\index{action\+\_\+dim@{action\+\_\+dim}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{action\+\_\+dim}{action_dim}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+action\+\_\+dim}\hypertarget{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}{}\label{classactor_1_1_actor_network_ada197a9b6d5e1b5ebcdcc360d11e4f1b}
+
+
+Definēts līnijā 13 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!action\+\_\+grad@{action\+\_\+grad}}
+\index{action\+\_\+grad@{action\+\_\+grad}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{action\+\_\+grad}{action_grad}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+action\+\_\+grad}\hypertarget{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}{}\label{classactor_1_1_actor_network_a1420ab0da00328629de6fe8087c4c4e7}
+
+
+Definēts līnijā 29 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!action\+\_\+predict@{action\+\_\+predict}}
+\index{action\+\_\+predict@{action\+\_\+predict}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{action\+\_\+predict}{action_predict}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+action\+\_\+predict}\hypertarget{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}{}\label{classactor_1_1_actor_network_a8cbb128a36aa9bc9279880c34d503af3}
+
+
+Definēts līnijā 27 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!name@{name}}
+\index{name@{name}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+name}\hypertarget{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}{}\label{classactor_1_1_actor_network_adecdbb6d5d6d12f4c9d36b22bd9ad6c4}
+
+
+Definēts līnijā 14 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!network\+\_\+params@{network\+\_\+params}}
+\index{network\+\_\+params@{network\+\_\+params}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{network\+\_\+params}{network_params}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+network\+\_\+params}\hypertarget{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}{}\label{classactor_1_1_actor_network_ae0bac8c1fdcbdf33f9651444e66f9e09}
+
+
+Definēts līnijā 30 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!network\+\_\+params\+\_\+grad@{network\+\_\+params\+\_\+grad}}
+\index{network\+\_\+params\+\_\+grad@{network\+\_\+params\+\_\+grad}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{network\+\_\+params\+\_\+grad}{network_params_grad}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+network\+\_\+params\+\_\+grad}\hypertarget{classactor_1_1_actor_network_ae6932b19d7a23205226ab1bc454a5693}{}\label{classactor_1_1_actor_network_ae6932b19d7a23205226ab1bc454a5693}
+
+
+Definēts līnijā 35 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!options@{options}}
+\index{options@{options}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+options}\hypertarget{classactor_1_1_actor_network_af7cdb447ae7a2a605a9a22336297d34f}{}\label{classactor_1_1_actor_network_af7cdb447ae7a2a605a9a22336297d34f}
+
+
+Definēts līnijā 15 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!sess@{sess}}
+\index{sess@{sess}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{sess}{sess}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+sess}\hypertarget{classactor_1_1_actor_network_ae8daea79f8d1f754c3d44c76036da21a}{}\label{classactor_1_1_actor_network_ae8daea79f8d1f754c3d44c76036da21a}
+
+
+Definēts līnijā 11 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!state@{state}}
+\index{state@{state}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+state}\hypertarget{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}{}\label{classactor_1_1_actor_network_ab3bae8f52b46f6b7ee7c9f4f0cd21c45}
+
+
+Definēts līnijā 24 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!state\+\_\+dim@{state\+\_\+dim}}
+\index{state\+\_\+dim@{state\+\_\+dim}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{state\+\_\+dim}{state_dim}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+state\+\_\+dim}\hypertarget{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}{}\label{classactor_1_1_actor_network_a5a97fa085ad81efe114122af1cff8d26}
+
+
+Definēts līnijā 12 failā actor.\+py.
+
+\index{actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}!train@{train}}
+\index{train@{train}!actor\+::\+Actor\+Network@{actor\+::\+Actor\+Network}}
+\subsubsection[{\texorpdfstring{train}{train}}]{\setlength{\rightskip}{0pt plus 5cm}actor.\+Actor\+Network.\+train}\hypertarget{classactor_1_1_actor_network_a10e3ddfa0963a82bec05f3a0fa59d023}{}\label{classactor_1_1_actor_network_a10e3ddfa0963a82bec05f3a0fa59d023}
+
+
+Definēts līnijā 38 failā actor.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{actor_8py}{actor.\+py}\end{DoxyCompactItemize}

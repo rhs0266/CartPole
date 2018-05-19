@@ -1,0 +1,275 @@
+\hypertarget{class_my_window}{}\section{My\+Window klases apraksts}
+\label{class_my_window}\index{My\+Window@{My\+Window}}
+
+
+Mantojamības diagramma klasei My\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_my_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei My\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_my_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_window_ab319c71f6000be0f356911276049eb89}{My\+Window} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ world)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_window_a5cd1724374ca3e5315990f91a16db4b4}{print\+Dofs} ()
+\item 
+void \hyperlink{class_my_window_a2352b961fdf49a5cd01eefa6a0ba1676}{keyboard} (unsigned char key, int x, int y) override
+\begin{DoxyCompactList}\small\item\em Handle keyboard input. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_window_af082a7fc8b36683d7b5d2894a094793f}{time\+Stepping} () override
+\end{DoxyCompactItemize}
+\subsection*{Aizsargātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ Arrow\+Shape $>$ \hyperlink{class_my_window_a95e499f45c2bb2d92b8038300eaaa51d}{m\+Arrow}
+\begin{DoxyCompactList}\small\item\em An arrow shape that we will use to visualize applied forces. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_world}{V\+P\+C\+::\+World} $>$ \hyperlink{class_my_window_a395fd6ff98a01ac7850471b7d584bf66}{m\+World}
+\begin{DoxyCompactList}\small\item\em The world pointer. \end{DoxyCompactList}\item 
+Skeleton\+Ptr \hyperlink{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}{m\+Sim\+Bi\+Con}
+\begin{DoxyCompactList}\small\item\em The pendulum that we will be perturbing. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{class_my_window_a41b65319bbba6d3154fa70e242c75cee}{m\+Force\+Count\+Down}
+\begin{DoxyCompactList}\small\item\em Number of iterations before clearing a force entry. \end{DoxyCompactList}\item 
+bool \hyperlink{class_my_window_a8b21e90e07f6cd150eedb8b596be4800}{m\+Positive\+Sign}
+\begin{DoxyCompactList}\small\item\em Whether a force should be applied in the positive or negative direction. \end{DoxyCompactList}\item 
+bool \hyperlink{class_my_window_a99865aead6e9ed47b7f6303e50ec1dff}{m\+Body\+Force}
+\item 
+bool \hyperlink{class_my_window_a83c40a43fe1ee6e080dbe918d4753cf3}{m\+P\+D\+Control}
+\begin{DoxyCompactList}\small\item\em True if doing PD Control to desired dofs. \end{DoxyCompactList}\item 
+double \hyperlink{class_my_window_aaaf55ec8565cb69f691fdc7046cc2b7e}{Kp}
+\begin{DoxyCompactList}\small\item\em gain of PD control \end{DoxyCompactList}\item 
+double \hyperlink{class_my_window_a2113bdacdbc4042ed43fafb852a720e4}{Kd}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 37 failā main.\+cpp.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{My\+Window@{My\+Window}!My\+Window@{My\+Window}}
+\index{My\+Window@{My\+Window}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{My\+Window(std\+::shared\+\_\+ptr$<$ V\+P\+C\+::\+World $>$ world)}{MyWindow(std::shared_ptr< VPC::World > world)}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Window\+::\+My\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf V\+P\+C\+::\+World} $>$}]{world}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_my_window_ab319c71f6000be0f356911276049eb89}{}\label{class_my_window_ab319c71f6000be0f356911276049eb89}
+
+
+Constructor. 
+
+
+
+Definēts līnijā 41 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+42             : \hyperlink{class_my_window_a8b21e90e07f6cd150eedb8b596be4800}{mPositiveSign}(\textcolor{keyword}{true}),
+43               \hyperlink{class_my_window_a99865aead6e9ed47b7f6303e50ec1dff}{mBodyForce}(\textcolor{keyword}{false}),
+44               \hyperlink{class_my_window_a83c40a43fe1ee6e080dbe918d4753cf3}{mPDControl}(\textcolor{keyword}{false}),
+45               \hyperlink{class_my_window_aaaf55ec8565cb69f691fdc7046cc2b7e}{Kp}(\hyperlink{main_8cpp_a1c25f2dcb2a57c4317f306f51d30b811}{default\_Kp}), \hyperlink{class_my_window_a2113bdacdbc4042ed43fafb852a720e4}{Kd}(\hyperlink{main_8cpp_ae96b0c74bb3c0da05a664eb428e6dcd0}{default\_Kd}) \{
+46         setWorld(world->GetWorld());
+47 
+48         \hyperlink{class_my_window_a395fd6ff98a01ac7850471b7d584bf66}{mWorld} = world;
+49 
+50         \textcolor{comment}{// Find the Skeleton named "CartPole" within the World}
+51         \hyperlink{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}{mSimBiCon} = world->GetWorld()->getSkeleton(\textcolor{stringliteral}{"SimBiCon"});
+52 
+53         \textcolor{comment}{// Make sure that the pendulum was found in the World}
+54         \textcolor{comment}{// assert(mSimBiCon != nullptr);}
+55 
+56 
+57     \}
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{My\+Window@{My\+Window}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{keyboard(unsigned char key, int x, int y) override}{keyboard(unsigned char key, int x, int y) override}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Window\+::keyboard (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_my_window_a2352b961fdf49a5cd01eefa6a0ba1676}{}\label{class_my_window_a2352b961fdf49a5cd01eefa6a0ba1676}
+
+
+Handle keyboard input. 
+
+
+
+Definēts līnijā 66 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+66                                                             \{
+67         \textcolor{keywordflow}{switch} (key) \{
+68             \textcolor{keywordflow}{case} \textcolor{charliteral}{'k'}:
+69 \textcolor{comment}{//                mWorld->GetCharacter()->GetSkeleton()->setPosition(0,1.1);}
+70 \textcolor{comment}{//                std::cout << mWorld->GetCharacter()->GetSkeleton()->getVelocity(4) << std::endl;}
+71 \textcolor{comment}{//                if (mWorld->GetCharacter()->GetSkeleton()->getPosition(4) >= -0.2207)}
+72                 SimWindow::timeStepping();
+73                 \textcolor{keywordflow}{break};
+74 
+75             \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}:
+76                 \hyperlink{class_my_window_a5cd1724374ca3e5315990f91a16db4b4}{printDofs}();
+77                 \textcolor{keywordflow}{break};
+78 
+79             \textcolor{keywordflow}{default}:
+80                 SimWindow::keyboard(key, x, y);
+81         \}
+82     \}
+\end{DoxyCode}
+\index{My\+Window@{My\+Window}!print\+Dofs@{print\+Dofs}}
+\index{print\+Dofs@{print\+Dofs}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{print\+Dofs()}{printDofs()}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Window\+::print\+Dofs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_my_window_a5cd1724374ca3e5315990f91a16db4b4}{}\label{class_my_window_a5cd1724374ca3e5315990f91a16db4b4}
+
+
+Definēts līnijā 59 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+59                      \{
+60         \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \hyperlink{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}{mSimBiCon}->getNumDofs(); i++) \{
+61             std::cout << \textcolor{stringliteral}{"Dof #"} << i << \textcolor{stringliteral}{" : "} << \hyperlink{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}{mSimBiCon}->getDof(i)->getPosition() / M\_PI * 180
+      .0 << std::endl;
+62         \}
+63     \}
+\end{DoxyCode}
+\index{My\+Window@{My\+Window}!time\+Stepping@{time\+Stepping}}
+\index{time\+Stepping@{time\+Stepping}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{time\+Stepping() override}{timeStepping() override}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Window\+::time\+Stepping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_my_window_af082a7fc8b36683d7b5d2894a094793f}{}\label{class_my_window_af082a7fc8b36683d7b5d2894a094793f}
+
+
+Definēts līnijā 84 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+84                                  \{
+85 \textcolor{comment}{//        std::cout << mWorld->GetCharacter()->GetSkeleton()->getPositions() << std::endl << std::endl;}
+86 \textcolor{comment}{//        SimWindow::timeStepping();}
+87     \}
+\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{My\+Window@{My\+Window}!Kd@{Kd}}
+\index{Kd@{Kd}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{Kd}{Kd}}]{\setlength{\rightskip}{0pt plus 5cm}double My\+Window\+::\+Kd\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a2113bdacdbc4042ed43fafb852a720e4}{}\label{class_my_window_a2113bdacdbc4042ed43fafb852a720e4}
+
+
+Definēts līnijā 114 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!Kp@{Kp}}
+\index{Kp@{Kp}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{Kp}{Kp}}]{\setlength{\rightskip}{0pt plus 5cm}double My\+Window\+::\+Kp\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_aaaf55ec8565cb69f691fdc7046cc2b7e}{}\label{class_my_window_aaaf55ec8565cb69f691fdc7046cc2b7e}
+
+
+gain of PD control 
+
+
+
+Definēts līnijā 114 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+Arrow@{m\+Arrow}}
+\index{m\+Arrow@{m\+Arrow}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+Arrow}{mArrow}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$Arrow\+Shape$>$ My\+Window\+::m\+Arrow\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a95e499f45c2bb2d92b8038300eaaa51d}{}\label{class_my_window_a95e499f45c2bb2d92b8038300eaaa51d}
+
+
+An arrow shape that we will use to visualize applied forces. 
+
+
+
+Definēts līnijā 92 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+Body\+Force@{m\+Body\+Force}}
+\index{m\+Body\+Force@{m\+Body\+Force}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+Body\+Force}{mBodyForce}}]{\setlength{\rightskip}{0pt plus 5cm}bool My\+Window\+::m\+Body\+Force\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a99865aead6e9ed47b7f6303e50ec1dff}{}\label{class_my_window_a99865aead6e9ed47b7f6303e50ec1dff}
+True if 1-\/9 should be used to apply a body force. Otherwise, 1-\/9 will be used to apply a joint torque. 
+
+Definēts līnijā 108 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+Force\+Count\+Down@{m\+Force\+Count\+Down}}
+\index{m\+Force\+Count\+Down@{m\+Force\+Count\+Down}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+Force\+Count\+Down}{mForceCountDown}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ My\+Window\+::m\+Force\+Count\+Down\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a41b65319bbba6d3154fa70e242c75cee}{}\label{class_my_window_a41b65319bbba6d3154fa70e242c75cee}
+
+
+Number of iterations before clearing a force entry. 
+
+
+
+Definēts līnijā 101 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+P\+D\+Control@{m\+P\+D\+Control}}
+\index{m\+P\+D\+Control@{m\+P\+D\+Control}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+P\+D\+Control}{mPDControl}}]{\setlength{\rightskip}{0pt plus 5cm}bool My\+Window\+::m\+P\+D\+Control\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a83c40a43fe1ee6e080dbe918d4753cf3}{}\label{class_my_window_a83c40a43fe1ee6e080dbe918d4753cf3}
+
+
+True if doing PD Control to desired dofs. 
+
+
+
+Definēts līnijā 111 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+Positive\+Sign@{m\+Positive\+Sign}}
+\index{m\+Positive\+Sign@{m\+Positive\+Sign}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+Positive\+Sign}{mPositiveSign}}]{\setlength{\rightskip}{0pt plus 5cm}bool My\+Window\+::m\+Positive\+Sign\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a8b21e90e07f6cd150eedb8b596be4800}{}\label{class_my_window_a8b21e90e07f6cd150eedb8b596be4800}
+
+
+Whether a force should be applied in the positive or negative direction. 
+
+
+
+Definēts līnijā 104 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+Sim\+Bi\+Con@{m\+Sim\+Bi\+Con}}
+\index{m\+Sim\+Bi\+Con@{m\+Sim\+Bi\+Con}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+Sim\+Bi\+Con}{mSimBiCon}}]{\setlength{\rightskip}{0pt plus 5cm}Skeleton\+Ptr My\+Window\+::m\+Sim\+Bi\+Con\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}{}\label{class_my_window_a61f5d7b9cf55734d36a616902420cc1e}
+
+
+The pendulum that we will be perturbing. 
+
+
+
+Definēts līnijā 98 failā main.\+cpp.
+
+\index{My\+Window@{My\+Window}!m\+World@{m\+World}}
+\index{m\+World@{m\+World}!My\+Window@{My\+Window}}
+\subsubsection[{\texorpdfstring{m\+World}{mWorld}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf V\+P\+C\+::\+World}$>$ My\+Window\+::m\+World\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_my_window_a395fd6ff98a01ac7850471b7d584bf66}{}\label{class_my_window_a395fd6ff98a01ac7850471b7d584bf66}
+
+
+The world pointer. 
+
+
+
+Definēts līnijā 95 failā main.\+cpp.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

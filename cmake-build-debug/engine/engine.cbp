@@ -74,6 +74,12 @@
 		<Unit filename="/home/ryuhoseok/CartPole/engine/Character.h">
 			<Option target="engine"/>
 		</Unit>
+		<Unit filename="/home/ryuhoseok/CartPole/engine/Controller.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/ryuhoseok/CartPole/engine/Controller.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/ryuhoseok/CartPole/engine/DartHelper.cpp">
 			<Option target="engine"/>
 		</Unit>

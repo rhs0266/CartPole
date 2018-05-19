@@ -1,0 +1,208 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp faila apraksts}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}engine/engine.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$dart/dart.\+hpp$>$}\\*
+{\ttfamily \#include $<$dart/gui/gui.\+hpp$>$}\\*
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Klases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_my_window}{My\+Window}
+\end{DoxyCompactItemize}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Mainīgie}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{main_8cpp_a5cfb7451faf9194c68b21899521f0652}{default\+\_\+height} = 0.\+1
+\item 
+const double \hyperlink{main_8cpp_a08c39212fcdfc15c0077a20312600fd0}{default\+\_\+width} = 0.\+2
+\item 
+const double \hyperlink{main_8cpp_abbf019d648b16ac03a595c900458710c}{default\+\_\+depth} = 0.\+1
+\item 
+const double \hyperlink{main_8cpp_a41f247c307e6e5c526db918588ca0535}{default\+\_\+torque} = 15.\+0
+\item 
+const double \hyperlink{main_8cpp_aaa7a3d0d3d53c5eb6036ae8857ef2486}{default\+\_\+force} = 25.\+0
+\item 
+const int \hyperlink{main_8cpp_af5e7f2421bd209256807c4c5773177e2}{default\+\_\+countdown} = 200
+\item 
+const double \hyperlink{main_8cpp_af3341744207d8622b320ac66d380a620}{default\+\_\+rest\+\_\+position} = 0.\+0
+\item 
+const double \hyperlink{main_8cpp_a582f9837f3a85f9efafe3df2d254e973}{delta\+\_\+rest\+\_\+position} = 10.\+0 $\ast$ M\+\_\+\+PI / 180.\+0
+\item 
+const double \hyperlink{main_8cpp_a2033479f516fe1e85f3cb51048df3bd6}{default\+\_\+stiffness} = 0.\+0
+\item 
+const double \hyperlink{main_8cpp_a1001da008a8651dc7e89ee9ad7789508}{delta\+\_\+stiffness} = 10
+\item 
+const double \hyperlink{main_8cpp_a1d665fd7afc0c11537022e894333e36b}{default\+\_\+damping} = 5.\+0
+\item 
+const double \hyperlink{main_8cpp_a7c708ae1404abeeb2d4b89b8030c7ca3}{delta\+\_\+damping} = 1.\+0
+\item 
+const double \hyperlink{main_8cpp_a1c25f2dcb2a57c4317f306f51d30b811}{default\+\_\+\+Kp} = 0.\+0
+\item 
+const double \hyperlink{main_8cpp_a735366f54952c9ff70ddb1e368101768}{delta\+\_\+\+Kp} = 3.\+0
+\item 
+const double \hyperlink{main_8cpp_ae96b0c74bb3c0da05a664eb428e6dcd0}{default\+\_\+\+Kd} = 0.\+0
+\item 
+const double \hyperlink{main_8cpp_a1bee760f41c9939c69c52280a82441a8}{delta\+\_\+\+Kd} = 3.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Funkcijas dokumentācija}
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definēts līnijā 117 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+117                                  \{
+118     \textcolor{comment}{// Create a world and add the pendulum to the world}
+119     std::shared\_ptr<VPC::World> world = std::make\_shared<VPC::World>(1);
+120     world->Initialize();
+121     world->GetWorld()->setTimeStep(0.002);
+122     std::cout << world->GetCharacter()->GetSkeleton()->getPositions() << std::endl;
+123 
+124 
+125     \textcolor{comment}{// Create a window for rendering the world and handling user input}
+126     \hyperlink{class_my_window}{MyWindow} window(world);
+127 
+128     \textcolor{comment}{// Print instructions}
+129 
+130     \textcolor{comment}{// Initialize glut, initialize the window, and begin the glut event loop}
+131     glutInit(&argc, argv);
+132     window.initWindow(1080, 810, \textcolor{stringliteral}{"SimBiCon"});
+133     glutMainLoop();
+134 \}\end{DoxyCode}
+
+
+\subsection{Mainīgo dokumentācija}
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+countdown@{default\+\_\+countdown}}
+\index{default\+\_\+countdown@{default\+\_\+countdown}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+countdown}{default_countdown}}]{\setlength{\rightskip}{0pt plus 5cm}const int default\+\_\+countdown = 200}\hypertarget{main_8cpp_af5e7f2421bd209256807c4c5773177e2}{}\label{main_8cpp_af5e7f2421bd209256807c4c5773177e2}
+
+
+Definēts līnijā 11 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+damping@{default\+\_\+damping}}
+\index{default\+\_\+damping@{default\+\_\+damping}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+damping}{default_damping}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+damping = 5.\+0}\hypertarget{main_8cpp_a1d665fd7afc0c11537022e894333e36b}{}\label{main_8cpp_a1d665fd7afc0c11537022e894333e36b}
+
+
+Definēts līnijā 19 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+depth@{default\+\_\+depth}}
+\index{default\+\_\+depth@{default\+\_\+depth}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+depth}{default_depth}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+depth = 0.\+1}\hypertarget{main_8cpp_abbf019d648b16ac03a595c900458710c}{}\label{main_8cpp_abbf019d648b16ac03a595c900458710c}
+
+
+Definēts līnijā 7 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+force@{default\+\_\+force}}
+\index{default\+\_\+force@{default\+\_\+force}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+force}{default_force}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+force = 25.\+0}\hypertarget{main_8cpp_aaa7a3d0d3d53c5eb6036ae8857ef2486}{}\label{main_8cpp_aaa7a3d0d3d53c5eb6036ae8857ef2486}
+
+
+Definēts līnijā 10 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+height@{default\+\_\+height}}
+\index{default\+\_\+height@{default\+\_\+height}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+height}{default_height}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+height = 0.\+1}\hypertarget{main_8cpp_a5cfb7451faf9194c68b21899521f0652}{}\label{main_8cpp_a5cfb7451faf9194c68b21899521f0652}
+
+
+Definēts līnijā 5 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+\+Kd@{default\+\_\+\+Kd}}
+\index{default\+\_\+\+Kd@{default\+\_\+\+Kd}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+\+Kd}{default_Kd}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+\+Kd = 0.\+0}\hypertarget{main_8cpp_ae96b0c74bb3c0da05a664eb428e6dcd0}{}\label{main_8cpp_ae96b0c74bb3c0da05a664eb428e6dcd0}
+
+
+Definēts līnijā 25 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+\+Kp@{default\+\_\+\+Kp}}
+\index{default\+\_\+\+Kp@{default\+\_\+\+Kp}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+\+Kp}{default_Kp}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+\+Kp = 0.\+0}\hypertarget{main_8cpp_a1c25f2dcb2a57c4317f306f51d30b811}{}\label{main_8cpp_a1c25f2dcb2a57c4317f306f51d30b811}
+
+
+Definēts līnijā 22 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+rest\+\_\+position@{default\+\_\+rest\+\_\+position}}
+\index{default\+\_\+rest\+\_\+position@{default\+\_\+rest\+\_\+position}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+rest\+\_\+position}{default_rest_position}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+rest\+\_\+position = 0.\+0}\hypertarget{main_8cpp_af3341744207d8622b320ac66d380a620}{}\label{main_8cpp_af3341744207d8622b320ac66d380a620}
+
+
+Definēts līnijā 13 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+stiffness@{default\+\_\+stiffness}}
+\index{default\+\_\+stiffness@{default\+\_\+stiffness}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+stiffness}{default_stiffness}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+stiffness = 0.\+0}\hypertarget{main_8cpp_a2033479f516fe1e85f3cb51048df3bd6}{}\label{main_8cpp_a2033479f516fe1e85f3cb51048df3bd6}
+
+
+Definēts līnijā 16 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+torque@{default\+\_\+torque}}
+\index{default\+\_\+torque@{default\+\_\+torque}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+torque}{default_torque}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+torque = 15.\+0}\hypertarget{main_8cpp_a41f247c307e6e5c526db918588ca0535}{}\label{main_8cpp_a41f247c307e6e5c526db918588ca0535}
+
+
+Definēts līnijā 9 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!default\+\_\+width@{default\+\_\+width}}
+\index{default\+\_\+width@{default\+\_\+width}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+width}{default_width}}]{\setlength{\rightskip}{0pt plus 5cm}const double default\+\_\+width = 0.\+2}\hypertarget{main_8cpp_a08c39212fcdfc15c0077a20312600fd0}{}\label{main_8cpp_a08c39212fcdfc15c0077a20312600fd0}
+
+
+Definēts līnijā 6 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!delta\+\_\+damping@{delta\+\_\+damping}}
+\index{delta\+\_\+damping@{delta\+\_\+damping}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{delta\+\_\+damping}{delta_damping}}]{\setlength{\rightskip}{0pt plus 5cm}const double delta\+\_\+damping = 1.\+0}\hypertarget{main_8cpp_a7c708ae1404abeeb2d4b89b8030c7ca3}{}\label{main_8cpp_a7c708ae1404abeeb2d4b89b8030c7ca3}
+
+
+Definēts līnijā 20 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!delta\+\_\+\+Kd@{delta\+\_\+\+Kd}}
+\index{delta\+\_\+\+Kd@{delta\+\_\+\+Kd}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{delta\+\_\+\+Kd}{delta_Kd}}]{\setlength{\rightskip}{0pt plus 5cm}const double delta\+\_\+\+Kd = 3.\+0}\hypertarget{main_8cpp_a1bee760f41c9939c69c52280a82441a8}{}\label{main_8cpp_a1bee760f41c9939c69c52280a82441a8}
+
+
+Definēts līnijā 26 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!delta\+\_\+\+Kp@{delta\+\_\+\+Kp}}
+\index{delta\+\_\+\+Kp@{delta\+\_\+\+Kp}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{delta\+\_\+\+Kp}{delta_Kp}}]{\setlength{\rightskip}{0pt plus 5cm}const double delta\+\_\+\+Kp = 3.\+0}\hypertarget{main_8cpp_a735366f54952c9ff70ddb1e368101768}{}\label{main_8cpp_a735366f54952c9ff70ddb1e368101768}
+
+
+Definēts līnijā 23 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!delta\+\_\+rest\+\_\+position@{delta\+\_\+rest\+\_\+position}}
+\index{delta\+\_\+rest\+\_\+position@{delta\+\_\+rest\+\_\+position}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{delta\+\_\+rest\+\_\+position}{delta_rest_position}}]{\setlength{\rightskip}{0pt plus 5cm}const double delta\+\_\+rest\+\_\+position = 10.\+0 $\ast$ M\+\_\+\+PI / 180.\+0}\hypertarget{main_8cpp_a582f9837f3a85f9efafe3df2d254e973}{}\label{main_8cpp_a582f9837f3a85f9efafe3df2d254e973}
+
+
+Definēts līnijā 14 failā main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!delta\+\_\+stiffness@{delta\+\_\+stiffness}}
+\index{delta\+\_\+stiffness@{delta\+\_\+stiffness}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{delta\+\_\+stiffness}{delta_stiffness}}]{\setlength{\rightskip}{0pt plus 5cm}const double delta\+\_\+stiffness = 10}\hypertarget{main_8cpp_a1001da008a8651dc7e89ee9ad7789508}{}\label{main_8cpp_a1001da008a8651dc7e89ee9ad7789508}
+
+
+Definēts līnijā 17 failā main.\+cpp.
+

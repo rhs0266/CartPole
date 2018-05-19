@@ -83,7 +83,7 @@ class DDPG(object):
 		# s_batch = s_batch[idxs]
 		# q_grad_batch = q_grad_batch[idxs]
 
-		self.actor.update(s_batch, q_grad_batch)
+		self.actor.update(s_batch, q_grad_batch)		
 
 		self.sess.run(self.soft_copy_actor)	
 		self.sess.run(self.soft_copy_critic)	
@@ -100,7 +100,7 @@ class DDPG(object):
 			state = self.env.getState()
 			total_reward = 0
 
-			while local_step < goal_step and not done:
+			while local_step < goal_step:
 				# epsilon decaying
 				global_step += 1
 				local_step += 1
@@ -112,12 +112,24 @@ class DDPG(object):
 				# 	action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3
 				# else:
 				# 	action = float(self.actor.predict(state)[0][0])
-				action = np.random.normal(float(self.actor.predict(state)[0][0]), 0.3) # sigma = 0.3
-
+				
+				# print(self.actor.predict(state)[0])
+				# action = np.random.normal(float(self.actor.predict(state)[0][0]), eps) # sigma = 0.3
+				# action = normlNoise(action, eps)
+				action = self.actor.predict(state)[0]
+				print("predicted action : ",action)
+				for i in range(len(action)):
+					action[i] = np.random.normal(float(action[i]), eps)
+					if action[i] > 1.5:
+						action[i] = 1.5
+					if action[i] < -1.5:
+						action[i] = -1.5
+				print("noise addition   : ",action)
 
 				# stepping
-				self.env.setAction(action)
-				self.env.step(False)
+				self.env.setAction(action.tolist())
+				self.env.step(True)
+				return
 				reward = self.env.getReward()
 				next_state = self.env.getState()
 				done = self.env.getDone()
@@ -136,7 +148,7 @@ class DDPG(object):
 			else:
 				mem = False
 			if (t+1)%500==0:
-				self.saver.save(self.sess, 'checkpoints-cartpole/cartpole_dqn', global_step = global_step)
+				self.saver.save(self.sess, 'checkpoints-simbicon/simbicon_ddpg', global_step = global_step)
 			print(t, total_reward)
 
 	def eval(self):

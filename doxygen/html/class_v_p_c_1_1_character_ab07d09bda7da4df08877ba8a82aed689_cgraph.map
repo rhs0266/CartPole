@@ -1,0 +1,5 @@
+<map id="VPC::Character::Character" name="VPC::Character::Character">
+<area shape="rect" id="node2" href="$class_v_p_c_1_1_character.html#a9fb1410736359fab3877e3afe18f2877" title="VPC::Character::Initialize" alt="" coords="233,46,404,73"/>
+<area shape="rect" id="node3" href="$namespace_v_p_c_1_1_dart_helper.html#a69fa7c63ad96f84bb86411e438a73d48" title="VPC::DartHelper::MakeFree\lJointBody" alt="" coords="465,5,652,47"/>
+<area shape="rect" id="node4" href="$namespace_v_p_c_1_1_dart_helper.html#a4cf2225ca4d44189f0f0f390cf7aff99" title="VPC::DartHelper::MakeRevolute\lJointBody" alt="" coords="452,71,665,112"/>
+</map>

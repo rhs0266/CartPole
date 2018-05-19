@@ -25,9 +25,10 @@ public:
     double getReward();
     int getDone();
 
-    void PDControl(Eigen::VectorXd mDesiredDofs[4]);
-
     Eigen::VectorXd mDesiredDofs[4];
+    std::shared_ptr<VPC::StateMachine> fsm;
+    std::shared_ptr<VPC::Controller> controller;
+    double reward;
 };
 
 #endif

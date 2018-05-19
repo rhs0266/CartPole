@@ -1,0 +1,465 @@
+\hypertarget{class_v_p_c_1_1_record}{}\section{V\+PC\+:\+:Record klases apraksts}
+\label{class_v_p_c_1_1_record}\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+
+
+{\ttfamily \#include $<$Record.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_v_p_c_1_1_record__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_record_abe141f694c3d8691ad8cc87d37aea170}{Record} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53}{Set} (const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \&character)
+\item 
+void \hyperlink{class_v_p_c_1_1_record_a9730edac5935812b4227ad4598cb80bc}{Set} (const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \&character, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_state_machine}{V\+P\+C\+::\+State\+Machine} $>$ \&fsm)
+\item 
+void \hyperlink{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924}{Get} (const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \&character)
+\item 
+void \hyperlink{class_v_p_c_1_1_record_a7ddfb79220b19b61a3c5ae6b0beb43d7}{Get} (const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_character}{Character} $>$ \&character, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_state_machine}{V\+P\+C\+::\+State\+Machine} $>$ \&fsm)
+\item 
+bool \hyperlink{class_v_p_c_1_1_record_a7d6345bdfc4e90a48bae74ffd3627ee5}{Write} (const std\+::string path)
+\item 
+bool \hyperlink{class_v_p_c_1_1_record_a2d51f0fb1ab4eceb47e8eb1c9d0d216c}{Read} (const std\+::string path)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{t}
+\item 
+std\+::map$<$ std\+::string, Eigen\+::\+Vector\+Xd $>$ \hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}
+\item 
+std\+::map$<$ std\+::string, Eigen\+::\+Vector\+Xd $>$ \hyperlink{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{velocities}
+\item 
+int \hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 9 failā Record.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Record@{Record}}
+\index{Record@{Record}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Record()}{Record()}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+Record\+::\+Record (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_v_p_c_1_1_record_abe141f694c3d8691ad8cc87d37aea170}{}\label{class_v_p_c_1_1_record_abe141f694c3d8691ad8cc87d37aea170}
+
+
+Definēts līnijā 17 failā Record.\+h.
+
+
+\begin{DoxyCode}
+17 :\hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state}(-1)\{\};
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_abe141f694c3d8691ad8cc87d37aea170_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Get@{Get}}
+\index{Get@{Get}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Get(const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ Character $>$ \&character)}{Get(const dart::simulation::WorldPtr &world, const std::shared_ptr< Character > &character)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+Record\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{const dart\+::simulation\+::\+World\+Ptr \&}]{world, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Character} $>$ \&}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924}{}\label{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924}
+
+
+Definēts līnijā 22 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+24 \{
+25     world->setTime(\hyperlink{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{t});
+26     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i =0;i<world->getNumSkeletons();i++)
+27     \{
+28 
+29         std::string key = world->getSkeleton(i)->getName();
+30         \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}.find(key)!=\hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}.end())\{
+31             world->getSkeleton(i)->setPositions(\hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}.at(key));
+32             world->getSkeleton(i)->setVelocities(\hyperlink{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{velocities}.at(key));
+33         \}
+34         \textcolor{keywordflow}{else}
+35         \{
+36             std::cout<<\textcolor{stringliteral}{"No skeleton name "}<<key<<std::endl;
+37             exit(0);
+38         \}
+39     \}
+40 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Get@{Get}}
+\index{Get@{Get}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Get(const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ Character $>$ \&character, const std\+::shared\+\_\+ptr$<$ V\+P\+C\+::\+State\+Machine $>$ \&fsm)}{Get(const dart::simulation::WorldPtr &world, const std::shared_ptr< Character > &character, const std::shared_ptr< VPC::StateMachine > &fsm)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+Record\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{const dart\+::simulation\+::\+World\+Ptr \&}]{world, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Character} $>$ \&}]{character, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf V\+P\+C\+::\+State\+Machine} $>$ \&}]{fsm}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a7ddfb79220b19b61a3c5ae6b0beb43d7}{}\label{class_v_p_c_1_1_record_a7ddfb79220b19b61a3c5ae6b0beb43d7}
+
+
+Definēts līnijā 52 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+55 \{
+56     this->\hyperlink{class_v_p_c_1_1_record_a80c82d06a0d90252190f4e5071957924}{Get}(world,character);
+57     fsm->SetState(\hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state});
+58 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_a7ddfb79220b19b61a3c5ae6b0beb43d7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Read@{Read}}
+\index{Read@{Read}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Read(const std\+::string path)}{Read(const std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}bool V\+P\+C\+::\+Record\+::\+Read (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a2d51f0fb1ab4eceb47e8eb1c9d0d216c}{}\label{class_v_p_c_1_1_record_a2d51f0fb1ab4eceb47e8eb1c9d0d216c}
+
+
+Definēts līnijā 97 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     std::ifstream ifs(path);
+100     \textcolor{keywordflow}{if}(!(ifs.is\_open()))
+101     \{
+102         std::cout<<\textcolor{stringliteral}{"Can't read file "}<<path<<std::endl;
+103         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+104     \}
+105     std::string str;
+106     std::string index;
+107     std::stringstream ss;
+108     \textcolor{keywordflow}{while}(!ifs.eof())
+109     \{
+110         str.clear();
+111         index.clear();
+112         ss.clear();
+113 
+114         std::getline(ifs,str);
+115         ss.str(str);    
+116         ss>>index;
+117 
+118         Eigen::VectorXd eigen\_vec;
+119         std::vector<double> vec;
+120         \textcolor{keywordtype}{double} val;
+121 
+122         \textcolor{keywordflow}{if}(!index.compare(\textcolor{stringliteral}{"rpos"}))
+123         \{
+124             std::string name;
+125             ss>>name;
+126             \textcolor{keywordflow}{while}(!ss.eof())
+127             \{
+128                 \textcolor{keywordflow}{if}(ss>>val)
+129                     vec.push\_back(val);
+130                 \textcolor{keywordflow}{else}\{
+131                     \textcolor{keywordflow}{continue};
+132                     \textcolor{comment}{// return false;}
+133                 \}
+134             \}
+135             eigen\_vec.resize(vec.size());
+136             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<vec.size();i++)
+137                 eigen\_vec[i] = vec[i];
+138             \hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}.insert(std::make\_pair(name,eigen\_vec));
+139         \}
+140         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!index.compare(\textcolor{stringliteral}{"rvel"}))
+141         \{
+142             std::string name;
+143             ss>>name;
+144             \textcolor{keywordflow}{while}(!ss.eof())
+145             \{
+146                 \textcolor{keywordflow}{if}(ss>>val)
+147                     vec.push\_back(val);
+148                 \textcolor{keywordflow}{else}
+149                 \{
+150                     \textcolor{keywordflow}{continue};
+151                     \textcolor{comment}{// return false;}
+152                 \}
+153             \}
+154             eigen\_vec.resize(vec.size());
+155             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<vec.size();i++)
+156             \{
+157                 eigen\_vec[i] = vec[i];
+158             \}
+159             \hyperlink{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{velocities}.insert(std::make\_pair(name,eigen\_vec));
+160 
+161         \}
+162         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!index.compare(\textcolor{stringliteral}{"time"}))
+163         \{
+164             ss>>val;
+165             \hyperlink{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{t} = val;
+166         \}
+167         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!index.compare(\textcolor{stringliteral}{"state"}))
+168         \{   
+169             \textcolor{keywordtype}{int} int\_val;
+170             ss>>int\_val;
+171             \hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state} = int\_val;
+172         \}
+173         
+174     \}
+175     ifs.close();
+176     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+177 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_a2d51f0fb1ab4eceb47e8eb1c9d0d216c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Set@{Set}}
+\index{Set@{Set}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Set(const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ Character $>$ \&character)}{Set(const dart::simulation::WorldPtr &world, const std::shared_ptr< Character > &character)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+Record\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const dart\+::simulation\+::\+World\+Ptr \&}]{world, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Character} $>$ \&}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53}{}\label{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53}
+
+
+Definēts līnijā 10 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+12 \{
+13     \hyperlink{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{t} = world->getTime();
+14     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<world->getNumSkeletons();i++)
+15     \{
+16         \hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions}.insert(std::make\_pair(world->getSkeleton(i)->getName(),world->getSkeleton(i)->
+      getPositions()));
+17         \hyperlink{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{velocities}.insert(std::make\_pair(world->getSkeleton(i)->getName(),world->getSkeleton(i)->
+      getVelocities()));
+18     \}
+19 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Set@{Set}}
+\index{Set@{Set}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Set(const dart\+::simulation\+::\+World\+Ptr \&world, const std\+::shared\+\_\+ptr$<$ Character $>$ \&character, const std\+::shared\+\_\+ptr$<$ V\+P\+C\+::\+State\+Machine $>$ \&fsm)}{Set(const dart::simulation::WorldPtr &world, const std::shared_ptr< Character > &character, const std::shared_ptr< VPC::StateMachine > &fsm)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+Record\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const dart\+::simulation\+::\+World\+Ptr \&}]{world, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Character} $>$ \&}]{character, }
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf V\+P\+C\+::\+State\+Machine} $>$ \&}]{fsm}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a9730edac5935812b4227ad4598cb80bc}{}\label{class_v_p_c_1_1_record_a9730edac5935812b4227ad4598cb80bc}
+
+
+Definēts līnijā 43 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     this->\hyperlink{class_v_p_c_1_1_record_a9a4211edc9dd0352403d3e501366ba53}{Set}(world,character);
+48     \hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state} = fsm->GetState();
+49 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_record_a9730edac5935812b4227ad4598cb80bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!Write@{Write}}
+\index{Write@{Write}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{Write(const std\+::string path)}{Write(const std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}bool V\+P\+C\+::\+Record\+::\+Write (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_record_a7d6345bdfc4e90a48bae74ffd3627ee5}{}\label{class_v_p_c_1_1_record_a7d6345bdfc4e90a48bae74ffd3627ee5}
+
+
+Definēts līnijā 63 failā Record.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     std::ofstream ofs(path);
+66     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tup : \hyperlink{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{positions})
+67     \{
+68         ofs<<\textcolor{stringliteral}{"rpos "};
+69         \textcolor{keywordflow}{if}(dart::math::isNan(tup.second))
+70         \{
+71             ofs.close();
+72             boost::filesystem::remove(path);
+73             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+74         \}
+75         ofs<<tup.first<<\textcolor{stringliteral}{" "}<<tup.second.transpose()<<std::endl; 
+76     \}
+77     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tup : \hyperlink{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{velocities})
+78     \{
+79         ofs<<\textcolor{stringliteral}{"rvel "};
+80         \textcolor{keywordflow}{if}(dart::math::isNan(tup.second))
+81         \{
+82             ofs.close();
+83             boost::filesystem::remove(path);
+84             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+85         \}
+86         ofs<<tup.first<<\textcolor{stringliteral}{" "}<<tup.second.transpose()<<std::endl; 
+87     \}
+88 
+89     ofs<<\textcolor{stringliteral}{"time "}<<\hyperlink{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{t}<<std::endl;
+90     \textcolor{keywordflow}{if}(\hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state}!=-1)
+91         ofs<<\textcolor{stringliteral}{"state "}<<\hyperlink{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{state}<<std::endl;
+92     ofs.close();
+93     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+94 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_v_p_c_1_1_record_a7d6345bdfc4e90a48bae74ffd3627ee5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_v_p_c_1_1_record_a7d6345bdfc4e90a48bae74ffd3627ee5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!positions@{positions}}
+\index{positions@{positions}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{positions}{positions}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string,Eigen\+::\+Vector\+Xd$>$ V\+P\+C\+::\+Record\+::positions}\hypertarget{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}{}\label{class_v_p_c_1_1_record_aeea0f4576199ce09ffc7870c792624d0}
+
+
+Definēts līnijā 13 failā Record.\+h.
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!state@{state}}
+\index{state@{state}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+Record\+::state}\hypertarget{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}{}\label{class_v_p_c_1_1_record_aefdcae9a398f483c7a4c61b6a43307e5}
+
+
+Definēts līnijā 15 failā Record.\+h.
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!t@{t}}
+\index{t@{t}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{t}{t}}]{\setlength{\rightskip}{0pt plus 5cm}double V\+P\+C\+::\+Record\+::t}\hypertarget{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}{}\label{class_v_p_c_1_1_record_af9b5867d85eb7d0073ced8bd09a79626}
+
+
+Definēts līnijā 12 failā Record.\+h.
+
+\index{V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}!velocities@{velocities}}
+\index{velocities@{velocities}!V\+P\+C\+::\+Record@{V\+P\+C\+::\+Record}}
+\subsubsection[{\texorpdfstring{velocities}{velocities}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string,Eigen\+::\+Vector\+Xd$>$ V\+P\+C\+::\+Record\+::velocities}\hypertarget{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}{}\label{class_v_p_c_1_1_record_a6d0ac69f7cb390fd819cb006f23d6e32}
+
+
+Definēts līnijā 14 failā Record.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+engine/\hyperlink{_record_8h}{Record.\+h}\item 
+engine/\hyperlink{_record_8cpp}{Record.\+cpp}\end{DoxyCompactItemize}

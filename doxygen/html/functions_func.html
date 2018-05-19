@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CartPole: Klases elementi - Funkcijas</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CartPole
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Ģenerēts ar Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Meklēt');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sākumlapa</span></a></li>
+      <li><a href="pages.html"><span>Saistītās&#160;lapas</span></a></li>
+      <li><a href="namespaces.html"><span>Nosaukumvietas</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klases</span></a></li>
+      <li><a href="files.html"><span>Faili</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Meklēt" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Klašu&#160;saraksts</span></a></li>
+      <li><a href="classes.html"><span>Klašu&#160;indekss</span></a></li>
+      <li><a href="inherits.html"><span>Klašu&#160;hierarhija</span></a></li>
+      <li class="current"><a href="functions.html"><span>Klases&#160;elementi</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="functions.html"><span>Visi</span></a></li>
+      <li class="current"><a href="functions_func.html"><span>Funkcijas</span></a></li>
+      <li><a href="functions_vars.html"><span>Mainīgie</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+      <li><a href="#index_z"><span>z</span></a></li>
+      <li class="current"><a href="#index_0x7e"><span>~</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions_func.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>__init__()
+: <a class="el" href="classactor_1_1_actor_network.html#a4fc65628c69ee1807e95af77b6794046">actor.ActorNetwork</a>
+, <a class="el" href="classcritic_1_1_critic_network.html#a7f619dd822278ac236b4398003c06f94">critic.CriticNetwork</a>
+, <a class="el" href="classddpg_1_1_d_d_p_g.html#ae5e2615ed363feea9c437913b1cfc71f">ddpg.DDPG</a>
+, <a class="el" href="classddpg__others_1_1_actor.html#a98635ab068dfa432844a7007d34f923f">ddpg_others.Actor</a>
+, <a class="el" href="classddpg__others_1_1_critic.html#ad79f6a3961bf9da84b50feb690f72708">ddpg_others.Critic</a>
+, <a class="el" href="classenv_1_1_environment.html#ab43aa325dc7ec51e135ea24d2e6d8954">env.Environment</a>
+, <a class="el" href="classnoise_1_1_gaussian_noise.html#afbab5255dc75d7f01173a2c3231a5083">noise.GaussianNoise</a>
+, <a class="el" href="classnoise_1_1_o_u_noise.html#a4c250d049db8708e66241e37a2910101">noise.OUNoise</a>
+, <a class="el" href="classoptions_1_1_options.html#ad708dd8dd3879087314e2e86c0fad701">options.Options</a>
+, <a class="el" href="classreplaybuffer_1_1_replay_buffer.html#ad9df73a40ff390fb1dab7f0bc4deb816">replaybuffer.ReplayBuffer</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>Action()
+: <a class="el" href="class_v_p_c_1_1_world.html#a7c97e099140777b966a10a09a8ef8c46">VPC::World</a>
+</li>
+<li>add()
+: <a class="el" href="classreplaybuffer_1_1_replay_buffer.html#aa47eed5f5365313a32d8a18b486d06ac">replaybuffer.ReplayBuffer</a>
+</li>
+<li>Apply()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#a30bd1c97b4736674333192813ca9a8e1">VPC::GUI::Camera</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>brownian_motion_log_returns()
+: <a class="el" href="classnoise_1_1_o_u_noise.html#a18a594f4c39c884806b50078df4a2063">noise.OUNoise</a>
+</li>
+<li>build_network()
+: <a class="el" href="classactor_1_1_actor_network.html#acf991872a87f6ba32f828e6611262a1b">actor.ActorNetwork</a>
+, <a class="el" href="classcritic_1_1_critic_network.html#a6ef997aa35d20b9ff53caa8c87fea17a">critic.CriticNetwork</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>Camera()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#ae699f409e3205018175f7bd8b3eab657">VPC::GUI::Camera</a>
+</li>
+<li>Character()
+: <a class="el" href="class_v_p_c_1_1_character.html#ab07d09bda7da4df08877ba8a82aed689">VPC::Character</a>
+</li>
+<li>choose_action()
+: <a class="el" href="classddpg__others_1_1_actor.html#afef72403fadcc61b70c575d93affd7c1">ddpg_others.Actor</a>
+</li>
+<li>clear()
+: <a class="el" href="classreplaybuffer_1_1_replay_buffer.html#a882965a63e7dde4fc7c23c974be17c01">replaybuffer.ReplayBuffer</a>
+</li>
+<li>compute_grad()
+: <a class="el" href="classcritic_1_1_critic_network.html#aca9bfaf828183ad50b80e971e4de446c">critic.CriticNetwork</a>
+</li>
+<li>ComputeTorque()
+: <a class="el" href="class_v_p_c_1_1_controller.html#a15c395dff986eed594d3f99d58e7d3d1">VPC::Controller</a>
+</li>
+<li>Controller()
+: <a class="el" href="class_v_p_c_1_1_controller.html#a132b5d8ac47550346fecf84fe8008179">VPC::Controller</a>
+</li>
+<li>current()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#ac04192559c661a6bc954609807df477d">VPC::GUI::GLUTWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>Display()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a6335c4c1f6166156d0330e9af5f4fc31">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6863fa1bec1696c6984c2f1066428e21">VPC::GUI::SimWindow</a>
+</li>
+<li>DisplayEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a8874ae9e61f82863cec3b3524c3b0d33">VPC::GUI::GLUTWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>eval()
+: <a class="el" href="classddpg_1_1_d_d_p_g.html#a2784ad40da92d5131c80f25736b0413b">ddpg.DDPG</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>gaussian_noise()
+: <a class="el" href="classnoise_1_1_gaussian_noise.html#aa5a9d46ef04a4eef8dfc25e966c0f622">noise.GaussianNoise</a>
+</li>
+<li>Get()
+: <a class="el" href="class_v_p_c_1_1_record.html#a80c82d06a0d90252190f4e5071957924">VPC::Record</a>
+</li>
+<li>get_options()
+: <a class="el" href="classoptions_1_1_options.html#a165cc2bdb7015d5f0333fdc463cfaf67">options.Options</a>
+</li>
+<li>getActionNum()
+: <a class="el" href="classenv_1_1_environment.html#a33704b8916e5dbca53031fa89dd5ccb0">env.Environment</a>
+, <a class="el" href="class_simulation.html#a75067c89a43d0e1798fc06c71c3e3a27">Simulation</a>
+</li>
+<li>GetCharacter()
+: <a class="el" href="class_v_p_c_1_1_world.html#ac1036f6ad680a9fc111a2ab9fd7f8db7">VPC::World</a>
+</li>
+<li>getDone()
+: <a class="el" href="classenv_1_1_environment.html#aa44deb3deae93e541af1d23523e28969">env.Environment</a>
+, <a class="el" href="class_simulation.html#ad5446c6b0bc0a889ffdd64d04454a2a2">Simulation</a>
+</li>
+<li>GetMotion()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a83142e6c04d30eeb8beb49b331ba5b74">VPC::StateMachine</a>
+</li>
+<li>getReward()
+: <a class="el" href="classenv_1_1_environment.html#a3ed8a37b7b6c1279a10af783352335a6">env.Environment</a>
+, <a class="el" href="class_simulation.html#acdf5b1b5ec41703365499a888b0d6691">Simulation</a>
+</li>
+<li>GetSkeleton()
+: <a class="el" href="class_v_p_c_1_1_character.html#ab2694f013d033805504228cb151a368f">VPC::Character</a>
+</li>
+<li>GetStanceFootName()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#aa803d5ed2b6f0482db916befb57d5117">VPC::StateMachine</a>
+</li>
+<li>getState()
+: <a class="el" href="classenv_1_1_environment.html#adbbb2aecb72314a5337fece8e433fe35">env.Environment</a>
+, <a class="el" href="class_simulation.html#a0fed4408760d2ba5c2e18aee56aa2f52">Simulation</a>
+</li>
+<li>GetState()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a4a9ff71162129142a4eeb70b209be439">VPC::StateMachine</a>
+</li>
+<li>getStateNum()
+: <a class="el" href="classenv_1_1_environment.html#a03b485c5cd7d6a33b0563fb074989b5f">env.Environment</a>
+, <a class="el" href="class_simulation.html#ad1124017cff783732cab02a78af0720d">Simulation</a>
+</li>
+<li>GetSwingFootName()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a3a82e5a3e97af57259dd438e1666850f">VPC::StateMachine</a>
+</li>
+<li>GetTrackballPoint()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#acf91e9c32fceb9143c7dd41d45ccafca">VPC::GUI::Camera</a>
+</li>
+<li>GetWorld()
+: <a class="el" href="class_v_p_c_1_1_world.html#aa05d0cebdc8e0145b5adce7cd177e79b">VPC::World</a>
+</li>
+<li>GLUTWindow()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a34872e6244c4762090285b502c594336">VPC::GUI::GLUTWindow</a>
+</li>
+<li>GoToFrame()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a3e7a520e02dde6a2e8525f86db0c7895">VPC::GUI::SimWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>init()
+: <a class="el" href="classenv_1_1_environment.html#a8dd860a9d167e765134f08344a2c2d71">env.Environment</a>
+, <a class="el" href="class_simulation.html#a10d9646039f5bffba768c3abd0b558c7">Simulation</a>
+</li>
+<li>Initialize()
+: <a class="el" href="class_v_p_c_1_1_character.html#a9fb1410736359fab3877e3afe18f2877">VPC::Character</a>
+, <a class="el" href="class_v_p_c_1_1_state_machine.html#a74cd487408c3ae67046fdaf429b25ca7">VPC::StateMachine</a>
+, <a class="el" href="class_v_p_c_1_1_world.html#ab539deccddaf2d046421fb1597c9f75f">VPC::World</a>
+</li>
+<li>initLights()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a216d92bb142c672c42a69e5fd9163746">VPC::GUI::GLUTWindow</a>
+</li>
+<li>InitWindow()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a2e763564b7728a1b8faf65694f148d79">VPC::GUI::GLUTWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>keyboard()
+: <a class="el" href="class_my_window.html#a2352b961fdf49a5cd01eefa6a0ba1676">MyWindow</a>
+</li>
+<li>Keyboard()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#ad1251eb42edd623ecffaaf361ff83bc2">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6da00ed4fb5f11befaf1dba6485cfcfb">VPC::GUI::SimWindow</a>
+</li>
+<li>KeyboardEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#ad94b80f2d5d0d032aac9ee71b6fdcf9b">VPC::GUI::GLUTWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>learn()
+: <a class="el" href="classddpg__others_1_1_actor.html#a24e5b40ab12e8d9e6e6eb92385576327">ddpg_others.Actor</a>
+, <a class="el" href="classddpg__others_1_1_critic.html#aa108c309d56a4e946e76908168a97cdf">ddpg_others.Critic</a>
+</li>
+<li>LoadFromFolder()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a4d8e529910bdb8c0afa2c675786c10e5">VPC::GUI::SimWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>Motion()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a366b6fed6cd4db1130a54aac12656ba0">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#aba3a57913fd25280353abe94a64539fc">VPC::GUI::SimWindow</a>
+</li>
+<li>MotionEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a962cbc03bcbb5a0541978ec3630f65a6">VPC::GUI::GLUTWindow</a>
+</li>
+<li>Mouse()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a346eb9d90c940048473f7e69bf4feeda">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a6decd7c869caee8f54c8c80d46b6d4e6">VPC::GUI::SimWindow</a>
+</li>
+<li>MouseEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#ae838963ea1a595625bddfa31dd9cbabd">VPC::GUI::GLUTWindow</a>
+</li>
+<li>MyWindow()
+: <a class="el" href="class_my_window.html#ab319c71f6000be0f356911276049eb89">MyWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>optimize_network()
+: <a class="el" href="classddpg_1_1_d_d_p_g.html#a06c8a226bfc7c56f33a74da00ed8bcec">ddpg.DDPG</a>
+</li>
+<li>ornstein_uhlenbeck_level()
+: <a class="el" href="classnoise_1_1_o_u_noise.html#a4b01fc4f19ee3f17cffe91290312cc97">noise.OUNoise</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>Pan()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#a04f129748aac202d1d3d9ea5f55af125">VPC::GUI::Camera</a>
+</li>
+<li>predict()
+: <a class="el" href="classactor_1_1_actor_network.html#add9742704ce6dbd77bd645e9ee9f4ed5">actor.ActorNetwork</a>
+, <a class="el" href="classcritic_1_1_critic_network.html#a52b79a3c802070dc8925733bf7dcb42e">critic.CriticNetwork</a>
+</li>
+<li>printDofs()
+: <a class="el" href="class_my_window.html#a5cd1724374ca3e5315990f91a16db4b4">MyWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>Read()
+: <a class="el" href="class_v_p_c_1_1_record.html#a2d51f0fb1ab4eceb47e8eb1c9d0d216c">VPC::Record</a>
+</li>
+<li>Record()
+: <a class="el" href="class_v_p_c_1_1_record.html#abe141f694c3d8691ad8cc87d37aea170">VPC::Record</a>
+</li>
+<li>reset()
+: <a class="el" href="classenv_1_1_environment.html#a33c77a544170cb422c7bcc6e257e9e66">env.Environment</a>
+, <a class="el" href="class_simulation.html#a2dc2464162d59383e0a1c68a3f9c42fb">Simulation</a>
+</li>
+<li>Reshape()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a5b89e37453f4c46e36b5dd5c2a8257ab">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a53692e6568f1568679f3f8a7793f1f15">VPC::GUI::SimWindow</a>
+</li>
+<li>ReshapeEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a584bc6119237804393bc403de78031a3">VPC::GUI::GLUTWindow</a>
+</li>
+<li>Rotate()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#a9f41d355bea421e7403de20db33ed069">VPC::GUI::Camera</a>
+</li>
+<li>Rotateq()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#a3bca13fbbe8272562b7261037e991860">VPC::GUI::Camera</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>sample_batch()
+: <a class="el" href="classreplaybuffer_1_1_replay_buffer.html#aea98cc353ae15cd58f285b49f88e1dc7">replaybuffer.ReplayBuffer</a>
+</li>
+<li>Screenshot()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#ac609ccaf459a941709927da1e36403e8">VPC::GUI::SimWindow</a>
+</li>
+<li>Set()
+: <a class="el" href="class_v_p_c_1_1_record.html#a9a4211edc9dd0352403d3e501366ba53">VPC::Record</a>
+</li>
+<li>setAction()
+: <a class="el" href="classenv_1_1_environment.html#a9cc0fbe9f5e1fbe3c49a3fb412d591d1">env.Environment</a>
+, <a class="el" href="class_simulation.html#ae024524b94a02df25c987e25cd83d8c9">Simulation</a>
+</li>
+<li>SetCamera()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#a5e28472053c4188219683939cad01f1f">VPC::GUI::Camera</a>
+</li>
+<li>SetState()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a377178b83696e6ad08504858930bef8c">VPC::StateMachine</a>
+</li>
+<li>SetStatePose()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#af1b80fe57cbacfe9b2cb29ef8a0a29ff">VPC::StateMachine</a>
+</li>
+<li>Simulation()
+: <a class="el" href="class_simulation.html#a5b224cc5b36bcc8eb29689aff223de41">Simulation</a>
+</li>
+<li>SimWindow()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#a992208c3ff374bcf269d7b7fcbf7324d">VPC::GUI::SimWindow</a>
+</li>
+<li>size()
+: <a class="el" href="classreplaybuffer_1_1_replay_buffer.html#a88315be96866304cdd1d3ac57e7ffebb">replaybuffer.ReplayBuffer</a>
+</li>
+<li>State()
+: <a class="el" href="struct_v_p_c_1_1_state.html#a94cddcb6972824d5be642b417ffbcac3">VPC::State</a>
+</li>
+<li>StateMachine()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a2c351c164a0a6cfd999ef8c1a50c8747">VPC::StateMachine</a>
+</li>
+<li>step()
+: <a class="el" href="classenv_1_1_environment.html#afb163b7692002933d860d3bd00a9e869">env.Environment</a>
+, <a class="el" href="class_simulation.html#ae057193c8d120c47e136cdb9aeee2fd8">Simulation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>Timer()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a8e43baa0b17285f1e2cb2135b298d716">VPC::GUI::GLUTWindow</a>
+, <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_sim_window.html#ab45783776b702b9e7fb6de00a57a88e7">VPC::GUI::SimWindow</a>
+</li>
+<li>TimerEvent()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a3dd7ed12ee68dea02946415292139a0e">VPC::GUI::GLUTWindow</a>
+</li>
+<li>timeStepping()
+: <a class="el" href="class_my_window.html#af082a7fc8b36683d7b5d2894a094793f">MyWindow</a>
+</li>
+<li>TimeStepping()
+: <a class="el" href="class_v_p_c_1_1_world.html#ab919f1a2120d4ba69baf6b71310ba44c">VPC::World</a>
+</li>
+<li>TorsoControl()
+: <a class="el" href="class_v_p_c_1_1_state_machine.html#a09f8ecfe81b0e075f648b81cf545fd89">VPC::StateMachine</a>
+</li>
+<li>training()
+: <a class="el" href="classddpg_1_1_d_d_p_g.html#a5237a908e38e5ac76c6b733fc61aeb3d">ddpg.DDPG</a>
+</li>
+<li>Translate()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#ae2bdc4748463c831a9bc2170d0b420b1">VPC::GUI::Camera</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UnProject()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#af5f9325fafe1d0015c785d077f5c5319">VPC::GUI::Camera</a>
+</li>
+<li>update()
+: <a class="el" href="classactor_1_1_actor_network.html#a730e1fa368e30085d1f320b99afa5571">actor.ActorNetwork</a>
+, <a class="el" href="classcritic_1_1_critic_network.html#af383ed0494f00bb145040d6acdbc6913">critic.CriticNetwork</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>World()
+: <a class="el" href="class_v_p_c_1_1_world.html#ad254de0695a997e40e656f713457fd02">VPC::World</a>
+</li>
+<li>Write()
+: <a class="el" href="class_v_p_c_1_1_record.html#a7d6345bdfc4e90a48bae74ffd3627ee5">VPC::Record</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_z"></a>- z -</h3><ul>
+<li>Zoom()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_camera.html#abdde0bfa7ddf8fbd1e7f04f8865797cd">VPC::GUI::Camera</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~GLUTWindow()
+: <a class="el" href="class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window.html#a432925ff6224cffc0b63b496a493ab61">VPC::GUI::GLUTWindow</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Ģenerēts ar
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

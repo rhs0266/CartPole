@@ -1,0 +1,211 @@
+\hypertarget{classreplaybuffer_1_1_replay_buffer}{}\section{replaybuffer.\+Replay\+Buffer klases apraksts}
+\label{classreplaybuffer_1_1_replay_buffer}\index{replaybuffer.\+Replay\+Buffer@{replaybuffer.\+Replay\+Buffer}}
+
+
+Mantojamības diagramma klasei replaybuffer.\+Replay\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classreplaybuffer_1_1_replay_buffer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei replaybuffer.\+Replay\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classreplaybuffer_1_1_replay_buffer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classreplaybuffer_1_1_replay_buffer_ad9df73a40ff390fb1dab7f0bc4deb816}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}{buffer\+\_\+size})
+\item 
+def \hyperlink{classreplaybuffer_1_1_replay_buffer_aa47eed5f5365313a32d8a18b486d06ac}{add} (self, s, a, r, s2)
+\item 
+def \hyperlink{classreplaybuffer_1_1_replay_buffer_a88315be96866304cdd1d3ac57e7ffebb}{size} (self)
+\item 
+def \hyperlink{classreplaybuffer_1_1_replay_buffer_aea98cc353ae15cd58f285b49f88e1dc7}{sample\+\_\+batch} (self, batch\+\_\+size)
+\item 
+def \hyperlink{classreplaybuffer_1_1_replay_buffer_a882965a63e7dde4fc7c23c974be17c01}{clear} (self)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}{buffer\+\_\+size}
+\item 
+\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count}
+\item 
+\hyperlink{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}{buffer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 5 failā replaybuffer.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, buffer\+\_\+size)}{__init__(self, buffer_size)}}]{\setlength{\rightskip}{0pt plus 5cm}def replaybuffer.\+Replay\+Buffer.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{buffer\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classreplaybuffer_1_1_replay_buffer_ad9df73a40ff390fb1dab7f0bc4deb816}{}\label{classreplaybuffer_1_1_replay_buffer_ad9df73a40ff390fb1dab7f0bc4deb816}
+
+
+Definēts līnijā 7 failā replaybuffer.\+py.
+
+
+\begin{DoxyCode}
+7     \textcolor{keyword}{def }\hyperlink{classreplaybuffer_1_1_replay_buffer_ad9df73a40ff390fb1dab7f0bc4deb816}{\_\_init\_\_}(self, buffer\_size):
+8         self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}{buffer\_size} = buffer\_size
+9         self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count} = 0
+10         self.\hyperlink{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}{buffer} = deque()
+11 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!add@{add}}
+\index{add@{add}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{add(self, s, a, r, s2)}{add(self, s, a, r, s2)}}]{\setlength{\rightskip}{0pt plus 5cm}def replaybuffer.\+Replay\+Buffer.\+add (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{s, }
+\item[{}]{a, }
+\item[{}]{r, }
+\item[{}]{s2}
+\end{DoxyParamCaption}
+)}\hypertarget{classreplaybuffer_1_1_replay_buffer_aa47eed5f5365313a32d8a18b486d06ac}{}\label{classreplaybuffer_1_1_replay_buffer_aa47eed5f5365313a32d8a18b486d06ac}
+
+
+Definēts līnijā 13 failā replaybuffer.\+py.
+
+
+\begin{DoxyCode}
+13     \textcolor{keyword}{def }\hyperlink{classreplaybuffer_1_1_replay_buffer_aa47eed5f5365313a32d8a18b486d06ac}{add}(self, s, a, r, s2):
+14         experience = (s, a, r, s2)
+15         \textcolor{keywordflow}{if} self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count} < self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}{buffer\_size}: 
+16             self.buffer.append(experience)
+17             self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count} += 1
+18         \textcolor{keywordflow}{else}:
+19             self.buffer.popleft()
+20             self.buffer.append(experience)
+21 
+\end{DoxyCode}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!clear@{clear}}
+\index{clear@{clear}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{clear(self)}{clear(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def replaybuffer.\+Replay\+Buffer.\+clear (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classreplaybuffer_1_1_replay_buffer_a882965a63e7dde4fc7c23c974be17c01}{}\label{classreplaybuffer_1_1_replay_buffer_a882965a63e7dde4fc7c23c974be17c01}
+
+
+Definēts līnijā 49 failā replaybuffer.\+py.
+
+
+\begin{DoxyCode}
+49     \textcolor{keyword}{def }\hyperlink{classreplaybuffer_1_1_replay_buffer_a882965a63e7dde4fc7c23c974be17c01}{clear}(self):
+50         self.buffer.clear()
+51         self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count} = 0\end{DoxyCode}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!sample\+\_\+batch@{sample\+\_\+batch}}
+\index{sample\+\_\+batch@{sample\+\_\+batch}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{sample\+\_\+batch(self, batch\+\_\+size)}{sample_batch(self, batch_size)}}]{\setlength{\rightskip}{0pt plus 5cm}def replaybuffer.\+Replay\+Buffer.\+sample\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{batch\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classreplaybuffer_1_1_replay_buffer_aea98cc353ae15cd58f285b49f88e1dc7}{}\label{classreplaybuffer_1_1_replay_buffer_aea98cc353ae15cd58f285b49f88e1dc7}
+\begin{DoxyVerb}batch_size specifies the number of experiences to add 
+to the batch. If the replay buffer has less than batch_size
+elements, simply return all of the elements within the buffer.
+Generally, you'll want to wait until the buffer has at least 
+batch_size elements before beginning to sample from it.
+\end{DoxyVerb}
+ 
+
+Definēts līnijā 25 failā replaybuffer.\+py.
+
+
+\begin{DoxyCode}
+25     \textcolor{keyword}{def }\hyperlink{classreplaybuffer_1_1_replay_buffer_aea98cc353ae15cd58f285b49f88e1dc7}{sample\_batch}(self, batch\_size):
+26         \textcolor{stringliteral}{'''     }
+27 \textcolor{stringliteral}{        batch\_size specifies the number of experiences to add }
+28 \textcolor{stringliteral}{        to the batch. If the replay buffer has less than batch\_size}
+29 \textcolor{stringliteral}{        elements, simply return all of the elements within the buffer.}
+30 \textcolor{stringliteral}{        Generally, you'll want to wait until the buffer has at least }
+31 \textcolor{stringliteral}{        batch\_size elements before beginning to sample from it.}
+32 \textcolor{stringliteral}{        '''}
+33         batch = []
+34 
+35         \textcolor{keywordflow}{if} self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count} < batch\_size:
+36             batch = random.sample(self.\hyperlink{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}{buffer}, self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count})
+37         \textcolor{keywordflow}{else}:
+38             batch = random.sample(self.\hyperlink{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}{buffer}, batch\_size)
+39 
+40         s\_batch = np.array([\_[0] \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} batch])
+41         a\_batch = np.array([\_[1] \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} batch])
+42         r\_batch = np.array([\_[2] \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} batch])
+43         \textcolor{comment}{# t\_batch = np.array([\_[3] for \_ in batch])}
+44         s2\_batch = np.array([\_[3] \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} batch])
+45 
+46         \textcolor{comment}{# return s\_batch, a\_batch, r\_batch, t\_batch, s2\_batch}
+47         \textcolor{keywordflow}{return} s\_batch, a\_batch, r\_batch, s2\_batch
+48 
+\end{DoxyCode}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!size@{size}}
+\index{size@{size}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{size(self)}{size(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def replaybuffer.\+Replay\+Buffer.\+size (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classreplaybuffer_1_1_replay_buffer_a88315be96866304cdd1d3ac57e7ffebb}{}\label{classreplaybuffer_1_1_replay_buffer_a88315be96866304cdd1d3ac57e7ffebb}
+
+
+Definēts līnijā 22 failā replaybuffer.\+py.
+
+
+\begin{DoxyCode}
+22     \textcolor{keyword}{def }\hyperlink{classreplaybuffer_1_1_replay_buffer_a88315be96866304cdd1d3ac57e7ffebb}{size}(self):
+23         \textcolor{keywordflow}{return} self.\hyperlink{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{count}
+24 
+\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!buffer@{buffer}}
+\index{buffer@{buffer}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{buffer}{buffer}}]{\setlength{\rightskip}{0pt plus 5cm}replaybuffer.\+Replay\+Buffer.\+buffer}\hypertarget{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}{}\label{classreplaybuffer_1_1_replay_buffer_ae1fc312917fad747d402f0f103e20061}
+
+
+Definēts līnijā 10 failā replaybuffer.\+py.
+
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!buffer\+\_\+size@{buffer\+\_\+size}}
+\index{buffer\+\_\+size@{buffer\+\_\+size}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{buffer\+\_\+size}{buffer_size}}]{\setlength{\rightskip}{0pt plus 5cm}replaybuffer.\+Replay\+Buffer.\+buffer\+\_\+size}\hypertarget{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}{}\label{classreplaybuffer_1_1_replay_buffer_a86681e04166a4ee274542f57ddd1a12b}
+
+
+Definēts līnijā 8 failā replaybuffer.\+py.
+
+\index{replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}!count@{count}}
+\index{count@{count}!replaybuffer\+::\+Replay\+Buffer@{replaybuffer\+::\+Replay\+Buffer}}
+\subsubsection[{\texorpdfstring{count}{count}}]{\setlength{\rightskip}{0pt plus 5cm}replaybuffer.\+Replay\+Buffer.\+count}\hypertarget{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}{}\label{classreplaybuffer_1_1_replay_buffer_a9a4f50b29294de06ab6f42b0403b7e1e}
+
+
+Definēts līnijā 9 failā replaybuffer.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{replaybuffer_8py}{replaybuffer.\+py}\end{DoxyCompactItemize}

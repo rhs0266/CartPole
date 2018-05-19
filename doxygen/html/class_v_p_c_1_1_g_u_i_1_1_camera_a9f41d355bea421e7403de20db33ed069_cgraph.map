@@ -1,0 +1,6 @@
+<map id="VPC::GUI::Camera::Rotate" name="VPC::GUI::Camera::Rotate">
+<area shape="rect" id="node2" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#acf91e9c32fceb9143c7dd41d45ccafca" title="VPC::GUI::Camera::GetTrackball\lPoint" alt="" coords="721,93,940,134"/>
+<area shape="rect" id="node3" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#af5f9325fafe1d0015c785d077f5c5319" title="VPC::GUI::Camera::UnProject" alt="" coords="988,42,1191,68"/>
+<area shape="rect" id="node4" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#a3bca13fbbe8272562b7261037e991860" title="VPC::GUI::Camera::Rotateq" alt="" coords="483,92,673,119"/>
+<area shape="rect" id="node5" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#ae2bdc4748463c831a9bc2170d0b420b1" title="VPC::GUI::Camera::Translate" alt="" coords="236,42,435,68"/>
+</map>

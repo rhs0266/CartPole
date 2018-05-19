@@ -22,6 +22,6 @@ np.random.seed(2)
 
 if __name__ == "__main__":
 	ddpg = DDPG()
-	for tt in range(10):
-		ddpg.training(1000)
-		ddpg.eval()
+	#for tt in range(10):
+	ddpg.training(20)
+	#	ddpg.eval()

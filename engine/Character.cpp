@@ -85,16 +85,16 @@ Initialize()
 		"FootR",
 		mSkeleton,
 		mSkeleton->getBodyNode("KneeR"),
-		Eigen::Vector3d(0.0,0.06,0.2),
+		Eigen::Vector3d(0.0,0.095,0.2),
 		Eigen::Vector3d(-0.0,0.1,0),
 		Eigen::Vector3d(-0.0,0.05,-0.03),
 		1);
 
-	DartHelper::MakeBallJointBody(
+	DartHelper::MakeRevoluteJointBody(
 		"FootL",
 		mSkeleton,
 		mSkeleton->getBodyNode("KneeL"),
-		Eigen::Vector3d(0.0,0.06,0.2),
+		Eigen::Vector3d(0.0,0.095,0.2),
 		Eigen::Vector3d(0.0,0.1,0),
 		Eigen::Vector3d(0.0,0.05,-0.03),
 		1);

@@ -1,0 +1,567 @@
+\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera}{}\section{V\+PC\+:\+:G\+UI\+:\+:Camera klases apraksts}
+\label{class_v_p_c_1_1_g_u_i_1_1_camera}\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:G\+UI\+:\+:Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_v_p_c_1_1_g_u_i_1_1_camera__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_ae699f409e3205018175f7bd8b3eab657}{Camera} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a5e28472053c4188219683939cad01f1f}{Set\+Camera} (const Eigen\+::\+Vector3d \&\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{look\+At}, const Eigen\+::\+Vector3d \&\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}, const Eigen\+::\+Vector3d \&\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up})
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a30bd1c97b4736674333192813ca9a8e1}{Apply} ()
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a04f129748aac202d1d3d9ea5f55af125}{Pan} (int x, int y, int prev\+\_\+x, int prev\+\_\+y)
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_abdde0bfa7ddf8fbd1e7f04f8865797cd}{Zoom} (int x, int y, int prev\+\_\+x, int prev\+\_\+y)
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a9f41d355bea421e7403de20db33ed069}{Rotate} (int x, int y, int prev\+\_\+x, int prev\+\_\+y)
+\item 
+void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_ae2bdc4748463c831a9bc2170d0b420b1}{Translate} (int x, int y, int prev\+\_\+x, int prev\+\_\+y)
+\end{DoxyCompactItemize}
+\subsection*{Privātās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860}{Rotateq} (const Eigen\+::\+Vector3d \&target, const Eigen\+::\+Vector3d \&rotate\+Vector, double angle)
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca}{Get\+Trackball\+Point} (int mouseX, int mouseY, int w, int h)
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319}{Un\+Project} (const Eigen\+::\+Vector3d \&vec)
+\end{DoxyCompactItemize}
+\subsection*{Privātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{look\+At}
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}
+\item 
+Eigen\+::\+Vector3d \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}
+\item 
+double \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}{fovy}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 8 failā Camera.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Camera()}{Camera()}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_ae699f409e3205018175f7bd8b3eab657}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_ae699f409e3205018175f7bd8b3eab657}
+
+
+Definēts līnijā 6 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+8     :\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}{fovy}(60.0),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt}(Eigen::Vector3d(0,0.5,0)),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}(Eigen::Vector3d(3.0,0.5,0.0)),
+      \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}(Eigen::Vector3d(0,1,0))
+9 \{
+10 
+11 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_ae699f409e3205018175f7bd8b3eab657_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Apply@{Apply}}
+\index{Apply@{Apply}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Apply()}{Apply()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Apply (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a30bd1c97b4736674333192813ca9a8e1}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a30bd1c97b4736674333192813ca9a8e1}
+
+
+Definēts līnijā 21 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23     GLint w = glutGet(GLUT\_WINDOW\_WIDTH);
+24     GLint h = glutGet(GLUT\_WINDOW\_HEIGHT);
+25     glMatrixMode(GL\_PROJECTION);
+26     glLoadIdentity();
+27     gluPerspective(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}{fovy}, (GLfloat)w / (GLfloat)h, 0.01, 1000);
+28     glMatrixMode(GL\_MODELVIEW);
+29     glLoadIdentity();
+30     gluLookAt(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}.x(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}.y(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}.z(),
+31         \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt}.x(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt}.y(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt}.z(),
+32         \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}.x(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}.y(), \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}.z());
+33 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a30bd1c97b4736674333192813ca9a8e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a30bd1c97b4736674333192813ca9a8e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Get\+Trackball\+Point@{Get\+Trackball\+Point}}
+\index{Get\+Trackball\+Point@{Get\+Trackball\+Point}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Get\+Trackball\+Point(int mouse\+X, int mouse\+Y, int w, int h)}{GetTrackballPoint(int mouseX, int mouseY, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Get\+Trackball\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{mouseX, }
+\item[{int}]{mouseY, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca}
+
+
+Definēts līnijā 98 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+99 \{
+100     \textcolor{keywordtype}{double} rad = sqrt((\textcolor{keywordtype}{double})(w*w+h*h)) / 2.0;
+101     \textcolor{keywordtype}{double} dx = (double)(mouseX)-(double)w / 2.0;
+102     \textcolor{keywordtype}{double} dy = (double)(mouseY)-(double)h / 2.0;
+103     \textcolor{keywordtype}{double} dx2pdy2 = dx*dx + dy*dy;
+104 
+105     \textcolor{keywordflow}{if} (rad*rad - dx2pdy2 <= 0)
+106         \textcolor{keywordflow}{return} Eigen::Vector3d(dx, dy, 0);
+107     \textcolor{keywordflow}{else}
+108         \textcolor{keywordflow}{return} Eigen::Vector3d(dx, dy, sqrt(rad*rad - dx*dx - dy*dy));
+109 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Pan@{Pan}}
+\index{Pan@{Pan}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Pan(int x, int y, int prev\+\_\+x, int prev\+\_\+y)}{Pan(int x, int y, int prev_x, int prev_y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Pan (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{prev\+\_\+x, }
+\item[{int}]{prev\+\_\+y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a04f129748aac202d1d3d9ea5f55af125}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a04f129748aac202d1d3d9ea5f55af125}
+
+
+Definēts līnijā 37 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordtype}{double} delta = (double)prev\_y - (\textcolor{keywordtype}{double})y;
+40     delta = 1 - delta / 200.0;
+41     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye} = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} - (\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} - \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye})*delta;
+42 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a04f129748aac202d1d3d9ea5f55af125_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a04f129748aac202d1d3d9ea5f55af125_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Rotate(int x, int y, int prev\+\_\+x, int prev\+\_\+y)}{Rotate(int x, int y, int prev_x, int prev_y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Rotate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{prev\+\_\+x, }
+\item[{int}]{prev\+\_\+y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a9f41d355bea421e7403de20db33ed069}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a9f41d355bea421e7403de20db33ed069}
+
+
+Definēts līnijā 52 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+53 \{
+54     GLint w = glutGet(GLUT\_WINDOW\_WIDTH);
+55     GLint h = glutGet(GLUT\_WINDOW\_HEIGHT);
+56 
+57     Eigen::Vector3d prevPoint = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca}{GetTrackballPoint}(prev\_x,prev\_y,w,h);
+58     Eigen::Vector3d curPoint = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_acf91e9c32fceb9143c7dd41d45ccafca}{GetTrackballPoint}(x,y,w,h);
+59     Eigen::Vector3d rotVec = curPoint.cross(prevPoint);
+60 
+61     rotVec = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319}{UnProject}(rotVec);
+62     \textcolor{keywordtype}{double} cosT = curPoint.dot(prevPoint) / (curPoint.norm()*prevPoint.norm());
+63     \textcolor{keywordtype}{double} sinT = (curPoint.cross(prevPoint)).norm() / (curPoint.norm()*prevPoint.norm());
+64 
+65     \textcolor{keywordtype}{double} angle = -atan2(sinT, cosT);
+66 
+67     Eigen::Vector3d n = this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} - this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye};
+68     n = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860}{Rotateq}(n, rotVec, angle);
+69     this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up} = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860}{Rotateq}(this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}, rotVec, angle);
+70     this->eye = this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} - n;
+71 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a9f41d355bea421e7403de20db33ed069_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a9f41d355bea421e7403de20db33ed069_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Rotateq@{Rotateq}}
+\index{Rotateq@{Rotateq}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Rotateq(const Eigen\+::\+Vector3d \&target, const Eigen\+::\+Vector3d \&rotate\+Vector, double angle)}{Rotateq(const Eigen::Vector3d &target, const Eigen::Vector3d &rotateVector, double angle)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Rotateq (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector3d \&}]{target, }
+\item[{const Eigen\+::\+Vector3d \&}]{rotate\+Vector, }
+\item[{double}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860}
+
+
+Definēts līnijā 83 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+84 \{
+85     Eigen::Vector3d rv = rotateVector.normalized();
+86 
+87     Eigen::Quaternion<double> rot(cos(angle / 2.0), sin(angle / 2.0)*rv.x(), sin(angle / 2.0)*rv.y(), sin(
+      angle / 2.0)*rv.z());
+88     rot.normalize();
+89     Eigen::Quaternion<double> tar(0, target.x(), target.y(), target.z());
+90 
+91 
+92     tar = rot.inverse()*tar*rot;
+93 
+94     \textcolor{keywordflow}{return} Eigen::Vector3d(tar.x(), tar.y(), tar.z());
+95 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a3bca13fbbe8272562b7261037e991860_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Set\+Camera@{Set\+Camera}}
+\index{Set\+Camera@{Set\+Camera}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Set\+Camera(const Eigen\+::\+Vector3d \&look\+At, const Eigen\+::\+Vector3d \&eye, const Eigen\+::\+Vector3d \&up)}{SetCamera(const Eigen::Vector3d &lookAt, const Eigen::Vector3d &eye, const Eigen::Vector3d &up)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Set\+Camera (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector3d \&}]{look\+At, }
+\item[{const Eigen\+::\+Vector3d \&}]{eye, }
+\item[{const Eigen\+::\+Vector3d \&}]{up}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a5e28472053c4188219683939cad01f1f}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a5e28472053c4188219683939cad01f1f}
+
+
+Definēts līnijā 15 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+16 \{
+17     this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt}, this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye} = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye}, this->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up} = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up};
+18 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a5e28472053c4188219683939cad01f1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_a5e28472053c4188219683939cad01f1f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Translate@{Translate}}
+\index{Translate@{Translate}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Translate(int x, int y, int prev\+\_\+x, int prev\+\_\+y)}{Translate(int x, int y, int prev_x, int prev_y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Translate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{prev\+\_\+x, }
+\item[{int}]{prev\+\_\+y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_ae2bdc4748463c831a9bc2170d0b420b1}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_ae2bdc4748463c831a9bc2170d0b420b1}
+
+
+Definēts līnijā 74 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     Eigen::Vector3d delta((\textcolor{keywordtype}{double})x - (\textcolor{keywordtype}{double})prev\_x, (\textcolor{keywordtype}{double})y - (\textcolor{keywordtype}{double})prev\_y, 0);
+77     delta = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319}{UnProject}(delta) / 200.0;
+78     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} += delta; \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye} += delta;
+79 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_ae2bdc4748463c831a9bc2170d0b420b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_ae2bdc4748463c831a9bc2170d0b420b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Un\+Project@{Un\+Project}}
+\index{Un\+Project@{Un\+Project}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Un\+Project(const Eigen\+::\+Vector3d \&vec)}{UnProject(const Eigen::Vector3d &vec)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Un\+Project (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Vector3d \&}]{vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319}
+
+
+Definēts līnijā 112 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114     Eigen::Vector3d n = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{lookAt} - \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{eye};
+115     n.normalize();
+116     
+117     Eigen::Vector3d v = \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{up}.cross(n);
+118     v.normalize();
+119 
+120     Eigen::Vector3d u = n.cross(v);
+121     u.normalize();
+122 
+123     \textcolor{keywordflow}{return} vec.z()*n + vec.x()*v + vec.y()*u;
+124 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_af5f9325fafe1d0015c785d077f5c5319_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{Zoom(int x, int y, int prev\+\_\+x, int prev\+\_\+y)}{Zoom(int x, int y, int prev_x, int prev_y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::\+Zoom (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{prev\+\_\+x, }
+\item[{int}]{prev\+\_\+y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_abdde0bfa7ddf8fbd1e7f04f8865797cd}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_abdde0bfa7ddf8fbd1e7f04f8865797cd}
+
+
+Definēts līnijā 45 failā Camera.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{keywordtype}{double} delta = (double)prev\_y - (\textcolor{keywordtype}{double})y;
+48     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}{fovy} += delta/20.0;
+49 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_abdde0bfa7ddf8fbd1e7f04f8865797cd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_camera_abdde0bfa7ddf8fbd1e7f04f8865797cd_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!eye@{eye}}
+\index{eye@{eye}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{eye}{eye}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::eye\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_aa8d4d1fb2e40a19c1a18bcf04728e64a}
+
+
+Definēts līnijā 23 failā Camera.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!fovy@{fovy}}
+\index{fovy@{fovy}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{fovy}{fovy}}]{\setlength{\rightskip}{0pt plus 5cm}double V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::fovy\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a34f22355b6221876ea44fbfd866471b1}
+
+
+Definēts līnijā 25 failā Camera.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!look\+At@{look\+At}}
+\index{look\+At@{look\+At}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{look\+At}{lookAt}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::look\+At\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a41fa78ce129c9f56edc54f0cf7c8d60a}
+
+
+Definēts līnijā 22 failā Camera.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}!up@{up}}
+\index{up@{up}!V\+P\+C\+::\+G\+U\+I\+::\+Camera@{V\+P\+C\+::\+G\+U\+I\+::\+Camera}}
+\subsubsection[{\texorpdfstring{up}{up}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector3d V\+P\+C\+::\+G\+U\+I\+::\+Camera\+::up\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}{}\label{class_v_p_c_1_1_g_u_i_1_1_camera_a92bf7bde4d049ff9b23a304aa562e698}
+
+
+Definēts līnijā 24 failā Camera.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+render/\hyperlink{_camera_8h}{Camera.\+h}\item 
+render/\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

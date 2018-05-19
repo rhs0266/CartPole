@@ -1,0 +1,12 @@
+/home/ryuhoseok/다운로드/clion-2018.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/ryuhoseok/CartPole
+-- Found DART: /usr/local/include  found components:  optimizer-ipopt dart 
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   filesystem
+--   regex
+--   python
+--   system
+-- Found DART: /usr/local/include  found components:  gui optimizer-ipopt dart 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ryuhoseok/CartPole/cmake-build-release

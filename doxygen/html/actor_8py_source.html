@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CartPole: py_code/actor.py pirmkoda fails</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CartPole
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Ģenerēts ar Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Meklēt');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sākumlapa</span></a></li>
+      <li><a href="pages.html"><span>Saistītās&#160;lapas</span></a></li>
+      <li><a href="namespaces.html"><span>Nosaukumvietas</span></a></li>
+      <li><a href="annotated.html"><span>Klases</span></a></li>
+      <li class="current"><a href="files.html"><span>Faili</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Meklēt" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Failu&#160;saraksts</span></a></li>
+      <li><a href="globals.html"><span>Faila&#160;elementi</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('actor_8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">actor.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="actor_8py.html">Ietu uz šī faila dokumentāciju.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceactor.html">    1</a></span>&#160;<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="classactor_1_1_actor_network.html">ActorNetwork</a>:</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a4fc65628c69ee1807e95af77b6794046">    5</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classactor_1_1_actor_network.html#a4fc65628c69ee1807e95af77b6794046">__init__</a>(self,sess,options,name):</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="comment"># session</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="comment"># state_dim</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="comment"># action_dim</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="comment"># learning_rate</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="comment"># name</span></div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#ae8daea79f8d1f754c3d44c76036da21a">   11</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#ae8daea79f8d1f754c3d44c76036da21a">sess</a> = sess</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a5a97fa085ad81efe114122af1cff8d26">   12</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#a5a97fa085ad81efe114122af1cff8d26">state_dim</a> = options.STATE_DIM</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#ada197a9b6d5e1b5ebcdcc360d11e4f1b">   13</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#ada197a9b6d5e1b5ebcdcc360d11e4f1b">action_dim</a> = options.ACTION_DIM</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#adecdbb6d5d6d12f4c9d36b22bd9ad6c4">   14</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#adecdbb6d5d6d12f4c9d36b22bd9ad6c4">name</a> = name</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#af7cdb447ae7a2a605a9a22336297d34f">   15</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#af7cdb447ae7a2a605a9a22336297d34f">options</a> = options</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#acf991872a87f6ba32f828e6611262a1b">build_network</a>()</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        init_vars = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        sess.run(init_vars)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment"># Add options to graph</span></div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#acf991872a87f6ba32f828e6611262a1b">   23</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classactor_1_1_actor_network.html#acf991872a87f6ba32f828e6611262a1b">build_network</a>(self):</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">   24</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">state</a> = tf.placeholder(tf.float32, [<span class="keywordtype">None</span>, self.<a class="code" href="classactor_1_1_actor_network.html#a5a97fa085ad81efe114122af1cff8d26">state_dim</a>]) <span class="comment"># Placeholder</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        with tf.variable_scope(self.<a class="code" href="classactor_1_1_actor_network.html#adecdbb6d5d6d12f4c9d36b22bd9ad6c4">name</a>):</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            hidden_layer = tf.layers.dense(self.<a class="code" href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">state</a>, 64, activation = tf.nn.elu, kernel_initializer = tf.contrib.layers.xavier_initializer()) <span class="comment"># use elu for hidden layer</span></div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a8cbb128a36aa9bc9279880c34d503af3">   27</a></span>&#160;            self.<a class="code" href="classactor_1_1_actor_network.html#a8cbb128a36aa9bc9279880c34d503af3">action_predict</a> = tf.layers.dense(hidden_layer, self.<a class="code" href="classactor_1_1_actor_network.html#ada197a9b6d5e1b5ebcdcc360d11e4f1b">action_dim</a>, activation = tf.nn.tanh, kernel_initializer = tf.contrib.layers.xavier_initializer()) <span class="comment"># use tanh to ensure output range becomes [-1,1]</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a1420ab0da00328629de6fe8087c4c4e7">   29</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#a1420ab0da00328629de6fe8087c4c4e7">action_grad</a> = tf.placeholder(tf.float32, [<span class="keywordtype">None</span>, self.<a class="code" href="classactor_1_1_actor_network.html#ada197a9b6d5e1b5ebcdcc360d11e4f1b">action_dim</a>]) <span class="comment"># Placeholder</span></div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#ae0bac8c1fdcbdf33f9651444e66f9e09">   30</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#ae0bac8c1fdcbdf33f9651444e66f9e09">network_params</a> = tf.trainable_variables(scope = self.<a class="code" href="classactor_1_1_actor_network.html#adecdbb6d5d6d12f4c9d36b22bd9ad6c4">name</a>)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment"># find d(xs) s.t. d(ys)=grad_ys</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment"># since grad_ys is given, result is gradient of each network params for satisfying given grad_ys</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment"># in other word, net params should be changed as net_params_grad to change ys as grad_ys</span></div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#ae6932b19d7a23205226ab1bc454a5693">   35</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#ae6932b19d7a23205226ab1bc454a5693">network_params_grad</a> = tf.gradients(ys=self.<a class="code" href="classactor_1_1_actor_network.html#a8cbb128a36aa9bc9279880c34d503af3">action_predict</a>, xs=self.<a class="code" href="classactor_1_1_actor_network.html#ae0bac8c1fdcbdf33f9651444e66f9e09">network_params</a>, grad_ys=-self.<a class="code" href="classactor_1_1_actor_network.html#a1420ab0da00328629de6fe8087c4c4e7">action_grad</a>)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment"># train</span></div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a10e3ddfa0963a82bec05f3a0fa59d023">   38</a></span>&#160;        self.<a class="code" href="classactor_1_1_actor_network.html#a10e3ddfa0963a82bec05f3a0fa59d023">train</a> = tf.train.AdamOptimizer(self.options.LR_A).apply_gradients(zip(self.<a class="code" href="classactor_1_1_actor_network.html#ae6932b19d7a23205226ab1bc454a5693">network_params_grad</a>, self.<a class="code" href="classactor_1_1_actor_network.html#ae0bac8c1fdcbdf33f9651444e66f9e09">network_params</a>))</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#add9742704ce6dbd77bd645e9ee9f4ed5">   40</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classactor_1_1_actor_network.html#add9742704ce6dbd77bd645e9ee9f4ed5">predict</a>(self, state):</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        s = np.reshape(state, [-1, self.<a class="code" href="classactor_1_1_actor_network.html#a5a97fa085ad81efe114122af1cff8d26">state_dim</a>]) <span class="comment"># ensure right shape</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> self.sess.run(self.<a class="code" href="classactor_1_1_actor_network.html#a8cbb128a36aa9bc9279880c34d503af3">action_predict</a>,</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                             feed_dict={</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                 self.<a class="code" href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">state</a> : s</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                             })</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classactor_1_1_actor_network.html#a730e1fa368e30085d1f320b99afa5571">   48</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classactor_1_1_actor_network.html#a730e1fa368e30085d1f320b99afa5571">update</a>(self, states, action_grads):</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        self.sess.run(self.<a class="code" href="classactor_1_1_actor_network.html#a10e3ddfa0963a82bec05f3a0fa59d023">train</a>,</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                      feed_dict={</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                          self.<a class="code" href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">state</a>: states,</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          self.<a class="code" href="classactor_1_1_actor_network.html#a1420ab0da00328629de6fe8087c4c4e7">action_grad</a>: action_grads</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                      })</div><div class="ttc" id="classactor_1_1_actor_network_html_a4fc65628c69ee1807e95af77b6794046"><div class="ttname"><a href="classactor_1_1_actor_network.html#a4fc65628c69ee1807e95af77b6794046">actor.ActorNetwork.__init__</a></div><div class="ttdeci">def __init__(self, sess, options, name)</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00005">actor.py:5</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_a5a97fa085ad81efe114122af1cff8d26"><div class="ttname"><a href="classactor_1_1_actor_network.html#a5a97fa085ad81efe114122af1cff8d26">actor.ActorNetwork.state_dim</a></div><div class="ttdeci">state_dim</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00012">actor.py:12</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_a1420ab0da00328629de6fe8087c4c4e7"><div class="ttname"><a href="classactor_1_1_actor_network.html#a1420ab0da00328629de6fe8087c4c4e7">actor.ActorNetwork.action_grad</a></div><div class="ttdeci">action_grad</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00029">actor.py:29</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_af7cdb447ae7a2a605a9a22336297d34f"><div class="ttname"><a href="classactor_1_1_actor_network.html#af7cdb447ae7a2a605a9a22336297d34f">actor.ActorNetwork.options</a></div><div class="ttdeci">options</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00015">actor.py:15</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_ae8daea79f8d1f754c3d44c76036da21a"><div class="ttname"><a href="classactor_1_1_actor_network.html#ae8daea79f8d1f754c3d44c76036da21a">actor.ActorNetwork.sess</a></div><div class="ttdeci">sess</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00011">actor.py:11</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_adecdbb6d5d6d12f4c9d36b22bd9ad6c4"><div class="ttname"><a href="classactor_1_1_actor_network.html#adecdbb6d5d6d12f4c9d36b22bd9ad6c4">actor.ActorNetwork.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00014">actor.py:14</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_a730e1fa368e30085d1f320b99afa5571"><div class="ttname"><a href="classactor_1_1_actor_network.html#a730e1fa368e30085d1f320b99afa5571">actor.ActorNetwork.update</a></div><div class="ttdeci">def update(self, states, action_grads)</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00048">actor.py:48</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_ada197a9b6d5e1b5ebcdcc360d11e4f1b"><div class="ttname"><a href="classactor_1_1_actor_network.html#ada197a9b6d5e1b5ebcdcc360d11e4f1b">actor.ActorNetwork.action_dim</a></div><div class="ttdeci">action_dim</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00013">actor.py:13</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_a10e3ddfa0963a82bec05f3a0fa59d023"><div class="ttname"><a href="classactor_1_1_actor_network.html#a10e3ddfa0963a82bec05f3a0fa59d023">actor.ActorNetwork.train</a></div><div class="ttdeci">train</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00038">actor.py:38</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_ae0bac8c1fdcbdf33f9651444e66f9e09"><div class="ttname"><a href="classactor_1_1_actor_network.html#ae0bac8c1fdcbdf33f9651444e66f9e09">actor.ActorNetwork.network_params</a></div><div class="ttdeci">network_params</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00030">actor.py:30</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_a8cbb128a36aa9bc9279880c34d503af3"><div class="ttname"><a href="classactor_1_1_actor_network.html#a8cbb128a36aa9bc9279880c34d503af3">actor.ActorNetwork.action_predict</a></div><div class="ttdeci">action_predict</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00027">actor.py:27</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_ab3bae8f52b46f6b7ee7c9f4f0cd21c45"><div class="ttname"><a href="classactor_1_1_actor_network.html#ab3bae8f52b46f6b7ee7c9f4f0cd21c45">actor.ActorNetwork.state</a></div><div class="ttdeci">state</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00024">actor.py:24</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_add9742704ce6dbd77bd645e9ee9f4ed5"><div class="ttname"><a href="classactor_1_1_actor_network.html#add9742704ce6dbd77bd645e9ee9f4ed5">actor.ActorNetwork.predict</a></div><div class="ttdeci">def predict(self, state)</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00040">actor.py:40</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html"><div class="ttname"><a href="classactor_1_1_actor_network.html">actor.ActorNetwork</a></div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00004">actor.py:4</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_acf991872a87f6ba32f828e6611262a1b"><div class="ttname"><a href="classactor_1_1_actor_network.html#acf991872a87f6ba32f828e6611262a1b">actor.ActorNetwork.build_network</a></div><div class="ttdeci">def build_network(self)</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00023">actor.py:23</a></div></div>
+<div class="ttc" id="classactor_1_1_actor_network_html_ae6932b19d7a23205226ab1bc454a5693"><div class="ttname"><a href="classactor_1_1_actor_network.html#ae6932b19d7a23205226ab1bc454a5693">actor.ActorNetwork.network_params_grad</a></div><div class="ttdeci">network_params_grad</div><div class="ttdef"><b>Definition:</b> <a href="actor_8py_source.html#l00035">actor.py:35</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_40d4f3d0f21502ab8145b7353e888c2d.html">py_code</a></li><li class="navelem"><a class="el" href="actor_8py.html">actor.py</a></li>
+    <li class="footer">Ģenerēts ar
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

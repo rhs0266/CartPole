@@ -1,0 +1,60 @@
+\hypertarget{render_2main_8cpp}{}\section{render/main.cpp faila apraksts}
+\label{render_2main_8cpp}\index{render/main.\+cpp@{render/main.\+cpp}}
+{\ttfamily \#include \char`\"{}Sim\+Window.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G\+L/glut.\+h\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_2main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{render_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Funkcijas dokumentācija}
+\index{render/main.\+cpp@{render/main.\+cpp}!main@{main}}
+\index{main@{main}!render/main.\+cpp@{render/main.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{render_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{render_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definēts līnijā 6 failā main.\+cpp.
+
+
+\begin{DoxyCode}
+7 \{
+8     std::string record\_path;
+9     \textcolor{keywordflow}{if}(argc==2)
+10         record\_path = argv[1];
+11     \textcolor{keywordflow}{else}
+12         record\_path = \textcolor{stringliteral}{"../output/"};
+13 
+14     \textcolor{keywordflow}{if}(record\_path.back()!=\textcolor{charliteral}{'/'})
+15         record\_path.append(\textcolor{stringliteral}{"/"});
+16     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window}{SimWindow} simwindow(record\_path);
+17     glutInit(&argc, argv);
+18     simwindow.InitWindow(960,960,\textcolor{stringliteral}{"Render"});
+19     glutMainLoop();
+20 \}\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+

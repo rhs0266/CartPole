@@ -1,0 +1,67 @@
+\hypertarget{ddpg__others_8py}{}\section{py\+\_\+code/ddpg\+\_\+others.py faila apraksts}
+\label{ddpg__others_8py}\index{py\+\_\+code/ddpg\+\_\+others.\+py@{py\+\_\+code/ddpg\+\_\+others.\+py}}
+\subsection*{Klases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classddpg__others_1_1_actor}{ddpg\+\_\+others.\+Actor}
+\item 
+class \hyperlink{classddpg__others_1_1_critic}{ddpg\+\_\+others.\+Critic}
+\end{DoxyCompactItemize}
+\subsection*{Nosaukumvietas}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceddpg__others}{ddpg\+\_\+others}
+\end{DoxyCompactItemize}
+\subsection*{Mainīgie}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceddpg__others_a8d8efc66aff50b88de22a9373e2d7602}{ddpg\+\_\+others.\+O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH} = False
+\item 
+int \hyperlink{namespaceddpg__others_afb464b6fe0768d57caf65334b4d8f87e}{ddpg\+\_\+others.\+M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE} = 10000
+\item 
+int \hyperlink{namespaceddpg__others_a0db47bb3ba4a2b08dfae7438342b3ef1}{ddpg\+\_\+others.\+M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS} = 200
+\item 
+int \hyperlink{namespaceddpg__others_abe31be53540bd026d448c7d8c7a10141}{ddpg\+\_\+others.\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = -\/100
+\item 
+bool \hyperlink{namespaceddpg__others_a2c384bab41511c29b415ab1bd8fe9726}{ddpg\+\_\+others.\+R\+E\+N\+D\+ER} = False
+\item 
+float \hyperlink{namespaceddpg__others_a38ab6c2b615e48356811e668c04931f5}{ddpg\+\_\+others.\+G\+A\+M\+MA} = 0.\+9
+\item 
+float \hyperlink{namespaceddpg__others_a414c179cc14428441e47d44afc4dd8f2}{ddpg\+\_\+others.\+L\+R\+\_\+A} = 0.\+001
+\item 
+float \hyperlink{namespaceddpg__others_af9a7b0578b28ea38c337e8db55f0bb7e}{ddpg\+\_\+others.\+L\+R\+\_\+C} = 0.\+01
+\item 
+\hyperlink{namespaceddpg__others_afd02a34b64d07267055995ecab1de1d6}{ddpg\+\_\+others.\+env} = gym.\+make(\textquotesingle{}Pendulum-\/v0\textquotesingle{})
+\item 
+\hyperlink{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}{ddpg\+\_\+others.\+N\+\_\+S} = env.\+observation\+\_\+space.\+shape\mbox{[}0\mbox{]}
+\item 
+\hyperlink{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}{ddpg\+\_\+others.\+A\+\_\+\+B\+O\+U\+ND} = env.\+action\+\_\+space.\+high
+\item 
+\hyperlink{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}{ddpg\+\_\+others.\+sess} = tf.\+Session()
+\item 
+\hyperlink{namespaceddpg__others_ac9344417e957a7971f46d25644f70741}{ddpg\+\_\+others.\+actor} = Actor(sess, n\+\_\+features=N\+\_\+S, lr=L\+R\+\_\+A, action\+\_\+bound=\mbox{[}-\/A\+\_\+\+B\+O\+U\+ND, A\+\_\+\+B\+O\+U\+ND\mbox{]})
+\item 
+\hyperlink{namespaceddpg__others_a02a9cd4813c0b89d52754744bb297310}{ddpg\+\_\+others.\+critic} = Critic(sess, n\+\_\+features=N\+\_\+S, lr=L\+R\+\_\+C)
+\item 
+\hyperlink{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}{ddpg\+\_\+others.\+s} = env.\+reset()
+\item 
+int \hyperlink{namespaceddpg__others_aee1bec6a64f3215b28552758ee87bfc6}{ddpg\+\_\+others.\+t} = 0
+\item 
+list \hyperlink{namespaceddpg__others_a8b02d06c3efd8c65bd22c59b0be4046a}{ddpg\+\_\+others.\+ep\+\_\+rs} = \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{namespaceddpg__others_a5074dd5702ee1c582994c8544c0ac4f1}{ddpg\+\_\+others.\+a} = actor.\+choose\+\_\+action(s)
+\item 
+\hyperlink{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}{ddpg\+\_\+others.\+s\+\_\+}
+\item 
+\hyperlink{namespaceddpg__others_a05079a0e5b9b284648a5e279d844fc34}{ddpg\+\_\+others.\+r}
+\item 
+\hyperlink{namespaceddpg__others_ae2aa87b119af7536ff9c20bd0bcba552}{ddpg\+\_\+others.\+done}
+\item 
+\hyperlink{namespaceddpg__others_a906ea017b3e79f8b9791285c30773671}{ddpg\+\_\+others.\+info}
+\item 
+\hyperlink{namespaceddpg__others_ab3de6bd8c4c05cda51f8fb396eb255d8}{ddpg\+\_\+others.\+td\+\_\+error} = critic.\+learn(s, r, s\+\_\+)
+\item 
+\hyperlink{namespaceddpg__others_ae0eea715ecb8dfc45dfea85e23ff27ad}{ddpg\+\_\+others.\+ep\+\_\+rs\+\_\+sum} = sum(ep\+\_\+rs)
+\item 
+\hyperlink{namespaceddpg__others_a98714db748bdf3f1566b42ed000f7365}{ddpg\+\_\+others.\+running\+\_\+reward} = ep\+\_\+rs\+\_\+sum
+\end{DoxyCompactItemize}

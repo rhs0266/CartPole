@@ -1,0 +1,822 @@
+\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window}{}\section{V\+PC\+:\+:G\+UI\+:\+:G\+L\+U\+T\+Window klases apraksts}
+\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window}\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+
+
+{\ttfamily \#include $<$G\+L\+U\+T\+Window.\+h$>$}
+
+
+
+Mantojamības diagramma klasei V\+PC\+:\+:G\+UI\+:\+:G\+L\+U\+T\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei V\+PC\+:\+:G\+UI\+:\+:G\+L\+U\+T\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a34872e6244c4762090285b502c594336}{G\+L\+U\+T\+Window} ()
+\item 
+\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a432925ff6224cffc0b63b496a493ab61}{$\sim$\+G\+L\+U\+T\+Window} ()
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a2e763564b7728a1b8faf65694f148d79}{Init\+Window} (int \+\_\+w, int \+\_\+h, const char $\ast$\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Statiskās publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window}{G\+L\+U\+T\+Window} $\ast$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current} ()
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33}{Display\+Event} ()
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b}{Keyboard\+Event} (unsigned char key, int x, int y)
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd}{Mouse\+Event} (int button, int state, int x, int y)
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6}{Motion\+Event} (int x, int y)
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3}{Reshape\+Event} (int w, int h)
+\item 
+static void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e}{Timer\+Event} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Statiskie publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window}{G\+L\+U\+T\+Window} $\ast$ $>$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_aad2948c3a88afb3bc03f9bc54a81f285}{m\+Windows}
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}{m\+Win\+I\+Ds}
+\end{DoxyCompactItemize}
+\subsection*{Aizsargātās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a216d92bb142c672c42a69e5fd9163746}{init\+Lights} ()
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a6335c4c1f6166156d0330e9af5f4fc31}{Display} ()=0
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad1251eb42edd623ecffaaf361ff83bc2}{Keyboard} (unsigned char key, int x, int y)=0
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a346eb9d90c940048473f7e69bf4feeda}{Mouse} (int button, int state, int x, int y)=0
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a366b6fed6cd4db1130a54aac12656ba0}{Motion} (int x, int y)=0
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a5b89e37453f4c46e36b5dd5c2a8257ab}{Reshape} (int w, int h)=0
+\item 
+virtual void \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8e43baa0b17285f1e2cb2135b298d716}{Timer} (int value)=0
+\end{DoxyCompactItemize}
+\subsection*{Aizsargātie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_camera}{Camera} $>$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a188317ab66f82a4c1752797c8f77cc30}{m\+Camera}
+\item 
+bool \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a48731b1b83ad67c05d1fc29460a39079}{m\+Is\+Drag}
+\item 
+int \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_abcb6dd2e6da3ff86b7d485fc439d6851}{m\+Mouse\+Type}
+\item 
+int \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_afb53d32a8f4b83476cd57f7b0bdc1b1e}{m\+PrevX}
+\item 
+int \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a11ba670d3ec0ac9ae16f276469dcbbe8}{m\+PrevY}
+\item 
+int \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1a0397ed6b305040c02660e4154d3282}{m\+Display\+Timeout}
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3fb2ef7f66b526626c242cf35a4af080}{m\+Screenshot\+Temp}
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a9a373bab4c85c9a39d5b188311509ea6}{m\+Screenshot\+Temp2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 10 failā G\+L\+U\+T\+Window.\+h.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!G\+L\+U\+T\+Window@{G\+L\+U\+T\+Window}}
+\index{G\+L\+U\+T\+Window@{G\+L\+U\+T\+Window}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{G\+L\+U\+T\+Window()}{GLUTWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+G\+L\+U\+T\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a34872e6244c4762090285b502c594336}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a34872e6244c4762090285b502c594336}
+
+
+Definēts līnijā 13 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+14     :\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a188317ab66f82a4c1752797c8f77cc30}{mCamera}(\textcolor{keyword}{new} Camera()),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a48731b1b83ad67c05d1fc29460a39079}{mIsDrag}(\textcolor{keyword}{false}),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_abcb6dd2e6da3ff86b7d485fc439d6851}{mMouseType}(0),
+      \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_afb53d32a8f4b83476cd57f7b0bdc1b1e}{mPrevX}(0),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a11ba670d3ec0ac9ae16f276469dcbbe8}{mPrevY}(0),\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1a0397ed6b305040c02660e4154d3282}{mDisplayTimeout}(1.0/30.0)
+15 \{
+16 
+17 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a34872e6244c4762090285b502c594336_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!````~G\+L\+U\+T\+Window@{$\sim$\+G\+L\+U\+T\+Window}}
+\index{````~G\+L\+U\+T\+Window@{$\sim$\+G\+L\+U\+T\+Window}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{$\sim$\+G\+L\+U\+T\+Window()}{~GLUTWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::$\sim$\+G\+L\+U\+T\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a432925ff6224cffc0b63b496a493ab61}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a432925ff6224cffc0b63b496a493ab61}
+
+
+Definēts līnijā 19 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{
+21 
+22 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a432925ff6224cffc0b63b496a493ab61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a432925ff6224cffc0b63b496a493ab61_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!current@{current}}
+\index{current@{current}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{current()}{current()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+L\+U\+T\+Window} $\ast$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}
+
+
+Definēts līnijā 44 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = glutGetWindow();
+47     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}{mWinIDs}.size(); i++)
+48     \{
+49         \textcolor{keywordflow}{if} (\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}{mWinIDs}.at(i) == id) \{
+50             \textcolor{keywordflow}{return} \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_aad2948c3a88afb3bc03f9bc54a81f285}{mWindows}.at(i);
+51         \}
+52     \}
+53     std::cout << \textcolor{stringliteral}{"An unknown error occurred!"} << std::endl;
+54     exit(0);
+55 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Display@{Display}}
+\index{Display@{Display}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Display()=0}{Display()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a6335c4c1f6166156d0330e9af5f4fc31}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a6335c4c1f6166156d0330e9af5f4fc31}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_a6863fa1bec1696c6984c2f1066428e21}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a6335c4c1f6166156d0330e9af5f4fc31_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Display\+Event@{Display\+Event}}
+\index{Display\+Event@{Display\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Display\+Event()}{DisplayEvent()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Display\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33}
+
+
+Definēts līnijā 58 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a6335c4c1f6166156d0330e9af5f4fc31}{Display}();
+61 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!init\+Lights@{init\+Lights}}
+\index{init\+Lights@{init\+Lights}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{init\+Lights()}{initLights()}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::init\+Lights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a216d92bb142c672c42a69e5fd9163746}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a216d92bb142c672c42a69e5fd9163746}
+
+
+Definēts līnijā 95 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+96 \{
+97     \textcolor{keyword}{static} \textcolor{keywordtype}{float} ambient[]             = \{0.2, 0.2, 0.2, 1.0\};
+98   \textcolor{keyword}{static} \textcolor{keywordtype}{float} diffuse[]             = \{0.6, 0.6, 0.6, 1.0\};
+99   \textcolor{keyword}{static} \textcolor{keywordtype}{float} front\_mat\_shininess[] = \{60.0\};
+100   \textcolor{keyword}{static} \textcolor{keywordtype}{float} front\_mat\_specular[]  = \{0.2, 0.2,  0.2,  1.0\};
+101   \textcolor{keyword}{static} \textcolor{keywordtype}{float} front\_mat\_diffuse[]   = \{0.5, 0.28, 0.38, 1.0\};
+102   \textcolor{keyword}{static} \textcolor{keywordtype}{float} lmodel\_ambient[]      = \{0.2, 0.2,  0.2,  1.0\};
+103   \textcolor{keyword}{static} \textcolor{keywordtype}{float} lmodel\_twoside[]      = \{GL\_FALSE\};
+104 
+105   GLfloat position[] = \{0.0, 1.0, 1.0, 0.0\};
+106   GLfloat position1[] = \{0.0, 1.0, -1.0, 0.0\};
+107 
+108   glEnable(GL\_LIGHT0);
+109   glLightfv(GL\_LIGHT0, GL\_AMBIENT,  ambient);
+110   glLightfv(GL\_LIGHT0, GL\_DIFFUSE,  diffuse);
+111   glLightfv(GL\_LIGHT0, GL\_POSITION, position);
+112 
+113   glLightModelfv(GL\_LIGHT\_MODEL\_AMBIENT,  lmodel\_ambient);
+114   glLightModelfv(GL\_LIGHT\_MODEL\_TWO\_SIDE, lmodel\_twoside);
+115 
+116   glEnable(GL\_LIGHT1);
+117   glLightfv(GL\_LIGHT1, GL\_DIFFUSE, diffuse);
+118   glLightfv(GL\_LIGHT1, GL\_POSITION, position1);
+119   glEnable(GL\_LIGHTING);
+120   glEnable(GL\_COLOR\_MATERIAL);
+121 
+122   glMaterialfv(GL\_FRONT\_AND\_BACK, GL\_SHININESS, front\_mat\_shininess);
+123   glMaterialfv(GL\_FRONT\_AND\_BACK, GL\_SPECULAR,  front\_mat\_specular);
+124   glMaterialfv(GL\_FRONT\_AND\_BACK, GL\_DIFFUSE,   front\_mat\_diffuse);
+125 
+126   glEnable(GL\_DEPTH\_TEST);
+127   glDepthFunc(GL\_LEQUAL);
+128   glDisable(GL\_CULL\_FACE);
+129   glEnable(GL\_NORMALIZE);
+130 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a216d92bb142c672c42a69e5fd9163746_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Init\+Window@{Init\+Window}}
+\index{Init\+Window@{Init\+Window}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Init\+Window(int \+\_\+w, int \+\_\+h, const char $\ast$\+\_\+name)}{InitWindow(int _w, int _h, const char *_name)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Init\+Window (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+w, }
+\item[{int}]{\+\_\+h, }
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a2e763564b7728a1b8faf65694f148d79}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a2e763564b7728a1b8faf65694f148d79}
+
+
+Definēts līnijā 26 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{
+28     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_aad2948c3a88afb3bc03f9bc54a81f285}{mWindows}.push\_back(\textcolor{keyword}{this});
+29     glutInitDisplayMode(GLUT\_DEPTH | GLUT\_DOUBLE | GLUT\_RGBA | GLUT\_MULTISAMPLE | GLUT\_ACCUM);
+30     glutInitWindowPosition(1050, 200);
+31     glutInitWindowSize(\_w, \_h);
+32     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}{mWinIDs}.push\_back(glutCreateWindow(\_name));
+33     glutDisplayFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8874ae9e61f82863cec3b3524c3b0d33}{DisplayEvent});
+34     glutReshapeFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3}{ReshapeEvent});
+35     glutKeyboardFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b}{KeyboardEvent});
+36     glutMouseFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd}{MouseEvent});
+37     glutMotionFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6}{MotionEvent});
+38     glutTimerFunc(\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1a0397ed6b305040c02660e4154d3282}{mDisplayTimeout}, \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e}{TimerEvent}, 0);
+39     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3fb2ef7f66b526626c242cf35a4af080}{mScreenshotTemp}.resize(4*\_w*\_h);
+40     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a9a373bab4c85c9a39d5b188311509ea6}{mScreenshotTemp2}.resize(4*\_w*\_h);
+41 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a2e763564b7728a1b8faf65694f148d79_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a2e763564b7728a1b8faf65694f148d79_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Keyboard@{Keyboard}}
+\index{Keyboard@{Keyboard}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Keyboard(unsigned char key, int x, int y)=0}{Keyboard(unsigned char key, int x, int y)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Keyboard (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad1251eb42edd623ecffaaf361ff83bc2}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad1251eb42edd623ecffaaf361ff83bc2}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_a6da00ed4fb5f11befaf1dba6485cfcfb}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad1251eb42edd623ecffaaf361ff83bc2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Keyboard\+Event@{Keyboard\+Event}}
+\index{Keyboard\+Event@{Keyboard\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Keyboard\+Event(unsigned char key, int x, int y)}{KeyboardEvent(unsigned char key, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Keyboard\+Event (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b}
+
+
+Definēts līnijā 64 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad1251eb42edd623ecffaaf361ff83bc2}{Keyboard}(key,x,y);
+67 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ad94b80f2d5d0d032aac9ee71b6fdcf9b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Motion@{Motion}}
+\index{Motion@{Motion}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Motion(int x, int y)=0}{Motion(int x, int y)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Motion (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a366b6fed6cd4db1130a54aac12656ba0}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a366b6fed6cd4db1130a54aac12656ba0}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_aba3a57913fd25280353abe94a64539fc}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a366b6fed6cd4db1130a54aac12656ba0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Motion\+Event@{Motion\+Event}}
+\index{Motion\+Event@{Motion\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Motion\+Event(int x, int y)}{MotionEvent(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Motion\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6}
+
+
+Definēts līnijā 76 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a366b6fed6cd4db1130a54aac12656ba0}{Motion}(x,y);
+79 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a962cbc03bcbb5a0541978ec3630f65a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Mouse(int button, int state, int x, int y)=0}{Mouse(int button, int state, int x, int y)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Mouse (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{state, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a346eb9d90c940048473f7e69bf4feeda}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a346eb9d90c940048473f7e69bf4feeda}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_a6decd7c869caee8f54c8c80d46b6d4e6}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a346eb9d90c940048473f7e69bf4feeda_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Mouse\+Event@{Mouse\+Event}}
+\index{Mouse\+Event@{Mouse\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Mouse\+Event(int button, int state, int x, int y)}{MouseEvent(int button, int state, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Mouse\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{state, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd}
+
+
+Definēts līnijā 70 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a346eb9d90c940048473f7e69bf4feeda}{Mouse}(button,state,x,y);
+73 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ae838963ea1a595625bddfa31dd9cbabd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Reshape(int w, int h)=0}{Reshape(int w, int h)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Reshape (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a5b89e37453f4c46e36b5dd5c2a8257ab}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a5b89e37453f4c46e36b5dd5c2a8257ab}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_a53692e6568f1568679f3f8a7793f1f15}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a5b89e37453f4c46e36b5dd5c2a8257ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Reshape\+Event@{Reshape\+Event}}
+\index{Reshape\+Event@{Reshape\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Reshape\+Event(int w, int h)}{ReshapeEvent(int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Reshape\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3}
+
+
+Definēts līnijā 82 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a5b89e37453f4c46e36b5dd5c2a8257ab}{Reshape}(w,h);
+85 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a584bc6119237804393bc403de78031a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Timer@{Timer}}
+\index{Timer@{Timer}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Timer(int value)=0}{Timer(int value)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Timer (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8e43baa0b17285f1e2cb2135b298d716}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8e43baa0b17285f1e2cb2135b298d716}
+
+
+Īstenots \hyperlink{class_v_p_c_1_1_g_u_i_1_1_sim_window_ab45783776b702b9e7fb6de00a57a88e7}{V\+P\+C\+::\+G\+U\+I\+::\+Sim\+Window}.
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8e43baa0b17285f1e2cb2135b298d716_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!Timer\+Event@{Timer\+Event}}
+\index{Timer\+Event@{Timer\+Event}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{Timer\+Event(int value)}{TimerEvent(int value)}}]{\setlength{\rightskip}{0pt plus 5cm}void V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::\+Timer\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e}
+
+
+Definēts līnijā 88 failā G\+L\+U\+T\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+89 \{
+90     \hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_ac04192559c661a6bc954609807df477d}{current}()->\hyperlink{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a8e43baa0b17285f1e2cb2135b298d716}{Timer}(value);
+91 \}
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3dd7ed12ee68dea02946415292139a0e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Camera@{m\+Camera}}
+\index{m\+Camera@{m\+Camera}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Camera}{mCamera}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Camera}$>$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Camera\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a188317ab66f82a4c1752797c8f77cc30}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a188317ab66f82a4c1752797c8f77cc30}
+
+
+Definēts līnijā 38 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Display\+Timeout@{m\+Display\+Timeout}}
+\index{m\+Display\+Timeout@{m\+Display\+Timeout}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Display\+Timeout}{mDisplayTimeout}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Display\+Timeout\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1a0397ed6b305040c02660e4154d3282}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1a0397ed6b305040c02660e4154d3282}
+
+
+Definēts līnijā 42 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Is\+Drag@{m\+Is\+Drag}}
+\index{m\+Is\+Drag@{m\+Is\+Drag}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Is\+Drag}{mIsDrag}}]{\setlength{\rightskip}{0pt plus 5cm}bool V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Is\+Drag\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a48731b1b83ad67c05d1fc29460a39079}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a48731b1b83ad67c05d1fc29460a39079}
+
+
+Definēts līnijā 39 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Mouse\+Type@{m\+Mouse\+Type}}
+\index{m\+Mouse\+Type@{m\+Mouse\+Type}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Mouse\+Type}{mMouseType}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Mouse\+Type\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_abcb6dd2e6da3ff86b7d485fc439d6851}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_abcb6dd2e6da3ff86b7d485fc439d6851}
+
+
+Definēts līnijā 40 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+PrevX@{m\+PrevX}}
+\index{m\+PrevX@{m\+PrevX}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+PrevX}{mPrevX}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+PrevX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_afb53d32a8f4b83476cd57f7b0bdc1b1e}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_afb53d32a8f4b83476cd57f7b0bdc1b1e}
+
+
+Definēts līnijā 41 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+PrevY@{m\+PrevY}}
+\index{m\+PrevY@{m\+PrevY}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+PrevY}{mPrevY}}]{\setlength{\rightskip}{0pt plus 5cm}int V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+PrevY\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a11ba670d3ec0ac9ae16f276469dcbbe8}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a11ba670d3ec0ac9ae16f276469dcbbe8}
+
+
+Definēts līnijā 41 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Screenshot\+Temp@{m\+Screenshot\+Temp}}
+\index{m\+Screenshot\+Temp@{m\+Screenshot\+Temp}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Screenshot\+Temp}{mScreenshotTemp}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Screenshot\+Temp\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3fb2ef7f66b526626c242cf35a4af080}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a3fb2ef7f66b526626c242cf35a4af080}
+
+
+Definēts līnijā 43 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Screenshot\+Temp2@{m\+Screenshot\+Temp2}}
+\index{m\+Screenshot\+Temp2@{m\+Screenshot\+Temp2}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Screenshot\+Temp2}{mScreenshotTemp2}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Screenshot\+Temp2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a9a373bab4c85c9a39d5b188311509ea6}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a9a373bab4c85c9a39d5b188311509ea6}
+
+
+Definēts līnijā 44 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Windows@{m\+Windows}}
+\index{m\+Windows@{m\+Windows}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Windows}{mWindows}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf G\+L\+U\+T\+Window} $\ast$ $>$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Windows\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_aad2948c3a88afb3bc03f9bc54a81f285}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_aad2948c3a88afb3bc03f9bc54a81f285}
+
+
+Definēts līnijā 26 failā G\+L\+U\+T\+Window.\+h.
+
+\index{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}!m\+Win\+I\+Ds@{m\+Win\+I\+Ds}}
+\index{m\+Win\+I\+Ds@{m\+Win\+I\+Ds}!V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window@{V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window}}
+\subsubsection[{\texorpdfstring{m\+Win\+I\+Ds}{mWinIDs}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ V\+P\+C\+::\+G\+U\+I\+::\+G\+L\+U\+T\+Window\+::m\+Win\+I\+Ds\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}{}\label{class_v_p_c_1_1_g_u_i_1_1_g_l_u_t_window_a1ceb7745b98f3497579a0f4e8288419e}
+
+
+Definēts līnijā 27 failā G\+L\+U\+T\+Window.\+h.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda failiem\+:\begin{DoxyCompactItemize}
+\item 
+render/\hyperlink{_g_l_u_t_window_8h}{G\+L\+U\+T\+Window.\+h}\item 
+render/\hyperlink{_g_l_u_t_window_8cpp}{G\+L\+U\+T\+Window.\+cpp}\end{DoxyCompactItemize}

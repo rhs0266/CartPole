@@ -1,0 +1,195 @@
+\hypertarget{classnoise_1_1_o_u_noise}{}\section{noise.\+O\+U\+Noise klases apraksts}
+\label{classnoise_1_1_o_u_noise}\index{noise.\+O\+U\+Noise@{noise.\+O\+U\+Noise}}
+
+
+Mantojamības diagramma klasei noise.\+O\+U\+Noise\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classnoise_1_1_o_u_noise__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Sadarbības diagramma klasei noise.\+O\+U\+Noise\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classnoise_1_1_o_u_noise__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnoise_1_1_o_u_noise_a4c250d049db8708e66241e37a2910101}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{delta}, \hyperlink{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}{sigma}, \hyperlink{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}{ou\+\_\+a}, \hyperlink{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}{ou\+\_\+mu})
+\item 
+def \hyperlink{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063}{brownian\+\_\+motion\+\_\+log\+\_\+returns} (self)
+\item 
+def \hyperlink{classnoise_1_1_o_u_noise_a4b01fc4f19ee3f17cffe91290312cc97}{ornstein\+\_\+uhlenbeck\+\_\+level} (self, prev\+\_\+ou\+\_\+level)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{delta}
+\item 
+\hyperlink{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}{sigma}
+\item 
+\hyperlink{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}{ou\+\_\+a}
+\item 
+\hyperlink{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}{ou\+\_\+mu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 8 failā noise.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, delta, sigma, ou\+\_\+a, ou\+\_\+mu)}{__init__(self, delta, sigma, ou_a, ou_mu)}}]{\setlength{\rightskip}{0pt plus 5cm}def noise.\+O\+U\+Noise.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{delta, }
+\item[{}]{sigma, }
+\item[{}]{ou\+\_\+a, }
+\item[{}]{ou\+\_\+mu}
+\end{DoxyParamCaption}
+)}\hypertarget{classnoise_1_1_o_u_noise_a4c250d049db8708e66241e37a2910101}{}\label{classnoise_1_1_o_u_noise_a4c250d049db8708e66241e37a2910101}
+
+
+Definēts līnijā 10 failā noise.\+py.
+
+
+\begin{DoxyCode}
+10     \textcolor{keyword}{def }\hyperlink{classnoise_1_1_o_u_noise_a4c250d049db8708e66241e37a2910101}{\_\_init\_\_}(self, delta, sigma, ou\_a, ou\_mu):
+11         \textcolor{comment}{# Noise parameters}
+12         self.\hyperlink{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{delta} = delta
+13         self.\hyperlink{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}{sigma} = sigma
+14         self.\hyperlink{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}{ou\_a} = ou\_a
+15         self.\hyperlink{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}{ou\_mu} = ou\_mu
+16 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!brownian\+\_\+motion\+\_\+log\+\_\+returns@{brownian\+\_\+motion\+\_\+log\+\_\+returns}}
+\index{brownian\+\_\+motion\+\_\+log\+\_\+returns@{brownian\+\_\+motion\+\_\+log\+\_\+returns}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{brownian\+\_\+motion\+\_\+log\+\_\+returns(self)}{brownian_motion_log_returns(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def noise.\+O\+U\+Noise.\+brownian\+\_\+motion\+\_\+log\+\_\+returns (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063}{}\label{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063}
+\begin{DoxyVerb}This method returns a Wiener process. The Wiener process is also called Brownian motion. For more information
+about the Wiener process check out the Wikipedia page: http://en.wikipedia.org/wiki/Wiener_process
+:return: brownian motion log returns
+\end{DoxyVerb}
+ 
+
+Definēts līnijā 17 failā noise.\+py.
+
+
+\begin{DoxyCode}
+17     \textcolor{keyword}{def }\hyperlink{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063}{brownian\_motion\_log\_returns}(self):
+18         \textcolor{stringliteral}{"""}
+19 \textcolor{stringliteral}{        This method returns a Wiener process. The Wiener process is also called Brownian motion. For more
+       information}
+20 \textcolor{stringliteral}{        about the Wiener process check out the Wikipedia page: http://en.wikipedia.org/wiki/Wiener\_process}
+21 \textcolor{stringliteral}{        :return: brownian motion log returns}
+22 \textcolor{stringliteral}{        """}
+23         sqrt\_delta\_sigma = np.sqrt(self.\hyperlink{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{delta}) * self.\hyperlink{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}{sigma}
+24         \textcolor{keywordflow}{return} np.random.normal(loc=0, scale=sqrt\_delta\_sigma, size=\textcolor{keywordtype}{None})
+25 
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!ornstein\+\_\+uhlenbeck\+\_\+level@{ornstein\+\_\+uhlenbeck\+\_\+level}}
+\index{ornstein\+\_\+uhlenbeck\+\_\+level@{ornstein\+\_\+uhlenbeck\+\_\+level}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{ornstein\+\_\+uhlenbeck\+\_\+level(self, prev\+\_\+ou\+\_\+level)}{ornstein_uhlenbeck_level(self, prev_ou_level)}}]{\setlength{\rightskip}{0pt plus 5cm}def noise.\+O\+U\+Noise.\+ornstein\+\_\+uhlenbeck\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{prev\+\_\+ou\+\_\+level}
+\end{DoxyParamCaption}
+)}\hypertarget{classnoise_1_1_o_u_noise_a4b01fc4f19ee3f17cffe91290312cc97}{}\label{classnoise_1_1_o_u_noise_a4b01fc4f19ee3f17cffe91290312cc97}
+\begin{DoxyVerb}This method returns the rate levels of a mean-reverting ornstein uhlenbeck process.
+:return: the Ornstein Uhlenbeck level
+\end{DoxyVerb}
+ 
+
+Definēts līnijā 26 failā noise.\+py.
+
+
+\begin{DoxyCode}
+26     \textcolor{keyword}{def }\hyperlink{classnoise_1_1_o_u_noise_a4b01fc4f19ee3f17cffe91290312cc97}{ornstein\_uhlenbeck\_level}(self, prev\_ou\_level):
+27         \textcolor{stringliteral}{"""}
+28 \textcolor{stringliteral}{        This method returns the rate levels of a mean-reverting ornstein uhlenbeck process.}
+29 \textcolor{stringliteral}{        :return: the Ornstein Uhlenbeck level}
+30 \textcolor{stringliteral}{        """}
+31         drift = self.\hyperlink{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}{ou\_a} * (self.\hyperlink{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}{ou\_mu} - prev\_ou\_level) * self.\hyperlink{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{delta}
+32         randomness = self.\hyperlink{classnoise_1_1_o_u_noise_a18a594f4c39c884806b50078df4a2063}{brownian\_motion\_log\_returns}()
+33         \textcolor{keywordflow}{return} prev\_ou\_level + drift + randomness
+34 
+\end{DoxyCode}
+
+
+Šeit ir visu funkciju izsaugumu grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnoise_1_1_o_u_noise_a4b01fc4f19ee3f17cffe91290312cc97_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Elementa datu dokumentācija}
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!delta@{delta}}
+\index{delta@{delta}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{delta}{delta}}]{\setlength{\rightskip}{0pt plus 5cm}noise.\+O\+U\+Noise.\+delta}\hypertarget{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}{}\label{classnoise_1_1_o_u_noise_a0d32976eef71e3899eeff4d04ec50544}
+
+
+Definēts līnijā 12 failā noise.\+py.
+
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!ou\+\_\+a@{ou\+\_\+a}}
+\index{ou\+\_\+a@{ou\+\_\+a}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{ou\+\_\+a}{ou_a}}]{\setlength{\rightskip}{0pt plus 5cm}noise.\+O\+U\+Noise.\+ou\+\_\+a}\hypertarget{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}{}\label{classnoise_1_1_o_u_noise_aff4bb3aa350f605b987d90e72499afd9}
+
+
+Definēts līnijā 14 failā noise.\+py.
+
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!ou\+\_\+mu@{ou\+\_\+mu}}
+\index{ou\+\_\+mu@{ou\+\_\+mu}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{ou\+\_\+mu}{ou_mu}}]{\setlength{\rightskip}{0pt plus 5cm}noise.\+O\+U\+Noise.\+ou\+\_\+mu}\hypertarget{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}{}\label{classnoise_1_1_o_u_noise_ae5746606ef8e0c123814e782535c5b09}
+
+
+Definēts līnijā 15 failā noise.\+py.
+
+\index{noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}!sigma@{sigma}}
+\index{sigma@{sigma}!noise\+::\+O\+U\+Noise@{noise\+::\+O\+U\+Noise}}
+\subsubsection[{\texorpdfstring{sigma}{sigma}}]{\setlength{\rightskip}{0pt plus 5cm}noise.\+O\+U\+Noise.\+sigma}\hypertarget{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}{}\label{classnoise_1_1_o_u_noise_ae47f26b40c75e9039ceef58859dccc90}
+
+
+Definēts līnijā 13 failā noise.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{noise_8py}{noise.\+py}\end{DoxyCompactItemize}

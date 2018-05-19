@@ -81,9 +81,33 @@ engine/CMakeFiles/engine.dir/Character.cpp.o.provides: engine/CMakeFiles/engine.
 engine/CMakeFiles/engine.dir/Character.cpp.o.provides.build: engine/CMakeFiles/engine.dir/Character.cpp.o
 
 
+engine/CMakeFiles/engine.dir/Controller.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/Controller.cpp.o: ../engine/Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object engine/CMakeFiles/engine.dir/Controller.cpp.o"
+	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Controller.cpp.o -c /home/ryuhoseok/CartPole/engine/Controller.cpp
+
+engine/CMakeFiles/engine.dir/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Controller.cpp.i"
+	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryuhoseok/CartPole/engine/Controller.cpp > CMakeFiles/engine.dir/Controller.cpp.i
+
+engine/CMakeFiles/engine.dir/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Controller.cpp.s"
+	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryuhoseok/CartPole/engine/Controller.cpp -o CMakeFiles/engine.dir/Controller.cpp.s
+
+engine/CMakeFiles/engine.dir/Controller.cpp.o.requires:
+
+.PHONY : engine/CMakeFiles/engine.dir/Controller.cpp.o.requires
+
+engine/CMakeFiles/engine.dir/Controller.cpp.o.provides: engine/CMakeFiles/engine.dir/Controller.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/Controller.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/Controller.cpp.o.provides
+
+engine/CMakeFiles/engine.dir/Controller.cpp.o.provides.build: engine/CMakeFiles/engine.dir/Controller.cpp.o
+
+
 engine/CMakeFiles/engine.dir/DartHelper.cpp.o: engine/CMakeFiles/engine.dir/flags.make
 engine/CMakeFiles/engine.dir/DartHelper.cpp.o: ../engine/DartHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object engine/CMakeFiles/engine.dir/DartHelper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object engine/CMakeFiles/engine.dir/DartHelper.cpp.o"
 	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/DartHelper.cpp.o -c /home/ryuhoseok/CartPole/engine/DartHelper.cpp
 
 engine/CMakeFiles/engine.dir/DartHelper.cpp.i: cmake_force
@@ -107,7 +131,7 @@ engine/CMakeFiles/engine.dir/DartHelper.cpp.o.provides.build: engine/CMakeFiles/
 
 engine/CMakeFiles/engine.dir/Record.cpp.o: engine/CMakeFiles/engine.dir/flags.make
 engine/CMakeFiles/engine.dir/Record.cpp.o: ../engine/Record.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object engine/CMakeFiles/engine.dir/Record.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object engine/CMakeFiles/engine.dir/Record.cpp.o"
 	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Record.cpp.o -c /home/ryuhoseok/CartPole/engine/Record.cpp
 
 engine/CMakeFiles/engine.dir/Record.cpp.i: cmake_force
@@ -131,7 +155,7 @@ engine/CMakeFiles/engine.dir/Record.cpp.o.provides.build: engine/CMakeFiles/engi
 
 engine/CMakeFiles/engine.dir/StateMachine.cpp.o: engine/CMakeFiles/engine.dir/flags.make
 engine/CMakeFiles/engine.dir/StateMachine.cpp.o: ../engine/StateMachine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object engine/CMakeFiles/engine.dir/StateMachine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object engine/CMakeFiles/engine.dir/StateMachine.cpp.o"
 	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/StateMachine.cpp.o -c /home/ryuhoseok/CartPole/engine/StateMachine.cpp
 
 engine/CMakeFiles/engine.dir/StateMachine.cpp.i: cmake_force
@@ -155,7 +179,7 @@ engine/CMakeFiles/engine.dir/StateMachine.cpp.o.provides.build: engine/CMakeFile
 
 engine/CMakeFiles/engine.dir/World.cpp.o: engine/CMakeFiles/engine.dir/flags.make
 engine/CMakeFiles/engine.dir/World.cpp.o: ../engine/World.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object engine/CMakeFiles/engine.dir/World.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object engine/CMakeFiles/engine.dir/World.cpp.o"
 	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/World.cpp.o -c /home/ryuhoseok/CartPole/engine/World.cpp
 
 engine/CMakeFiles/engine.dir/World.cpp.i: cmake_force
@@ -180,6 +204,7 @@ engine/CMakeFiles/engine.dir/World.cpp.o.provides.build: engine/CMakeFiles/engin
 # Object files for target engine
 engine_OBJECTS = \
 "CMakeFiles/engine.dir/Character.cpp.o" \
+"CMakeFiles/engine.dir/Controller.cpp.o" \
 "CMakeFiles/engine.dir/DartHelper.cpp.o" \
 "CMakeFiles/engine.dir/Record.cpp.o" \
 "CMakeFiles/engine.dir/StateMachine.cpp.o" \
@@ -189,6 +214,7 @@ engine_OBJECTS = \
 engine_EXTERNAL_OBJECTS =
 
 ../engine/libengine.so: engine/CMakeFiles/engine.dir/Character.cpp.o
+../engine/libengine.so: engine/CMakeFiles/engine.dir/Controller.cpp.o
 ../engine/libengine.so: engine/CMakeFiles/engine.dir/DartHelper.cpp.o
 ../engine/libengine.so: engine/CMakeFiles/engine.dir/Record.cpp.o
 ../engine/libengine.so: engine/CMakeFiles/engine.dir/StateMachine.cpp.o
@@ -205,7 +231,7 @@ engine_EXTERNAL_OBJECTS =
 ../engine/libengine.so: /usr/local/lib/libdart-external-odelcpsolver.so.6.4.0
 ../engine/libengine.so: /usr/lib/libipopt.so
 ../engine/libengine.so: engine/CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library ../../engine/libengine.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ryuhoseok/CartPole/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library ../../engine/libengine.so"
 	cd /home/ryuhoseok/CartPole/cmake-build-debug/engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +240,7 @@ engine/CMakeFiles/engine.dir/build: ../engine/libengine.so
 .PHONY : engine/CMakeFiles/engine.dir/build
 
 engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/Character.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/Controller.cpp.o.requires
 engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/DartHelper.cpp.o.requires
 engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/Record.cpp.o.requires
 engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/StateMachine.cpp.o.requires

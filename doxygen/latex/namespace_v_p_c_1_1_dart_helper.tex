@@ -1,0 +1,282 @@
+\hypertarget{namespace_v_p_c_1_1_dart_helper}{}\section{V\+PC\+:\+:Dart\+Helper nosaukumvietas apraksts}
+\label{namespace_v_p_c_1_1_dart_helper}\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+dart\+::dynamics\+::\+Body\+Node $\ast$ \hyperlink{namespace_v_p_c_1_1_dart_helper_a69fa7c63ad96f84bb86411e438a73d48}{Make\+Free\+Joint\+Body} (const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)
+\item 
+dart\+::dynamics\+::\+Body\+Node $\ast$ \hyperlink{namespace_v_p_c_1_1_dart_helper_ae6733c6d54ab191ffd40b2bc0e013d05}{Make\+Ball\+Joint\+Body} (const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)
+\item 
+dart\+::dynamics\+::\+Body\+Node $\ast$ \hyperlink{namespace_v_p_c_1_1_dart_helper_aca1fb6a9cadd2f260f0e20813d2c6c57}{Make\+Prismatic\+Joint\+Body} (const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)
+\item 
+dart\+::dynamics\+::\+Body\+Node $\ast$ \hyperlink{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{Make\+Revolute\+Joint\+Body} (const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)
+\item 
+dart\+::dynamics\+::\+Body\+Node $\ast$ \hyperlink{namespace_v_p_c_1_1_dart_helper_a70dd049386ce8ba7d9fdb96407d8c3d3}{Make\+Weld\+Joint\+Body} (const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)
+\end{DoxyCompactItemize}
+
+
+\subsection{Funkcijas dokumentācija}
+\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}!Make\+Ball\+Joint\+Body@{Make\+Ball\+Joint\+Body}}
+\index{Make\+Ball\+Joint\+Body@{Make\+Ball\+Joint\+Body}!V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsubsection[{\texorpdfstring{Make\+Ball\+Joint\+Body(const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)}{MakeBallJointBody(const std::string &name, const dart::dynamics::SkeletonPtr &skel, dart::dynamics::BodyNode *const parent, const Eigen::Vector3d &size, const Eigen::Vector3d &joint_pos, const Eigen::Vector3d &body_pos, double mass)}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Body\+Node $\ast$ V\+P\+C\+::\+Dart\+Helper\+::\+Make\+Ball\+Joint\+Body (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{dart\+::dynamics\+::\+Body\+Node $\ast$const}]{parent, }
+\item[{const Eigen\+::\+Vector3d \&}]{size, }
+\item[{const Eigen\+::\+Vector3d \&}]{joint\+\_\+pos, }
+\item[{const Eigen\+::\+Vector3d \&}]{body\+\_\+pos, }
+\item[{double}]{mass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_dart_helper_ae6733c6d54ab191ffd40b2bc0e013d05}{}\label{namespace_v_p_c_1_1_dart_helper_ae6733c6d54ab191ffd40b2bc0e013d05}
+
+
+Definēts līnijā 35 failā Dart\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     ShapePtr shape = std::shared\_ptr<BoxShape>(\textcolor{keyword}{new} BoxShape(size));
+45 
+46     dart::dynamics::Inertia inertia;
+47     inertia.setMass(mass);
+48     inertia.setMoment(shape->computeInertia(mass));
+49 
+50     BodyNode* bn;
+51     BallJoint::Properties props;
+52     props.mName = name + \textcolor{stringliteral}{"\_joint"};
+53     \textcolor{keywordflow}{if}(parent!=\textcolor{keyword}{nullptr})
+54     \{
+55         props.mT\_ParentBodyToJoint.setIdentity();
+56         props.mT\_ParentBodyToJoint.translation() = joint\_pos-parent->getCOM();
+57     \}
+58 
+59     props.mT\_ChildBodyToJoint.setIdentity();
+60     props.mT\_ChildBodyToJoint.translation() = joint\_pos-body\_pos;
+61     
+62     bn = skel->createJointAndBodyNodePair<BallJoint>(
+63         parent,props,BodyNode::AspectProperties(name)).second;
+64     bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);
+65     
+66     bn->setInertia(inertia);
+67 
+68     \textcolor{keywordflow}{return} bn;
+69 \}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}!Make\+Free\+Joint\+Body@{Make\+Free\+Joint\+Body}}
+\index{Make\+Free\+Joint\+Body@{Make\+Free\+Joint\+Body}!V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsubsection[{\texorpdfstring{Make\+Free\+Joint\+Body(const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)}{MakeFreeJointBody(const std::string &name, const dart::dynamics::SkeletonPtr &skel, dart::dynamics::BodyNode *const parent, const Eigen::Vector3d &size, const Eigen::Vector3d &body_pos, double mass)}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Body\+Node $\ast$ V\+P\+C\+::\+Dart\+Helper\+::\+Make\+Free\+Joint\+Body (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{dart\+::dynamics\+::\+Body\+Node $\ast$const}]{parent, }
+\item[{const Eigen\+::\+Vector3d \&}]{size, }
+\item[{const Eigen\+::\+Vector3d \&}]{body\+\_\+pos, }
+\item[{double}]{mass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_dart_helper_a69fa7c63ad96f84bb86411e438a73d48}{}\label{namespace_v_p_c_1_1_dart_helper_a69fa7c63ad96f84bb86411e438a73d48}
+
+
+Definēts līnijā 6 failā Dart\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+13 \{
+14     ShapePtr shape = std::shared\_ptr<BoxShape>(\textcolor{keyword}{new} BoxShape(size));
+15 
+16     dart::dynamics::Inertia inertia;
+17     inertia.setMass(mass);
+18     inertia.setMoment(shape->computeInertia(mass));
+19 
+20     BodyNode* bn;
+21     FreeJoint::Properties props;
+22     props.mName = name + \textcolor{stringliteral}{"\_joint"};
+23     props.mT\_ParentBodyToJoint.setIdentity();
+24     props.mT\_ParentBodyToJoint.translation() = body\_pos;
+25 
+26     bn = skel->createJointAndBodyNodePair<FreeJoint>(
+27         parent,props,BodyNode::AspectProperties(name)).second;
+28     bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);
+29     bn->setInertia(inertia);
+30 
+31     \textcolor{keywordflow}{return} bn;
+32 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_dart_helper_a69fa7c63ad96f84bb86411e438a73d48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}!Make\+Prismatic\+Joint\+Body@{Make\+Prismatic\+Joint\+Body}}
+\index{Make\+Prismatic\+Joint\+Body@{Make\+Prismatic\+Joint\+Body}!V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsubsection[{\texorpdfstring{Make\+Prismatic\+Joint\+Body(const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)}{MakePrismaticJointBody(const std::string &name, const dart::dynamics::SkeletonPtr &skel, dart::dynamics::BodyNode *const parent, const Eigen::Vector3d &size, const Eigen::Vector3d &joint_pos, const Eigen::Vector3d &body_pos, double mass)}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Body\+Node $\ast$ V\+P\+C\+::\+Dart\+Helper\+::\+Make\+Prismatic\+Joint\+Body (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{dart\+::dynamics\+::\+Body\+Node $\ast$const}]{parent, }
+\item[{const Eigen\+::\+Vector3d \&}]{size, }
+\item[{const Eigen\+::\+Vector3d \&}]{joint\+\_\+pos, }
+\item[{const Eigen\+::\+Vector3d \&}]{body\+\_\+pos, }
+\item[{double}]{mass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_dart_helper_aca1fb6a9cadd2f260f0e20813d2c6c57}{}\label{namespace_v_p_c_1_1_dart_helper_aca1fb6a9cadd2f260f0e20813d2c6c57}
+
+
+Definēts līnijā 70 failā Dart\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+78 \{
+79     ShapePtr shape = std::shared\_ptr<BoxShape>(\textcolor{keyword}{new} BoxShape(size)); 
+80 
+81     dart::dynamics::Inertia inertia;
+82     inertia.setMass(mass);
+83     inertia.setMoment(shape->computeInertia(mass));
+84 
+85     BodyNode* bn;
+86     PrismaticJoint::Properties props;
+87     props.mName = name + \textcolor{stringliteral}{"\_joint"};
+88     props.mAxis = Eigen::Vector3d::UnitX();
+89 
+90     \textcolor{keywordflow}{if}(parent!=\textcolor{keyword}{nullptr})
+91     \{
+92         \textcolor{keyword}{const} \textcolor{keyword}{auto} sn = parent->getShapeNodesWith<DynamicsAspect>();
+93         \textcolor{keyword}{const} \textcolor{keyword}{auto} box = std::dynamic\_pointer\_cast<\textcolor{keyword}{const} BoxShape>(sn[0]->getShape());
+94     \}   
+95 
+96     props.mT\_ParentBodyToJoint.setIdentity();
+97     props.mT\_ParentBodyToJoint.translation() = body\_pos;
+98 
+99     bn = skel->createJointAndBodyNodePair<PrismaticJoint>(
+100         parent,props,BodyNode::AspectProperties(name)).second;
+101     bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);
+102     
+103     bn->setInertia(inertia);
+104 
+105     \textcolor{keywordflow}{return} bn;
+106 \}
+\end{DoxyCode}
+\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}!Make\+Revolute\+Joint\+Body@{Make\+Revolute\+Joint\+Body}}
+\index{Make\+Revolute\+Joint\+Body@{Make\+Revolute\+Joint\+Body}!V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsubsection[{\texorpdfstring{Make\+Revolute\+Joint\+Body(const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)}{MakeRevoluteJointBody(const std::string &name, const dart::dynamics::SkeletonPtr &skel, dart::dynamics::BodyNode *const parent, const Eigen::Vector3d &size, const Eigen::Vector3d &joint_pos, const Eigen::Vector3d &body_pos, double mass)}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Body\+Node $\ast$ V\+P\+C\+::\+Dart\+Helper\+::\+Make\+Revolute\+Joint\+Body (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{dart\+::dynamics\+::\+Body\+Node $\ast$const}]{parent, }
+\item[{const Eigen\+::\+Vector3d \&}]{size, }
+\item[{const Eigen\+::\+Vector3d \&}]{joint\+\_\+pos, }
+\item[{const Eigen\+::\+Vector3d \&}]{body\+\_\+pos, }
+\item[{double}]{mass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}{}\label{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99}
+
+
+Definēts līnijā 107 failā Dart\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+115 \{
+116     ShapePtr shape = std::shared\_ptr<BoxShape>(\textcolor{keyword}{new} BoxShape(size));
+117 
+118     dart::dynamics::Inertia inertia;
+119     inertia.setMass(mass);
+120     inertia.setMoment(shape->computeInertia(mass));
+121 
+122     BodyNode* bn;
+123     RevoluteJoint::Properties props;
+124     props.mName = name + \textcolor{stringliteral}{"\_joint"};
+125     \textcolor{keywordflow}{if}(parent!=\textcolor{keyword}{nullptr})
+126     \{
+127         props.mT\_ParentBodyToJoint.setIdentity();
+128         props.mT\_ParentBodyToJoint.translation() = joint\_pos-parent->getCOM();
+129     \}
+130 
+131     props.mT\_ChildBodyToJoint.setIdentity();
+132     props.mT\_ChildBodyToJoint.translation() = joint\_pos-body\_pos;
+133     props.mAxis = Eigen::Vector3d::UnitZ();
+134     bn = skel->createJointAndBodyNodePair<RevoluteJoint>(
+135         parent,props,BodyNode::AspectProperties(name)).second;
+136     bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);
+137     
+138     bn->setInertia(inertia);
+139 
+140     \textcolor{keywordflow}{return} bn;
+141 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_dart_helper_a4cf2225ca4d44189f0f0f390cf7aff99_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}!Make\+Weld\+Joint\+Body@{Make\+Weld\+Joint\+Body}}
+\index{Make\+Weld\+Joint\+Body@{Make\+Weld\+Joint\+Body}!V\+P\+C\+::\+Dart\+Helper@{V\+P\+C\+::\+Dart\+Helper}}
+\subsubsection[{\texorpdfstring{Make\+Weld\+Joint\+Body(const std\+::string \&name, const dart\+::dynamics\+::\+Skeleton\+Ptr \&skel, dart\+::dynamics\+::\+Body\+Node $\ast$const parent, const Eigen\+::\+Vector3d \&size, const Eigen\+::\+Vector3d \&joint\+\_\+pos, const Eigen\+::\+Vector3d \&body\+\_\+pos, double mass)}{MakeWeldJointBody(const std::string &name, const dart::dynamics::SkeletonPtr &skel, dart::dynamics::BodyNode *const parent, const Eigen::Vector3d &size, const Eigen::Vector3d &joint_pos, const Eigen::Vector3d &body_pos, double mass)}}]{\setlength{\rightskip}{0pt plus 5cm}dart\+::dynamics\+::\+Body\+Node $\ast$ V\+P\+C\+::\+Dart\+Helper\+::\+Make\+Weld\+Joint\+Body (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const dart\+::dynamics\+::\+Skeleton\+Ptr \&}]{skel, }
+\item[{dart\+::dynamics\+::\+Body\+Node $\ast$const}]{parent, }
+\item[{const Eigen\+::\+Vector3d \&}]{size, }
+\item[{const Eigen\+::\+Vector3d \&}]{joint\+\_\+pos, }
+\item[{const Eigen\+::\+Vector3d \&}]{body\+\_\+pos, }
+\item[{double}]{mass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_v_p_c_1_1_dart_helper_a70dd049386ce8ba7d9fdb96407d8c3d3}{}\label{namespace_v_p_c_1_1_dart_helper_a70dd049386ce8ba7d9fdb96407d8c3d3}
+
+
+Definēts līnijā 142 failā Dart\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+150 \{
+151     ShapePtr shape = std::shared\_ptr<BoxShape>(\textcolor{keyword}{new} BoxShape(size));
+152 
+153     dart::dynamics::Inertia inertia;
+154     inertia.setMass(mass);
+155     inertia.setMoment(shape->computeInertia(mass));
+156 
+157     BodyNode* bn;
+158     WeldJoint::Properties props;
+159     props.mName = name + \textcolor{stringliteral}{"\_joint"};
+160     \textcolor{keywordflow}{if}(parent!=\textcolor{keyword}{nullptr})
+161     \{
+162         props.mT\_ParentBodyToJoint.setIdentity();
+163         props.mT\_ParentBodyToJoint.translation() = joint\_pos-parent->getCOM();
+164     \}
+165 
+166     props.mT\_ChildBodyToJoint.setIdentity();
+167     props.mT\_ChildBodyToJoint.translation() = joint\_pos-body\_pos;
+168     bn = skel->createJointAndBodyNodePair<WeldJoint>(
+169         parent,props,BodyNode::AspectProperties(name)).second;
+170     bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);
+171     
+172     bn->setInertia(inertia);    
+173 
+174     \textcolor{keywordflow}{return} bn;
+175 \}
+\end{DoxyCode}
+
+
+Šeit ir šīs funkcijas izsaukuma grafs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_v_p_c_1_1_dart_helper_a70dd049386ce8ba7d9fdb96407d8c3d3_icgraph}
+\end{center}
+\end{figure}
+
+

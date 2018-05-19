@@ -1,0 +1,250 @@
+\hypertarget{classenv_1_1_environment}{}\section{env.\+Environment klases apraksts}
+\label{classenv_1_1_environment}\index{env.\+Environment@{env.\+Environment}}
+
+
+Sadarbības diagramma klasei env.\+Environment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classenv_1_1_environment__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classenv_1_1_environment_ab43aa325dc7ec51e135ea24d2e6d8954}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_a8dd860a9d167e765134f08344a2c2d71}{init} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_a33c77a544170cb422c7bcc6e257e9e66}{reset} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_afb163b7692002933d860d3bd00a9e869}{step} (self, flag)
+\item 
+def \hyperlink{classenv_1_1_environment_a03b485c5cd7d6a33b0563fb074989b5f}{get\+State\+Num} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_a33704b8916e5dbca53031fa89dd5ccb0}{get\+Action\+Num} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_adbbb2aecb72314a5337fece8e433fe35}{get\+State} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_a9cc0fbe9f5e1fbe3c49a3fb412d591d1}{set\+Action} (self, action)
+\item 
+def \hyperlink{classenv_1_1_environment_a3ed8a37b7b6c1279a10af783352335a6}{get\+Reward} (self)
+\item 
+def \hyperlink{classenv_1_1_environment_aa44deb3deae93e541af1d23523e28969}{get\+Done} (self)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classenv_1_1_environment_ae1915ac7b5e3da938948b6f6f57a3dfa}{env}
+\item 
+\hyperlink{classenv_1_1_environment_a60104200654a882002d5be49bb6843de}{options}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 4 failā env.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{env\+::\+Environment@{env\+::\+Environment}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self)}{__init__(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_ab43aa325dc7ec51e135ea24d2e6d8954}{}\label{classenv_1_1_environment_ab43aa325dc7ec51e135ea24d2e6d8954}
+
+
+Definēts līnijā 5 failā env.\+py.
+
+
+\begin{DoxyCode}
+5     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_ab43aa325dc7ec51e135ea24d2e6d8954}{\_\_init\_\_}(self):
+6         self.\hyperlink{classenv_1_1_environment_ae1915ac7b5e3da938948b6f6f57a3dfa}{env} = cp.Simulation()
+7         self.env.init()
+8         self.\hyperlink{classenv_1_1_environment_a60104200654a882002d5be49bb6843de}{options} = \hyperlink{classoptions_1_1_options}{Options}().get\_options()
+9 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{env\+::\+Environment@{env\+::\+Environment}!get\+Action\+Num@{get\+Action\+Num}}
+\index{get\+Action\+Num@{get\+Action\+Num}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{get\+Action\+Num(self)}{getActionNum(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+get\+Action\+Num (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a33704b8916e5dbca53031fa89dd5ccb0}{}\label{classenv_1_1_environment_a33704b8916e5dbca53031fa89dd5ccb0}
+
+
+Definēts līnijā 22 failā env.\+py.
+
+
+\begin{DoxyCode}
+22     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a33704b8916e5dbca53031fa89dd5ccb0}{getActionNum}(self):
+23         \textcolor{keywordflow}{return} self.env.getActionNum()
+24 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!get\+Done@{get\+Done}}
+\index{get\+Done@{get\+Done}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{get\+Done(self)}{getDone(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+get\+Done (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_aa44deb3deae93e541af1d23523e28969}{}\label{classenv_1_1_environment_aa44deb3deae93e541af1d23523e28969}
+
+
+Definēts līnijā 34 failā env.\+py.
+
+
+\begin{DoxyCode}
+34     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_aa44deb3deae93e541af1d23523e28969}{getDone}(self):
+35         \textcolor{keywordflow}{return} self.env.getDone()
+36 \end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!get\+Reward@{get\+Reward}}
+\index{get\+Reward@{get\+Reward}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{get\+Reward(self)}{getReward(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+get\+Reward (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a3ed8a37b7b6c1279a10af783352335a6}{}\label{classenv_1_1_environment_a3ed8a37b7b6c1279a10af783352335a6}
+
+
+Definēts līnijā 31 failā env.\+py.
+
+
+\begin{DoxyCode}
+31     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a3ed8a37b7b6c1279a10af783352335a6}{getReward}(self):
+32         \textcolor{keywordflow}{return} self.env.getReward()
+33 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{get\+State(self)}{getState(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+get\+State (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_adbbb2aecb72314a5337fece8e433fe35}{}\label{classenv_1_1_environment_adbbb2aecb72314a5337fece8e433fe35}
+
+
+Definēts līnijā 25 failā env.\+py.
+
+
+\begin{DoxyCode}
+25     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_adbbb2aecb72314a5337fece8e433fe35}{getState}(self):
+26         \textcolor{keywordflow}{return} self.env.getState()
+27 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!get\+State\+Num@{get\+State\+Num}}
+\index{get\+State\+Num@{get\+State\+Num}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{get\+State\+Num(self)}{getStateNum(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+get\+State\+Num (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a03b485c5cd7d6a33b0563fb074989b5f}{}\label{classenv_1_1_environment_a03b485c5cd7d6a33b0563fb074989b5f}
+
+
+Definēts līnijā 19 failā env.\+py.
+
+
+\begin{DoxyCode}
+19     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a03b485c5cd7d6a33b0563fb074989b5f}{getStateNum}(self):
+20         \textcolor{keywordflow}{return} self.env.getStateNum()
+21 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!init@{init}}
+\index{init@{init}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{init(self)}{init(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+init (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a8dd860a9d167e765134f08344a2c2d71}{}\label{classenv_1_1_environment_a8dd860a9d167e765134f08344a2c2d71}
+
+
+Definēts līnijā 10 failā env.\+py.
+
+
+\begin{DoxyCode}
+10     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a8dd860a9d167e765134f08344a2c2d71}{init}(self):
+11         self.env.init()
+12 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!reset@{reset}}
+\index{reset@{reset}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{reset(self)}{reset(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+reset (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a33c77a544170cb422c7bcc6e257e9e66}{}\label{classenv_1_1_environment_a33c77a544170cb422c7bcc6e257e9e66}
+
+
+Definēts līnijā 13 failā env.\+py.
+
+
+\begin{DoxyCode}
+13     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a33c77a544170cb422c7bcc6e257e9e66}{reset}(self):
+14         self.env.reset()
+15 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!set\+Action@{set\+Action}}
+\index{set\+Action@{set\+Action}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{set\+Action(self, action)}{setAction(self, action)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+set\+Action (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{action}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_a9cc0fbe9f5e1fbe3c49a3fb412d591d1}{}\label{classenv_1_1_environment_a9cc0fbe9f5e1fbe3c49a3fb412d591d1}
+
+
+Definēts līnijā 28 failā env.\+py.
+
+
+\begin{DoxyCode}
+28     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_a9cc0fbe9f5e1fbe3c49a3fb412d591d1}{setAction}(self, action):
+29         \textcolor{keywordflow}{return} self.env.setAction(action)
+30 
+\end{DoxyCode}
+\index{env\+::\+Environment@{env\+::\+Environment}!step@{step}}
+\index{step@{step}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{step(self, flag)}{step(self, flag)}}]{\setlength{\rightskip}{0pt plus 5cm}def env.\+Environment.\+step (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{classenv_1_1_environment_afb163b7692002933d860d3bd00a9e869}{}\label{classenv_1_1_environment_afb163b7692002933d860d3bd00a9e869}
+
+
+Definēts līnijā 16 failā env.\+py.
+
+
+\begin{DoxyCode}
+16     \textcolor{keyword}{def }\hyperlink{classenv_1_1_environment_afb163b7692002933d860d3bd00a9e869}{step}(self, flag):
+17         self.env.step(flag)
+18 
+\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{env\+::\+Environment@{env\+::\+Environment}!env@{env}}
+\index{env@{env}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}env.\+Environment.\+env}\hypertarget{classenv_1_1_environment_ae1915ac7b5e3da938948b6f6f57a3dfa}{}\label{classenv_1_1_environment_ae1915ac7b5e3da938948b6f6f57a3dfa}
+
+
+Definēts līnijā 6 failā env.\+py.
+
+\index{env\+::\+Environment@{env\+::\+Environment}!options@{options}}
+\index{options@{options}!env\+::\+Environment@{env\+::\+Environment}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}env.\+Environment.\+options}\hypertarget{classenv_1_1_environment_a60104200654a882002d5be49bb6843de}{}\label{classenv_1_1_environment_a60104200654a882002d5be49bb6843de}
+
+
+Definēts līnijā 8 failā env.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{env_8py}{env.\+py}\end{DoxyCompactItemize}

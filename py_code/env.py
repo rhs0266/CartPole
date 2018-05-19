@@ -26,7 +26,7 @@ class Environment():
 		return self.env.getState()
 
 	def setAction(self, action):
-		return self.env.setAction(action)
+		self.env.setAction(action)
 
 	def getReward(self):
 		return self.env.getReward()

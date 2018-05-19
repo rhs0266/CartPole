@@ -7,8 +7,9 @@ class World;
 struct State
 {
 	Eigen::VectorXd target_positions;
-	double c_d,c_v;
-	State():target_positions(Eigen::VectorXd::Zero(0)),c_d(0),c_v(0){};
+//	double c_d,c_v;
+//	State():target_positions(Eigen::VectorXd::Zero(0)),c_d(0),c_v(0){};
+	State():target_positions(Eigen::VectorXd::Zero(0)){};
 };
 
 class StateMachine
@@ -19,14 +20,15 @@ private:
 	int mState;
 	double mElapsedTime;
 
-	double ComputeD();
-	double ComputeV();
-	Eigen::VectorXd AddBalanceControl(const Eigen::VectorXd& p0);
+	//double ComputeD();
+	//double ComputeV();
+	//Eigen::VectorXd AddBalanceControl(const Eigen::VectorXd& p0);
 	std::string GetStanceFootName();
 	std::string GetSwingFootName();
 
 public:
 	StateMachine(const std::shared_ptr<VPC::World>& world);
+	void SetStatePose(Eigen::VectorXd p);
 	int GetState(){return mState;};
 	void SetState(int state) {mState =state;}
 	void Initialize();

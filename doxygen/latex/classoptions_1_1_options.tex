@@ -1,0 +1,118 @@
+\hypertarget{classoptions_1_1_options}{}\section{options.\+Options klases apraksts}
+\label{classoptions_1_1_options}\index{options.\+Options@{options.\+Options}}
+
+
+Sadarbības diagramma klasei options.\+Options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classoptions_1_1_options__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classoptions_1_1_options_ad708dd8dd3879087314e2e86c0fad701}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classoptions_1_1_options_a165cc2bdb7015d5f0333fdc463cfaf67}{get\+\_\+options} (self)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classoptions_1_1_options_a9c41aa8b6baa3a4f7cf9817d2aea2fa1}{options}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 3 failā options.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{options\+::\+Options@{options\+::\+Options}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!options\+::\+Options@{options\+::\+Options}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self)}{__init__(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def options.\+Options.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classoptions_1_1_options_ad708dd8dd3879087314e2e86c0fad701}{}\label{classoptions_1_1_options_ad708dd8dd3879087314e2e86c0fad701}
+
+
+Definēts līnijā 4 failā options.\+py.
+
+
+\begin{DoxyCode}
+4     \textcolor{keyword}{def }\hyperlink{classoptions_1_1_options_ad708dd8dd3879087314e2e86c0fad701}{\_\_init\_\_}(self):
+5         parser = ArgumentParser()
+6         parser.add\_argument(\textcolor{stringliteral}{'--MAX\_EPISODE'}, type=int, default=100,
+7                             help=\textcolor{stringliteral}{'max number of episodes iteration'})
+8         parser.add\_argument(\textcolor{stringliteral}{'--GOAL\_REWARD'}, type=int, default=1000,
+9                             help=\textcolor{stringliteral}{'goal reward of each episode'})
+10         parser.add\_argument(\textcolor{stringliteral}{'--ACTION\_DIM'}, type=int, default=24,
+11                             help=\textcolor{stringliteral}{'number of actions one can take'})
+12         parser.add\_argument(\textcolor{stringliteral}{'--STATE\_DIM'}, type=int, default=25,
+13                             help=\textcolor{stringliteral}{'number of states one can see'})
+14         parser.add\_argument(\textcolor{stringliteral}{'--GAMMA'}, type=float, default=0.99,
+15                             help=\textcolor{stringliteral}{'discount factor'})
+16         parser.add\_argument(\textcolor{stringliteral}{'--TAU'}, type=float, default=0.01,
+17                             help=\textcolor{stringliteral}{'blending factor for soft copy'})
+18         parser.add\_argument(\textcolor{stringliteral}{'--INIT\_EPS'}, type=float, default=0.5,
+19                             help=\textcolor{stringliteral}{'initial probability for randomly sampling action'})
+20         parser.add\_argument(\textcolor{stringliteral}{'--FINAL\_EPS'}, type=float, default=0.1,
+21                             help=\textcolor{stringliteral}{'finial probability for randomly sampling action'})
+22         parser.add\_argument(\textcolor{stringliteral}{'--EPS\_DECAY'}, type=float, default=0.5,
+23                             help=\textcolor{stringliteral}{'epsilon decay rate'})
+24         parser.add\_argument(\textcolor{stringliteral}{'--EPS\_ANNEAL\_STEPS'}, type=int, default=100,
+25                             help=\textcolor{stringliteral}{'steps interval to decay epsilon'})
+26         parser.add\_argument(\textcolor{stringliteral}{'--LR\_A'}, type=float, default=1e-4,
+27                             help=\textcolor{stringliteral}{'learning rate of actor network'})
+28         parser.add\_argument(\textcolor{stringliteral}{'--LR\_C'}, type=float, default=1e-3,
+29                             help=\textcolor{stringliteral}{'learning rate of critic network'})
+30         parser.add\_argument(\textcolor{stringliteral}{'--BUFFER\_SIZE'}, type=int, default=1000,
+31                             help=\textcolor{stringliteral}{'size of experience replay buffer'})
+32         parser.add\_argument(\textcolor{stringliteral}{'--BATCH\_SIZE'}, type=int, default=32,
+33                             help=\textcolor{stringliteral}{'mini batch size'})
+34         \textcolor{comment}{# parser.add\_argument('--H1\_SIZE', type=int, default=128,}
+35         \textcolor{comment}{#                   help='size of hidden layer 1')}
+36         \textcolor{comment}{# parser.add\_argument('--H2\_SIZE', type=int, default=128,}
+37         \textcolor{comment}{#                   help='size of hidden layer 2')}
+38         \textcolor{comment}{# parser.add\_argument('--H3\_SIZE', type=int, default=128,}
+39         \textcolor{comment}{#                   help='size of hidden layer 3')}
+40         self.\hyperlink{classoptions_1_1_options_a9c41aa8b6baa3a4f7cf9817d2aea2fa1}{options} = parser.parse\_args()
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{options\+::\+Options@{options\+::\+Options}!get\+\_\+options@{get\+\_\+options}}
+\index{get\+\_\+options@{get\+\_\+options}!options\+::\+Options@{options\+::\+Options}}
+\subsubsection[{\texorpdfstring{get\+\_\+options(self)}{get_options(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def options.\+Options.\+get\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classoptions_1_1_options_a165cc2bdb7015d5f0333fdc463cfaf67}{}\label{classoptions_1_1_options_a165cc2bdb7015d5f0333fdc463cfaf67}
+
+
+Definēts līnijā 41 failā options.\+py.
+
+
+\begin{DoxyCode}
+41     \textcolor{keyword}{def }\hyperlink{classoptions_1_1_options_a165cc2bdb7015d5f0333fdc463cfaf67}{get\_options}(self):
+42         \textcolor{keywordflow}{return} self.\hyperlink{classoptions_1_1_options_a9c41aa8b6baa3a4f7cf9817d2aea2fa1}{options}\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{options\+::\+Options@{options\+::\+Options}!options@{options}}
+\index{options@{options}!options\+::\+Options@{options\+::\+Options}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}options.\+Options.\+options}\hypertarget{classoptions_1_1_options_a9c41aa8b6baa3a4f7cf9817d2aea2fa1}{}\label{classoptions_1_1_options_a9c41aa8b6baa3a4f7cf9817d2aea2fa1}
+
+
+Definēts līnijā 40 failā options.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{options_8py}{options.\+py}\end{DoxyCompactItemize}

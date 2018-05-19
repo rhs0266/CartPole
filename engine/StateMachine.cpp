@@ -14,7 +14,7 @@ void
 StateMachine::
 Initialize()
 {
-	auto& skel = mWorld->GetCharacter()->GetSkeleton();
+	/*auto& skel = mWorld->GetCharacter()->GetSkeleton();
 	//Initialize Walking fsm
 	Eigen::VectorXd p = skel->getPositions();
 	p.setZero();
@@ -76,8 +76,69 @@ Initialize()
 	mStates.push_back(s0);
 	mStates.push_back(s1);
 	mStates.push_back(s2);
+	mStates.push_back(s3);*/
+}
+
+void
+StateMachine::
+SetStatePose(Eigen::VectorXd action){
+	auto& skel = mWorld->GetCharacter()->GetSkeleton();
+	Eigen::VectorXd p = skel->getPositions();
+	p.setZero();
+	Eigen::VectorXd p0=p;
+	Eigen::VectorXd p1=p;
+	Eigen::VectorXd p2=p;
+	Eigen::VectorXd p3=p;
+
+	//Swing Foot
+	p0[6] = action[0];
+	p0[8] = action[1];
+	p0[10] = action[2];
+	//Stance Foot
+	p1[7] = action[3];
+	p1[9] = action[4];
+	p1[11] = action[5];
+
+	//Swing Foot
+	p1[6] = action[6];
+	p1[8] = action[7];
+	p1[10] = action[8];
+	//Stance Foot
+	p1[7] = action[9];
+	p1[9] = action[10];
+	p1[11] = action[11];
+
+	//Swing Foot
+	p2[7] = action[12];
+	p2[9] = action[13];
+	p2[11] = action[14];
+	//Stance Foot
+	p2[6] = action[15];
+	p2[8] = action[16];
+	p2[10] = action[17];
+
+	//Swing Foot
+	p3[7] = action[18];
+	p3[9] = action[19];
+	p3[11] = action[20];
+	//Stance Foot
+	p3[6] = action[21];
+	p3[8] = action[22];
+	p3[10] = action[23];
+
+	State s0,s1,s2,s3;
+	s0.target_positions = p0;
+	s1.target_positions = p1;
+	s2.target_positions = p2;
+	s3.target_positions = p3;
+
+	mStates.clear();
+	mStates.push_back(s0);
+	mStates.push_back(s1);
+	mStates.push_back(s2);
 	mStates.push_back(s3);
 }
+
 void
 StateMachine::
 GetMotion(Eigen::VectorXd& p,Eigen::VectorXd& v)
@@ -106,17 +167,17 @@ GetMotion(Eigen::VectorXd& p,Eigen::VectorXd& v)
 
 	mState %=4;
 	p = mStates[mState].target_positions;
-	p = AddBalanceControl(p);
+//	p = AddBalanceControl(p);
 
 
 }
-double
+/*double
 StateMachine::
 ComputeD()
 {
 	Eigen::Vector3d d_root = mWorld->GetCharacter()->GetSkeleton()->getCOM();
 	auto ankle = mWorld->GetCharacter()->GetSkeleton()->getBodyNode(GetStanceFootName())->getParentJoint();
-	
+
 	Eigen::Isometry3d T;
 	T.setIdentity();
 
@@ -149,7 +210,7 @@ AddBalanceControl(const Eigen::VectorXd& p0)
 	}
 	// p[0] += feedback;
 	return p;
-}
+}*/
 std::string
 StateMachine::
 GetStanceFootName()

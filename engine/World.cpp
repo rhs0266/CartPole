@@ -19,7 +19,7 @@ Initialize()
 {
 	mWorld = std::make_shared<dart::simulation::World>();
 	mWorld->setGravity(Eigen::Vector3d(0,-9.81,0));
-	mCharacter = std::make_shared<VPC::Character>("cartpole");
+	mCharacter = std::make_shared<VPC::Character>("SimBiCon");
 	mCharacter->Initialize();
 	mGround = Skeleton::create("ground");
 	DartHelper::MakeWeldJointBody(

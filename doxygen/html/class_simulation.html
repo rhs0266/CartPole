@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CartPole: Simulation klases apraksts</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CartPole
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Ģenerēts ar Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Meklēt');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sākumlapa</span></a></li>
+      <li><a href="pages.html"><span>Saistītās&#160;lapas</span></a></li>
+      <li><a href="namespaces.html"><span>Nosaukumvietas</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klases</span></a></li>
+      <li><a href="files.html"><span>Faili</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Meklēt" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Klašu&#160;saraksts</span></a></li>
+      <li><a href="classes.html"><span>Klašu&#160;indekss</span></a></li>
+      <li><a href="inherits.html"><span>Klašu&#160;hierarhija</span></a></li>
+      <li><a href="functions.html"><span>Klases&#160;elementi</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_simulation.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Publiskās elementa funkcijas</a> &#124;
+<a href="#pub-attribs">Publiskie atribūti</a> &#124;
+<a href="class_simulation-members.html">Visu elementu saraksts</a>  </div>
+  <div class="headertitle">
+<div class="title">Simulation klases apraksts</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="simulation_8h_source.html">simulation.h</a>&gt;</code></p>
+<div class="dynheader">
+Sadarbības diagramma klasei Simulation:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation__coll__graph.png" border="0" usemap="#_simulation_coll__map" alt="Collaboration graph"/></div>
+<map name="_simulation_coll__map" id="_simulation_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Publiskās elementa funkcijas</h2></td></tr>
+<tr class="memitem:a5b224cc5b36bcc8eb29689aff223de41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a5b224cc5b36bcc8eb29689aff223de41">Simulation</a> ()</td></tr>
+<tr class="separator:a5b224cc5b36bcc8eb29689aff223de41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d9646039f5bffba768c3abd0b558c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a10d9646039f5bffba768c3abd0b558c7">init</a> ()</td></tr>
+<tr class="separator:a10d9646039f5bffba768c3abd0b558c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc2464162d59383e0a1c68a3f9c42fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a2dc2464162d59383e0a1c68a3f9c42fb">reset</a> ()</td></tr>
+<tr class="separator:a2dc2464162d59383e0a1c68a3f9c42fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae057193c8d120c47e136cdb9aeee2fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#ae057193c8d120c47e136cdb9aeee2fd8">step</a> (bool)</td></tr>
+<tr class="separator:ae057193c8d120c47e136cdb9aeee2fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1124017cff783732cab02a78af0720d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#ad1124017cff783732cab02a78af0720d">getStateNum</a> ()</td></tr>
+<tr class="separator:ad1124017cff783732cab02a78af0720d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75067c89a43d0e1798fc06c71c3e3a27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a75067c89a43d0e1798fc06c71c3e3a27">getActionNum</a> ()</td></tr>
+<tr class="separator:a75067c89a43d0e1798fc06c71c3e3a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fed4408760d2ba5c2e18aee56aa2f52"><td class="memItemLeft" align="right" valign="top">boost::python::list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a0fed4408760d2ba5c2e18aee56aa2f52">getState</a> ()</td></tr>
+<tr class="separator:a0fed4408760d2ba5c2e18aee56aa2f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae024524b94a02df25c987e25cd83d8c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#ae024524b94a02df25c987e25cd83d8c9">setAction</a> (boost::python::list action)</td></tr>
+<tr class="separator:ae024524b94a02df25c987e25cd83d8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf5b1b5ec41703365499a888b0d6691"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#acdf5b1b5ec41703365499a888b0d6691">getReward</a> ()</td></tr>
+<tr class="separator:acdf5b1b5ec41703365499a888b0d6691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5446c6b0bc0a889ffdd64d04454a2a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#ad5446c6b0bc0a889ffdd64d04454a2a2">getDone</a> ()</td></tr>
+<tr class="separator:ad5446c6b0bc0a889ffdd64d04454a2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Publiskie atribūti</h2></td></tr>
+<tr class="memitem:ab8b3d4d3e13a05086f8497e5235fb37a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_v_p_c_1_1_world.html">VPC::World</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a></td></tr>
+<tr class="separator:ab8b3d4d3e13a05086f8497e5235fb37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e55698283d8bbba9843391b0d9ecfa8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_v_p_c_1_1_record.html">VPC::Record</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">records</a></td></tr>
+<tr class="separator:a8e55698283d8bbba9843391b0d9ecfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c51cfbcfc8f08e47535a504dfbdd18a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a></td></tr>
+<tr class="separator:a7c51cfbcfc8f08e47535a504dfbdd18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c630148d41a6eb21d13563e2017f7b6"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a3c630148d41a6eb21d13563e2017f7b6">mDesiredDofs</a> [4]</td></tr>
+<tr class="separator:a3c630148d41a6eb21d13563e2017f7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7d01e2a53a88044001a28aab387a97"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_v_p_c_1_1_state_machine.html">VPC::StateMachine</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a></td></tr>
+<tr class="separator:a3a7d01e2a53a88044001a28aab387a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3cc7be178e163d8a2bae06191993a7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_v_p_c_1_1_controller.html">VPC::Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a2e3cc7be178e163d8a2bae06191993a7">controller</a></td></tr>
+<tr class="separator:a2e3cc7be178e163d8a2bae06191993a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5224aea8e98ffc054c58674ab1494971"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">reward</a></td></tr>
+<tr class="separator:a5224aea8e98ffc054c58674ab1494971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detalizēts apraksts</h2>
+<div class="textblock">
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00009">9</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+</div><h2 class="groupheader">Konstruktora un destruktora dokumentācija</h2>
+<a class="anchor" id="a5b224cc5b36bcc8eb29689aff223de41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Simulation::Simulation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00018">18</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                      {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Elementa funkcijas dokumentācija</h2>
+<a class="anchor" id="a75067c89a43d0e1798fc06c71c3e3a27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Simulation::getActionNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00096">96</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                            {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> 24; <span class="comment">// state number(4) * joint number(6)</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad5446c6b0bc0a889ffdd64d04454a2a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Simulation::getDone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00117">117</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                       {</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Eigen::VectorXd pos = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPositions();</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (abs(pos[0])&gt;1.5 || abs(pos[1])&gt;15.0/180.0*3.141592) <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div><div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2_icgraph.png" border="0" usemap="#class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2_icgraph" alt=""/></div>
+<map name="class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2_icgraph" id="class_simulation_ad5446c6b0bc0a889ffdd64d04454a2a2_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="193,5,388,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acdf5b1b5ec41703365499a888b0d6691"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Simulation::getReward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00113">113</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                            {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">reward</a>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div><div class="ttc" id="class_simulation_html_a5224aea8e98ffc054c58674ab1494971"><div class="ttname"><a href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">Simulation::reward</a></div><div class="ttdeci">double reward</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00031">simulation.h:31</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_acdf5b1b5ec41703365499a888b0d6691_icgraph.png" border="0" usemap="#class_simulation_acdf5b1b5ec41703365499a888b0d6691_icgraph" alt=""/></div>
+<map name="class_simulation_acdf5b1b5ec41703365499a888b0d6691_icgraph" id="class_simulation_acdf5b1b5ec41703365499a888b0d6691_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="208,5,403,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fed4408760d2ba5c2e18aee56aa2f52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::python::list Simulation::getState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00100">100</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                    {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    Eigen::VectorXd pos = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPositions() * 2.0;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    Eigen::VectorXd vec = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getVelocities() * 0.2;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    Eigen::VectorXd phase(1); phase &lt;&lt; <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;GetState()/4.0;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> size = pos.rows();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    Eigen::VectorXd state(size*2 + 1);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    state &lt;&lt; pos,vec,phase;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::cout &lt;&lt; state &lt;&lt; <span class="stringliteral">&quot;#&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="simulation_8cpp.html#a3fe4fa32fecf808041a7f243ac01c91d">toPyList</a>(state);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div><div class="ttc" id="simulation_8cpp_html_a3fe4fa32fecf808041a7f243ac01c91d"><div class="ttname"><a href="simulation_8cpp.html#a3fe4fa32fecf808041a7f243ac01c91d">toPyList</a></div><div class="ttdeci">boost::python::list toPyList(const Eigen::VectorXd &amp;vec)</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8cpp_source.html#l00003">simulation.cpp:3</a></div></div>
+<div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+<div class="ttc" id="class_simulation_html_a3a7d01e2a53a88044001a28aab387a97"><div class="ttname"><a href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">Simulation::fsm</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::StateMachine &gt; fsm</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00029">simulation.h:29</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir visu funkciju izsaugumu grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_cgraph.png" border="0" usemap="#class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_cgraph" alt=""/></div>
+<map name="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_cgraph" id="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_cgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3fe4fa32fecf808041a7f243ac01c91d" title="toPyList" alt="" coords="193,5,264,32"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_icgraph.png" border="0" usemap="#class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_icgraph" alt=""/></div>
+<map name="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_icgraph" id="class_simulation_a0fed4408760d2ba5c2e18aee56aa2f52_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="193,5,388,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1124017cff783732cab02a78af0720d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Simulation::getStateNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00089">89</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                           {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Eigen::VectorXd pos = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPositions();</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> size = pos.rows() * 2 + 1;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> size;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a10d9646039f5bffba768c3abd0b558c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00021">21</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                     {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a> = std::make_shared&lt;VPC::World&gt;(5); <span class="comment">// world-&gt;TimeStepping() 이 호출 될 때마다 world-&gt;step() 이 호출되는 비율</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;Initialize();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetWorld()-&gt;setTimeStep(0.0001);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> size = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPositions().rows();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;4;i++) <a class="code" href="class_simulation.html#a3c630148d41a6eb21d13563e2017f7b6">mDesiredDofs</a>[i] = Eigen::VectorXd::Zero(size);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a> = std::make_shared&lt;VPC::StateMachine&gt;(<a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_simulation.html#a2e3cc7be178e163d8a2bae06191993a7">controller</a> = std::make_shared&lt;VPC::Controller&gt;(<a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;Initialize();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a> = <span class="stringliteral">&quot;../output/&quot;</span>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(boost::filesystem::exists(<a class="code" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a>))</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        boost::filesystem::remove_all(<a class="code" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    boost::filesystem::create_directories(<a class="code" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a>);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div><div class="ttc" id="class_simulation_html_a7c51cfbcfc8f08e47535a504dfbdd18a"><div class="ttname"><a href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">Simulation::output_path</a></div><div class="ttdeci">std::string output_path</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00019">simulation.h:19</a></div></div>
+<div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+<div class="ttc" id="class_simulation_html_a3c630148d41a6eb21d13563e2017f7b6"><div class="ttname"><a href="class_simulation.html#a3c630148d41a6eb21d13563e2017f7b6">Simulation::mDesiredDofs</a></div><div class="ttdeci">Eigen::VectorXd mDesiredDofs[4]</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00028">simulation.h:28</a></div></div>
+<div class="ttc" id="class_simulation_html_a2e3cc7be178e163d8a2bae06191993a7"><div class="ttname"><a href="class_simulation.html#a2e3cc7be178e163d8a2bae06191993a7">Simulation::controller</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::Controller &gt; controller</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00030">simulation.h:30</a></div></div>
+<div class="ttc" id="class_simulation_html_a3a7d01e2a53a88044001a28aab387a97"><div class="ttname"><a href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">Simulation::fsm</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::StateMachine &gt; fsm</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00029">simulation.h:29</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_a10d9646039f5bffba768c3abd0b558c7_icgraph.png" border="0" usemap="#class_simulation_a10d9646039f5bffba768c3abd0b558c7_icgraph" alt=""/></div>
+<map name="class_simulation_a10d9646039f5bffba768c3abd0b558c7_icgraph" id="class_simulation_a10d9646039f5bffba768c3abd0b558c7_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="161,5,356,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2dc2464162d59383e0a1c68a3f9c42fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00039">39</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                      {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;Initialize();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//    if(boost::filesystem::exists(output_path))</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//        boost::filesystem::remove_all(output_path);</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    boost::filesystem::create_directories(output_path);</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div><div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb_icgraph.png" border="0" usemap="#class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb_icgraph" alt=""/></div>
+<map name="class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb_icgraph" id="class_simulation_a2dc2464162d59383e0a1c68a3f9c42fb_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="173,5,368,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae024524b94a02df25c987e25cd83d8c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::setAction </td>
+          <td>(</td>
+          <td class="paramtype">boost::python::list&#160;</td>
+          <td class="paramname"><em>action</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00123">123</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                {</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;SetStatePose(<a class="code" href="simulation_8cpp.html#a6d1b6ed25a79f2f7060d0f4e43f86b12">toEigen</a>(action));</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div><div class="ttc" id="class_simulation_html_a3a7d01e2a53a88044001a28aab387a97"><div class="ttname"><a href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">Simulation::fsm</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::StateMachine &gt; fsm</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00029">simulation.h:29</a></div></div>
+<div class="ttc" id="simulation_8cpp_html_a6d1b6ed25a79f2f7060d0f4e43f86b12"><div class="ttname"><a href="simulation_8cpp.html#a6d1b6ed25a79f2f7060d0f4e43f86b12">toEigen</a></div><div class="ttdeci">Eigen::VectorXd toEigen(boost::python::list py_list)</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8cpp_source.html#l00010">simulation.cpp:10</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir visu funkciju izsaugumu grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_ae024524b94a02df25c987e25cd83d8c9_cgraph.png" border="0" usemap="#class_simulation_ae024524b94a02df25c987e25cd83d8c9_cgraph" alt=""/></div>
+<map name="class_simulation_ae024524b94a02df25c987e25cd83d8c9_cgraph" id="class_simulation_ae024524b94a02df25c987e25cd83d8c9_cgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a6d1b6ed25a79f2f7060d0f4e43f86b12" title="toEigen" alt="" coords="200,5,267,32"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_ae024524b94a02df25c987e25cd83d8c9_icgraph.png" border="0" usemap="#class_simulation_ae024524b94a02df25c987e25cd83d8c9_icgraph" alt=""/></div>
+<map name="class_simulation_ae024524b94a02df25c987e25cd83d8c9_icgraph" id="class_simulation_ae024524b94a02df25c987e25cd83d8c9_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="200,5,395,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae057193c8d120c47e136cdb9aeee2fd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::step </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recordFlag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8cpp_source.html#l00046">46</a> failā <a class="el" href="simulation_8cpp_source.html">simulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                    {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Eigen::VectorXd p,v;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> lastState = 0, stepCount = 0;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">reward</a> = 0.0;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (;;){</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        stepCount++;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;GetMotion(p,v);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">int</span> newState = <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;GetState();</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//        if (world-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPosition(4) &lt;= -0.2207){ // determine simbicon falls down</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//            break;</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//        }</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (lastState == 3 &amp;&amp; newState == 0){</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        Eigen::VectorXd tau = <a class="code" href="class_simulation.html#a2e3cc7be178e163d8a2bae06191993a7">controller</a>-&gt;ComputeTorque(p,v);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        tau = <a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>-&gt;TorsoControl(tau);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;setForces(tau);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;TimeStepping();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">double</span> desiredVelocity = -1.3; <span class="comment">// z-axis</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">double</span> currentVelocity = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getVelocity(5);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">double</span> zVelocityReward = exp(-pow((desiredVelocity - currentVelocity),2.0));</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">double</span> torsoAngle = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPosition(0);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">double</span> torsoUpwardReward = exp(-pow(torsoAngle, 2.0));</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> fallDownFlag = <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter()-&gt;GetSkeleton()-&gt;getPosition(4) &lt;= -0.2207;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">double</span> fallDownPenalty = fallDownFlag ? -10 : 0.0;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">reward</a> += 1.0 * zVelocityReward + 0.5 * torsoUpwardReward + 1.0 * fallDownPenalty;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        lastState = newState;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (recordFlag) {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">records</a>.push_back(std::make_shared&lt;VPC::Record&gt;());</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">records</a>.back()-&gt;Set(<a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetWorld(), <a class="code" href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">world</a>-&gt;GetCharacter(),<a class="code" href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">fsm</a>);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">records</a>.back()-&gt;Write(<a class="code" href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">output_path</a> + std::to_string(<a class="code" href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">records</a>.size() - 1));</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">reward</a> /= stepCount;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div><div class="ttc" id="class_simulation_html_a7c51cfbcfc8f08e47535a504dfbdd18a"><div class="ttname"><a href="class_simulation.html#a7c51cfbcfc8f08e47535a504dfbdd18a">Simulation::output_path</a></div><div class="ttdeci">std::string output_path</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00019">simulation.h:19</a></div></div>
+<div class="ttc" id="class_simulation_html_ab8b3d4d3e13a05086f8497e5235fb37a"><div class="ttname"><a href="class_simulation.html#ab8b3d4d3e13a05086f8497e5235fb37a">Simulation::world</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::World &gt; world</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00017">simulation.h:17</a></div></div>
+<div class="ttc" id="class_simulation_html_a8e55698283d8bbba9843391b0d9ecfa8"><div class="ttname"><a href="class_simulation.html#a8e55698283d8bbba9843391b0d9ecfa8">Simulation::records</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; VPC::Record &gt; &gt; records</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00018">simulation.h:18</a></div></div>
+<div class="ttc" id="class_simulation_html_a2e3cc7be178e163d8a2bae06191993a7"><div class="ttname"><a href="class_simulation.html#a2e3cc7be178e163d8a2bae06191993a7">Simulation::controller</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::Controller &gt; controller</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00030">simulation.h:30</a></div></div>
+<div class="ttc" id="class_simulation_html_a5224aea8e98ffc054c58674ab1494971"><div class="ttname"><a href="class_simulation.html#a5224aea8e98ffc054c58674ab1494971">Simulation::reward</a></div><div class="ttdeci">double reward</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00031">simulation.h:31</a></div></div>
+<div class="ttc" id="class_simulation_html_a3a7d01e2a53a88044001a28aab387a97"><div class="ttname"><a href="class_simulation.html#a3a7d01e2a53a88044001a28aab387a97">Simulation::fsm</a></div><div class="ttdeci">std::shared_ptr&lt; VPC::StateMachine &gt; fsm</div><div class="ttdef"><b>Definition:</b> <a href="simulation_8h_source.html#l00029">simulation.h:29</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Šeit ir šīs funkcijas izsaukuma grafs:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_simulation_ae057193c8d120c47e136cdb9aeee2fd8_icgraph.png" border="0" usemap="#class_simulation_ae057193c8d120c47e136cdb9aeee2fd8_icgraph" alt=""/></div>
+<map name="class_simulation_ae057193c8d120c47e136cdb9aeee2fd8_icgraph" id="class_simulation_ae057193c8d120c47e136cdb9aeee2fd8_icgraph">
+<area shape="rect" id="node2" href="simulation_8cpp.html#a3ce127d7d91ec30b2465b6cefdbdf84c" title="BOOST_PYTHON_MODULE" alt="" coords="169,5,364,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Elementa datu dokumentācija</h2>
+<a class="anchor" id="a2e3cc7be178e163d8a2bae06191993a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_v_p_c_1_1_controller.html">VPC::Controller</a>&gt; Simulation::controller</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00030">30</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a7d01e2a53a88044001a28aab387a97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_v_p_c_1_1_state_machine.html">VPC::StateMachine</a>&gt; Simulation::fsm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00029">29</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c630148d41a6eb21d13563e2017f7b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd Simulation::mDesiredDofs[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00028">28</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c51cfbcfc8f08e47535a504dfbdd18a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Simulation::output_path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00019">19</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e55698283d8bbba9843391b0d9ecfa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_v_p_c_1_1_record.html">VPC::Record</a>&gt; &gt; Simulation::records</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00018">18</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5224aea8e98ffc054c58674ab1494971"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Simulation::reward</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00031">31</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8b3d4d3e13a05086f8497e5235fb37a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_v_p_c_1_1_world.html">VPC::World</a>&gt; Simulation::world</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definēts līnijā <a class="el" href="simulation_8h_source.html#l00017">17</a> failā <a class="el" href="simulation_8h_source.html">simulation.h</a>.</p>
+
+</div>
+</div>
+<hr/>Šīs klases dokumentācijas tika ģenerēta no šāda failiem:<ul>
+<li>vpc/<a class="el" href="simulation_8h_source.html">simulation.h</a></li>
+<li>vpc/<a class="el" href="simulation_8cpp_source.html">simulation.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_simulation.html">Simulation</a></li>
+    <li class="footer">Ģenerēts ar
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

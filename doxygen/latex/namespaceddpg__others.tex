@@ -1,0 +1,255 @@
+\hypertarget{namespaceddpg__others}{}\section{ddpg\+\_\+others nosaukumvietas apraksts}
+\label{namespaceddpg__others}\index{ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsection*{Klases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classddpg__others_1_1_actor}{Actor}
+\item 
+class \hyperlink{classddpg__others_1_1_critic}{Critic}
+\end{DoxyCompactItemize}
+\subsection*{Mainīgie}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceddpg__others_a8d8efc66aff50b88de22a9373e2d7602}{O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH} = False
+\item 
+int \hyperlink{namespaceddpg__others_afb464b6fe0768d57caf65334b4d8f87e}{M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE} = 10000
+\item 
+int \hyperlink{namespaceddpg__others_a0db47bb3ba4a2b08dfae7438342b3ef1}{M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS} = 200
+\item 
+int \hyperlink{namespaceddpg__others_abe31be53540bd026d448c7d8c7a10141}{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = -\/100
+\item 
+bool \hyperlink{namespaceddpg__others_a2c384bab41511c29b415ab1bd8fe9726}{R\+E\+N\+D\+ER} = False
+\item 
+float \hyperlink{namespaceddpg__others_a38ab6c2b615e48356811e668c04931f5}{G\+A\+M\+MA} = 0.\+9
+\item 
+float \hyperlink{namespaceddpg__others_a414c179cc14428441e47d44afc4dd8f2}{L\+R\+\_\+A} = 0.\+001
+\item 
+float \hyperlink{namespaceddpg__others_af9a7b0578b28ea38c337e8db55f0bb7e}{L\+R\+\_\+C} = 0.\+01
+\item 
+\hyperlink{namespaceddpg__others_afd02a34b64d07267055995ecab1de1d6}{env} = gym.\+make(\textquotesingle{}Pendulum-\/v0\textquotesingle{})
+\item 
+\hyperlink{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}{N\+\_\+S} = env.\+observation\+\_\+space.\+shape\mbox{[}0\mbox{]}
+\item 
+\hyperlink{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}{A\+\_\+\+B\+O\+U\+ND} = env.\+action\+\_\+space.\+high
+\item 
+\hyperlink{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}{sess} = tf.\+Session()
+\item 
+\hyperlink{namespaceddpg__others_ac9344417e957a7971f46d25644f70741}{actor} = \hyperlink{classddpg__others_1_1_actor}{Actor}(\hyperlink{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}{sess}, n\+\_\+features=\hyperlink{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}{N\+\_\+S}, lr=\hyperlink{namespaceddpg__others_a414c179cc14428441e47d44afc4dd8f2}{L\+R\+\_\+A}, action\+\_\+bound=\mbox{[}-\/\hyperlink{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}{A\+\_\+\+B\+O\+U\+ND}, \hyperlink{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}{A\+\_\+\+B\+O\+U\+ND}\mbox{]})
+\item 
+\hyperlink{namespaceddpg__others_a02a9cd4813c0b89d52754744bb297310}{critic} = \hyperlink{classddpg__others_1_1_critic}{Critic}(\hyperlink{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}{sess}, n\+\_\+features=\hyperlink{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}{N\+\_\+S}, lr=\hyperlink{namespaceddpg__others_af9a7b0578b28ea38c337e8db55f0bb7e}{L\+R\+\_\+C})
+\item 
+\hyperlink{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}{s} = env.\+reset()
+\item 
+int \hyperlink{namespaceddpg__others_aee1bec6a64f3215b28552758ee87bfc6}{t} = 0
+\item 
+list \hyperlink{namespaceddpg__others_a8b02d06c3efd8c65bd22c59b0be4046a}{ep\+\_\+rs} = \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{namespaceddpg__others_a5074dd5702ee1c582994c8544c0ac4f1}{a} = actor.\+choose\+\_\+action(\hyperlink{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}{s})
+\item 
+\hyperlink{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}{s\+\_\+}
+\item 
+\hyperlink{namespaceddpg__others_a05079a0e5b9b284648a5e279d844fc34}{r}
+\item 
+\hyperlink{namespaceddpg__others_ae2aa87b119af7536ff9c20bd0bcba552}{done}
+\item 
+\hyperlink{namespaceddpg__others_a906ea017b3e79f8b9791285c30773671}{info}
+\item 
+\hyperlink{namespaceddpg__others_ab3de6bd8c4c05cda51f8fb396eb255d8}{td\+\_\+error} = critic.\+learn(\hyperlink{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}{s}, \hyperlink{namespaceddpg__others_a05079a0e5b9b284648a5e279d844fc34}{r}, \hyperlink{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}{s\+\_\+})
+\item 
+\hyperlink{namespaceddpg__others_ae0eea715ecb8dfc45dfea85e23ff27ad}{ep\+\_\+rs\+\_\+sum} = sum(\hyperlink{namespaceddpg__others_a8b02d06c3efd8c65bd22c59b0be4046a}{ep\+\_\+rs})
+\item 
+\hyperlink{namespaceddpg__others_a98714db748bdf3f1566b42ed000f7365}{running\+\_\+reward} = \hyperlink{namespaceddpg__others_ae0eea715ecb8dfc45dfea85e23ff27ad}{ep\+\_\+rs\+\_\+sum}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+\begin{DoxyVerb}Actor-Critic with continuous action using TD-error as the Advantage, Reinforcement Learning.
+
+The Pendulum example (based on https://github.com/dennybritz/reinforcement-learning/blob/master/PolicyGradient/Continuous%20MountainCar%20Actor%20Critic%20Solution.ipynb)
+
+Cannot converge!!! oscillate!!!
+
+View more on my tutorial page: https://morvanzhou.github.io/tutorials/
+
+Using:
+tensorflow r1.3
+gym 0.8.0
+\end{DoxyVerb}
+ 
+
+\subsection{Mainīgo dokumentācija}
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!a@{a}}
+\index{a@{a}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+a = actor.\+choose\+\_\+action({\bf s})}\hypertarget{namespaceddpg__others_a5074dd5702ee1c582994c8544c0ac4f1}{}\label{namespaceddpg__others_a5074dd5702ee1c582994c8544c0ac4f1}
+
+
+Definēts līnijā 159 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!A\+\_\+\+B\+O\+U\+ND@{A\+\_\+\+B\+O\+U\+ND}}
+\index{A\+\_\+\+B\+O\+U\+ND@{A\+\_\+\+B\+O\+U\+ND}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{A\+\_\+\+B\+O\+U\+ND}{A_BOUND}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+A\+\_\+\+B\+O\+U\+ND = env.\+action\+\_\+space.\+high}\hypertarget{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}{}\label{namespaceddpg__others_a7e1c48752aba637fb6cea31fa0eaa826}
+
+
+Definēts līnijā 140 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!actor@{actor}}
+\index{actor@{actor}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{actor}{actor}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+actor = {\bf Actor}({\bf sess}, n\+\_\+features={\bf N\+\_\+S}, lr={\bf L\+R\+\_\+A}, action\+\_\+bound=\mbox{[}-\/{\bf A\+\_\+\+B\+O\+U\+ND}, {\bf A\+\_\+\+B\+O\+U\+ND}\mbox{]})}\hypertarget{namespaceddpg__others_ac9344417e957a7971f46d25644f70741}{}\label{namespaceddpg__others_ac9344417e957a7971f46d25644f70741}
+
+
+Definēts līnijā 144 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!critic@{critic}}
+\index{critic@{critic}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{critic}{critic}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+critic = {\bf Critic}({\bf sess}, n\+\_\+features={\bf N\+\_\+S}, lr={\bf L\+R\+\_\+C})}\hypertarget{namespaceddpg__others_a02a9cd4813c0b89d52754744bb297310}{}\label{namespaceddpg__others_a02a9cd4813c0b89d52754744bb297310}
+
+
+Definēts līnijā 145 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{DISPLAY_REWARD_THRESHOLD}}]{\setlength{\rightskip}{0pt plus 5cm}int ddpg\+\_\+others.\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+E\+W\+A\+R\+D\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = -\/100}\hypertarget{namespaceddpg__others_abe31be53540bd026d448c7d8c7a10141}{}\label{namespaceddpg__others_abe31be53540bd026d448c7d8c7a10141}
+
+
+Definēts līnijā 129 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!done@{done}}
+\index{done@{done}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{done}{done}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+done}\hypertarget{namespaceddpg__others_ae2aa87b119af7536ff9c20bd0bcba552}{}\label{namespaceddpg__others_ae2aa87b119af7536ff9c20bd0bcba552}
+
+
+Definēts līnijā 161 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!env@{env}}
+\index{env@{env}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+env = gym.\+make(\textquotesingle{}Pendulum-\/v0\textquotesingle{})}\hypertarget{namespaceddpg__others_afd02a34b64d07267055995ecab1de1d6}{}\label{namespaceddpg__others_afd02a34b64d07267055995ecab1de1d6}
+
+
+Definēts līnijā 135 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!ep\+\_\+rs@{ep\+\_\+rs}}
+\index{ep\+\_\+rs@{ep\+\_\+rs}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{ep\+\_\+rs}{ep_rs}}]{\setlength{\rightskip}{0pt plus 5cm}list ddpg\+\_\+others.\+ep\+\_\+rs = \mbox{[}$\,$\mbox{]}}\hypertarget{namespaceddpg__others_a8b02d06c3efd8c65bd22c59b0be4046a}{}\label{namespaceddpg__others_a8b02d06c3efd8c65bd22c59b0be4046a}
+
+
+Definēts līnijā 155 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!ep\+\_\+rs\+\_\+sum@{ep\+\_\+rs\+\_\+sum}}
+\index{ep\+\_\+rs\+\_\+sum@{ep\+\_\+rs\+\_\+sum}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{ep\+\_\+rs\+\_\+sum}{ep_rs_sum}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+ep\+\_\+rs\+\_\+sum = sum({\bf ep\+\_\+rs})}\hypertarget{namespaceddpg__others_ae0eea715ecb8dfc45dfea85e23ff27ad}{}\label{namespaceddpg__others_ae0eea715ecb8dfc45dfea85e23ff27ad}
+
+
+Definēts līnijā 171 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!G\+A\+M\+MA@{G\+A\+M\+MA}}
+\index{G\+A\+M\+MA@{G\+A\+M\+MA}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{G\+A\+M\+MA}{GAMMA}}]{\setlength{\rightskip}{0pt plus 5cm}float ddpg\+\_\+others.\+G\+A\+M\+MA = 0.\+9}\hypertarget{namespaceddpg__others_a38ab6c2b615e48356811e668c04931f5}{}\label{namespaceddpg__others_a38ab6c2b615e48356811e668c04931f5}
+
+
+Definēts līnijā 131 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!info@{info}}
+\index{info@{info}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{info}{info}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+info}\hypertarget{namespaceddpg__others_a906ea017b3e79f8b9791285c30773671}{}\label{namespaceddpg__others_a906ea017b3e79f8b9791285c30773671}
+
+
+Definēts līnijā 161 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!L\+R\+\_\+A@{L\+R\+\_\+A}}
+\index{L\+R\+\_\+A@{L\+R\+\_\+A}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{L\+R\+\_\+A}{LR_A}}]{\setlength{\rightskip}{0pt plus 5cm}float ddpg\+\_\+others.\+L\+R\+\_\+A = 0.\+001}\hypertarget{namespaceddpg__others_a414c179cc14428441e47d44afc4dd8f2}{}\label{namespaceddpg__others_a414c179cc14428441e47d44afc4dd8f2}
+
+
+Definēts līnijā 132 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!L\+R\+\_\+C@{L\+R\+\_\+C}}
+\index{L\+R\+\_\+C@{L\+R\+\_\+C}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{L\+R\+\_\+C}{LR_C}}]{\setlength{\rightskip}{0pt plus 5cm}float ddpg\+\_\+others.\+L\+R\+\_\+C = 0.\+01}\hypertarget{namespaceddpg__others_af9a7b0578b28ea38c337e8db55f0bb7e}{}\label{namespaceddpg__others_af9a7b0578b28ea38c337e8db55f0bb7e}
+
+
+Definēts līnijā 133 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS@{M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS}}
+\index{M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS@{M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS}{MAX_EP_STEPS}}]{\setlength{\rightskip}{0pt plus 5cm}int ddpg\+\_\+others.\+M\+A\+X\+\_\+\+E\+P\+\_\+\+S\+T\+E\+PS = 200}\hypertarget{namespaceddpg__others_a0db47bb3ba4a2b08dfae7438342b3ef1}{}\label{namespaceddpg__others_a0db47bb3ba4a2b08dfae7438342b3ef1}
+
+
+Definēts līnijā 128 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE@{M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE}}
+\index{M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE@{M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE}{MAX_EPISODE}}]{\setlength{\rightskip}{0pt plus 5cm}int ddpg\+\_\+others.\+M\+A\+X\+\_\+\+E\+P\+I\+S\+O\+DE = 10000}\hypertarget{namespaceddpg__others_afb464b6fe0768d57caf65334b4d8f87e}{}\label{namespaceddpg__others_afb464b6fe0768d57caf65334b4d8f87e}
+
+
+Definēts līnijā 127 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!N\+\_\+S@{N\+\_\+S}}
+\index{N\+\_\+S@{N\+\_\+S}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{N\+\_\+S}{N_S}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+N\+\_\+S = env.\+observation\+\_\+space.\+shape\mbox{[}0\mbox{]}}\hypertarget{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}{}\label{namespaceddpg__others_a085e3af0235a4184f14e45c40242542c}
+
+
+Definēts līnijā 139 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH@{O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH}}
+\index{O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH@{O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH}{OUTPUT_GRAPH}}]{\setlength{\rightskip}{0pt plus 5cm}bool ddpg\+\_\+others.\+O\+U\+T\+P\+U\+T\+\_\+\+G\+R\+A\+PH = False}\hypertarget{namespaceddpg__others_a8d8efc66aff50b88de22a9373e2d7602}{}\label{namespaceddpg__others_a8d8efc66aff50b88de22a9373e2d7602}
+
+
+Definēts līnijā 126 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!r@{r}}
+\index{r@{r}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{r}{r}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+r}\hypertarget{namespaceddpg__others_a05079a0e5b9b284648a5e279d844fc34}{}\label{namespaceddpg__others_a05079a0e5b9b284648a5e279d844fc34}
+
+
+Definēts līnijā 161 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!R\+E\+N\+D\+ER@{R\+E\+N\+D\+ER}}
+\index{R\+E\+N\+D\+ER@{R\+E\+N\+D\+ER}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{R\+E\+N\+D\+ER}{RENDER}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+R\+E\+N\+D\+ER = False}\hypertarget{namespaceddpg__others_a2c384bab41511c29b415ab1bd8fe9726}{}\label{namespaceddpg__others_a2c384bab41511c29b415ab1bd8fe9726}
+
+
+Definēts līnijā 130 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!running\+\_\+reward@{running\+\_\+reward}}
+\index{running\+\_\+reward@{running\+\_\+reward}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{running\+\_\+reward}{running_reward}}]{\setlength{\rightskip}{0pt plus 5cm}float ddpg\+\_\+others.\+running\+\_\+reward = {\bf ep\+\_\+rs\+\_\+sum}}\hypertarget{namespaceddpg__others_a98714db748bdf3f1566b42ed000f7365}{}\label{namespaceddpg__others_a98714db748bdf3f1566b42ed000f7365}
+
+
+Definēts līnijā 173 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!s@{s}}
+\index{s@{s}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{s}{s}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+s = env.\+reset()}\hypertarget{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}{}\label{namespaceddpg__others_a2e657d9112433f7acfe9a28c8e7ce79a}
+
+
+Definēts līnijā 153 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!s\+\_\+@{s\+\_\+}}
+\index{s\+\_\+@{s\+\_\+}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{s\+\_\+}{s_}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+s\+\_\+}\hypertarget{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}{}\label{namespaceddpg__others_a9401d5decfd243fdd11c64d512501ff1}
+
+
+Definēts līnijā 161 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!sess@{sess}}
+\index{sess@{sess}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{sess}{sess}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+sess = tf.\+Session()}\hypertarget{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}{}\label{namespaceddpg__others_a88947f5e132c9538f8d4ce16004711ca}
+
+
+Definēts līnijā 142 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!t@{t}}
+\index{t@{t}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{t}{t}}]{\setlength{\rightskip}{0pt plus 5cm}int ddpg\+\_\+others.\+t = 0}\hypertarget{namespaceddpg__others_aee1bec6a64f3215b28552758ee87bfc6}{}\label{namespaceddpg__others_aee1bec6a64f3215b28552758ee87bfc6}
+
+
+Definēts līnijā 154 failā ddpg\+\_\+others.\+py.
+
+\index{ddpg\+\_\+others@{ddpg\+\_\+others}!td\+\_\+error@{td\+\_\+error}}
+\index{td\+\_\+error@{td\+\_\+error}!ddpg\+\_\+others@{ddpg\+\_\+others}}
+\subsubsection[{\texorpdfstring{td\+\_\+error}{td_error}}]{\setlength{\rightskip}{0pt plus 5cm}ddpg\+\_\+others.\+td\+\_\+error = critic.\+learn({\bf s}, {\bf r}, {\bf s\+\_\+})}\hypertarget{namespaceddpg__others_ab3de6bd8c4c05cda51f8fb396eb255d8}{}\label{namespaceddpg__others_ab3de6bd8c4c05cda51f8fb396eb255d8}
+
+
+Definēts līnijā 164 failā ddpg\+\_\+others.\+py.
+

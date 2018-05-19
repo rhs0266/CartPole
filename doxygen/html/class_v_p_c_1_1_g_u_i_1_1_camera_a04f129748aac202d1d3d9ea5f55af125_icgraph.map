@@ -1,0 +1,5 @@
+<map id="VPC::GUI::Camera::Pan" name="VPC::GUI::Camera::Pan">
+<area shape="rect" id="node2" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#a30bd1c97b4736674333192813ca9a8e1" title="VPC::GUI::Camera::Apply" alt="" coords="220,5,397,32"/>
+<area shape="rect" id="node3" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#a5e28472053c4188219683939cad01f1f" title="VPC::GUI::Camera::SetCamera" alt="" coords="445,5,656,32"/>
+<area shape="rect" id="node4" href="$class_v_p_c_1_1_g_u_i_1_1_camera.html#ae699f409e3205018175f7bd8b3eab657" title="VPC::GUI::Camera::Camera" alt="" coords="704,5,895,32"/>
+</map>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CartPole: py_code/noise.py pirmkoda fails</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CartPole
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Ģenerēts ar Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Meklēt');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sākumlapa</span></a></li>
+      <li><a href="pages.html"><span>Saistītās&#160;lapas</span></a></li>
+      <li><a href="namespaces.html"><span>Nosaukumvietas</span></a></li>
+      <li><a href="annotated.html"><span>Klases</span></a></li>
+      <li class="current"><a href="files.html"><span>Faili</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Meklēt" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Failu&#160;saraksts</span></a></li>
+      <li><a href="globals.html"><span>Faila&#160;elementi</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('noise_8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">noise.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="noise_8py.html">Ietu uz šī faila dokumentāciju.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacenoise.html">    1</a></span>&#160;<span class="comment"># ===========================</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#   Noise - Ornstein Uhlenbeck</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">#   Modified from: http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#   Author: Liam Pettigrew</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># ===========================</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoise_1_1_o_u_noise.html">OUNoise</a>(object):</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#a4c250d049db8708e66241e37a2910101">   10</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classnoise_1_1_o_u_noise.html#a4c250d049db8708e66241e37a2910101">__init__</a>(self, delta, sigma, ou_a, ou_mu):</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment"># Noise parameters</span></div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#a0d32976eef71e3899eeff4d04ec50544">   12</a></span>&#160;        self.<a class="code" href="classnoise_1_1_o_u_noise.html#a0d32976eef71e3899eeff4d04ec50544">delta</a> = delta</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#ae47f26b40c75e9039ceef58859dccc90">   13</a></span>&#160;        self.<a class="code" href="classnoise_1_1_o_u_noise.html#ae47f26b40c75e9039ceef58859dccc90">sigma</a> = sigma</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#aff4bb3aa350f605b987d90e72499afd9">   14</a></span>&#160;        self.<a class="code" href="classnoise_1_1_o_u_noise.html#aff4bb3aa350f605b987d90e72499afd9">ou_a</a> = ou_a</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#ae5746606ef8e0c123814e782535c5b09">   15</a></span>&#160;        self.<a class="code" href="classnoise_1_1_o_u_noise.html#ae5746606ef8e0c123814e782535c5b09">ou_mu</a> = ou_mu</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#a18a594f4c39c884806b50078df4a2063">   17</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classnoise_1_1_o_u_noise.html#a18a594f4c39c884806b50078df4a2063">brownian_motion_log_returns</a>(self):</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">        This method returns a Wiener process. The Wiener process is also called Brownian motion. For more information</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">        about the Wiener process check out the Wikipedia page: http://en.wikipedia.org/wiki/Wiener_process</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">        :return: brownian motion log returns</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        sqrt_delta_sigma = np.sqrt(self.<a class="code" href="classnoise_1_1_o_u_noise.html#a0d32976eef71e3899eeff4d04ec50544">delta</a>) * self.<a class="code" href="classnoise_1_1_o_u_noise.html#ae47f26b40c75e9039ceef58859dccc90">sigma</a></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> np.random.normal(loc=0, scale=sqrt_delta_sigma, size=<span class="keywordtype">None</span>)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classnoise_1_1_o_u_noise.html#a4b01fc4f19ee3f17cffe91290312cc97">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classnoise_1_1_o_u_noise.html#a4b01fc4f19ee3f17cffe91290312cc97">ornstein_uhlenbeck_level</a>(self, prev_ou_level):</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">        This method returns the rate levels of a mean-reverting ornstein uhlenbeck process.</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral">        :return: the Ornstein Uhlenbeck level</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        drift = self.<a class="code" href="classnoise_1_1_o_u_noise.html#aff4bb3aa350f605b987d90e72499afd9">ou_a</a> * (self.<a class="code" href="classnoise_1_1_o_u_noise.html#ae5746606ef8e0c123814e782535c5b09">ou_mu</a> - prev_ou_level) * self.<a class="code" href="classnoise_1_1_o_u_noise.html#a0d32976eef71e3899eeff4d04ec50544">delta</a></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        randomness = self.<a class="code" href="classnoise_1_1_o_u_noise.html#a18a594f4c39c884806b50078df4a2063">brownian_motion_log_returns</a>()</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> prev_ou_level + drift + randomness</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classnoise_1_1_gaussian_noise.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoise_1_1_gaussian_noise.html">GaussianNoise</a>(object):</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classnoise_1_1_gaussian_noise.html#afbab5255dc75d7f01173a2c3231a5083">   36</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classnoise_1_1_gaussian_noise.html#afbab5255dc75d7f01173a2c3231a5083">__init__</a>(self):</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classnoise_1_1_gaussian_noise.html#ae6ebe290c02cbbddebafa335ef0af013">   37</a></span>&#160;        self.<a class="code" href="classnoise_1_1_gaussian_noise.html#ae6ebe290c02cbbddebafa335ef0af013">sigma</a> = 0.3</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classnoise_1_1_gaussian_noise.html#aa5a9d46ef04a4eef8dfc25e966c0f622">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classnoise_1_1_gaussian_noise.html#aa5a9d46ef04a4eef8dfc25e966c0f622">gaussian_noise</a>(self, mu, sigma = 0.3):</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> np.random.normal(mu, sigma)</div><div class="ttc" id="classnoise_1_1_gaussian_noise_html"><div class="ttname"><a href="classnoise_1_1_gaussian_noise.html">noise.GaussianNoise</a></div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00035">noise.py:35</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_ae5746606ef8e0c123814e782535c5b09"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#ae5746606ef8e0c123814e782535c5b09">noise.OUNoise.ou_mu</a></div><div class="ttdeci">ou_mu</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00015">noise.py:15</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_a4b01fc4f19ee3f17cffe91290312cc97"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#a4b01fc4f19ee3f17cffe91290312cc97">noise.OUNoise.ornstein_uhlenbeck_level</a></div><div class="ttdeci">def ornstein_uhlenbeck_level(self, prev_ou_level)</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00026">noise.py:26</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_a18a594f4c39c884806b50078df4a2063"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#a18a594f4c39c884806b50078df4a2063">noise.OUNoise.brownian_motion_log_returns</a></div><div class="ttdeci">def brownian_motion_log_returns(self)</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00017">noise.py:17</a></div></div>
+<div class="ttc" id="classnoise_1_1_gaussian_noise_html_ae6ebe290c02cbbddebafa335ef0af013"><div class="ttname"><a href="classnoise_1_1_gaussian_noise.html#ae6ebe290c02cbbddebafa335ef0af013">noise.GaussianNoise.sigma</a></div><div class="ttdeci">sigma</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00037">noise.py:37</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_ae47f26b40c75e9039ceef58859dccc90"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#ae47f26b40c75e9039ceef58859dccc90">noise.OUNoise.sigma</a></div><div class="ttdeci">sigma</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00013">noise.py:13</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html">noise.OUNoise</a></div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00008">noise.py:8</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_aff4bb3aa350f605b987d90e72499afd9"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#aff4bb3aa350f605b987d90e72499afd9">noise.OUNoise.ou_a</a></div><div class="ttdeci">ou_a</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00014">noise.py:14</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_a4c250d049db8708e66241e37a2910101"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#a4c250d049db8708e66241e37a2910101">noise.OUNoise.__init__</a></div><div class="ttdeci">def __init__(self, delta, sigma, ou_a, ou_mu)</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00010">noise.py:10</a></div></div>
+<div class="ttc" id="classnoise_1_1_o_u_noise_html_a0d32976eef71e3899eeff4d04ec50544"><div class="ttname"><a href="classnoise_1_1_o_u_noise.html#a0d32976eef71e3899eeff4d04ec50544">noise.OUNoise.delta</a></div><div class="ttdeci">delta</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00012">noise.py:12</a></div></div>
+<div class="ttc" id="classnoise_1_1_gaussian_noise_html_afbab5255dc75d7f01173a2c3231a5083"><div class="ttname"><a href="classnoise_1_1_gaussian_noise.html#afbab5255dc75d7f01173a2c3231a5083">noise.GaussianNoise.__init__</a></div><div class="ttdeci">def __init__(self)</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00036">noise.py:36</a></div></div>
+<div class="ttc" id="classnoise_1_1_gaussian_noise_html_aa5a9d46ef04a4eef8dfc25e966c0f622"><div class="ttname"><a href="classnoise_1_1_gaussian_noise.html#aa5a9d46ef04a4eef8dfc25e966c0f622">noise.GaussianNoise.gaussian_noise</a></div><div class="ttdeci">def gaussian_noise(self, mu, sigma=0.3)</div><div class="ttdef"><b>Definition:</b> <a href="noise_8py_source.html#l00039">noise.py:39</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_40d4f3d0f21502ab8145b7353e888c2d.html">py_code</a></li><li class="navelem"><a class="el" href="noise_8py.html">noise.py</a></li>
+    <li class="footer">Ģenerēts ar
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

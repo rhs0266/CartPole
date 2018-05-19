@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CartPole: render/SimWindow.cpp faila apraksts</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CartPole
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Ģenerēts ar Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Meklēt');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sākumlapa</span></a></li>
+      <li><a href="pages.html"><span>Saistītās&#160;lapas</span></a></li>
+      <li><a href="namespaces.html"><span>Nosaukumvietas</span></a></li>
+      <li><a href="annotated.html"><span>Klases</span></a></li>
+      <li class="current"><a href="files.html"><span>Faili</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Meklēt" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Failu&#160;saraksts</span></a></li>
+      <li><a href="globals.html"><span>Faila&#160;elementi</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_sim_window_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Nosaukumvietas</a>  </div>
+  <div class="headertitle">
+<div class="title">SimWindow.cpp faila apraksts</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_sim_window_8h_source.html">SimWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_dart_interface_8h_source.html">DartInterface.h</a>&quot;</code><br />
+<code>#include &quot;dart/external/lodepng/lodepng.h&quot;</code><br />
+<code>#include &lt;boost/filesystem.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="_g_l_includes_8h_source.html">GLIncludes.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SimWindow.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="_sim_window_8cpp__incl.png" border="0" usemap="#render_2_sim_window_8cpp" alt=""/></div>
+<map name="render_2_sim_window_8cpp" id="render_2_sim_window_8cpp">
+<area shape="rect" id="node2" href="_sim_window_8h.html" title="SimWindow.h" alt="" coords="503,87,606,114"/>
+<area shape="rect" id="node31" href="_dart_interface_8h.html" title="DartInterface.h" alt="" coords="1189,169,1299,196"/>
+<area shape="rect" id="node34" href="_g_l_includes_8h.html" title="GLIncludes.h" alt="" coords="1316,87,1415,114"/>
+<area shape="rect" id="node3" href="_camera_8h.html" title="Camera.h" alt="" coords="403,319,482,345"/>
+<area shape="rect" id="node7" href="_g_l_u_t_window_8h.html" title="GLUTWindow.h" alt="" coords="507,319,621,345"/>
+<area shape="rect" id="node9" href="_g_lfunctions_8h.html" title="GLfunctions.h" alt="" coords="277,319,379,345"/>
+<area shape="rect" id="node12" href="engine_8h.html" title="engine/engine.h" alt="" coords="851,169,965,196"/>
+<area shape="rect" id="node13" href="_std_includes_8h.html" title="StdIncludes.h" alt="" coords="886,393,989,420"/>
+<area shape="rect" id="node21" href="_eigen_includes_8h.html" title="EigenIncludes.h" alt="" coords="645,319,760,345"/>
+<area shape="rect" id="node23" href="_character_8h.html" title="Character.h" alt="" coords="1044,244,1135,271"/>
+<area shape="rect" id="node25" href="_dart_helper_8h.html" title="DartHelper.h" alt="" coords="1301,319,1397,345"/>
+<area shape="rect" id="node27" href="_world_8h.html" title="World.h" alt="" coords="1259,244,1325,271"/>
+<area shape="rect" id="node28" href="_record_8h.html" title="Record.h" alt="" coords="945,244,1020,271"/>
+<area shape="rect" id="node29" href="_controller_8h.html" title="Controller.h" alt="" coords="643,244,733,271"/>
+<area shape="rect" id="node30" href="_state_machine_8h.html" title="StateMachine.h" alt="" coords="757,244,870,271"/>
+</map>
+</div>
+</div>
+<p><a href="_sim_window_8cpp_source.html">Iet uz šī faila pirmkodu.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Nosaukumvietas</h2></td></tr>
+<tr class="memitem:namespace_v_p_c"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_v_p_c.html">VPC</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_v_p_c_1_1_g_u_i"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_v_p_c_1_1_g_u_i.html">VPC::GUI</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c30bb48f042946ebe97e62b65a0197ba.html">render</a></li><li class="navelem"><a class="el" href="_sim_window_8cpp.html">SimWindow.cpp</a></li>
+    <li class="footer">Ģenerēts ar
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

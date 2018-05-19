@@ -1,0 +1,8 @@
+<map id="VPC::StateMachine::TorsoControl" name="VPC::StateMachine::TorsoControl">
+<area shape="rect" id="node2" href="$class_v_p_c_1_1_state_machine.html#a3a82e5a3e97af57259dd438e1666850f" title="VPC::StateMachine::\lGetSwingFootName" alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node3" href="$class_v_p_c_1_1_state_machine.html#a83142e6c04d30eeb8beb49b331ba5b74" title="VPC::StateMachine::\lGetMotion" alt="" coords="589,35,736,76"/>
+<area shape="rect" id="node7" href="$class_v_p_c_1_1_state_machine.html#aa803d5ed2b6f0482db916befb57d5117" title="VPC::StateMachine::\lGetStanceFootName" alt="" coords="395,64,541,105"/>
+<area shape="rect" id="node4" href="$class_v_p_c_1_1_state_machine.html#af1b80fe57cbacfe9b2cb29ef8a0a29ff" title="VPC::StateMachine::\lSetStatePose" alt="" coords="784,35,931,76"/>
+<area shape="rect" id="node5" href="$class_v_p_c_1_1_state_machine.html#a74cd487408c3ae67046fdaf429b25ca7" title="VPC::StateMachine::\lInitialize" alt="" coords="979,35,1125,76"/>
+<area shape="rect" id="node6" href="$class_v_p_c_1_1_state_machine.html#a2c351c164a0a6cfd999ef8c1a50c8747" title="VPC::StateMachine::\lStateMachine" alt="" coords="1173,35,1320,76"/>
+</map>

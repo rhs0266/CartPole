@@ -1,0 +1,62 @@
+\hypertarget{_g_lfunctions_8cpp}{}\section{render/\+G\+Lfunctions.cpp faila apraksts}
+\label{_g_lfunctions_8cpp}\index{render/\+G\+Lfunctions.\+cpp@{render/\+G\+Lfunctions.\+cpp}}
+{\ttfamily \#include \char`\"{}G\+Lfunctions.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$assimp/cimport.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}G\+L\+Includes.\+h\char`\"{}}\\*
+Include dependency graph for G\+Lfunctions.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_g_lfunctions_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Nosaukumvietas}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_v_p_c}{V\+PC}
+\item 
+ \hyperlink{namespace_v_p_c_1_1_g_u_i}{V\+P\+C\+::\+G\+UI}
+\end{DoxyCompactItemize}
+\subsection*{Makro}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g_lfunctions_8cpp_ac0622674f5e3b0eb0bb851ca8d546b34}{Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT}~\{ if(!quad\+Obj) init\+Quad\+Obj(); \}
+\end{DoxyCompactItemize}
+\subsection*{Funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespace_v_p_c_1_1_g_u_i_a43f2493f014244094295c8840b9dc54f}{V\+P\+C\+::\+G\+U\+I\+::init\+Quad\+Obj} (void)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a7676fc36f15b67e72c9f1bd3a4836755}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Point} (const Eigen\+::\+Vector3d \&p0, const Eigen\+::\+Vector4d \&color, double size)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a45de6c011f74c08734aa04ce57bb9fd7}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Line} (const Eigen\+::\+Vector3d \&p0, const Eigen\+::\+Vector3d \&p1, const Eigen\+::\+Vector4d \&color, double width)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_ae93b170c02a6812211061109cbb0c4a6}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Sphere} (const Eigen\+::\+Vector3d \&p, double r, const Eigen\+::\+Vector4d \&color, int slices, int stacks)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a3ab06821c73e252bb864f2e9c9a6e916}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Cube} (const Eigen\+::\+Isometry3d \&T, const Eigen\+::\+Vector3d \&\+\_\+size, const Eigen\+::\+Vector4d \&color)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a1021ea56c7215b6a592c0046a77677d2}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Cylinder} (const Eigen\+::\+Isometry3d \&T, double \+\_\+radius, double \+\_\+height, const Eigen\+::\+Vector4d \&color, int slices, int stacks)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a727b1e8916ec599677fa11217d6ddf2b}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Arrow3D} (const Eigen\+::\+Vector3d \&\+\_\+pt, const Eigen\+::\+Vector3d \&\+\_\+dir, const double \+\_\+length, const double \+\_\+thickness, const Eigen\+::\+Vector4d \&color, const double \+\_\+arrow\+Thickness)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_a802b6ee2e4a882e55af30a5d12ff3965}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+Circle2D} (float \+\_\+x, float \+\_\+y, const std\+::string \&\+\_\+s, const Eigen\+::\+Vector4d \&color)
+\item 
+void \hyperlink{namespace_v_p_c_1_1_g_u_i_aba7cda15c9d9fa148f09e44915ec78f9}{V\+P\+C\+::\+G\+U\+I\+::\+Draw\+String\+On\+Screen} (float \+\_\+x, float \+\_\+y, const std\+::string \&\+\_\+s, bool \+\_\+big\+Font, const Eigen\+::\+Vector3d \&color)
+\end{DoxyCompactItemize}
+\subsection*{Mainīgie}
+\begin{DoxyCompactItemize}
+\item 
+static G\+L\+Uquadric\+Obj $\ast$ \hyperlink{namespace_v_p_c_1_1_g_u_i_a0a2d963cfdc95564bad5be52225b4df8}{V\+P\+C\+::\+G\+U\+I\+::quad\+Obj}
+\end{DoxyCompactItemize}
+
+
+\subsection{Makro definīcijas dokumentācija}
+\index{G\+Lfunctions.\+cpp@{G\+Lfunctions.\+cpp}!Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT@{Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT}}
+\index{Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT@{Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT}!G\+Lfunctions.\+cpp@{G\+Lfunctions.\+cpp}}
+\subsubsection[{\texorpdfstring{Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT}{QUAD_OBJ_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\+U\+A\+D\+\_\+\+O\+B\+J\+\_\+\+I\+N\+IT~\{ if(!quad\+Obj) init\+Quad\+Obj(); \}}\hypertarget{_g_lfunctions_8cpp_ac0622674f5e3b0eb0bb851ca8d546b34}{}\label{_g_lfunctions_8cpp_ac0622674f5e3b0eb0bb851ca8d546b34}
+
+
+Definēts līnijā 15 failā G\+Lfunctions.\+cpp.
+

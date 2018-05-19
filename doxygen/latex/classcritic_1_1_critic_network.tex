@@ -1,0 +1,292 @@
+\hypertarget{classcritic_1_1_critic_network}{}\section{critic.\+Critic\+Network klases apraksts}
+\label{classcritic_1_1_critic_network}\index{critic.\+Critic\+Network@{critic.\+Critic\+Network}}
+
+
+Sadarbības diagramma klasei critic.\+Critic\+Network\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classcritic_1_1_critic_network__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Publiskās elementa funkcijas}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classcritic_1_1_critic_network_a7f619dd822278ac236b4398003c06f94}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classcritic_1_1_critic_network_ad19c4eb9fce11599a0807f94fcab6343}{sess}, \hyperlink{classcritic_1_1_critic_network_a14fa3b43d18dc2e8e5ca3fcd617b8bcc}{options}, \hyperlink{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{name})
+\item 
+def \hyperlink{classcritic_1_1_critic_network_a6ef997aa35d20b9ff53caa8c87fea17a}{build\+\_\+network} (self)
+\item 
+def \hyperlink{classcritic_1_1_critic_network_a52b79a3c802070dc8925733bf7dcb42e}{predict} (self, \hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state}, \hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action})
+\item 
+def \hyperlink{classcritic_1_1_critic_network_af383ed0494f00bb145040d6acdbc6913}{update} (self, states, actions, q\+\_\+targets)
+\item 
+def \hyperlink{classcritic_1_1_critic_network_aca9bfaf828183ad50b80e971e4de446c}{compute\+\_\+grad} (self, states, actions)
+\end{DoxyCompactItemize}
+\subsection*{Publiskie atribūti}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcritic_1_1_critic_network_ad19c4eb9fce11599a0807f94fcab6343}{sess}
+\item 
+\hyperlink{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{name}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a14fa3b43d18dc2e8e5ca3fcd617b8bcc}{options}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{q\+\_\+predict}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a033abaa32fa20baf9d2faaa6a2c6fae3}{network\+\_\+params}
+\item 
+\hyperlink{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}{q\+\_\+target}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a720bbce2d663aea7f91ad957a0d24542}{loss}
+\item 
+\hyperlink{classcritic_1_1_critic_network_a85b9d34191b5218ce6af960ec3846b4f}{train}
+\item 
+\hyperlink{classcritic_1_1_critic_network_aeec8c7f1d08044b18a6c85868a18174a}{action\+\_\+grad}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detalizēts apraksts}
+
+
+Definēts līnijā 4 failā critic.\+py.
+
+
+
+\subsection{Konstruktora un destruktora dokumentācija}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, sess, options, name)}{__init__(self, sess, options, name)}}]{\setlength{\rightskip}{0pt plus 5cm}def critic.\+Critic\+Network.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sess, }
+\item[{}]{options, }
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classcritic_1_1_critic_network_a7f619dd822278ac236b4398003c06f94}{}\label{classcritic_1_1_critic_network_a7f619dd822278ac236b4398003c06f94}
+
+
+Definēts līnijā 5 failā critic.\+py.
+
+
+\begin{DoxyCode}
+5     \textcolor{keyword}{def }\hyperlink{classcritic_1_1_critic_network_a7f619dd822278ac236b4398003c06f94}{\_\_init\_\_}(self,sess,options,name):
+6         \textcolor{comment}{# session}
+7         \textcolor{comment}{# state\_dim}
+8         \textcolor{comment}{# action\_dim}
+9         \textcolor{comment}{# learning\_rate}
+10         \textcolor{comment}{# name}
+11         self.\hyperlink{classcritic_1_1_critic_network_ad19c4eb9fce11599a0807f94fcab6343}{sess} = sess
+12         self.\hyperlink{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{name} = name
+13         self.\hyperlink{classcritic_1_1_critic_network_a14fa3b43d18dc2e8e5ca3fcd617b8bcc}{options} = options
+14 
+15         self.\hyperlink{classcritic_1_1_critic_network_a6ef997aa35d20b9ff53caa8c87fea17a}{build\_network}()
+16 
+17         init\_vars = tf.group(tf.global\_variables\_initializer(), tf.local\_variables\_initializer())
+18         sess.run(init\_vars)
+19 
+\end{DoxyCode}
+
+
+\subsection{Elementa funkcijas dokumentācija}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!build\+\_\+network@{build\+\_\+network}}
+\index{build\+\_\+network@{build\+\_\+network}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{build\+\_\+network(self)}{build_network(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def critic.\+Critic\+Network.\+build\+\_\+network (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classcritic_1_1_critic_network_a6ef997aa35d20b9ff53caa8c87fea17a}{}\label{classcritic_1_1_critic_network_a6ef997aa35d20b9ff53caa8c87fea17a}
+
+
+Definēts līnijā 21 failā critic.\+py.
+
+
+\begin{DoxyCode}
+21     \textcolor{keyword}{def }\hyperlink{classcritic_1_1_critic_network_a6ef997aa35d20b9ff53caa8c87fea17a}{build\_network}(self):
+22         self.\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state} = tf.placeholder(tf.float32, [\textcolor{keywordtype}{None}, self.options.STATE\_DIM]) \textcolor{comment}{# Placeholder}
+23         self.\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action} = tf.placeholder(tf.float32, [\textcolor{keywordtype}{None}, self.options.ACTION\_DIM]) \textcolor{comment}{# Placeholder}
+24 
+25         with tf.variable\_scope(self.\hyperlink{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{name}):
+26             hidden\_layer\_state = tf.layers.dense(self.\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state}, 64, activation = tf.nn.relu, 
+      kernel\_initializer = tf.contrib.layers.xavier\_initializer()) \textcolor{comment}{# use elu for hidden layers}
+27             \textcolor{comment}{# hidden\_layer\_action = tf.layers.dense(self.action, 16, activation = tf.nn.relu,
+       kernel\_initializer = tf.contrib.layers.xavier\_initializer()) # use elu for hidden layers}
+28             hidden\_layer\_total = tf.concat([hidden\_layer\_state, self.\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action}], axis=1)
+29             hidden\_layer = tf.layers.dense(hidden\_layer\_total, 32, activation = tf.nn.relu, 
+      kernel\_initializer=tf.contrib.layers.xavier\_initializer())
+30             self.\hyperlink{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{q\_predict} = tf.layers.dense(hidden\_layer, 1, kernel\_initializer = 
+      tf.contrib.layers.xavier\_initializer())
+31 
+32         self.\hyperlink{classcritic_1_1_critic_network_a033abaa32fa20baf9d2faaa6a2c6fae3}{network\_params} = tf.trainable\_variables(scope = self.
+      \hyperlink{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{name})
+33 
+34         self.\hyperlink{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}{q\_target} = tf.placeholder(tf.float32, [\textcolor{keywordtype}{None}, 1]) \textcolor{comment}{# Placeholder}
+35         self.\hyperlink{classcritic_1_1_critic_network_a720bbce2d663aea7f91ad957a0d24542}{loss} = tf.losses.mean\_squared\_error(self.\hyperlink{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{q\_predict}, self.
+      \hyperlink{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}{q\_target})
+36         self.\hyperlink{classcritic_1_1_critic_network_a85b9d34191b5218ce6af960ec3846b4f}{train} = tf.train.AdamOptimizer(self.options.LR\_C).minimize(self.
+      \hyperlink{classcritic_1_1_critic_network_a720bbce2d663aea7f91ad957a0d24542}{loss})
+37 
+38         self.\hyperlink{classcritic_1_1_critic_network_aeec8c7f1d08044b18a6c85868a18174a}{action\_grad} = tf.gradients(self.\hyperlink{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{q\_predict}, self.
+      \hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action})[0]
+39 
+\end{DoxyCode}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!compute\+\_\+grad@{compute\+\_\+grad}}
+\index{compute\+\_\+grad@{compute\+\_\+grad}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{compute\+\_\+grad(self, states, actions)}{compute_grad(self, states, actions)}}]{\setlength{\rightskip}{0pt plus 5cm}def critic.\+Critic\+Network.\+compute\+\_\+grad (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{states, }
+\item[{}]{actions}
+\end{DoxyParamCaption}
+)}\hypertarget{classcritic_1_1_critic_network_aca9bfaf828183ad50b80e971e4de446c}{}\label{classcritic_1_1_critic_network_aca9bfaf828183ad50b80e971e4de446c}
+
+
+Definēts līnijā 57 failā critic.\+py.
+
+
+\begin{DoxyCode}
+57     \textcolor{keyword}{def }\hyperlink{classcritic_1_1_critic_network_aca9bfaf828183ad50b80e971e4de446c}{compute\_grad}(self, states, actions):
+58         \textcolor{keywordflow}{return} self.sess.run(self.\hyperlink{classcritic_1_1_critic_network_aeec8c7f1d08044b18a6c85868a18174a}{action\_grad},
+59                              feed\_dict=\{
+60                                  self.\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state}: states,
+61                                  self.\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action}: actions
+62                              \}\end{DoxyCode}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!predict@{predict}}
+\index{predict@{predict}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{predict(self, state, action)}{predict(self, state, action)}}]{\setlength{\rightskip}{0pt plus 5cm}def critic.\+Critic\+Network.\+predict (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{state, }
+\item[{}]{action}
+\end{DoxyParamCaption}
+)}\hypertarget{classcritic_1_1_critic_network_a52b79a3c802070dc8925733bf7dcb42e}{}\label{classcritic_1_1_critic_network_a52b79a3c802070dc8925733bf7dcb42e}
+
+
+Definēts līnijā 40 failā critic.\+py.
+
+
+\begin{DoxyCode}
+40     \textcolor{keyword}{def }\hyperlink{classcritic_1_1_critic_network_a52b79a3c802070dc8925733bf7dcb42e}{predict}(self, state, action):
+41         s = np.reshape(state, [-1, self.options.STATE\_DIM]) \textcolor{comment}{# ensure right shape}
+42         a = np.reshape(action, [-1, self.options.ACTION\_DIM]) \textcolor{comment}{# ensure right shape}
+43         \textcolor{keywordflow}{return} self.sess.run(self.\hyperlink{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{q\_predict},
+44                              feed\_dict=\{
+45                                  self.\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state} : s,
+46                                  self.\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action}: a
+47                              \})
+48 
+\end{DoxyCode}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!update@{update}}
+\index{update@{update}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{update(self, states, actions, q\+\_\+targets)}{update(self, states, actions, q_targets)}}]{\setlength{\rightskip}{0pt plus 5cm}def critic.\+Critic\+Network.\+update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{states, }
+\item[{}]{actions, }
+\item[{}]{q\+\_\+targets}
+\end{DoxyParamCaption}
+)}\hypertarget{classcritic_1_1_critic_network_af383ed0494f00bb145040d6acdbc6913}{}\label{classcritic_1_1_critic_network_af383ed0494f00bb145040d6acdbc6913}
+
+
+Definēts līnijā 49 failā critic.\+py.
+
+
+\begin{DoxyCode}
+49     \textcolor{keyword}{def }\hyperlink{classcritic_1_1_critic_network_af383ed0494f00bb145040d6acdbc6913}{update}(self, states, actions, q\_targets):
+50         self.sess.run(self.\hyperlink{classcritic_1_1_critic_network_a85b9d34191b5218ce6af960ec3846b4f}{train},
+51                       feed\_dict=\{
+52                           self.\hyperlink{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{state}: states,
+53                           self.\hyperlink{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{action}: actions,
+54                           self.\hyperlink{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}{q\_target}: q\_targets
+55                       \})
+56 
+\end{DoxyCode}
+
+
+\subsection{Elementa datu dokumentācija}
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!action@{action}}
+\index{action@{action}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{action}{action}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+action}\hypertarget{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}{}\label{classcritic_1_1_critic_network_a78b46c2dc517101434ffc7053581f5a6}
+
+
+Definēts līnijā 23 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!action\+\_\+grad@{action\+\_\+grad}}
+\index{action\+\_\+grad@{action\+\_\+grad}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{action\+\_\+grad}{action_grad}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+action\+\_\+grad}\hypertarget{classcritic_1_1_critic_network_aeec8c7f1d08044b18a6c85868a18174a}{}\label{classcritic_1_1_critic_network_aeec8c7f1d08044b18a6c85868a18174a}
+
+
+Definēts līnijā 38 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!loss@{loss}}
+\index{loss@{loss}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{loss}{loss}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+loss}\hypertarget{classcritic_1_1_critic_network_a720bbce2d663aea7f91ad957a0d24542}{}\label{classcritic_1_1_critic_network_a720bbce2d663aea7f91ad957a0d24542}
+
+
+Definēts līnijā 35 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!name@{name}}
+\index{name@{name}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+name}\hypertarget{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}{}\label{classcritic_1_1_critic_network_ad7a59dc914d7e6eff3d96c6c819bef38}
+
+
+Definēts līnijā 12 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!network\+\_\+params@{network\+\_\+params}}
+\index{network\+\_\+params@{network\+\_\+params}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{network\+\_\+params}{network_params}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+network\+\_\+params}\hypertarget{classcritic_1_1_critic_network_a033abaa32fa20baf9d2faaa6a2c6fae3}{}\label{classcritic_1_1_critic_network_a033abaa32fa20baf9d2faaa6a2c6fae3}
+
+
+Definēts līnijā 32 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!options@{options}}
+\index{options@{options}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+options}\hypertarget{classcritic_1_1_critic_network_a14fa3b43d18dc2e8e5ca3fcd617b8bcc}{}\label{classcritic_1_1_critic_network_a14fa3b43d18dc2e8e5ca3fcd617b8bcc}
+
+
+Definēts līnijā 13 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!q\+\_\+predict@{q\+\_\+predict}}
+\index{q\+\_\+predict@{q\+\_\+predict}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{q\+\_\+predict}{q_predict}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+q\+\_\+predict}\hypertarget{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}{}\label{classcritic_1_1_critic_network_a5c8a5c7b27312a19cd603216db6e5b52}
+
+
+Definēts līnijā 30 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!q\+\_\+target@{q\+\_\+target}}
+\index{q\+\_\+target@{q\+\_\+target}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{q\+\_\+target}{q_target}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+q\+\_\+target}\hypertarget{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}{}\label{classcritic_1_1_critic_network_acae4004c3e447aaadc7f25ee2a550f60}
+
+
+Definēts līnijā 34 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!sess@{sess}}
+\index{sess@{sess}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{sess}{sess}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+sess}\hypertarget{classcritic_1_1_critic_network_ad19c4eb9fce11599a0807f94fcab6343}{}\label{classcritic_1_1_critic_network_ad19c4eb9fce11599a0807f94fcab6343}
+
+
+Definēts līnijā 11 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!state@{state}}
+\index{state@{state}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+state}\hypertarget{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}{}\label{classcritic_1_1_critic_network_a21da613cb1688ada3b416e4286649fc2}
+
+
+Definēts līnijā 22 failā critic.\+py.
+
+\index{critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}!train@{train}}
+\index{train@{train}!critic\+::\+Critic\+Network@{critic\+::\+Critic\+Network}}
+\subsubsection[{\texorpdfstring{train}{train}}]{\setlength{\rightskip}{0pt plus 5cm}critic.\+Critic\+Network.\+train}\hypertarget{classcritic_1_1_critic_network_a85b9d34191b5218ce6af960ec3846b4f}{}\label{classcritic_1_1_critic_network_a85b9d34191b5218ce6af960ec3846b4f}
+
+
+Definēts līnijā 36 failā critic.\+py.
+
+
+
+Šīs klases dokumentācijas tika ģenerēta no šāda faila\+:\begin{DoxyCompactItemize}
+\item 
+py\+\_\+code/\hyperlink{critic_8py}{critic.\+py}\end{DoxyCompactItemize}

@@ -23,7 +23,7 @@ class ActorNetwork:
 	def build_network(self):
 		self.state = tf.placeholder(tf.float32, [None, self.state_dim]) # Placeholder
 		with tf.variable_scope(self.name):
-			hidden_layer = tf.layers.dense(self.state, 64, activation = tf.nn.elu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layer
+			hidden_layer = tf.layers.dense(self.state, 128, activation = tf.nn.elu, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use elu for hidden layer
 			self.action_predict = tf.layers.dense(hidden_layer, self.action_dim, activation = tf.nn.tanh, kernel_initializer = tf.contrib.layers.xavier_initializer()) # use tanh to ensure output range becomes [-1,1]
 
 		self.action_grad = tf.placeholder(tf.float32, [None, self.action_dim]) # Placeholder

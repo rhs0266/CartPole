@@ -20,8 +20,8 @@ Controller(const std::shared_ptr<VPC::World>& world)
 
 	// mKp.block<3,1>(18,0) = Eigen::Vector3d::Constant(10);
 	// mKp.block<3,1>(21,0) = Eigen::Vector3d::Constant(10);
-	mKp = Eigen::VectorXd::Constant(skel->getNumDofs(),300);
-	mKv = Eigen::VectorXd::Constant(skel->getNumDofs(),30);
+	mKp = Eigen::VectorXd::Constant(skel->getNumDofs(),100);
+	mKv = Eigen::VectorXd::Constant(skel->getNumDofs(),10);
 	// mKp.tail(skel->getNumDofs()-start_index) = Eigen::VectorXd::Constant(skel->getNumDofs()-start_index,300);
 	// mKv.tail(skel->getNumDofs()-start_index) = Eigen::VectorXd::Constant(skel->getNumDofs()-start_index,30);
 }

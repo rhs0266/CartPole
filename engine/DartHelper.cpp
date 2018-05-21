@@ -130,7 +130,7 @@ dart::dynamics::BodyNode* MakeRevoluteJointBody(
 
 	props.mT_ChildBodyToJoint.setIdentity();
 	props.mT_ChildBodyToJoint.translation() = joint_pos-body_pos;
-	props.mAxis = Eigen::Vector3d::UnitZ();
+	props.mAxis = Eigen::Vector3d::UnitX();
 	bn = skel->createJointAndBodyNodePair<RevoluteJoint>(
 		parent,props,BodyNode::AspectProperties(name)).second;
 	bn->createShapeNodeWith<VisualAspect,CollisionAspect, DynamicsAspect>(shape);

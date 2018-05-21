@@ -100,7 +100,7 @@ class DDPG(object):
 			state = self.env.getState()
 			total_reward = 0
 
-			while local_step < goal_step:
+			while local_step < goal_step and not done:
 				# epsilon decaying
 				global_step += 1
 				local_step += 1
@@ -115,21 +115,21 @@ class DDPG(object):
 				
 				# print(self.actor.predict(state)[0])
 				# action = np.random.normal(float(self.actor.predict(state)[0][0]), eps) # sigma = 0.3
-				# action = normlNoise(action, eps)
+				# action = normalNoise(action, eps)
+				# print("observed state   : ", state)
 				action = self.actor.predict(state)[0]
-				print("predicted action : ",action)
+				# print("predicted action : ",action)
 				for i in range(len(action)):
 					action[i] = np.random.normal(float(action[i]), eps)
 					if action[i] > 1.5:
 						action[i] = 1.5
 					if action[i] < -1.5:
 						action[i] = -1.5
-				print("noise addition   : ",action)
+				# print("noise addition   : ",action)
 
 				# stepping
 				self.env.setAction(action.tolist())
-				self.env.step(True)
-				return
+				self.env.step(t%50==0)
 				reward = self.env.getReward()
 				next_state = self.env.getState()
 				done = self.env.getDone()
@@ -137,7 +137,7 @@ class DDPG(object):
 				# 	reward = -1000
 
 				# training
-				self.replaybuffer.add(state, [action], [reward], next_state)
+				self.replaybuffer.add(state, action, [reward], next_state)
 				self.optimize_network()
 
 				state = next_state
@@ -147,8 +147,8 @@ class DDPG(object):
 				mem = True
 			else:
 				mem = False
-			if (t+1)%500==0:
-				self.saver.save(self.sess, 'checkpoints-simbicon/simbicon_ddpg', global_step = global_step)
+			# if (t+1)%500==0:
+				# self.saver.save(self.sess, 'checkpoints-simbicon/simbicon_ddpg', global_step = global_step)
 			print(t, total_reward)
 
 	def eval(self):

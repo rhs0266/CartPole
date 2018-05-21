@@ -47,22 +47,76 @@ void Simulation::step(bool recordFlag){
     Eigen::VectorXd p,v;
     int lastState = 0, stepCount = 0;
     reward = 0.0;
-    for (;stepCount<10;){
+
+    // test
+//    {
+//
+//        fsm->GetMotion(p,v);
+//        {
+//            world->GetCharacter()->GetSkeleton()->setPositions(p);
+//
+//            if (recordFlag) {
+//                records.push_back(std::make_shared<VPC::Record>());
+//                records.back()->Set(world->GetWorld(), world->GetCharacter(), fsm);
+//                records.back()->Write(output_path + std::to_string(records.size() - 1));
+//            }
+//        }
+//        fsm->GetMotion(p,v);
+//        {
+//            world->GetCharacter()->GetSkeleton()->setPositions(p);
+//
+//            if (recordFlag) {
+//                records.push_back(std::make_shared<VPC::Record>());
+//                records.back()->Set(world->GetWorld(), world->GetCharacter(), fsm);
+//                records.back()->Write(output_path + std::to_string(records.size() - 1));
+//            }
+//        }
+//        fsm->GetMotion(p,v);
+//        {
+//            world->GetCharacter()->GetSkeleton()->setPositions(p);
+//
+//            if (recordFlag) {
+//                records.push_back(std::make_shared<VPC::Record>());
+//                records.back()->Set(world->GetWorld(), world->GetCharacter(), fsm);
+//                records.back()->Write(output_path + std::to_string(records.size() - 1));
+//            }
+//        }
+//        fsm->GetMotion(p,v);
+//        {
+//            world->GetCharacter()->GetSkeleton()->setPositions(p);
+//
+//            if (recordFlag) {
+//                records.push_back(std::make_shared<VPC::Record>());
+//                records.back()->Set(world->GetWorld(), world->GetCharacter(), fsm);
+//                records.back()->Write(output_path + std::to_string(records.size() - 1));
+//            }
+//        }
+//
+//    }
+//    return;
+//
+
+    for (;;){
         stepCount++;
         fsm->GetMotion(p,v);
-
         int newState = fsm->GetState();
-//        if (world->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207){ // determine simbicon falls down
-//            break;
-//        }
+
+        if (lastState != newState){
+            reward += 10;
+        }
+
         if (lastState == 3 && newState == 0){
-            //break;
+            break;
         }
         Eigen::VectorXd tau = controller->ComputeTorque(p,v);
-        std::cout << "Tau : " << tau << std::endl;
         tau = fsm->TorsoControl(tau);
+//        std::cout << "State : " << newState << std::endl;
+//        std::cout << "Tau : " << tau << std::endl;
         world->GetCharacter()->GetSkeleton()->setForces(tau);
         world->TimeStepping();
+
+//        double zPositionReward = world->GetCharacter()->GetSkeleton()->getPosition(2); // z-value
+        double zPositionReward = 1.0; // z-value
 
         double desiredVelocity = -1.3; // z-axis
         double currentVelocity = world->GetCharacter()->GetSkeleton()->getVelocity(5);
@@ -71,14 +125,19 @@ void Simulation::step(bool recordFlag){
         double torsoAngle = world->GetCharacter()->GetSkeleton()->getPosition(0);
         double torsoUpwardReward = exp(-pow(torsoAngle, 2.0) );
 
-        bool fallDownFlag = world->GetCharacter()->GetSkeleton()->getPosition(4) <= -0.2207;
-        double fallDownPenalty = fallDownFlag ? -10 : 0.0;
+        bool strangeFlag = !((world->GetCharacter()->GetSkeleton()->getPosition(4) >= -0.3207) && (world->GetCharacter()->GetSkeleton()->getPosition(4) <= 0.3207));
+        double strangePenalty = strangeFlag ? -10 : 0.0;
 
-        reward += 1.0 * zVelocityReward + 0.5 * torsoUpwardReward + 1.0 * fallDownPenalty;
+        if (lastState != newState){
+            reward += zPositionReward + zVelocityReward + torsoUpwardReward;
+        }
+        reward += strangePenalty;
+//        reward += zPositionReward + torsoUpwardReward + strangePenalty;
+        //std::cout << reward << std::endl;
 
         lastState = newState;
 
-        //if (fallDownFlag) break;
+        if (strangeFlag) break;
 
         if (recordFlag) {
             records.push_back(std::make_shared<VPC::Record>());
@@ -86,12 +145,12 @@ void Simulation::step(bool recordFlag){
             records.back()->Write(output_path + std::to_string(records.size() - 1));
         }
     }
-    reward /= stepCount;
+//    reward /= stepCount;
 }
 
 int Simulation::getStateNum(){
     Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    int size = pos.rows() * 2 + 1;
+    int size = pos.rows() * 2;
     return size;
 }
 
@@ -101,14 +160,14 @@ int Simulation::getActionNum(){
 }
 
 boost::python::list Simulation::getState(){
-    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions() * 2.0;
-    Eigen::VectorXd vec = world->GetCharacter()->GetSkeleton()->getVelocities() * 0.2;
-    Eigen::VectorXd phase(1); phase << fsm->GetState()/4.0;
+    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
+//    pos[0] = pos[2] = 0; // delete body x, z position
+    Eigen::VectorXd vec = world->GetCharacter()->GetSkeleton()->getVelocities();
 
     int size = pos.rows();
-    Eigen::VectorXd state(size*2 + 1);
+    Eigen::VectorXd state(size*2);
 
-    //state << pos,vec,phase;
+    state << pos,vec;
     //std::cout << state << "#" << std::endl;
     return toPyList(state);
 }
@@ -118,9 +177,8 @@ double Simulation::getReward(){
 }
 
 int Simulation::getDone(){
-    Eigen::VectorXd pos = world->GetCharacter()->GetSkeleton()->getPositions();
-    if (abs(pos[0])>1.5 || abs(pos[1])>15.0/180.0*3.141592) return 1;
-    return 0;
+    bool strangeFlag = !((world->GetCharacter()->GetSkeleton()->getPosition(4) >= -0.3207) && (world->GetCharacter()->GetSkeleton()->getPosition(4) <= 0.3207));
+    return strangeFlag;
 }
 
 void Simulation::setAction(boost::python::list action){

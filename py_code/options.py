@@ -3,25 +3,25 @@ from argparse import ArgumentParser
 class Options():
 	def __init__(self):
 		parser = ArgumentParser()
-		parser.add_argument('--MAX_EPISODE', type=int, default=100,
+		parser.add_argument('--MAX_EPISODE', type=int, default=10000,
 							help='max number of episodes iteration')
 		parser.add_argument('--GOAL_REWARD', type=int, default=1000,
 							help='goal reward of each episode')
 		parser.add_argument('--ACTION_DIM', type=int, default=24,
 							help='number of actions one can take')
-		parser.add_argument('--STATE_DIM', type=int, default=25,
+		parser.add_argument('--STATE_DIM', type=int, default=24,
 							help='number of states one can see')
 		parser.add_argument('--GAMMA', type=float, default=0.99,
 							help='discount factor')
 		parser.add_argument('--TAU', type=float, default=0.01,
 							help='blending factor for soft copy')
-		parser.add_argument('--INIT_EPS', type=float, default=0.5,
+		parser.add_argument('--INIT_EPS', type=float, default=0.3,
 							help='initial probability for randomly sampling action')
 		parser.add_argument('--FINAL_EPS', type=float, default=0.1,
 							help='finial probability for randomly sampling action')
-		parser.add_argument('--EPS_DECAY', type=float, default=0.5,
+		parser.add_argument('--EPS_DECAY', type=float, default=0.995,
 							help='epsilon decay rate')
-		parser.add_argument('--EPS_ANNEAL_STEPS', type=int, default=100,
+		parser.add_argument('--EPS_ANNEAL_STEPS', type=int, default=10,
 							help='steps interval to decay epsilon')
 		parser.add_argument('--LR_A', type=float, default=1e-4,
 							help='learning rate of actor network')

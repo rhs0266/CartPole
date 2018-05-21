@@ -95,9 +95,9 @@ SetStatePose(Eigen::VectorXd action){
 	p0[8] = action[1];
 	p0[10] = action[2];
 	//Stance Foot
-	p1[7] = action[3];
-	p1[9] = action[4];
-	p1[11] = action[5];
+	p0[7] = action[3];
+	p0[9] = action[4];
+	p0[11] = action[5];
 
 	//Swing Foot
 	p1[6] = action[6];
@@ -155,7 +155,7 @@ GetMotion(Eigen::VectorXd& p,Eigen::VectorXd& v)
 		// std::cout<<mState<<std::endl;
 		if(mWorld->GetWorld()->getLastCollisionResult().inCollision(skel->getBodyNode(GetSwingFootName())))
 		{
-			std::cout<<"Contact ! "<<GetSwingFootName()<<std::endl;
+//			std::cout<<"Contact ! "<<GetSwingFootName()<<std::endl;
 			mElapsedTime = 0.0;
 			mState++;
 		}
